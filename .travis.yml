@@ -1,18 +1,14 @@
 language: python
 python:
-  - '2.7'
-
+- '2.7'
 env:
   global:
-  - secure: l9+ntB6r9QwFNJ6xt/UldP2nBdHk+s0/RWhZ8oOMUag6TyVBWBTlPFmjTLSDWbOnZ+XPaH6WEzpWPfLgPKP+LJoIxUO1X5AUUHSubV7BqMTMm/j8uYW10fmoCThVHWqvwk+1DkWz94uW+nr0krBNMdBEc6Yqrzs9LhmUFpegxNA=
-  - secure: scOV6dSbIs6x0P9sMXoEKGOMwvoYcNsZf0MrWSfzEDzZEVfMwA23y4nnIcisVsF+fLBVg5nhfYl/ZTu8A08OyaBoDckSCGNxnceclEZADd65VbTK+/lx2nf+wHqN4Qy05Ot24Vf3QlmgfKylS2TGnI+wNue2SRyE5rZuE7vl5v8=
-
+  - secure: PwVyAq9wIH8iBKqXmgDGcIa/vV20YKuwsDCWYqu4OUu1mEM+8v8moTKc/Kn/Is2clF9qQSf4FqBrFb/WRDUHTV/BHGuf0zWslXz3glz9VuyVvZ6qVLG5gi/VQ8fYGrbabDtehutaWXlDrfZNOfl4UmPZ2GAPVJ9WfhP7s+aOBwA=
+  - secure: Y/um17l1IAldPwrKf5eJ7eciAKfxLUL1uvan2wSh5uVHl6HZwr3rXIkug4zgQhqckpU1mjzUP3Utkgf8HmgvSVT3QVAsK+WtBbITKGhCf2aqRM83Jv/87kV/nT/OH+RXonyMacj6jhxPRD63Pg+K1J2MF8hlG0JEO55VNztQRbE=
 install:
-  - sudo apt-get install -y s3cmd
-  - pip install -r requirements.txt
-
+- sudo apt-get install -y s3cmd
+- pip install -r requirements.txt
 before_script:
-  - echo "access_key = $TRAVIS_AWS_ACCESS_KEY_ID" >> ~/.s3cfg
-  - echo "secret_key = $TRAVIS_AWS_SECRET_ACCESS_KEY" >> ~/.s3cfg
-
+- echo "access_key = $TRAVIS_AWS_ACCESS_KEY_ID" >> ~/.s3cfg
+- echo "secret_key = $TRAVIS_AWS_SECRET_ACCESS_KEY" >> ~/.s3cfg
 script: make s3_upload
