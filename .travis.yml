@@ -3,8 +3,8 @@ python:
 - '2.7'
 env:
   global:
-  - secure: PwVyAq9wIH8iBKqXmgDGcIa/vV20YKuwsDCWYqu4OUu1mEM+8v8moTKc/Kn/Is2clF9qQSf4FqBrFb/WRDUHTV/BHGuf0zWslXz3glz9VuyVvZ6qVLG5gi/VQ8fYGrbabDtehutaWXlDrfZNOfl4UmPZ2GAPVJ9WfhP7s+aOBwA=
-  - secure: Y/um17l1IAldPwrKf5eJ7eciAKfxLUL1uvan2wSh5uVHl6HZwr3rXIkug4zgQhqckpU1mjzUP3Utkgf8HmgvSVT3QVAsK+WtBbITKGhCf2aqRM83Jv/87kV/nT/OH+RXonyMacj6jhxPRD63Pg+K1J2MF8hlG0JEO55VNztQRbE=
+  - secure: VkDsW5PrLqZKXxA2juphhnwlkpEjZ/fwHC0/zQD/cVMZhjr46KJsRjadWMANDE0I/ypyW6EA5Z32NoYwsSGtd12Ccb62FxwAOGPCIkCHvAy059nWRu2yh2DvNOH5tWmILpIhpMK+G90RS9YQAGlTD3uuMY3jrhRTRlG2f/X7MLQ=
+  - secure: MvOjuQRIjdFeqfpzHyJMRcdMBtkf1RvvjSypZrxPdJgNYV8KaO3/lykh8LtP+08N0Mmy08rCf4PCinNDgfNHElKPUJQnRDPR6q56i/TN+/6V0weshyhvdtzpFXSjV3cuuho6KXCRN9yd76UHQ5EG5ycHVl5KVZhO6uIuD5acOCA=
 install:
 - sudo apt-get install -y s3cmd
 - pip install -r requirements.txt
