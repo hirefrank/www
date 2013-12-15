@@ -33,20 +33,57 @@
         <![endif]-->
 
         <section class="container">
-            <header>
-            </header>
-
-            <section class="main">
-            {% block content %}
-            {% endblock %}
+            <section class="drawer">
+                <div class="content">
+                    <section class="photo">
+                        <div class="image-wrapper">
+                            <img src="img/mug.jpg"/>
+                        </div>
+                    </section>
+                    <section class="about">
+                        <h2>Frank Harris</h2>
+                        <p>Hi, I'm a clown. Lorem ipsum dolor sit amet, <a href="/dsfsf">consectetur</a> adipiscing elit. Nam vulputate, metus a dictum imperdiet, 
+                        magna <a href="/asdfsad">tortor aliquet leo</a>, eu lobortis eros sapien <a href="/dasfasdf">laoreet</a> lacus. Donec eget purus pretium.
+                    </section>
+                </div>
             </section>
-
-            <footer>
+            <section class="blog">
+                <section class="mark-wrapper content">
+                    <div class="mark">
+                        <h1><a href="/" class="no-underline">hirefrank</a></h1>
+                    </div>
+                </section>
+                {% block content %}
+                {% endblock %}
+            </section>
+            <footer class="content">
+                <section class="navigate-left">
+                    <a href="/older" class="no-underline"><i class="ss-icon">&#x25C5;</i> Older posts</a>
+                </section>
+                <section class="search">
+                    <form>
+                        <input type="text" /><input type="submit" name="s" value="Search" class="ss-icon" />
+                    </form>
+                </section>
+                <section class="navigate-right">
+                    <a href="/newer" class="no-underline">Newer posts <i class="ss-icon">&#x25BB;</i></a>
+                </section>
+                <section class="profile-links">
+                    <i class="ss-icon ss-social-regular">
+                        <ul>
+                            <li><a href="//twitter" class="no-underline-icon twitter">Twitter</a></li>
+                            <li><a href="//linkedin" class="no-underline-icon linkedin">Linkedin</a></li>
+                            <li><a href="//mail" class="no-underline-icon email">Email</a></li>
+                        </ul>
+                     </i>
+                </section>
+                <section class="fine-print">
+                    <a href="/brooklyn" class="no-underline-icon"><i class="ss-icon">&#xE6D0;</i><span>Made in Brooklyn, NY</span></a> &bull; &copy;2013 Frank Harris
+                </section>
             </footer>
         </section>
 
-        {% block footer %}
-        {% endblock %}
+        {% include 'analytics.html' %}
 
     </body>
 </html>
