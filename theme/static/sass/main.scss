@@ -18,6 +18,7 @@ a:hover.no-underline,
 a:hover.no-underline-icon { text-decoration: none; }
 a:hover, a:hover span { text-decoration: underline; }
 p, li { line-height: 160%; }
+abbr[title] { border-bottom: 0; }
 
 section.container {
     

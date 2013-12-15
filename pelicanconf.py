@@ -9,7 +9,7 @@ SITEURL = 'http://www.hirefrank.com'
 TIMEZONE = 'America/New_York'
 
 DEFAULT_LANG = u'en'
-DEFAULT_DATE_FORMAT = '%a %d %B %Y'
+DEFAULT_DATE_FORMAT = '%b %d, %Y'
 #USE_FOLDER_AS_CATEGORY = True
 DISPLAY_PAGES_ON_MENU = True
 AUTHOR_SAVE_AS = None
@@ -67,7 +67,7 @@ DIRECT_TEMPLATES = ('archives', 'tags',)
 
 # path-specific metadata
 EXTRA_PATH_METADATA = {
-    'extras/index.html': {'path': 'index.html'},
+    'extras/old.html': {'path': 'old.html'},
     'extras/robots.txt': {'path': 'robots.txt'},
     }
 

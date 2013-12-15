@@ -1,35 +1,43 @@
 {% extends "base.html" %}
-{% block title %}{{ article.title|striptags }}{% endblock %}
+{% block title %}{{ article.title|striptags }} | {{ SITENAME }}{% endblock %}
 {% block content %}
-<section id="content" class="body">
-  <article>
-    <header>
-      <h1 class="entry-title">
-        <a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark"
-           title="Permalink to {{ article.title|striptags }}">{{ article.title}}</a></h1>
-      {% include 'twitter.html' %}
-    </header>
-
-    <div class="entry-content">
-      {% include 'article_infos.html' %}
-      {{ article.content }}
-    </div><!-- /.entry-content -->
-    {% if DISQUS_SITENAME and SITEURL and article.status != "draft" %}
-    <div class="comments">
-      <h2>Comments !</h2>
-      <div id="disqus_thread"></div>
-      <script type="text/javascript">
-        var disqus_identifier = "{{ article.url }}";
-        var disqus_url = "{{ SITEURL }}/{{ article.url }}";
-        (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = 'http://{{ DISQUS_SITENAME }}.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-        })();
-      </script>
-    </div>
-    {% endif %}
-
-  </article>
-</section>
+                <section class="article-wrapper content">
+                    <article>
+                        <section class="meta">
+                            <abbr class="date" title="{{ article.date.isoformat() }}">{{ article.locale_date }}</abbr>
+                            {% if article.tags %}
+                            <ul class="tags">
+                            {% for tag in article.tags %}
+                                <li><a href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a></li>
+                            {% endfor %}
+                            </ul>
+                            {% endif %}
+                        </section>
+                        <section class="main">
+                            <h3><a href="{{ SITEURL}}/{{ article.url }}" class="no-underline" rel="bookmark" title="Permalink to {{ article.title|striptags }}">{{ article.title}}</a></h3>
+                            <div class="body">
+                                {{ article.content }}
+                            </div>
+                            <div class="share">
+                                <a href="{{ SITEURL}}/{{ article.url }}" class="no-underline-icon" rel="bookmark" title="Permalink to {{ article.title|striptags }}"><i class="ss-icon">link</i></a> 
+                                <!--<i class="ss-icon">heart</i> 40 <i class="ss-icon">retweet</i> 56 <i class="ss-icon">comment</i> 20-->
+                            </div>
+                            {% if DISQUS_SITENAME and SITEURL and article.status != "draft" %}
+                            <div class="comments">
+                              <h2>Comments !</h2>
+                              <div id="disqus_thread"></div>
+                              <script type="text/javascript">
+                                var disqus_identifier = "{{ article.url }}";
+                                var disqus_url = "{{ SITEURL }}/{{ article.url }}";
+                                (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                                dsq.src = 'http://{{ DISQUS_SITENAME }}.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                                })();
+                              </script>
+                            </div>
+                            {% endif %}
+                        </section>
+                    </article>
+                </section>
 {% endblock %}
