@@ -1,0 +1,53 @@
+@import "../../../vendor/bundle/ruby/2.0.0/gems/bourbon-3.1.8/app/assets/stylesheets/bourbon";
+@import "grid-settings";
+@import "../../../vendor/bundle/ruby/2.0.0/gems/neat-1.5.0/app/assets/stylesheets/neat";
+
+body {
+    background-color: $background;
+    color: $text-default;
+}
+
+.content { @include outer-container; }
+i { vertical-align: middle; }
+a { text-decoration: none; color: inherit; }
+a:hover.no-underline,
+a:hover.no-underline-icon { text-decoration: none; }
+a:hover, a:hover span { text-decoration: underline; }
+p, li { line-height: 160%; }
+
+body.partner-documentation {
+    
+    margin-top: 20px;
+    background-color: #fff;
+    font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
+    color: #333;
+
+    p { margin-top: 0;}
+    li { margin: 30px 0; }
+    a { color: #cc0000; }
+
+    pre {
+        font-family: "Lucida Console", "Lucida Sans Typewriter", Monaco, "Bitstream Vera Sans Mono", monospace;
+        font-size: em(12);
+        width: 600px;
+        margin-left: -60px;
+        line-height: 130%;
+        background-color: #eee;
+        border: none;
+        padding: 10px 20px;
+    }
+
+    section.container {
+
+        article {
+            @include span-columns(8);
+            @include shift(3);
+            padding-left: 20px;
+        }
+    }
+}
+
+section.container {
+    
+
+}

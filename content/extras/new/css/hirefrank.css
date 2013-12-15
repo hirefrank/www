@@ -1,0 +1,61 @@
+/* base */
+
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figure, figcaption, hgroup, menu, footer, header, nav, section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+body {
+    font: 16px 'News Cycle', sans-serif;
+    text-align: center;
+    background-image: url('../img/background.png');
+    color: #555;
+    margin: 0 auto;
+}
+
+.clear {
+    clear: both;
+    height: 0px;
+    overflow: hidden;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+a img {
+    border:none;
+}
+
+p {
+  line-height: 24px;
+}
+
+#wrapper {
+  min-height: 100%;
+  position: relative;
+}
+
+#header {
+  /*
+  position: fixed;
+  z-index: 9000;
+  */
+  width: 100%;
+}
+
+#content {
+    width: 700px;
+    margin: 0 auto;
+    padding: 20px 0 20px 60px;
+    background: #fff
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+}

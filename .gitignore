@@ -1,0 +1,7 @@
+*.pid
+*.pyc
+output
+vendor
+bourbon
+neat
+.sass-cache
