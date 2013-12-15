@@ -11,6 +11,6 @@ install:
 before_script:
   - echo "access_key = $TRAVIS_AWS_ACCESS_KEY_ID" >> ~/.s3cfg
   - echo "secret_key = $TRAVIS_AWS_SECRET_ACCESS_KEY" >> ~/.s3cfg
-  - s3cmd get s3://webfonts.hirefrank.com/webfonts.tar.gz
+  - s3cmd get s3://utils.hirefrank.com/webfont/webfonts.tar.gz
   - tar -xvzf webfonts.tar.gz -C theme/static
 script: make s3_upload
