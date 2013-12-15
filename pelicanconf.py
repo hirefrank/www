@@ -10,9 +10,10 @@ TIMEZONE = 'America/New_York'
 
 DEFAULT_LANG = u'en'
 DEFAULT_DATE_FORMAT = '%a %d %B %Y'
-USE_FOLDER_AS_CATEGORY = True
+#USE_FOLDER_AS_CATEGORY = True
 DISPLAY_PAGES_ON_MENU = True
 AUTHOR_SAVE_AS = None
+DEFAULT_CATEGORY = ''
 
 ARTICLE_DIR = ''
 ARTICLE_URL = '{date:%y}/{date:%m}/{slug}'
@@ -23,10 +24,11 @@ PAGE_DIR = '_pages'
 PAGE_URL = '{slug}'
 PAGE_SAVE_AS = '{slug}/index.html'
 
-CATEGORY_URL = 'category/{slug}'
-CATEGORY_SAVE_AS = 'category/{slug}/index.html'
-CATEGORIES_URL = 'categories'
-CATEGORIES_SAVE_AS = 'categories/index.html'
+#CATEGORY_URL = 'category/{slug}'
+#CATEGORY_SAVE_AS = 'category/{slug}/index.html'
+CATEGORY_SAVE_AS = None
+#CATEGORIES_URL = 'categories'
+#CATEGORIES_SAVE_AS = 'categories/index.html'
 
 TAG_URL = 'tag/{slug}'
 TAG_SAVE_AS = 'tag/{slug}/index.html'
@@ -61,7 +63,7 @@ DEFAULT_PAGINATION = 10
 RELATIVE_URLS = True
 THEME = 'theme' 
 DELETE_OUTPUT_DIRECTORY = True
-DIRECT_TEMPLATES = ('archives', 'tags', 'categories')
+DIRECT_TEMPLATES = ('archives', 'tags',)
 
 # path-specific metadata
 EXTRA_PATH_METADATA = {
