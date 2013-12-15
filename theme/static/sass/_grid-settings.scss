@@ -1,17 +1,32 @@
-@import "../../../vendor/bundle/ruby/2.0.0/gems/neat-1.5.0/app/assets/stylesheets/neat-helpers"; 
+@import "../../../vendor/bundle/ruby/1.9.1/gems/neat-1.5.0/app/assets/stylesheets/neat-helpers"; 
 @import "normalize";
+@import url(http://webfonts.hirefrank.com/ss-social-regular.css);
+@import url(http://webfonts.hirefrank.com/ss-standard.css);
 
 // Change the grid settings
 $column: 46px;
 $gutter: 18px;
 $grid-columns: 16;
 $max-width: em(1088);
-$visual-grid: True;
 
 // Define your breakpoints
 $tablet: new-breakpoint(max-width 768px 8);
 $mobile: new-breakpoint(max-width 480px 4);
 
 // Variables
+$font-family: 'Roboto Slab', serif;
+
 $background: #FDF0E6;
+$background-drawer: #E7ECED;
+$background-border: #E4E0D7;
+$background-mark: #CB503D;
+$background-mark-border: #B85544;
+
 $text-default: #333;
+$text-highlight: #CC513D;
+$text-date: #176273;
+$text-opacity: .70;
+$text-mark: #FFF;
+$text-headline: #176273;
+
+
