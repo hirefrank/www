@@ -63,7 +63,7 @@ DEFAULT_PAGINATION = 10
 RELATIVE_URLS = True
 THEME = 'theme' 
 DELETE_OUTPUT_DIRECTORY = True
-DIRECT_TEMPLATES = ('archives', 'tags',)
+DIRECT_TEMPLATES = ('index', 'archives', 'tags',)
 
 # path-specific metadata
 EXTRA_PATH_METADATA = {
