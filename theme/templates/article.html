@@ -5,21 +5,14 @@
                     <article>
                         <section class="meta">
                             <abbr class="date" title="{{ article.date.isoformat() }}">{{ article.locale_date }}</abbr>
-                            {% if article.tags %}
-                            <ul class="tags">
-                            {% for tag in article.tags %}
-                                <li><a href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a></li>
-                            {% endfor %}
-                            </ul>
-                            {% endif %}
+                            {% include 'article_tags.html' %}
                         </section>
                         <section class="main">
-                            <h3><a href="{{ SITEURL}}/{{ article.url }}" class="no-underline" rel="bookmark" title="Permalink to {{ article.title|striptags }}">{{ article.title}}</a></h3>
+                            <h3>{{ article.title}}</h3>
                             <div class="body">
                                 {{ article.content }}
                             </div>
                             <div class="share">
-                                <a href="{{ SITEURL}}/{{ article.url }}" class="no-underline-icon" rel="bookmark" title="Permalink to {{ article.title|striptags }}"><i class="ss-icon">link</i></a> 
                                 <!--<i class="ss-icon">heart</i> 40 <i class="ss-icon">retweet</i> 56 <i class="ss-icon">comment</i> 20-->
                             </div>
                             {% if DISQUS_SITENAME and SITEURL and article.status != "draft" %}
