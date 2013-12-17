@@ -33,6 +33,7 @@
         <!-- styles for the example itself -->
         <link rel="stylesheet" type="text/css" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/search.css"/>
 
+        {% if SEARCH %}
         <script type="text/javascript">
             // set up autocomplete
             $("#st-search-input").swiftype({
@@ -66,6 +67,7 @@
                 renderFunction: searchResultRenderFunction
             });
         </script>
+        {% endif %}
 
         {% block header %}
         {% endblock %}
@@ -110,10 +112,12 @@
                 {% endif %}
                 </section>
                 <section class="search">
+                    {% if SEARCH %}
                     <form>
                         <input type="text" id="st-search-input" /><input type="submit" name="s" value="Search" class="ss-icon" />
                     </form>
                     <div id="st-results-container"></div>
+                    {% endif %}
                 </section>
                 <section class="navigate-right">
                 {% if DEFAULT_PAGINATION and articles_page and articles_paginator.num_pages > 1 %}
