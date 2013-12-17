@@ -116,13 +116,29 @@ section.container {
             
             article {
 
+                section.header {
+                    @include span-columns(10);
+                    @include shift(3);
+
+                    h3 {
+                        margin: 20px 0;
+                        font-size: em(36);
+                        font-weight: 700; 
+                        
+                        a {
+                            color: $text-headline;
+                        } 
+                        
+                    }
+                }
+
                 section.meta {
                     @include span-columns(2);
                     @include shift(1);
                     font-size: em(16);
                     opacity: $text-opacity;
-                    margin-top: 140px;
                     font-weight: 400;
+                    margin-top: 4px;
 
                     .date {
                         color: $text-date;
@@ -145,19 +161,12 @@ section.container {
                     @include span-columns(10);    
                     padding-bottom: 60px;
 
-                    h3 {
-                        margin: 20px 0;
-                        font-size: em(36);
-                        font-weight: 700; 
-                        
-                        a {
-                            color: $text-headline;
-                        } 
-                        
-                    }
-
                     .body {
                         font-size: em(18);
+
+                        p:first-child {
+                            margin-top: 0;
+                        }
 
                         a {
                             color: $text-highlight;

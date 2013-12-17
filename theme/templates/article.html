@@ -3,12 +3,14 @@
 {% block content %}
                 <section class="article-wrapper content">
                     <article>
+                        <section class="header">
+                            <h3>{{ article.title}}</h3>
+                        </section>
                         <section class="meta">
                             <abbr class="date" title="{{ article.date.isoformat() }}">{{ article.locale_date }}</abbr>
                             {% include 'article_tags.html' %}
                         </section>
                         <section class="main">
-                            <h3>{{ article.title}}</h3>
                             <div class="body">
                                 {{ article.content }}
                             </div>

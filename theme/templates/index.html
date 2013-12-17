@@ -6,12 +6,14 @@
     {% for article in articles_page.object_list %}
                 <section class="article-wrapper content">
                     <article>
+                        <section class="header">
+                            <h3><a href="{{ SITEURL}}/{{ article.url }}" class="no-underline" rel="bookmark" title="Permalink to {{ article.title|striptags }}">{{ article.title}}</a></h3>
+                        </section>
                         <section class="meta">
                             <abbr class="date" title="{{ article.date.isoformat() }}">{{ article.locale_date }}</abbr>
                             {% include 'article_tags.html' %}
                         </section>
                         <section class="main">
-                            <h3><a href="{{ SITEURL}}/{{ article.url }}" class="no-underline" rel="bookmark" title="Permalink to {{ article.title|striptags }}">{{ article.title}}</a></h3>
                             <div class="body">
                                 {{ article.content }}
                             </div>
