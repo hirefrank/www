@@ -13,4 +13,5 @@ before_script:
   - echo "secret_key = $TRAVIS_AWS_SECRET_ACCESS_KEY" >> ~/.s3cfg
   - s3cmd get s3://utilities.hirefrank.com/webfonts/webfonts.tar.gz
   - tar -xvzf webfonts.tar.gz -C theme/static
+  - mmake clean
 script: make s3_upload
