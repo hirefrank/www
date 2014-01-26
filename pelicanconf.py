@@ -61,9 +61,7 @@ DIRECT_TEMPLATES = ('index', 'archives', 'tags',)
 # path-specific metadata
 EXTRA_PATH_METADATA = {
     'extras/old.html': {'path': 'old.html'},
-    'extras/touch-icon-114×114.png': {'path': 'touch-icon-114×114.png'},
-    'extras/touch-icon-72×72.png': {'path': 'touch-icon-72×72.png'},
-    'extras/touch-icon-iphone.png': {'path': 'touch-icon-iphone.png'},
+    'extras/touch-icon.png': {'path': 'touch-icon.png'},
     'extras/favicon.ico': {'path': 'favicon.ico'},
     'extras/robots.txt': {'path': 'robots.txt'},
     }
