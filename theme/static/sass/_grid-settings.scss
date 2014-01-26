@@ -1,7 +1,7 @@
 @import "../../../vendor/bundle/ruby/1.9.1/gems/neat-1.5.0/app/assets/stylesheets/neat-helpers"; 
 @import "normalize";
-@import "../webfonts/ss-social-regular.css";
-@import "../webfonts/ss-standard.css";
+@import "../webfonts/ss-social-regular.min.css";
+@import "../webfonts/ss-standard.min.css";
 
 // Change the grid settings
 $column: 46px;
