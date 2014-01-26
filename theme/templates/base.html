@@ -22,51 +22,12 @@
         {% if FEED_ALL_RSS %}
         <link href="{{ FEED_DOMAIN }}/{{ FEED_ALL_RSS }}" type="application/rss+xml" rel="alternate" title="{{ SITENAME }} RSS Feed" />
         {% endif %}
-        
-        <script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/jquery-1.10.2.min.js"></script>
-        <!-- Files for autocomplete and search -->
-        <script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/jquery.swiftype.autocomplete.min.js"></script>
-        <script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/jquery.ba-hashchange.min.js"></script>
-        <script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/jquery.swiftype.search.min.js"></script>
+
+        {% if SEARCH %}
         <!-- Default styles for autocomplete dropdown -->
         <link rel="stylesheet" type="text/css" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/autocomplete.css"/>
         <!-- styles for the example itself -->
         <link rel="stylesheet" type="text/css" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/search.css"/>
-
-        {% if SEARCH %}
-        <script type="text/javascript">
-            // set up autocomplete
-            $("#st-search-input").swiftype({
-                engineKey: "9Zx3kTozjjSgF4Xixu8q"
-             });
-
-            // set up search
-            $("#st-search-input").swiftypeSearch({
-                engineKey: "9Zx3kTozjjSgF4Xixu8q",
-                resultContainingElement: "#st-results-container"
-            });
-
-            var autocompleteRenderFunction = function(documentType, item) {
-                return '<p><img src="' + item['thumbnail_url'] + '">' + item['title'] + '</p>';
-            }
-
-            var searchResultRenderFunction = function(documentType, item) {
-                return '<p><a href="' + item['url'] + '">' + item['title'] + '</a></p>';
-            }
-
-            // set up autocomplete with custom render function
-            $("#st-search-input").swiftype({
-                engineKey: "9Zx3kTozjjSgF4Xixu8q",
-                renderFunction: autocompleteRenderFunction
-            });
-
-            // set up search with custom render function
-            $("#st-search-input").swiftypeSearch({
-                engineKey: "9Zx3kTozjjSgF4Xixu8q",
-                resultContainingElement: "#st-results-container",
-                renderFunction: searchResultRenderFunction
-            });
-        </script>
         {% endif %}
 
         {% block header %}
@@ -143,6 +104,69 @@
 
         {% block footer %}
         {% endblock %}
+
+        <script type="text/javascript">
+
+            function downloadJSAtOnload() {
+                var element_jquery = document.createElement("script");
+                element_jquery.src = "{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/jquery-1.10.2.min.js";
+                document.body.appendChild(element_jquery);
+
+                {% if SEARCH %}
+                var element_autocomplete = document.createElement("script");
+                element_automcomplete.src = "{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/jquery.swiftype.autocomplete.min.js";
+                document.body.appendChild(element_autocomplete);
+                
+                var element_ba = document.createElement("script");
+                element_ba.src = "{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/jjquery.ba-hashchange.min.js";
+                document.body.appendChild(element_ba);
+                
+                var element_search = document.createElement("script");
+                element_search.src = "{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/jquery.swiftype.search.min.js";
+                document.body.appendChild(element_search);
+
+                // set up autocomplete
+                $("#st-search-input").swiftype({
+                    engineKey: "9Zx3kTozjjSgF4Xixu8q"
+                 });
+
+                // set up search
+                $("#st-search-input").swiftypeSearch({
+                    engineKey: "9Zx3kTozjjSgF4Xixu8q",
+                    resultContainingElement: "#st-results-container"
+                });
+
+                var autocompleteRenderFunction = function(documentType, item) {
+                    return '<p><img src="' + item['thumbnail_url'] + '">' + item['title'] + '</p>';
+                }
+
+                var searchResultRenderFunction = function(documentType, item) {
+                    return '<p><a href="' + item['url'] + '">' + item['title'] + '</a></p>';
+                }
+
+                // set up autocomplete with custom render function
+                $("#st-search-input").swiftype({
+                    engineKey: "9Zx3kTozjjSgF4Xixu8q",
+                    renderFunction: autocompleteRenderFunction
+                });
+
+                // set up search with custom render function
+                $("#st-search-input").swiftypeSearch({
+                    engineKey: "9Zx3kTozjjSgF4Xixu8q",
+                    resultContainingElement: "#st-results-container",
+                    renderFunction: searchResultRenderFunction
+                });
+                {% endif %}
+            }
+
+            // Check for browser support of event handling capability
+            if (window.addEventListener)
+            window.addEventListener("load", downloadJSAtOnload, false);
+            else if (window.attachEvent)
+            window.attachEvent("onload", downloadJSAtOnload);
+            else window.onload = downloadJSAtOnload;
+
+        </script>
 
         {% include 'analytics.html' %}
 
