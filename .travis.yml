@@ -14,4 +14,4 @@ before_script:
   - s3cmd get s3://utilities.hirefrank.com/webfonts/webfonts.tar.gz
   - tar -xvzf webfonts.tar.gz -C theme/static
   - make clean
-script: make s3_upload
+script: s3_gzip_upload
