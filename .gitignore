@@ -1,5 +1,6 @@
 *.pid
 *.pyc
+gzip
 output
 vendor
 bourbon

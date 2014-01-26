@@ -5,6 +5,7 @@ PELICANOPTS=
 BASEDIR=$(CURDIR)
 INPUTDIR=$(BASEDIR)/content
 OUTPUTDIR=$(BASEDIR)/output
+S3_PUBLICATION_DIR=$(BASEDIR)/gzip
 CONFFILE=$(BASEDIR)/pelicanconf.py
 PUBLISHCONF=$(BASEDIR)/publishconf.py
 
@@ -104,5 +105,28 @@ cf_upload: publish
 github: publish
 	ghp-import $(OUTPUTDIR)
 	git push origin gh-pages
+
+compress:
+	python bin/aws-s3-gzip-compression.py $(OUTPUTDIR) $(S3_PUBLICATION_DIR)
+
+s3_gzip_upload: publish compress    
+	s3cmd sync $(S3_PUBLICATION_DIR)/ s3://$(S3_BUCKET) --acl-public --add-header \
+	"Content-Encoding:gzip" --mime-type="application/javascript" \
+	--add-header "Cache-Control: max-age 86400" --exclude '*' --include '*.js' && \
+	s3cmd sync $(S3_PUBLICATION_DIR)/ s3://$(S3_BUCKET) --acl-public --add-header \
+	"Content-Encoding:gzip" --mime-type="text/css" --add-header \
+	"Cache-Control: max-age 86400" --exclude '*' --include '*.css' && \
+	s3cmd sync $(S3_PUBLICATION_DIR)/ s3://$(S3_BUCKET) --acl-public --add-header \
+	"Content-Encoding:gzip" --mime-type="text/html" --exclude '*' \
+	--include '*.html' && \
+	s3cmd sync $(S3_PUBLICATION_DIR)/ s3://$(S3_BUCKET) --acl-public --add-header \
+	"Content-Encoding:gzip" --mime-type="application/xml" --exclude \
+	'*' --include '*.xml'  && \
+	s3cmd sync $(S3_PUBLICATION_DIR)/static/ s3://$(S3_BUCKET)/static/ --acl-public \
+	--add-header "Cache-Control: max-age 86400" && \
+	s3cmd sync $(S3_PUBLICATION_DIR)/theme/ s3://$(S3_BUCKET)/theme/ --acl-public \
+	--add-header "Cache-Control: max-age 86400" && \
+	s3cmd sync $(S3_PUBLICATION_DIR)/ s3://$(S3_BUCKET) --acl-public --delete-removed --exclude-from="site_excludes"
+
 
 .PHONY: html help clean regenerate serve devserver publish ssh_upload rsync_upload dropbox_upload ftp_upload s3_upload cf_upload github
