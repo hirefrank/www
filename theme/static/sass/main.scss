@@ -31,6 +31,11 @@ section.container {
             margin-bottom: 50px;
                 
             @include media($tablet) {
+                @include span-columns(1);
+                @include shift(0);
+            }
+    
+            @include media($mobile) {
                 display: none;
             }
 
@@ -39,11 +44,9 @@ section.container {
                 background:url(../img/mug.jpg) no-repeat center center; 
                 height: 100px;
                 width: 100px;
-            
+
                 @include media($tablet) {
-                    height: 46px;
-                    width: 46px;
-                    background:url(../img/mugx50.jpg) no-repeat center center; 
+                    display: none;
                 }
 
                 img { 
@@ -56,12 +59,18 @@ section.container {
 
         section.about {
             @include span-columns(10);
+            @include shift(0);
             margin-top: 40px;
             margin-bottom: 40px;
             
             @include media($tablet) {
-                @include span-columns(8);
+                @include span-columns(6);
+                @include shift(1);
                 margin: 30px 0;
+            }
+
+            @include media($mobile) {
+                @include span-columns(4);
                 padding: 0 20px;
             }
 
@@ -142,6 +151,12 @@ section.container {
                         @include shift(1);
                     }
 
+                    @include media($mobile) {
+                        @include span-columns(4);
+                        @include shift(0);
+                        padding: 0 20px;
+                    }
+
                     h3 {
                         margin: 20px 0;
                         font-size: em(36);
@@ -149,6 +164,10 @@ section.container {
                        
                         @include media($tablet) {
                             font-size: em(27);
+                        }
+                        
+                        @include media($mobile) {
+                            font-size: em(20);
                         }
 
                         a {
@@ -167,10 +186,6 @@ section.container {
                     margin-top: 4px;
 
                     @include media($tablet) {
-                        @include span-columns(8);
-                        @include shift(0);
-                        padding: 0 20px;
-                        text-align: center;
                         display: none;
                     }
 
@@ -182,19 +197,6 @@ section.container {
                         list-style: none;
                         margin: 40px 0;
                         padding: 0;
-
-                        @include media($tablet) {
-                            border: red 1px solid;
-                            margin: 0 40px;
-
-                            li { 
-                                float: left;
-                                padding-right: 14px;
-                            }
-                            li:after { content: ", "; }
-                            li:last-child:after { content: ""; }
-
-                        }
 
                         a {
                             color: $text-highlight;
@@ -212,9 +214,19 @@ section.container {
                         @include span-columns(6);
                         @include shift(1);
                     }
+                    
+                    @include media($mobile) {
+                        @include span-columns(4);
+                        @include shift(0);
+                        padding: 0 20px;
+                    }
 
                     .body {
                         font-size: em(18);
+
+                        @include media($mobile) {
+                            font-size: em(16);
+                        }
 
                         p:first-child {
                             margin-top: 0;
@@ -227,6 +239,7 @@ section.container {
                     }
 
                     .share {
+                        display: none;
                         font-size: em(18);
                         font-weight: 400;
                         opacity: $text-opacity;
@@ -263,6 +276,11 @@ section.container {
 
         section[class^="navigate-"] {
             @include span-columns(3);
+            
+            @include media($tablet) {
+                @include span-columns(2);    
+            }
+
             margin-top: 6px;
         
             a {
@@ -278,10 +296,23 @@ section.container {
 
         section.navigate-left {
             @include shift(1);
+        
+            @include media($tablet) {
+                @include shift(0);
+            }
         }
        
         section.search {
             @include span-columns(8);
+            
+            @include media($tablet) {
+                @include span-columns(4);     
+            }
+            
+            @include media($mobile) {
+                display: none;
+            }
+
             text-align: center;
 
             input[type="text"] {
@@ -290,6 +321,11 @@ section.container {
                 margin: 0;
                 padding: 6px;
                 border: $background-mark-border 1px solid;
+            
+                @include media($tablet) {
+                    width: 83%;
+                }
+            
             }
 
             input.ss-icon {
@@ -314,6 +350,15 @@ section.container {
         
         section.profile-links {
             @include span-columns(16);
+
+            @include media($tablet) {
+                @include span-columns(8);
+            }
+            
+            @include media($mobile) {
+                @include span-columns(4);
+            }
+
             text-align: center;
             margin: 60px 0 50px 0;
             font-size: em(20);
@@ -361,6 +406,12 @@ section.container {
 
         section.fine-print {
             @include span-columns(16);
+            @include media($tablet) {
+                @include span-columns(8);
+            }
+            @include media($mobile) {
+                @include span-columns(4);
+            }
             font-size: em(12); 
             text-align: center;
             opacity: $text-opacity;

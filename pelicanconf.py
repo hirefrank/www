@@ -2,6 +2,7 @@
 # http://docs.getpelican.com/en/latest/settings.html
 # -*- coding: utf-8 -*- #
 from __future__ import unicode_literals
+from datetime import date
 
 AUTHOR = u'Frank Harris'
 SITENAME = u'hirefrank'
@@ -72,3 +73,4 @@ STATIC_PATHS = [
 
 PLUGIN_PATH = 'plugins'
 PLUGINS = ['sitemap']
+CURRENT_YEAR = date.today().year
