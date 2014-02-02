@@ -186,29 +186,60 @@ section.container {
                     margin-top: 4px;
 
                     @include media($tablet) {
-                        display: none;
+                        @include span-columns(6);
+                        @include shift(1);
+                    }
+                    
+                    @include media($mobile) {
+                        @include span-columns(4);
+                        @include shift(0);
+                        padding: 0 20px;
                     }
 
                     .date {
                         color: $text-date;
+                        line-height: 26px;
+                    
+                        @include media($tablet) {
+                            display: block;
+                            float: left;
+                            padding-right: 4px;
+                        }
+                    
                     }
 
                     ul.tags {
                         list-style: none;
-                        margin: 40px 0;
                         padding: 0;
+                        margin: 0;
 
                         a {
                             color: $text-highlight;
                         }
                         
-                    } 
-                
+                        li:first-child {
+                            margin-top: 40px;
+                        }
+                        
+                        @include media($tablet) {
+                           
+                            li:first-child {
+                                margin-top: 0;    
+                            }
+
+                            li {
+                                display: inline;
+                                padding-left: 10px;
+                            }
+                        
+                        }
+                    
+                    }
                 }
 
                 section.main {
                     @include span-columns(10);    
-                    padding-bottom: 60px;
+                    margin-bottom: 40px;
 
                     @include media($tablet) {
                         @include span-columns(6);
@@ -230,6 +261,10 @@ section.container {
 
                         p:first-child {
                             margin-top: 0;
+                        }
+
+                        p:last-child {
+                            margin-bottom: 20px;
                         }
 
                         a {
@@ -269,18 +304,29 @@ section.container {
     }
          
     footer {
-        margin-top: 20px;
-        padding-bottom: 20px;
+        margin-top: -20px;
+        margin-bottom: 20px;
         font-size: em(16);
         font-weight: 400;
 
+        @include media($mobile) {
+            padding: 0 20px;
+        }
+
         section[class^="navigate-"] {
             @include span-columns(3);
-            
+            @include shift(1);
+
             @include media($tablet) {
-                @include span-columns(2);    
+                @include span-columns(3);    
+                @include shift(1);
             }
 
+            @include media($mobile) {
+                @include span-columns(1.5);    
+                @include shift(0);
+            }
+            
             margin-top: 6px;
         
             a {
@@ -294,19 +340,17 @@ section.container {
 
         }
 
-        section.navigate-left {
-            @include shift(1);
-        
+        section.navigate-right {
+            @include shift(0);
             @include media($tablet) {
-                @include shift(0);
             }
         }
-       
+        
         section.search {
             @include span-columns(8);
-            
+
             @include media($tablet) {
-                @include span-columns(4);     
+                display: none;
             }
             
             @include media($mobile) {
@@ -317,13 +361,13 @@ section.container {
 
             input[type="text"] {
                 text-align: left;
-                width: 85%;
+                width: 83%;
                 margin: 0;
                 padding: 6px;
                 border: $background-mark-border 1px solid;
             
                 @include media($tablet) {
-                    width: 83%;
+                    width: 70%;
                 }
             
             }
