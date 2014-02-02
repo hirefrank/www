@@ -8,6 +8,10 @@ $column: 46px;
 $gutter: 18px;
 $grid-columns: 16;
 $max-width: em(1088);
+//$visual-grid: true;
+$visual-grid-index: front;
+$visual-grid-color: red;
+$visual-grid-opacity: .02;
 
 // Define your breakpoints
 $tablet: new-breakpoint(max-width 768px 8);
