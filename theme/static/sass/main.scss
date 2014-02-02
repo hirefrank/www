@@ -183,7 +183,7 @@ section.container {
                     font-size: em(16);
                     opacity: $text-opacity;
                     font-weight: 400;
-                    margin-top: 4px;
+                    margin-top: 2px;
 
                     @include media($tablet) {
                         @include span-columns(6);
