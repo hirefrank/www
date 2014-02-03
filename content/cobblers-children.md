@@ -8,7 +8,7 @@ and I was clearly focused on getting a job and graduating, in that order.
 
 It would be 8 months later before I would launch my first site. A then 
 senior months before graduation, it would be a portfolio site bolstering 
-_my_ much sought after experience (emphasis mine). 
+my _much sought after_ experience (emphasis mine). 
 
 The portfolio site ended up getting me a job at The Washington Post &mdash; 
 mostly because the hiring manager found the domain intriguing and felt the 
