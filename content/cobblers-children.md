@@ -34,5 +34,5 @@ good friends. I now have less time than I've ever had before, but in a weird
 way it seems like the perfect time to collect my thoughts regularly so I don't 
 go insane.
 
-And if I don't, it will just make my current employer, me, uneasy, not unlike the 
-way my domain made my past employers felt once I had a job.
+And if I don't, it will just make my current employer, me, uneasy, once again. 
+Not unlike the way my domain made my past employers felt once I had a job.
