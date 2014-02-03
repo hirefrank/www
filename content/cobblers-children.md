@@ -24,7 +24,9 @@ content. Sometimes it would be in blog form, other times music or pictures.
 I researched technologies and even switch web hosts seasonally thinking that 
 was the missing piece, but knowing full well it wasn't.
 
-I never planned on keeping the domain for as long as I have but at this point 
+Colleagues would ask me why I still had the domain. I usually respond half
+jokingly it was to keep my employer honest. Truth of the matter, I never 
+planned on keeping the domain for as long as I have but at this point 
 it seems like a shame to give it up. 
 
 Late last year, I left Etsy to do a [startup](http://getradico.com) with some 
