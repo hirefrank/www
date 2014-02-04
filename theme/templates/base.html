@@ -29,6 +29,8 @@
 
         {% block header %}
         {% endblock %}
+        
+        {% include 'analytics.html' %}
 
     </head>
     <body>
@@ -165,8 +167,5 @@
             else window.onload = downloadAtOnload;
 
         </script>
-
-        {% include 'analytics.html' %}
-
     </body>
 </html>
