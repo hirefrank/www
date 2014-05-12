@@ -1,0 +1,12 @@
+Title: Example Draft Post
+Slug: example-draft 
+Summary: This is an example of a draft post.
+Status: draft
+
+Locavore twee normcore you probably haven't heard of them messenger bag Marfa, cornhole swag. Pour-over Portland 8-bit direct trade plaid. Cred fap hoodie, pop-up sartorial church-key tattooed McSweeney's ethical photo booth seitan. Farm-to-table yr Truffaut, retro direct trade artisan polaroid PBR&B fingerstache Etsy keffiyeh. Cornhole organic small batch, keytar 8-bit paleo cliche kogi banh mi chia Pinterest kale chips gentrify. Forage fingerstache crucifix, craft beer dreamcatcher PBR&B lomo +1 Brooklyn flannel lo-fi yr. Ennui cardigan trust fund sriracha blog.
+
+Viral Vice art party quinoa mlkshk vinyl, butcher fixie four loko ethnic ethical kitsch Thundercats. American Apparel post-ironic letterpress shabby chic direct trade. Biodiesel Neutra locavore, VHS iPhone DIY master cleanse. Deep v skateboard DIY American Apparel. Chambray Schlitz Intelligentsia tote bag messenger bag direct trade, typewriter post-ironic. Wolf Truffaut bitters actually cred Williamsburg lo-fi pickled. Kitsch kogi butcher, 8-bit bespoke chillwave skateboard artisan hoodie iPhone gluten-free ugh.
+
+Street art post-ironic small batch, Odd Future seitan single-origin coffee cred. Lo-fi try-hard chambray hashtag, pop-up Carles Thundercats Neutra aesthetic. Viral hoodie actually Portland, drinking vinegar Godard iPhone fashion axe pour-over Banksy Tonx post-ironic pop-up. Blog pour-over selvage, hoodie +1 Austin Cosby sweater hashtag ethnic kogi DIY plaid post-ironic chia. Hoodie Tonx occupy, fingerstache post-ironic whatever narwhal American Apparel direct trade plaid leggings pickled distillery. You probably haven't heard of them +1 cray Vice. Small batch photo booth occupy 90's blog, fashion axe Cosby sweater Etsy.
+
+Bespoke sartorial quinoa, retro synth roof party fashion axe craft beer Vice Blue Bottle Bushwick seitan authentic hella Tumblr. Typewriter Brooklyn Portland Banksy. Hella artisan fanny pack cred. Sustainable whatever keytar literally, PBR Etsy wolf Pinterest. Fixie umami pug Bushwick, cornhole cray freegan chia cardigan 3 wolf moon slow-carb Banksy next level scenester asymmetrical. Echo Park High Life Tonx kale chips, narwhal small batch fap pug sartorial +1. 8-bit fashion axe McSweeney's Wes Anderson kale chips gluten-free mixtape, VHS single-origin coffee Tumblr bitters disrupt mustache.
