@@ -11,6 +11,7 @@ TIMEZONE = 'America/New_York'
 
 DEFAULT_LANG = u'en'
 DEFAULT_DATE_FORMAT = '%b %d, %Y'
+DEFAULT_DATE = 'fs'
 #USE_FOLDER_AS_CATEGORY = True
 DISPLAY_PAGES_ON_MENU = True
 AUTHOR_SAVE_AS = None
@@ -71,5 +72,4 @@ STATIC_PATHS = [
     ]
 
 PLUGIN_PATH = 'plugins'
-PLUGINS = ['sitemap']
 CURRENT_YEAR = date.today().year
