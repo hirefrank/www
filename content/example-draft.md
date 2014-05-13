@@ -1,5 +1,6 @@
 Title: Example Draft Post
 Slug: example-draft 
+Tags: healthcare, obama, real-life, true story
 Summary: This is an example of a draft post.
 Status: draft
 
