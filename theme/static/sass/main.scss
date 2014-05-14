@@ -20,28 +20,28 @@ abbr[title] { border-bottom: 0; }
 //section { border: 1px solid red; }
 
 section.container {
-   
+
     section.drawer {
         background-color: $background-drawer;
-        
+
         section.photo {
             @include span-columns(2);
             @include shift(1);
             margin-top: 50px;
             margin-bottom: 50px;
-                
+
             @include media($tablet) {
                 @include span-columns(1);
                 @include shift(0);
             }
-    
+
             @include media($mobile) {
                 display: none;
             }
 
             .image-wrapper {
                 border-radius: 50em;
-                background:url(../img/mug.jpg) no-repeat center center; 
+                background:url(../img/mug.jpg) no-repeat center center;
                 height: 100px;
                 width: 100px;
 
@@ -49,10 +49,10 @@ section.container {
                     display: none;
                 }
 
-                img { 
-                    opacity: 0; 
+                img {
+                    opacity: 0;
                 }
-            
+
             }
 
         }
@@ -62,7 +62,7 @@ section.container {
             @include shift(0);
             margin-top: 40px;
             margin-bottom: 40px;
-            
+
             @include media($tablet) {
                 @include span-columns(6);
                 @include shift(1);
@@ -79,16 +79,16 @@ section.container {
                 color: $text-highlight;
                 font-size: em(26);
                 margin: 0;
-           
+
                 @include media($tablet) { font-size: em(20); }
             }
 
             p {
                 margin: 0;
                 font-size: em(18);
-                
+
                 @include media($tablet) { font-size: em(14); }
-            
+
                 a {
                     font-weight: 400;
                     color: $text-default;
@@ -98,15 +98,15 @@ section.container {
             }
 
         }
-    
+
     }
-    
+
     section.blog {
         background-color: $background;
         border-top: 17px solid $background-border;
-    
+
         section.mark-wrapper {
-            
+
             .mark {
                 width: 180px;
                 background-color: $background-mark;
@@ -123,9 +123,9 @@ section.container {
                     color: $text-highlight;
                     font-weight: 100;
                     padding: 4px 0 14px 0;
-                    
-                    @include media($tablet) { 
-                        font-size: em(24); 
+
+                    @include media($tablet) {
+                        font-size: em(24);
                         padding: 3px 0 11 0;
                     }
                 }
@@ -133,13 +133,13 @@ section.container {
                     a {
                         color: $text-mark;
                     }
-            
+
             }
-        
+
         }
 
         section.article-wrapper {
-            
+
             article {
 
                 section.header {
@@ -160,20 +160,20 @@ section.container {
                     h3 {
                         margin: 20px 0;
                         font-size: em(36);
-                        font-weight: 700; 
-                       
+                        font-weight: 700;
+
                         @include media($tablet) {
                             font-size: em(27);
                         }
-                        
+
                         @include media($mobile) {
                             font-size: em(20);
                         }
 
                         a {
                             color: $text-headline;
-                        } 
-                        
+                        }
+
                     }
                 }
 
@@ -189,7 +189,7 @@ section.container {
                         @include span-columns(6);
                         @include shift(1);
                     }
-                    
+
                     @include media($mobile) {
                         @include span-columns(4);
                         @include shift(0);
@@ -199,13 +199,13 @@ section.container {
                     .date {
                         color: $text-date;
                         line-height: 26px;
-                    
+
                         @include media($tablet) {
                             display: block;
                             float: left;
                             padding-right: 4px;
                         }
-                    
+
                     }
 
                     ul.tags {
@@ -216,36 +216,36 @@ section.container {
                         a {
                             color: $text-highlight;
                         }
-                        
+
                         li:first-child {
                             margin-top: 40px;
                         }
-                        
+
                         @include media($tablet) {
-                           
+
                             li:first-child {
-                                margin-top: 0;    
+                                margin-top: 0;
                             }
 
                             li {
                                 display: inline;
                                 padding-left: 10px;
                             }
-                        
+
                         }
-                    
+
                     }
                 }
 
                 section.main {
-                    @include span-columns(10);    
+                    @include span-columns(10);
                     margin-bottom: 40px;
 
                     @include media($tablet) {
                         @include span-columns(6);
                         @include shift(1);
                     }
-                    
+
                     @include media($mobile) {
                         @include span-columns(4);
                         @include shift(0);
@@ -279,15 +279,15 @@ section.container {
                         font-weight: 400;
                         opacity: $text-opacity;
                         color: $text-highlight;
-                        
+
                         a {
                             color: $text-highlight;
-                        
+
                             i {
                                 margin-right: 40px;
                                 margin-left: 0;
                             }
-                        
+
                         }
 
                         i {
@@ -298,11 +298,11 @@ section.container {
                 }
 
             }
-            
+
         }
 
     }
-         
+
     footer {
         margin-top: -20px;
         margin-bottom: 20px;
@@ -318,17 +318,17 @@ section.container {
             @include shift(1);
 
             @include media($tablet) {
-                @include span-columns(3);    
+                @include span-columns(3);
                 @include shift(1);
             }
 
             @include media($mobile) {
-                @include span-columns(1.5);    
+                @include span-columns(1.5);
                 @include shift(0);
             }
-            
+
             margin-top: 6px;
-        
+
             a {
                 color: $text-highlight;
                 opacity: $text-opacity;
@@ -345,14 +345,14 @@ section.container {
             @include media($tablet) {
             }
         }
-        
+
         section.search {
             @include span-columns(8);
 
             @include media($tablet) {
                 display: none;
             }
-            
+
             @include media($mobile) {
                 display: none;
             }
@@ -365,11 +365,11 @@ section.container {
                 margin: 0;
                 padding: 6px;
                 border: $background-mark-border 1px solid;
-            
+
                 @include media($tablet) {
                     width: 70%;
                 }
-            
+
             }
 
             input.ss-icon {
@@ -385,20 +385,20 @@ section.container {
                 border-bottom: $background-mark-border 1px solid;
                 border-top: $background-mark-border 1px solid;
             }
-        
+
         }
 
         section.navigate-right {
             a { float: right; }
         }
-        
+
         section.profile-links {
             @include span-columns(16);
 
             @include media($tablet) {
                 @include span-columns(8);
             }
-            
+
             @include media($mobile) {
                 @include span-columns(4);
             }
@@ -406,7 +406,7 @@ section.container {
             text-align: center;
             margin: 60px 0 50px 0;
             font-size: em(20);
-        
+
             ul {
                 list-style: none;
                 margin: 0;
@@ -439,13 +439,13 @@ section.container {
                     top: 2px;
                     left: 1px;
                 }
-            
+
             }
 
             li:hover {
                 opacity: 1;
             }
-        
+
         }
 
         section.fine-print {
@@ -456,7 +456,7 @@ section.container {
             @include media($mobile) {
                 @include span-columns(4);
             }
-            font-size: em(12); 
+            font-size: em(12);
             text-align: center;
             opacity: $text-opacity;
 

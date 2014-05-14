@@ -1,38 +1,40 @@
 {% extends "base.html" %}
 {% block title %}{{ article.title|striptags }} - {{ SITENAME }}{% endblock %}
 {% block content %}
-                <section class="article-wrapper content">
-                    <article>
-                        <section class="header">
-                            <h3>{{ article.title}}</h3>
-                        </section>
-                        <section class="meta">
-                            <abbr class="date" title="{{ article.date.isoformat() }}">{{ article.locale_date }}</abbr>
-                            {% include 'article_tags.html' %}
-                        </section>
-                        <section class="main">
-                            <div class="body">
-                                {{ article.content }}
-                            </div>
-                            <div class="share">
-                                <!--<i class="ss-icon">heart</i> 40 <i class="ss-icon">retweet</i> 56 <i class="ss-icon">comment</i> 20-->
-                            </div>
-                            {% if DISQUS_SITENAME and SITEURL and article.status != "draft" %}
-                            <div class="comments">
-                              <h2>Comments !</h2>
-                              <div id="disqus_thread"></div>
-                              <script type="text/javascript">
-                                var disqus_identifier = "{{ article.url }}";
-                                var disqus_url = "{{ SITEURL }}/{{ article.url }}";
-                                (function() {
-                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-                                dsq.src = 'http://{{ DISQUS_SITENAME }}.disqus.com/embed.js';
-                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-                                })();
-                              </script>
-                            </div>
-                            {% endif %}
-                        </section>
-                    </article>
-                </section>
+    <article>
+      <div class="row">
+        <section class="col-md-8 col-md-offset-2 article-header">
+          <h3>{{ article.title}}</h3>
+        </section>
+      </div>
+      <div class="row">
+        <section class="col-md-2 meta">
+          <div class="meta-wrapper">
+            <abbr class="date" title="{{ article.date.isoformat() }}">{{ article.locale_date }}</abbr>
+            {% include 'article_tags.html' %}
+          </div>
+        </section>
+        <section class="col-md-8 main">
+          {{ article.content }}
+          <div class="share">
+            <!--<i class="ss-icon">heart</i> 40 <i class="ss-icon">retweet</i> 56 <i class="ss-icon">comment</i> 20-->
+          </div>
+          {% if DISQUS_SITENAME and SITEURL and article.status != "draft" %}
+          <div class="comments">
+            <h2>Comments !</h2>
+            <div id="disqus_thread"></div>
+            <script type="text/javascript">
+              var disqus_identifier = "{{ article.url }}";
+              var disqus_url = "{{ SITEURL }}/{{ article.url }}";
+              (function() {
+              var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+              dsq.src = 'http://{{ DISQUS_SITENAME }}.disqus.com/embed.js';
+              (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+              })();
+            </script>
+          </div>
+          {% endif %}
+        </section>
+      </div>
+    </article>
 {% endblock %}
