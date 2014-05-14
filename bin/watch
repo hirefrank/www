@@ -1,3 +1,0 @@
-#! /usr/bin/env bash
-
-bundle exec sass --watch theme/static/sass:theme/static/css --style compressed
