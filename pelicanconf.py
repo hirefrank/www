@@ -53,6 +53,7 @@ MAIL = 'frank@hirefrank.com'
 SEARCH = True
 
 DEFAULT_PAGINATION = 10
+CSS_FILE = 'styles.css'
 
 # Uncomment following line if you want document-relative URLs when developing
 RELATIVE_URLS = True
