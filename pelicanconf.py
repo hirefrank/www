@@ -5,7 +5,7 @@ from __future__ import unicode_literals
 from datetime import date
 
 AUTHOR = u'Frank Harris'
-SITENAME = u'hirefrank.com - Frank Harris'
+SITENAME = u'hirefrank.com'
 SITEURL = 'http://www.hirefrank.com'
 TIMEZONE = 'America/New_York'
 
