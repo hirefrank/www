@@ -19,6 +19,3 @@ FEED_ALL_ATOM = 'feeds/all.atom.xml'
 # Following items are often useful when publishing
 
 PLUGINS = ['sitemap', 'minify']
-
-#DISQUS_SITENAME = ""
-#GOOGLE_ANALYTICS = ""
