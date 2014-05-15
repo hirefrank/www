@@ -268,7 +268,11 @@ ul.tags a {
   }
 }
 
+.comments {
+  margin-top: 30px;
+}
 
+.comments a,
 .content p a {
   color: #cc513d;
 }
