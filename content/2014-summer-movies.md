@@ -30,6 +30,6 @@ The calendar is available in the following formats:
 * [iCalender](http://hrfnk.tk/1n28wbQ)
 * [XML](http://hrfnk.tk/RWBP5X)
 
-I hope to add Rooftop Films soon, but their data is a bit hard to gather. If you know anyone there, know of any other venues or have any other tips, let me know!
+I hope to add [Rooftop Films](http://rooftopfilms.com/blog/2014/04/rooftop-films-2014-summer-series-feature-film-lineup.html) soon, but their data is a bit hard and tedious to gather. If you know anyone there, know of any other venues or have any other tips, let me know!
 
 Enjoy the show(s).
