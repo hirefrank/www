@@ -18,10 +18,10 @@ So far, I've included the following venues:
 * Hudson River Park's RiverFlicks Family Fridays on Pier 46 
 * Celebrate Brooklyn! at Prospect Park Bandshell
 * Sony Wonder Technology Lab Feature Screenings
-* Movie Night at Habana Outpost, Brooklyn
-* Intrepid Summer Movie Series, Intrepid flight deck
-* Movies at Crocheron Park
-* HBO Bryant Park Summer Film Festival
+* Movie Night at Habana Outpost, Brooklyn
+* Intrepid Summer Movie Series, Intrepid flight deck
+* Movies at Crocheron Park
+* HBO Bryant Park Summer Film Festival
 * Central Park Conservancy Film Festival
 
 The calendar is available in the following formats:
