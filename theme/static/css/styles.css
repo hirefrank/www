@@ -273,6 +273,7 @@ ul.tags a {
 }
 
 .comments a,
+.content li a,
 .content p a {
   color: #cc513d;
 }
