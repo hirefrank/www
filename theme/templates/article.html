@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block title %}{{ article.title|striptags }} - {{ SITENAME }}{% endblock %}
-{% block description %}{{ article.summary }}{% endblock %}
+{% block description %}{{ article.summary|striptags }}{% endblock %}
 {% block content %}
     <article>
       <div class="row">
