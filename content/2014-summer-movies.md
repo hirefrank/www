@@ -4,10 +4,30 @@ Tags: movies, summer, nyc
 Summary: This is an example of a draft post.
 Status: draft
 
-Locavore twee normcore you probably haven't heard of them messenger bag Marfa, cornhole swag. Pour-over Portland 8-bit direct trade plaid. Cred fap hoodie, pop-up sartorial church-key tattooed McSweeney's ethical photo booth seitan. Farm-to-table yr Truffaut, retro direct trade artisan polaroid PBR&B fingerstache Etsy keffiyeh. Cornhole organic small batch, keytar 8-bit paleo cliche kogi banh mi chia Pinterest kale chips gentrify. Forage fingerstache crucifix, craft beer dreamcatcher PBR&B lomo +1 Brooklyn flannel lo-fi yr. Ennui cardigan trust fund sriracha blog.
+One of the best things -- that I never take full advantage of -- is New York City's penchant for free outdoor movies during the summer.
 
-Viral Vice art party quinoa mlkshk vinyl, butcher fixie four loko ethnic ethical kitsch Thundercats. American Apparel post-ironic letterpress shabby chic direct trade. Biodiesel Neutra locavore, VHS iPhone DIY master cleanse. Deep v skateboard DIY American Apparel. Chambray Schlitz Intelligentsia tote bag messenger bag direct trade, typewriter post-ironic. Wolf Truffaut bitters actually cred Williamsburg lo-fi pickled. Kitsch kogi butcher, 8-bit bespoke chillwave skateboard artisan hoodie iPhone gluten-free ugh.
+Based on [Kottke's suggestion](http://kottke.org/14/05/free-outdoor-movies-in-nyc-for-summer-2014), I aggregated over a dozen venues and nearly a hundred movies into a single dataset.
 
-Street art post-ironic small batch, Odd Future seitan single-origin coffee cred. Lo-fi try-hard chambray hashtag, pop-up Carles Thundercats Neutra aesthetic. Viral hoodie actually Portland, drinking vinegar Godard iPhone fashion axe pour-over Banksy Tonx post-ironic pop-up. Blog pour-over selvage, hoodie +1 Austin Cosby sweater hashtag ethnic kogi DIY plaid post-ironic chia. Hoodie Tonx occupy, fingerstache post-ironic whatever narwhal American Apparel direct trade plaid leggings pickled distillery. You probably haven't heard of them +1 cray Vice. Small batch photo booth occupy 90's blog, fashion axe Cosby sweater Etsy.
+So far, I've included the following venues:
+* Close Encounters of the Spielberg Kind, Museum of Jewish Heritage 
+* Hudson River Park's RiverFlicks Big Hit Wednesdays on Pier 63
+* Summer on the Hudson: Pier I Picture Show, Riverside Park [PDF]
+* SummerScreen in McCarren Park
+* Syfy Movies with a View at Brooklyn Bridge Park 
+* Hudson River Park's RiverFlicks Family Fridays on Pier 46 
+* Celebrate Brooklyn! at Prospect Park Bandshell
+* Sony Wonder Technology Lab Feature Screenings
+* Movie Night at Habana Outpost, Brooklyn
+* Intrepid Summer Movie Series, Intrepid flight deck
+* Movies at Crocheron Park
+* HBO Bryant Park Summer Film Festival
+* Central Park Conservancy Film Festival
 
-Bespoke sartorial quinoa, retro synth roof party fashion axe craft beer Vice Blue Bottle Bushwick seitan authentic hella Tumblr. Typewriter Brooklyn Portland Banksy. Hella artisan fanny pack cred. Sustainable whatever keytar literally, PBR Etsy wolf Pinterest. Fixie umami pug Bushwick, cornhole cray freegan chia cardigan 3 wolf moon slow-carb Banksy next level scenester asymmetrical. Echo Park High Life Tonx kale chips, narwhal small batch fap pug sartorial +1. 8-bit fashion axe McSweeney's Wes Anderson kale chips gluten-free mixtape, VHS single-origin coffee Tumblr bitters disrupt mustache.
+The calendar is available in the following formats:
+* [Google Calendar](http://hrfnk.tk/RWBH6u)
+* [iCalender](http://hrfnk.tk/1n28wbQ)
+* [XML](http://hrfnk.tk/RWBP5X)
+
+I hope to add Rooftop Films soon, but their data is a bit hard to gather. If you know anyone there, know of any other venues or have any other tips, let me know!
+
+Enjoy the show(s).
