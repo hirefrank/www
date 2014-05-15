@@ -9,8 +9,9 @@ One of the best things -- that I never take full advantage of -- is New York Cit
 Based on [Kottke's suggestion](http://kottke.org/14/05/free-outdoor-movies-in-nyc-for-summer-2014), I aggregated over a dozen venues and nearly a hundred movies into a single dataset.
 
 So far, I've included the following venues:
+
 * Close Encounters of the Spielberg Kind, Museum of Jewish Heritage 
-* Hudson River Park's RiverFlicks Big Hit Wednesdays on Pier 63
+* Hudson River Park's RiverFlicks Big Hit Wednesdays on Pier 63
 * Summer on the Hudson: Pier I Picture Show, Riverside Park [PDF]
 * SummerScreen in McCarren Park
 * Syfy Movies with a View at Brooklyn Bridge Park 
@@ -24,6 +25,7 @@ So far, I've included the following venues:
 * Central Park Conservancy Film Festival
 
 The calendar is available in the following formats:
+
 * [Google Calendar](http://hrfnk.tk/RWBH6u)
 * [iCalender](http://hrfnk.tk/1n28wbQ)
 * [XML](http://hrfnk.tk/RWBP5X)
