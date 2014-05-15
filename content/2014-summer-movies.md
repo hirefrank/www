@@ -12,7 +12,7 @@ So far, I've included the following venues:
 
 * Close Encounters of the Spielberg Kind, Museum of Jewish Heritage 
 * Hudson River Park's RiverFlicks Big Hit Wednesdays on Pier 63
-* Summer on the Hudson: Pier I Picture Show, Riverside Park [PDF]
+* Summer on the Hudson: Pier I Picture Show, Riverside Park
 * SummerScreen in McCarren Park
 * Syfy Movies with a View at Brooklyn Bridge Park 
 * Hudson River Park's RiverFlicks Family Fridays on Pier 46 
