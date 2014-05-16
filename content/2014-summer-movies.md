@@ -1,7 +1,7 @@
 Title: 2014 Summer Calendar of Free Movies in New York City 
 Slug: 2014-summer-movies
 Tags: movies, summer, nyc
-Summary: One calendar with over a dozen venues featuring nearly 100 movies to enjoy free this summer in the city.
+Summary: One calendar with over a dozen venues featuring nearly 100 free movies to enjoy this summer in the city.
 Status: draft
 
 One of the best things about New York City &mdash; and one that I never take full advantage of &mdash; is the wide array of free outdoor movies during the summer.
