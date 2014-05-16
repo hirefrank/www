@@ -272,6 +272,10 @@ ul.tags a {
   margin: 40px 0 -50px 0;
 }
 
+.content ul {
+  margin-top: 0;
+}
+
 .comments a,
 .content li a,
 .content p a {
