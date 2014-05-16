@@ -4,7 +4,7 @@ Tags: movies, summer, nyc
 Summary: This is an example of a draft post.
 Status: draft
 
-One of the best things &mdash; that I never take full advantage of &mdash; is New York City's penchant for free outdoor movies during the summer.
+One of the best things about New York City &mdash; and one that I never take full advantage of &mdash; is the wide array of free outdoor movies during the summer.
 
 Based on [Kottke's suggestion](http://kottke.org/14/05/free-outdoor-movies-in-nyc-for-summer-2014), I aggregated over a dozen venues and nearly a hundred movies into a single calendar. Each calendar entry features a brief synopsis, a link to the trailer and the details about the venue.
 
