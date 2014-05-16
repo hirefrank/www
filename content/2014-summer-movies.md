@@ -8,18 +8,18 @@ One of the best things &mdash; that I never take full advantage of &mdash; is Ne
 
 Based on [Kottke's suggestion](http://kottke.org/14/05/free-outdoor-movies-in-nyc-for-summer-2014), I aggregated over a dozen venues and nearly a hundred movies into a single calendar. Each calendar entry features a brief synopsis, a link to the trailer and the details about the venue.
 
-So far, I've included the following venues:
+So far, I've included the following movies series:
 
 * Close Encounters of the Spielberg Kind, Museum of Jewish Heritage 
-* Hudson River Park's RiverFlicks Big Hit Wednesdays on Pier 63
+* Hudson River Park's RiverFlicks Big Hit on Pier 63
 * Summer on the Hudson: Pier I Picture Show, Riverside Park
 * SummerScreen in McCarren Park
 * Syfy Movies with a View at Brooklyn Bridge Park 
-* Hudson River Park's RiverFlicks Family Fridays on Pier 46 
+* Hudson River Park's RiverFlicks Family on Pier 46 
 * Celebrate Brooklyn! at Prospect Park Bandshell
 * Sony Wonder Technology Lab Feature Screenings
-* Movie Night at Habana Outpost, Brooklyn
-* Intrepid Summer Movie Series, Intrepid flight deck
+* Movie Night at Habana Outpost
+* Intrepid Summer Movie Series on Intrepid flight deck
 * Movies at Crocheron Park
 * HBO Bryant Park Summer Film Festival
 * Central Park Conservancy Film Festival
