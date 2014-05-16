@@ -4,18 +4,18 @@
 {% block content %}
     <article>
       <div class="row">
-        <section class="col-md-8 col-md-offset-2 article-header">
+        <section class="col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 col-xs-12 article-header">
           <h3>{{ article.title}}</h3>
         </section>
       </div>
       <div class="row">
-        <section class="col-md-2 meta">
+        <section class="col-md-2 col-sm-2 col-xs-12 meta">
           <div class="meta-wrapper">
             <abbr class="date" title="{{ article.date.isoformat() }}">{{ article.locale_date }}</abbr>
             {% include 'article_tags.html' %}
           </div>
         </section>
-        <section class="col-md-8 main">
+        <section class="col-md-8 col-sm-8 col-xs-12 main">
           {{ article.content }}
           <div class="share">
             <!--<i class="ss-icon">heart</i> 40 <i class="ss-icon">retweet</i> 56 <i class="ss-icon">comment</i> 20-->
