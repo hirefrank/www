@@ -116,6 +116,13 @@ h2 {
   border-top: 17px solid #e4e0d7;
 }
 
+@media (max-width: 768px) {
+  .content {
+    font-size: 16px;
+    line-height: 160%;
+  }
+}
+
 .mark {
   width: 180px;
   background-color: #cb503d;
