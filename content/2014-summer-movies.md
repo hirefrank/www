@@ -1,4 +1,4 @@
-Title: 2014 Summer Calendar of Free Movies in NYC 
+Title: 2014 Summer Calendar of Free Movies in New York City 
 Slug: 2014-summer-movies 
 Tags: movies, summer, nyc
 Summary: This is an example of a draft post.
