@@ -30,12 +30,6 @@ body {
   background-color: #fdf0e6;
 }
 
-@media (max-width: 768px) {
-  body {
-    font-size: 16px;
-  }
-}
-
 @media (min-width: 992px) {
   .container {
     padding-left: 80px;
@@ -104,8 +98,7 @@ h2 {
 }
 
 @media (max-width: 768px) {
-  li,
-  p {
+  .about p {
     font-size: 14px;
     line-height: 160%;
   }
@@ -204,12 +197,6 @@ h3 a:hover {
   margin-top: 2px;
 }
 
-@media (max-width: 768px) {
-  .meta {
-    font-size: 14px;  
-  }  
-}
-
 .meta-wrapper {
   float: right;
   width: 100px;
@@ -244,7 +231,7 @@ h3 a:hover {
 @media (max-width: 768px) {
   .content ul.tags {
     margin-bottom: 1px;
-  }  
+  }
 }
 
 .content ul.tags li:first-child {
