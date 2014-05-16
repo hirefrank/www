@@ -30,6 +30,12 @@ body {
   background-color: #fdf0e6;
 }
 
+@media (max-width: 768px) {
+  body {
+    font-size: 16px;
+  }
+}
+
 @media (min-width: 992px) {
   .container {
     padding-left: 80px;
@@ -180,7 +186,6 @@ h3 {
   }
 }
 
-
 h3 a,
 h3 a:hover {
   color: #176273;
@@ -235,7 +240,7 @@ ul.tags li:first-child {
 
 @media (max-width: 768px) {
   ul.tags li:first-child {
-    margin-top: 0;
+    margin: 0;
   }
 }
 
@@ -260,12 +265,6 @@ ul.tags a {
 
 .content p {
   margin-bottom: 20px;
-}
-
-@media (max-width: 768px) {
-  .content p {
-    font-size: 16px;
-  }
 }
 
 .comments {
