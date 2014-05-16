@@ -1,7 +1,7 @@
 Title: 2014 Summer Calendar of Free Movies in New York City 
-Slug: 2014-summer-movies 
+Slug: 2014-summer-movies
 Tags: movies, summer, nyc
-Summary: This is an example of a draft post.
+Summary: One calendar with over a dozen venues featuring nearly 100 movies to enjoy free this summer in the city.
 Status: draft
 
 One of the best things about New York City &mdash; and one that I never take full advantage of &mdash; is the wide array of free outdoor movies during the summer.
@@ -10,12 +10,12 @@ Based on [Kottke's suggestion](http://kottke.org/14/05/free-outdoor-movies-in-ny
 
 So far, I've included the following movies series:
 
-* Close Encounters of the Spielberg Kind, Museum of Jewish Heritage 
+* Close Encounters of the Spielberg Kind, Museum of Jewish Heritage
 * Hudson River Park's RiverFlicks Big Hit on Pier 63
 * Summer on the Hudson: Pier I Picture Show, Riverside Park
 * SummerScreen in McCarren Park
-* Syfy Movies with a View at Brooklyn Bridge Park 
-* Hudson River Park's RiverFlicks Family on Pier 46 
+* Syfy Movies with a View at Brooklyn Bridge Park
+* Hudson River Park's RiverFlicks Family on Pier 46
 * Celebrate Brooklyn! at Prospect Park Bandshell
 * Sony Wonder Technology Lab Feature Screenings
 * Movie Night at Habana Outpost
