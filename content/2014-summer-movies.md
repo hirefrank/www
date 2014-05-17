@@ -3,9 +3,11 @@ Slug: 2014-summer-movies
 Tags: movies, summer, nyc
 Summary: One calendar with over a dozen venues featuring nearly 100 free movies to enjoy this summer in the city.
 
+**Updated 5/17/2014:** Added Films on the Green and Front/Row Cinema at South Street Seaport Pier.
+
 One of the best things about New York City &mdash; and one that I never take full advantage of &mdash; is the wide array of free outdoor movies during the summer.
 
-Based on [Kottke's suggestion](http://kottke.org/14/05/free-outdoor-movies-in-nyc-for-summer-2014), I aggregated over a dozen venues and nearly a hundred movies into a single calendar. Each calendar entry features a brief synopsis, a link to the trailer and the details about the venue.
+Based on [Kottke's suggestion](http://kottke.org/14/05/free-outdoor-movies-in-nyc-for-summer-2014), I aggregated over a dozen venues and ~~nearly~~ more than a hundred movies into a single calendar. Each calendar entry features a brief synopsis, a link to the trailer and the details about the venue.
 
 So far, I've included the following movies series:
 
@@ -22,6 +24,8 @@ So far, I've included the following movies series:
 * Movies at Crocheron Park
 * HBO Bryant Park Summer Film Festival
 * Central Park Conservancy Film Festival
+* Films on the Green
+* Front/Row Cinema at South Street Seaport Pier
 
 The calendar is available in the following formats:
 
