@@ -5,9 +5,9 @@ Summary: Follow @NYCSummerFilms to get daily reminders of free movies playing th
 
 I'm proud to announce my latest side project, [@NYCSummerFilms](https://twitter.com/nycsummerfilms). 
 
-@NYCSummerFilms tweets free summer movie showings in NYC several hours before they start. The dataset includes more than a dozen venues and well over a hundred movies.
+@NYCSummerFilms tweets daily free summer movie showings in NYC. The dataset includes more than a dozen venues and well over a hundred movies.
 
-I've also made the data available in the following calendar formats:
+The data available in the following calendar formats:
 
 * [Google Calendar](http://hrfnk.tk/RWBH6u)
 * [iCalender](http://hrfnk.tk/1n28wbQ)
