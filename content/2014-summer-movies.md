@@ -9,6 +9,12 @@ One of the best things about New York City &mdash; and one that I never take ful
 
 Based on [Kottke's suggestion](http://kottke.org/14/05/free-outdoor-movies-in-nyc-for-summer-2014), I aggregated over a dozen venues and <s>nearly</s> more than a hundred movies into a single calendar. Each calendar entry features a brief synopsis, a link to the trailer and the details about the venue.
 
+The calendar is available in the following formats:
+
+* [Google Calendar](http://hrfnk.tk/RWBH6u)
+* [iCalender](http://hrfnk.tk/1n28wbQ)
+* [XML](http://hrfnk.tk/RWBP5X)
+
 So far, I've included the following movies series:
 
 * Close Encounters of the Spielberg Kind, Museum of Jewish Heritage
@@ -26,12 +32,6 @@ So far, I've included the following movies series:
 * Central Park Conservancy Film Festival
 * Films on the Green
 * Front/Row Cinema at South Street Seaport Pier
-
-The calendar is available in the following formats:
-
-* [Google Calendar](http://hrfnk.tk/RWBH6u)
-* [iCalender](http://hrfnk.tk/1n28wbQ)
-* [XML](http://hrfnk.tk/RWBP5X)
 
 I hope to add [Rooftop Films](http://rooftopfilms.com/blog/2014/04/rooftop-films-2014-summer-series-feature-film-lineup.html) soon, but their data is a bit hard and tedious to gather. If you know anyone there, know of any other venues or have any other tips, let me know!
 
