@@ -43,6 +43,8 @@ YEAR_ARCHIVE_SAVE_AS = '{date:%y}/index.html'
 MONTH_ARCHIVE_SAVE_AS = '{date:%y}/{date:%m}/index.html'
 
 # Feed generation is usually not desired when developing
+FEED_DOMAIN = SITEURL
+FEED_ALL_RSS = 'feeds/rss.xml'
 FEED_ALL_ATOM = None
 CATEGORY_FEED_ATOM = None
 TRANSLATION_FEED_ATOM = None
