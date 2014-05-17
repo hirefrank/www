@@ -3,7 +3,7 @@ Slug: announcing-nycsummerfilms
 Tags: movies, nyc, twitter
 Summary: Follow @NYCSummerFilms to get daily reminders of free movies playing this summer in NYC.
 
-I'm proud to announce my latest side project, @NYCSummerFilms. 
+I'm proud to announce my latest side project,[@NYCSummerFilms](https://twitter.com/nycsummerfilms). 
 
 @NYCSummerFilms tweets free summer movie showings in NYC several hours before they start. The dataset includes more than a dozen venues and well over a hundred movies.
 
