@@ -13,9 +13,5 @@ from pelicanconf import *
 #RELATIVE_URLS = False
 SEARCH = False
 
-FEED_ALL_ATOM = 'feeds/all.atom.xml'
-#CATEGORY_FEED_ATOM = 'feeds/%s.atom.xml'
-
 # Following items are often useful when publishing
-
 PLUGINS = ['sitemap', 'minify']
