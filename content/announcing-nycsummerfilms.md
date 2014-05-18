@@ -7,7 +7,7 @@ I'm proud to announce my latest side project, [@NYCSummerFilms](https://twitter.
 
 @NYCSummerFilms tweets daily free summer movie showings in NYC. The dataset includes more than a dozen venues and well over a hundred movies.
 
-The data available in the following calendar formats:
+The data is available in the following calendar formats:
 
 * [Google Calendar](http://hrfnk.tk/RWBH6u)
 * [iCalendar](http://hrfnk.tk/1n28wbQ)
