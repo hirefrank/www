@@ -10,7 +10,7 @@ I'm proud to announce my latest side project, [@NYCSummerFilms](https://twitter.
 The data available in the following calendar formats:
 
 * [Google Calendar](http://hrfnk.tk/RWBH6u)
-* [iCalender](http://hrfnk.tk/1n28wbQ)
+* [iCalendar](http://hrfnk.tk/1n28wbQ)
 * [XML](http://hrfnk.tk/RWBP5X)
 
 So far, @NYCSummerFilms includes:
