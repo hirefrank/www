@@ -5,7 +5,9 @@ Summary: Follow @NYCSummerFilms to get daily reminders of free movies playing th
 
 I'm proud to announce my latest side project, [@NYCSummerFilms](https://twitter.com/nycsummerfilms). 
 
-@NYCSummerFilms tweets daily free summer movie showings in NYC. The dataset includes more than a dozen venues and well over a hundred movies.
+@NYCSummerFilms tweets daily free summer movie showings in NYC. The dataset includes more than 15 film series, over 20 venues and more than 175 movies. 
+
+This effort is based on [my earlier work on building a unified free movie calendar](http://www.hirefrank.com/14/05/2014-summer-movies/). 
 
 The data is available in the following calendar formats:
 
@@ -30,6 +32,7 @@ So far, @NYCSummerFilms includes:
 * Central Park Conservancy Film Festival
 * Films on the Green
 * Front/Row Cinema at South Street Seaport Pier
+* Rooftop Films Summer Series
 
 If you know of other film festivals or have any other tips, let me know!
 
