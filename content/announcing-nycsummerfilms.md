@@ -5,7 +5,7 @@ Summary: Follow @NYCSummerFilms to get daily reminders of free movies playing th
 
 I'm proud to announce my latest side project, [@NYCSummerFilms](https://twitter.com/nycsummerfilms). 
 
-@NYCSummerFilms tweets daily free summer movie showings in NYC. The dataset includes more than 15 film series, over 20 venues and more than 175 movies. This effort extends [my earlier work](http://www.hirefrank.com/14/05/2014-summer-movies/)  on building a unified free movie calendar. 
+@NYCSummerFilms tweets daily free summer movie showings in NYC. The dataset includes 16 film series, over 20 venues and more than 175 movies. This effort extends [my earlier work](http://www.hirefrank.com/14/05/2014-summer-movies/)  on building a unified free movie calendar. 
 
 The data is available in the following calendar formats:
 
