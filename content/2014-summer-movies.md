@@ -2,11 +2,9 @@ Title: 2014 Summer Calendar of Free Movies in New York City 
 Date: 2014-05-15 18:20
 Slug: 2014-summer-movies
 Tags: movies, summer, nyc
-Summary: One calendar with over a dozen venues featuring nearly 100 free movies to enjoy this summer in the city.
+Summary: One calendar with over a dozen venues featuring over 100 free movies to enjoy this summer in the city.
 
-**Updated 5/17/2014, 4:42pm:** Further updates will be [captured on this page](http://www.hirefrank.com/14/05/announcing-nycsummerfilms/). I've also created a dedicated Twitter account, [@NYCSummerFilms](https://twitter.com/nycsummerfilms) to tweet same day reminders.
-
-**Updated 5/17/2014:** Added Films on the Green and Front/Row Cinema at South Street Seaport Pier.
+**Updated 5/17/2014:** Added Films on the Green and Front/Row Cinema at South Street Seaport Pier. I've also created a dedicated Twitter account, [@NYCSummerFilms](https://twitter.com/nycsummerfilms) to tweet same day reminders. Further updates will be [captured on this page](http://www.hirefrank.com/14/05/announcing-nycsummerfilms/).
 
 One of the best things about New York City &mdash; and one that I never take full advantage of &mdash; is the wide array of free outdoor movies during the summer.
 
@@ -17,25 +15,5 @@ The calendar is available in the following formats:
 * [Google Calendar](http://hrfnk.tk/RWBH6u)
 * [iCalendar](http://hrfnk.tk/1n28wbQ)
 * [XML](http://hrfnk.tk/RWBP5X)
-
-So far, I've included the following movies series:
-
-* Close Encounters of the Spielberg Kind, Museum of Jewish Heritage
-* Hudson River Park's RiverFlicks Big Hit on Pier 63
-* Summer on the Hudson: Pier I Picture Show, Riverside Park
-* SummerScreen in McCarren Park
-* Syfy Movies with a View at Brooklyn Bridge Park
-* Hudson River Park's RiverFlicks Family on Pier 46
-* Celebrate Brooklyn! at Prospect Park Bandshell
-* Sony Wonder Technology Lab Feature Screenings
-* Movie Night at Habana Outpost
-* Intrepid Summer Movie Series on Intrepid flight deck
-* Movies at Crocheron Park
-* HBO Bryant Park Summer Film Festival
-* Central Park Conservancy Film Festival
-* Films on the Green
-* Front/Row Cinema at South Street Seaport Pier
-
-I hope to add [Rooftop Films](http://rooftopfilms.com/blog/2014/04/rooftop-films-2014-summer-series-feature-film-lineup.html) soon, but their data is a bit hard and tedious to gather. If you know anyone there, know of any other venues or have any other tips, let me know!
 
 Enjoy the show(s).
