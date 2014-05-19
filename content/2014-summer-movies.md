@@ -10,7 +10,7 @@ Summary: One calendar with over a dozen venues featuring over 100 free movies to
 
 One of the best things about New York City &mdash; and one that I never take full advantage of &mdash; is the wide array of free outdoor movies during the summer.
 
-Based on [Kottke's suggestion](http://kottke.org/14/05/free-outdoor-movies-in-nyc-for-summer-2014), I aggregated over a dozen venues and <s>nearly</s> more than a hundred movies into a single calendar. Each calendar entry features a brief synopsis, a link to the trailer and the details about the venue.
+Based on [Kottke's suggestion](http://kottke.org/14/05/free-outdoor-movies-in-nyc-for-summer-2014), I aggregated over a dozen venues and <s>nearly</s> more than a hundred movies into a single calendar. Each calendar entry features a brief synopsis, a link to the trailer and details about the venue or series.
 
 The calendar is available in the following formats:
 
