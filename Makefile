@@ -8,6 +8,8 @@ OUTPUTDIR=$(BASEDIR)/output
 S3_PUBLICATION_DIR=$(BASEDIR)/gzip
 CONFFILE=$(BASEDIR)/pelicanconf.py
 PUBLISHCONF=$(BASEDIR)/publishconf.py
+CSS_DIR=$(OUTPUTDIR)/theme/css/
+CSS_FILE=styles.css
 
 FTP_HOST=localhost
 FTP_USER=anonymous
@@ -83,6 +85,7 @@ stopserver:
 
 publish:
 	$(PELICAN) $(INPUTDIR) -o $(OUTPUTDIR) -s $(PUBLISHCONF) $(PELICANOPTS)
+	cd $(CSS_DIR) && md5sum $(CSS_FILE) | sed -e 's/\([^ ]*\) \(.*\(\..*\)\)$\/mv -v \2 \1\3/' | sh
 
 ssh_upload: publish
 	scp -P $(SSH_PORT) -r $(OUTPUTDIR)/* $(SSH_USER)@$(SSH_HOST):$(SSH_TARGET_DIR)
@@ -109,7 +112,7 @@ github: publish
 compress:
 	python bin/aws-s3-gzip-compression.py $(OUTPUTDIR) $(S3_PUBLICATION_DIR)
 
-s3_gzip_upload: publish compress    
+s3_gzip_upload: publish compress
 	s3cmd sync $(S3_PUBLICATION_DIR)/ s3://$(S3_BUCKET) --acl-public --add-header \
 	"Content-Encoding:gzip" --mime-type="application/javascript" \
 	--add-header "Cache-Control: max-age 86400" --exclude '*' --include '*.js' && \
