@@ -25,11 +25,6 @@
     <link href="{{ FEED_DOMAIN }}/{{ FEED_ALL_RSS }}" type="application/rss+xml" rel="alternate" title="{{ SITENAME }} RSS Feed" />
     {% endif -%}
 
-    {% if SEARCH %}
-    <link rel="stylesheet" type="text/css" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/autocomplete.css" />
-    <link rel="stylesheet" type="text/css" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/search.css" />
-    {% endif -%}
-
     {% block header %}
     {% endblock %}
 
@@ -91,7 +86,7 @@
           </div>
           <section class="col-md-8 col-sm-8 hidden-xs search">
             <form>
-              <input type="text" id="st-search-input" class="st-search-input" />
+              <input type="text" id="st-search-input" />
             </form>
             <script type="text/javascript">
               var Swiftype = window.Swiftype || {};
@@ -105,13 +100,6 @@
                 entry.parentNode.insertBefore(script, entry);
               }());
             </script>
-
-          {% if SEARCH %}
-            <form>
-              <input type="text" id="st-search-input" /><input type="submit" name="s" value="Search" class="ss-icon" />
-            </form>
-            <div id="st-results-container"></div>
-          {% endif %}
           </section>
           <div class="col-md-2 col-sm-2 col-xs-6">
             <section class="navigate-right">
