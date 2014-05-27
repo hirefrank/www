@@ -319,6 +319,7 @@ h3 a:hover {
   text-align: center;
 }
 
+form input.st-search-input,
 .search input[type="text"] {
   text-align: left;
   width: 83%;
