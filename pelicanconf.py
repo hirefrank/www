@@ -52,7 +52,7 @@ TRANSLATION_FEED_ATOM = None
 TWITTER = 'http://www.twitter.com/hirefrank'
 LINKEDIN = 'http://www.linkedin.com/in/hirefrank'
 MAIL = 'frank@hirefrank.com'
-SEARCH = True
+SEARCH = False
 
 DEFAULT_PAGINATION = 10
 CSS_FILE = 'styles.css'
