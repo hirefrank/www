@@ -3,9 +3,11 @@ Slug: announcing-nycsummerfilms
 Tags: movies, nyc, twitter
 Summary: Follow @NYCSummerFilms to get daily reminders of free movies playing this summer in NYC.
 
+**Updated 5/31:** Is Facebook your jam? If so, [like our Facebook Page](http://hrfnk.us/1wslQfS) and stay up-to-date with showtimes in your news feed.
+
 I'm proud to announce my latest side project, [@NYCSummerFilms](https://twitter.com/nycsummerfilms). 
 
-@NYCSummerFilms tweets daily free summer movie showings in NYC. The dataset includes 16 film series, over 20 venues and more than 175 movies. This effort extends [my earlier work](http://www.hirefrank.com/14/05/2014-summer-movies/)  on building a unified free movie calendar. 
+@NYCSummerFilms tweets daily free summer movie showings in NYC. The dataset includes 19 film series, 29 venues, 180 movies, and 195 showtimes. This effort extends [my earlier work](http://www.hirefrank.com/14/05/2014-summer-movies/)  on building a unified free movie calendar. 
 
 The data is available in the following calendar formats:
 
@@ -32,6 +34,8 @@ So far, @NYCSummerFilms includes:
 * [Films on the Green](http://hrfnk.us/1gAQ5g3)
 * [Front/Row Cinema at South Street Seaport Pier](http://hrfnk.us/1gAQcrX)
 * [Rooftop Films Summer Series](http://hrfnk.us/1lGcfe9)
+* [International Film Festival Celebrating the Cultural Diversity of Queens at Socrates Sculpture Park](http://hrfnk.us/1p0udNv)
+* [Red Hook Flicks Presents Summer Movies on The Pier](http://hrfnk.us/1p0AjNM)
 
 If you know of other film festivals or have any other tips, let me know!
 
