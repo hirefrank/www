@@ -14,8 +14,8 @@ Based on [Kottke's suggestion](http://kottke.org/14/05/free-outdoor-movies-in-ny
 
 The calendar is available in the following formats:
 
-* [Google Calendar](http://hrfnk.tk/RWBH6u)
-* [iCalendar](http://hrfnk.tk/1n28wbQ)
-* [XML](http://hrfnk.tk/RWBP5X)
+* [Google Calendar](http://hrfnk.us/RWBH6u)
+* [iCalendar](http://hrfnk.us/1n28wbQ)
+* [XML](http://hrfnk.us/RWBP5X)
 
 Enjoy the show(s).
