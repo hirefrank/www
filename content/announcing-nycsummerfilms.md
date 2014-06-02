@@ -1,4 +1,5 @@
 Title: @NYCSummerFilms
+Date: 2014-05-18 17:30
 Slug: announcing-nycsummerfilms
 Tags: movies, nyc, twitter
 Summary: Follow @NYCSummerFilms to get daily reminders of free movies playing this summer in NYC.
