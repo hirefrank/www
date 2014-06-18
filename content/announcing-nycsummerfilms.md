@@ -41,6 +41,7 @@ So far, @NYCSummerFilms includes:
 * [Free Summer Movies on Fordham Road](http://hrfnk.us/1mLDnYv)
 * [Free for All by Tribeca Film Festival](http://hrfnk.us/1kQzNQa)
 * [Rooftop Films at Bronx Terminal Market](http://hrfnk.us/1puKlYf)
+* [Coney Island Flicks on the Beach](http://hrfnk.us/1oFaSTd)
 
 If you know of other film festivals or have any other tips, let me know!
 
