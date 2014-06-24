@@ -42,6 +42,7 @@ So far, @NYCSummerFilms includes:
 * [Free for All by Tribeca Film Festival](http://hrfnk.us/1kQzNQa)
 * [Rooftop Films at Bronx Terminal Market](http://hrfnk.us/1puKlYf)
 * [Coney Island Flicks on the Beach](http://hrfnk.us/1oFaSTd)
+* [Nitehawk Outdoors at 50 Kent Ave](http://hrfnk.us/1nB1Cca)
 
 If you know of other film festivals or have any other tips, let me know!
 
