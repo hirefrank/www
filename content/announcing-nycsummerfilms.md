@@ -43,6 +43,7 @@ So far, @NYCSummerFilms includes:
 * [Rooftop Films at Bronx Terminal Market](http://hrfnk.us/1puKlYf)
 * [Coney Island Flicks on the Beach](http://hrfnk.us/1oFaSTd)
 * [Nitehawk Outdoors at 50 Kent Ave](http://hrfnk.us/1nB1Cca)
+* [A Richard Pryor Triple Play at BAM](http://hrfnk.us/VvVZFT)
 
 If you know of other film festivals or have any other tips, let me know!
 
