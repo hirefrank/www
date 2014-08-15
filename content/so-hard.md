@@ -1,6 +1,7 @@
 Title: What he said
 Date: 2014-08-14 14:41
 Slug: why-is-it-so-hard
+Tags: movies, nyc, twitter
 Summary: Charles Bradley, backed by The Menahan Street Band, performs "Why Is It So Hard" live from Mellow Johnny's Bike Shop in Austin, TX, during KEXP's broadcast at SXSW. Recorded 3/17/2011.
 
 <div class="video-container">
