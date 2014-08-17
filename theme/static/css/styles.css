@@ -68,7 +68,7 @@ header {
 .image-wrapper {
   margin-top: 12px;
   border-radius: 50em;
-  background: url(../img/mug-suit_bw.jpg) no-repeat center center;
+  background: url(../img/mug-cover.jpg) no-repeat center center;
   height: 100px;
   width: 100px;
   float: right;
@@ -436,7 +436,7 @@ footer {
 /*
  * Elastic Object & Iframe Embedded Videos
  */
- 
+
 .video-container {
   position: relative;
   padding-bottom: 56.25%;
@@ -446,8 +446,8 @@ footer {
   margin-bottom: 20px;
 }
 
-.video-container iframe,  
-.video-container object,  
+.video-container iframe,
+.video-container object,
 .video-container embed {
   position: absolute;
   top: 0;
