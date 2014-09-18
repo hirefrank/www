@@ -1,6 +1,6 @@
-Title: What he said
+Title: With an apple in your mouth
 Date: 2014-09-18 17:36
-Slug: devil-is-all-around
+Slug: apple-in-your-mouth
 Tags: music, video
 Summary: The first track from Shovels & Rope's new album, Swimmin' Time, out August 26, 2014.
 
