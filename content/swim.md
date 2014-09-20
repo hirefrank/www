@@ -3,7 +3,6 @@ Date: 2014-09-20 07:59
 Slug: swim
 Tags: poem, swimming
 Summary: Promise me you will not spend so much time treading water and trying to keep your head above the waves that you forget, truly forget, how much you have always loved to swim. -- Tyler Knott Gregson
-Status: draft
 
 ![Swim](https://img0.etsystatic.com/001/0/7361151/il_570xN.395521536_6ffx.jpg)
 
