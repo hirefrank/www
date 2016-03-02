@@ -1,4 +1,4 @@
-Title: Going back to the past to find the future
+Title: Back to the past to find the future
 Date: 2016-03-02 09:32
 Slug: past-to-find-the-future
 Tags: music, video
