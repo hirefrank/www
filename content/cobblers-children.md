@@ -1,6 +1,7 @@
 Title: Cobbler's children have no shoes
 Date: 2014-02-02 18:20
 Slug: cobbler-children
+Status: draft
 Summary: I purchased hirefrank.com nearly 13 years ago. In 2014, I plan on putting it to good use.
 
 I purchased hirefrank.com nearly 13 years ago. I was a junior in college, and focused on getting a job and graduating, in that order.
