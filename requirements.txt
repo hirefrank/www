@@ -1,4 +1,5 @@
-Jinja2==2.7.1
+Jinja2>=2.10.1
+#Jinja2==2.7.1 security issue flagged by github
 Markdown==2.3.1
 MarkupSafe==0.18
 Pygments==1.6
