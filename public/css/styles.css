@@ -2,31 +2,134 @@
  * Elements
  */
 
-a,
-a:hover {
+html {
+  background-color: #fdf0e6;
+}
+
+body {
+  font-family: "Roboto Slab", serif;
+  color: #333;
+  font-weight: 300;
+  font-size: 1.8rem;
+  background-color: #fdf0e6;
+  border-top: 17px solid #e4e0d7;
+}
+
+a {
   color: inherit;
   text-decoration: none;
   font-weight: 400;
   border-bottom: 1.3px dotted #777;
 }
 
-i {
-  vertical-align: middle;
+a:hover {
+  color: #cb503d;
+  border-bottom: none;
 }
 
-abbr[title] {
-  border-bottom: 0;
-  cursor: text;
+h4 {
+  font-weight: 500;
 }
 
-html {
-  background-color: #fdf0e6;
+/*
+ * Emoji
+ */
+
+h4::after {
+  content: "\00a0🙋🏼‍♂️";
 }
 
-body {
-  border-top: 17px solid #e4e0d7;
+.casper::after {
+  content: "\00a0💤";
 }
 
+.betterment::after {
+  content: "\00a0📈";
+}
+
+.etsy::after {
+  content: "\00a0🧶";
+}
+
+.cook::after {
+  content: "\00a0🍝";
+}
+
+.bread::after {
+  content: "\00a0🥖";
+}
+
+/*
+ * Summary
+ */
+
+/* Larger than phablet */
+@media (min-width: 550px) {
+  .summary p:first-of-type { font-size: 3.0rem; }
+}
+
+.summary p:first-of-type, 
+.summary p {
+  font-size: 2.4rem; line-height: 1.35; letter-spacing: -.08rem;
+}
+
+/*
+ * Sidebar
+ */
+
+.sidebar {
+  font-size: 1.5rem;
+  margin-top: 3%;
+}
+
+.sidebar img {
+  height: 80px;
+  width: 106px;
+}
+
+.sidebar ul {
+  list-style: none;
+}
+
+.sidebar li a {
+  margin-bottom: 2rem;
+  font-weight: 100;
+  border: none;
+}
+
+.sidebar li .company {
+  font-weight: 700;
+  font-size: 110%;
+}
+
+.sidebar li .role {
+  font-weight: 400;
+  font-size: 110%;
+}
+
+.sidebar li .date {
+  font-weight: 100;
+  /*text-transform: uppercase;*/
+}
+
+.sidebar li a span.title {
+  font-weight: 400;
+  color: #176273;
+  white-space: normal;
+
+}
+
+.sidebar li a span {
+  white-space: nowrap;
+}
+
+.sidebar li a:hover span {
+  color: #cb503d;
+}
+
+.sidebar li img {
+  margin: 0 8px 8px 0;
+}
 
 /*
  * Logo
@@ -66,28 +169,30 @@ h1, h1 a, h1 a:hover {
  * Footer
  */
 
-footer {
-  margin: 40px 0 20px 0;
+.footer {
+  margin: 2% 0 4% 0; 
+  font-size: 80%;
+  font-weight: 100;
 }
 
-@media (max-width: 768px) {
-  footer {
-    margin: 20px 0;
-  }
+.footer a {
+  font-weight: 100;
 }
 
-.fine-print {
-  font-size: 12px;
-  text-align: center;
-  opacity: .7;
+.footer ul {
+  list-style: none;
 }
 
-.fine-print a:hover {
-  text-decoration: none;
+.footer li {
+  float: left;
 }
 
-.fine-print span:hover {
-  text-decoration: underline;
+.footer li::before {
+  content: '\2022';
+  padding: 0 0.7em;
 }
 
-
+.footer li:first-of-type::before {
+  content: none;
+  padding: none;
+}
