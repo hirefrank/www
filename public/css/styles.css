@@ -207,7 +207,7 @@ h1, h1 a, h1 a:hover {
 
 .footer li::before {
   content: '\2022';
-  padding: 0 0.7em;
+  padding: 0 0.5em;
 }
 
 .footer li:first-of-type::before {
