@@ -190,11 +190,13 @@ h1, h1 a, h1 a:hover {
  */
 
 .footer {
-  margin: 4% 0 2% 0; 
+  margin: 4% auto 2% auto; 
   font-size: 70%;
   font-weight: 100;
   letter-spacing: 0.05rem;
   text-transform: uppercase;
+  display: flex;
+  justify-content: center;
 }
 
 .footer ul {
@@ -220,7 +222,6 @@ h1, h1 a, h1 a:hover {
 }
 
 @media (min-width: 550px) {
-  .footer span {
-    display: inline;
-  }
+  .footer span { display: inline; }
+  .footer { display: block; justify-content: flex-start; }
 }
