@@ -136,6 +136,7 @@ a.tertiary:hover {
 
 .sidebar ul {
   list-style: none;
+  max-width: 30rem;
 }
 
 .sidebar li {
@@ -163,33 +164,25 @@ a.tertiary:hover {
  */
 
 .mark {
-  width: 180px;
+  width: 135px;
   background-color: #cb503d;
-  margin: -17px auto 0 -10px;
+  margin: -17px auto 0 auto;
   border-top: 17px solid #b85544;
   text-align: center;
 }
 
-@media (max-width: 768px) {
-  .mark {
-    width: 135px;
-  }
-}
-
 h1, h1 a, h1 a:hover {
-  font-size: 32px;
+  font-size: 24px;
+  padding: 4px 0 15px 0;
   color: #fff;
   font-weight: 100;
-  padding: 8px 0 18px 0;
   text-decoration: none;
   border-bottom: none;
 }
 
-@media (max-width: 768px) {
-  h1 {
-    font-size: 24px;
-    padding: 4px 0 15px 0;
-  }
+@media (min-width: 550px) {
+  h1, h1 a, h1 a:hover { font-size: 32px; padding: 8px 0 18px 0; }
+  .mark { margin: -17px auto 0 -10px; width: 180px; }
 }
 
 /*
