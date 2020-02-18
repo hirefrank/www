@@ -49,8 +49,14 @@ a.tertiary:hover {
  * Summary
  */
 
-.summary {
-  font-size: 2.4rem; line-height: 1.45; letter-spacing: -.08rem;
+.summary p:first-of-type {
+  font-size: 2.4rem; 
+  line-height: 1.45; 
+  letter-spacing: -.08rem;
+}
+
+.summary { 
+  font-size: 1.8rem;
 }
 
 .summary h4 {
@@ -96,7 +102,7 @@ a.tertiary:hover {
 /* Larger than phablet */
 @media (min-width: 550px) {
   .summary p:first-of-type { font-size: 3.0rem; }
-  .summary p { font-size: 2.6rem; }
+  .summary { font-size: 2.4rem; }
 }
 
 .summary a {
