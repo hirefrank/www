@@ -1,23 +1,31 @@
 #https://dev.to/evanhalley/automate-your-hugo-website-deploys-2p84
 
-name: Deploy
+name: Build & Deploy
 
 on:
   push:
     branches: 
-    - master
+    - hugo
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout code
-      uses: actions/checkout@master
-      
+      uses: actions/checkout@hugo
+
+    - name: Setup Hugo
+      uses: peaceiris/actions-hugo@v2
+      with:
+        hugo-version: 'latest'
+
+    - name: Build with Hugo
+      run: hugo --gc --minify --cleanDestinationDir
+
     - name: Deploy to Firebase
       uses: w9jds/firebase-action@master
       with:
-        args: deploy --only hosting
+        args: deploy --only hosting:staging
       env:
         FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
         PROJECT_ID: hirefrank-public
