@@ -1,0 +1,17 @@
+{
+  "projects": {
+    "default": "hirefrank-public"
+  },
+  "targets": {
+    "hirefrank-public": {
+      "hosting": {
+        "prod": [
+          "hirefrank-public"
+        ],
+        "staging": [
+          "staging-hirefrank-public"
+        ]
+      }
+    }
+  }
+}
