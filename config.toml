@@ -2,5 +2,10 @@ baseURL = "https://hirefrank.com/"
 languageCode = "en-us"
 title = "hirefrank.com"
 
+disableKinds = ["section", "taxonomy", "taxonomyTerm"]
+
+enableRobotsTXT = true
+
 [permalinks]
   videos = "/:06/:01/:slug/"
+  posts = "/:06/:01/:slug/"

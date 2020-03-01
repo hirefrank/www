@@ -1,8 +1,10 @@
-Title: @NYCSummerFilms
-Date: 2014-05-18 17:30
-Slug: announcing-nycsummerfilms
-Tags: movies, nyc, twitter
-Summary: Follow @NYCSummerFilms to get daily reminders of free movies playing this summer in NYC.
+---
+title: "@NYCSummerFilms"
+date: 2014-05-18T17:30:21-05:00
+slug: announcing-nycsummerfilms
+summary: "Follow @NYCSummerFilms to get daily reminders of free movies playing this summer in NYC."
+draft: false
+---
 
 **Updated 5/31:** Is Facebook your jam? If so, [like our Facebook Page](http://hrfnk.us/1wslQfS) and stay up-to-date with showtimes in your news feed.
 
