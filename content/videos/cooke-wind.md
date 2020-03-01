@@ -1,12 +1,13 @@
-Title: Cooke's inspiration
-Date: 2015-06-28 07:50
-Slug: cooke-blowin-in-the-wind
-Tags: music, video
-Summary: Sam Cooke in 1964, a few months before his death, performing "Blowin' in the Wind" on the ABC variety show Shindig!.
-
-<div class="video-container">
-  <iframe width="560" height="315" src="//www.youtube.com/embed/PBDdLgBO0Nw" frameborder="0" allowfullscreen></iframe>
-</div>
+---
+title: "Cooke's inspiration"
+date: 2015-06-28T07:50:21-05:00
+slug: cooke-blowin-in-the-wind
+artist: "Sam Cooke"
+video: "Blowin' in the Wind"
+youtube_id: PBDdLgBO0Nw
+summary: "Sam Cooke in 1964, a few months before his death, performing \"Blowin' in the Wind\" on the ABC variety show Shindig!."
+draft: false
+---
 
 Sam Cooke in 1964, a few months before his death, performing "Blowin' in the Wind" on the ABC variety show [Shindig!](https://en.wikipedia.org/wiki/Shindig!).
 

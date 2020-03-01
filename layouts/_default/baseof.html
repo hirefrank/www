@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+{{ partial "header.html" . }}
+  <body>   
+
+    <div class="container">
+      <div class="row">
+        <div class="two-thirds column">
+          <div class="mark">
+            <h1><a href="/">hirefrank</a></h1>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="two-thirds column summary" style="margin-top: 3%">
+          {{- block "main" . }}{{- end }}
+        </div>
+        
+        <div class="one-third column sidebar">
+          <h5>Videos I Like</h5>
+          <ul>
+          {{ $pages := where .Site.RegularPages "Type" "videos"}}
+          {{ range $pages }}
+            <li class="u-cf">
+              <a href="{{.Permalink}}" class="secondary">
+                <img src="//img.youtube.com/vi/{{ .Params.youtube_id }}/default.jpg" class="u-pull-left"/>
+                <span class="title">{{ .Params.video }}</span><span>, </span>
+                <span class="meta">{{ .Params.artist }}</span><span> &mdash; </span>
+                <span class="meta">{{ .PublishDate.Format "January 2, 2006" }}</span>
+              </a>
+            </li>
+          {{ end }}
+          </ul>
+        </div>
+      </div>
+
+{{ partial "footer.html" . }}
+
+    </div>
+    {{ partial "analytics.html" . }}
+
+  </body>
+</html>

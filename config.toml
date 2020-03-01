@@ -2,4 +2,5 @@ baseURL = "http://example.org/"
 languageCode = "en-us"
 title = "My New Hugo Site"
 
-theme = "hirefrank"
+[permalinks]
+  videos = "/:06/:01/:slug/"
