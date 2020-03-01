@@ -1,6 +1,6 @@
-baseURL = "http://example.org/"
+baseURL = "https://hirefrank.com/"
 languageCode = "en-us"
-title = "My New Hugo Site"
+title = "hirefrank.com"
 
 [permalinks]
   videos = "/:06/:01/:slug/"
