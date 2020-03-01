@@ -1,9 +1,8 @@
-baseURL = "https://hirefrank.com/"
+baseURL = "/"
 languageCode = "en-us"
 title = "hirefrank.com"
 
 disableKinds = ["section", "taxonomy", "taxonomyTerm"]
-
 enableRobotsTXT = true
 
 [permalinks]
