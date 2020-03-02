@@ -3,7 +3,7 @@
 {{ partial "header.html" . }}
   <body>   
 
-    {{ with "billboard" }}
+    {{ if not .IsHome }}
     <div class="billboard">
       <div class="container">
         <div class="row">
