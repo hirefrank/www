@@ -13,7 +13,7 @@ body {
   font-size: 1.8rem;
   background-color: #fdf0e6;
   border-top: 17px solid #e4e0d7;
-}ublic
+}
 
 /*
  * Links
@@ -59,12 +59,18 @@ a.tertiary:hover {
   font-size: 1.8rem;
 }
 
-.summary h4 {
+.summary h4 span{
   font-weight: 500;
 }
 
-.summary h4::after {
+.summary h4 span::after {
   content: "\00a0🙋🏼‍♂️";
+  font-size: 88%;
+  vertical-align: top;
+}
+
+.summary .invision::after {
+  content: "\00a0🎨";
   font-size: 88%;
   vertical-align: top;
 }
