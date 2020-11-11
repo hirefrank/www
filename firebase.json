@@ -11,7 +11,7 @@
         "source": "/thea",
         "destination": "https://calendly.com/hirefrank/meet-theodora",
         "type": 302
-      },
+      } ]
     },
     {
       "target": "staging",
