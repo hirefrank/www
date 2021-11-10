@@ -93,6 +93,12 @@ a.tertiary:hover {
   vertical-align: top;
 }
 
+.summary .slack::after {
+  content: "\00a0🙌";
+  font-size: 88%;
+  vertical-align: top;
+}
+
 .summary .rodeo::after {
   content: "\00a0🐴";
   font-size: 88%;
