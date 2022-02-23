@@ -8,8 +8,8 @@
         "**/node_modules/**"
       ],
       "redirects": [ {
-        "source": "/thea",
-        "destination": "https://calendly.com/hirefrank/meet-theodora",
+        "source": "/cal",
+        "destination": "https://calendar.hirefrank.com/frank",
         "type": 302
       } ]
     },
