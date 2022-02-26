@@ -11,6 +11,10 @@
         "source": "/cal",
         "destination": "https://calendar.hirefrank.com/frank",
         "type": 302
+      },
+        "source": "/calp",
+        "destination": "https://calendar.hirefrank.com/frank/30min",
+        "type": 302
       } ]
     },
     {
