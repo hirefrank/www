@@ -9,11 +9,11 @@
       ],
       "redirects": [ {
         "source": "/cal",
-        "destination": "https://calendar.hirefrank.com/frank",
+        "destination": "https://zcal.co/hirefrank",
         "type": 302
       }, {
         "source": "/calp",
-        "destination": "https://calendar.hirefrank.com/frank/30min",
+        "destination": "https://zcal.co/hirefrank/catchup",
         "type": 302
       } ]
     },
