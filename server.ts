@@ -11,10 +11,12 @@ server.use(redirects({
   redirects: {
     "/from/": "/to/",
     "/from2/": "/to2/",
-
-    // Use an object to configure the status code. (301 by default)
-    "/from3/": {
-      to: "/to2/",
+    "/cal": {
+      to: "https://zcal.co/hirefrank",
+      code: 302,
+    },
+    "/calp": {
+      to: "https://zcal.co/hirefrank/catchup",
       code: 302,
     },
   },
