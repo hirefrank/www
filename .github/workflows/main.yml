@@ -1,23 +1,31 @@
-#https://dev.to/evanhalley/automate-your-hugo-website-deploys-2p84
-
-name: Deploy
+name: Publish on Deno Deploy
 
 on:
   push:
-    branches: 
-    - master
+    branches: [ master, lume ]
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: read
+
     steps:
-    - name: Checkout code
-      uses: actions/checkout@master
-      
-    - name: Deploy to Firebase
-      uses: w9jds/firebase-action@master
-      with:
-        args: deploy --only hosting:prod
-      env:
-        FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
-        PROJECT_ID: hirefrank-public
+      - name: Clone repository
+        uses: actions/checkout@v2
+
+      - name: Setup Deno environment
+        uses: denoland/setup-deno@v1
+        with:
+          deno-version: v1.x
+
+      - name: Build site
+        run: |
+          deno run -A https://deno.land/x/lume/ci.ts
+
+      - name: Deploy to Deno Deploy
+        uses: denoland/deployctl@v1
+        with:
+          project: project-name
+          entrypoint: server.ts
