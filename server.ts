@@ -9,8 +9,6 @@ const server = new Server({
 
 server.use(redirects({
   redirects: {
-    "/from/": "/to/",
-    "/from2/": "/to2/",
     "/cal": {
       to: "https://zcal.co/hirefrank",
       code: 302,
