@@ -10,8 +10,8 @@ const site = lume();
 //site.use(sass());
 
 site.copy("public", ".");
-//site.copy("assets", ".");
-site.ignore("public", "example")
+site.copy("assets", ".");
+site.ignore("example")
 
 //copy redirects to site folder.
 
