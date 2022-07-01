@@ -11,8 +11,5 @@ site.use(postcss())
 
 site.copy("static", ".")
 site.copy("redirects", "_redirects");
-site.ignore("example", "public")
-
-//copy redirects to site folder.
 
 export default site;
