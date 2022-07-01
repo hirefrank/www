@@ -2,14 +2,8 @@ image:
   file: .gitpod.Dockerfile
 
 tasks:
-  - name: Cloudflare Pages
-    command: |
-      npm install wrangler
-      npx wrangler pages dev _site
   - name: Lume
-    command: |
-      gp env -e
-      lume --serve
+    command: lume --serve
 
 vscode:
   extensions:
@@ -17,7 +11,5 @@ vscode:
 
 ports:
   - port: 3000
-    onOpen: ignore  
-  - port: 8788
     onOpen: open-browser
     visibility: private

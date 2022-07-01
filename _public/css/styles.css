@@ -1,0 +1,276 @@
+/*
+ * Elements
+ */
+
+html {
+  background-color: #fdf0e6;
+}
+
+body {
+  font-family: "Roboto Slab", serif;
+  color: #333;
+  font-weight: 300;
+  font-size: 1.8rem;
+  background-color: #fdf0e6;
+  border-top: 17px solid #e4e0d7;
+}
+
+/*
+ * Links
+ */
+
+a.primary {
+  color: inherit;
+  font-weight: 400;
+  text-decoration: none;
+} 
+
+a.secondary {
+  color: #176273;
+  font-weight: 400;
+  text-decoration: none;
+}
+
+a.secondary:hover {
+  color: #cb503d;
+}
+
+a.tertiary {
+  color: inherit;
+  text-decoration: none;
+}
+
+a.tertiary:hover {
+  color: #000;
+  border-bottom: 1px solid #000;
+}
+
+/*
+ * Summary
+ */
+
+.summary p {
+  font-size: 2.4rem; 
+  line-height: 1.45; 
+  letter-spacing: -.08rem;
+}
+
+.summary { 
+  font-size: 1.8rem;
+}
+
+.summary h4 {
+  font-weight: 500;
+}
+
+.summary h4::after {
+  content: "\00a0🙋🏼‍♂️";
+  font-size: 88%;
+  vertical-align: top;
+}
+
+.summary .efficiency::after {
+  content: "\00a0⚙️";
+  font-size: 88%;
+  vertical-align: top;
+}
+
+.summary .information::after {
+  content: "\00a0💡";
+  font-size: 88%;
+  vertical-align: top;
+}
+
+.summary .access::after {
+  content: "\00a0🔓";
+  font-size: 88%;
+  vertical-align: top;
+}
+
+.summary .email::after {
+  content: "\00a0✉️";
+  font-size: 88%;
+  vertical-align: top;
+}
+
+.summary .slack::after {
+  content: "\00a0🙌";
+  font-size: 88%;
+  vertical-align: top;
+}
+
+.summary .rodeo::after {
+  content: "\00a0🐴";
+  font-size: 88%;
+  vertical-align: top;
+}
+
+.summary .invision::after {
+  content: "\00a0🎨";
+  font-size: 88%;
+  vertical-align: top;
+}
+
+.summary .casper::after {
+  content: "\00a0💤";
+  font-size: 88%;
+  vertical-align: top;
+}
+
+.summary .betterment::after {
+  content: "\00a0💸";
+  font-size: 88%;
+  vertical-align: top;
+}
+
+.summary .etsy::after {
+  content: "\00a0🧶";
+  font-size: 88%;
+  vertical-align: top;
+}
+
+.summary .cook::after {
+  content: "\00a0🍝";
+  font-size: 88%;
+  vertical-align: top;
+}
+
+.summary .bread::after {
+  content: "\00a0🍞";
+  font-size: 88%;
+  vertical-align: top;
+}
+
+/* Larger than phablet */
+@media (min-width: 550px) {
+  .summary p { font-size: 3.0rem; }
+  .summary { font-size: 2.4rem; }
+}
+
+.summary a {
+  color: inherit;
+  font-weight: 400;
+  text-decoration: none;
+  border-bottom: 1.3px dotted #333;
+}
+
+.summary a:hover {
+  color:  #cb503d;
+  border-bottom: 1.3px dotted #cb503d;
+}
+
+.summary ul {
+  list-style: square outside;
+  margin-left: 4rem;
+}
+
+.summary ul li {
+  padding-left: 1rem;
+  margin-bottom: 2.5rem;
+}
+
+/*
+ * Sidebar
+ */
+
+.sidebar {
+  font-size: 1.5rem;
+  margin-top: 3%;
+}
+
+.sidebar img {
+  height: 80px;
+  width: 106px;
+}
+
+.sidebar ul {
+  list-style: none;
+  max-width: 30rem;
+}
+
+.sidebar li {
+  margin-bottom: 1.5rem;
+}
+
+.sidebar li a span.title {
+  white-space: normal;
+  color: inherit;
+  font-weight: inherit;
+}
+
+.sidebar li span {
+  white-space: nowrap;
+  color: #333;
+  font-weight: 200;
+}
+
+.sidebar li img {
+  margin: 0 8px 8px 0;
+}
+
+/*
+ * Logo
+ */
+
+.mark {
+  width: 135px;
+  background-color: #cb503d;
+  margin: -17px auto 0 auto;
+  border-top: 17px solid #b85544;
+  text-align: center;
+}
+
+h1, h1 a, h1 a:hover {
+  font-size: 24px;
+  padding: 4px 0 15px 0;
+  color: #fff;
+  font-weight: 100;
+  text-decoration: none;
+  border-bottom: none;
+}
+
+@media (min-width: 550px) {
+  h1, h1 a, h1 a:hover { font-size: 32px; padding: 8px 0 18px 0; }
+  .mark { margin: -17px auto 0 -10px; width: 180px; }
+}
+
+/*
+ * Footer
+ */
+
+.footer {
+  margin: 1% auto; 
+  font-size: 70%;
+  font-weight: 100;
+  letter-spacing: 0.05rem;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: center;
+}
+
+.footer ul {
+  list-style: none;
+}
+
+.footer li {
+  float: left;
+}
+
+.footer li::before {
+  content: '\2022';
+  padding: 0 0.5em;
+}
+
+.footer li:first-of-type::before {
+  content: none;
+  padding: none;
+}
+
+.footer span {
+  display: none;
+}
+
+@media (min-width: 550px) {
+  .footer span { display: inline; }
+  .footer { display: block; justify-content: flex-start; }
+}
