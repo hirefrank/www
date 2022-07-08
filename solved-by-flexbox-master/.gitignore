@@ -1,0 +1,11 @@
+# OS or Editor folders
+.DS_Store
+
+# npm/yarn files
+node_modules
+*.log
+*.lock
+
+# Static site output
+_tmp/
+solved-by-flexbox/

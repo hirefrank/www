@@ -3,8 +3,8 @@ Color Properties
 ------------- */
 
 :root {
-    --hue: 200;
-    --canvas: hsl(var(--hue) 2% 97%);
+    --hue: 26;
+    --canvas: hsl(var(--hue) 85% 95%);
     --on-canvas: hsl(var(--hue) 10% 10%);
     --on-canvas--dim: hsl(var(--hue) 20% 35%);
     --on-canvas--mute: hsl(var(--hue) 10% 90%);

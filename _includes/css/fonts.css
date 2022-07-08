@@ -1,30 +1,9 @@
 @font-face {
-    font-family: 'Inter';
-    font-weight: 400;
+    font-family: 'Quicksand';
     font-display: swap;
     font-style: normal;
     font-named-instance: 'Regular';
-    src: url('/assets/fonts/Inter-Regular.woff2') format('woff2');
-}
-
-@font-face {
-    font-family: 'Inter';
-    font-weight: 600;
-    font-display: swap;
-    font-style: normal;
-    font-named-instance: 'SemiBold';
-    src: url('/assets/fonts/Inter-SemiBold.woff2') format('woff2');
-}
-
-@font-face {
-    font-family: 'Newsreader';
-    font-weight: 400;
-    font-display: swap;
-    font-style: Italic;
-    ascent-override: 90%;
-    descent-override: 10%;
-    font-named-instance: 'Italic';
-    src: url('/assets/fonts/Newsreader-Italic.woff2') format('woff2');
+    src: url('/assets/fonts/Quicksand-VariableFont_wght.ttf');
 }
 
 @font-face {
@@ -37,16 +16,11 @@
 }
 
 :root {
-    --text-stack: Inter, Fallback, sans-serif;
+    --text-stack: Quicksand, Fallback, sans-serif;
     --text-settings: 'kern' 1, 'liga' 1, 'case' 1, 'dlig' 1, 'ss03' 1;
     --text-measure: 70ch;
     --text-size: max(1em, 1.1vw);
     --text-height: 1.7;
     --text-spacing: -0.011em;
-    --text-serif-stack: Newsreader, var(--text-stack);
-    --text-serif-size: 110%;
-    --text-serif-height: 1.545;
-    --text-serif-spacing: normal;
-
     --bold: 600;
 }

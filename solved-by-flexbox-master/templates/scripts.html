@@ -1,0 +1,39 @@
+<script>
+(function() {
+  var style = document.body.style;
+  var supportsFlexbox = 'flexBasis' in style ||
+      'msFlexAlign' in style || 'webkitBoxDirection' in style;
+
+  if (!supportsFlexbox) {
+    var div = document.createElement('div');
+    div.className = 'Error';
+    div.innerHTML = 'Your browser does not support Flexbox.  ' +
+        'Parts of this site may not appear as expected.';
+
+    document.body.insertBefore(div, document.body.firstChild);
+  }
+})();
+</script>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0YRDCZXZSB"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+var config = {
+  measurement_version: '5',
+  transport_type: 'beacon',
+  debug_mode: location.hostname !== 'philipwalton.github.io',
+  custom_map: {
+    dimension1: 'measurement_version',
+    dimension2: 'event_id',
+  },
+};
+gtag('config', 'UA-40829935-1', config);
+gtag('config', 'G-0YRDCZXZSB', config);
+</script>
+
+<script type="module" src="{{ site.baseUrl }}main.js"></script>
+
+<script defer id="twitter-wjs" src="https://platform.twitter.com/widgets.js"></script>
+<script defer src="https://buttons.github.io/buttons.js"></script>

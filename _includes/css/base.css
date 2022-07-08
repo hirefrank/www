@@ -64,6 +64,10 @@ header h1 + p {
 
 h1, h2, h3 {
     font-weight: var(--bold);
+    font-family: var(--text-serif-stack);
+    font-size:   var(--text-serif-size);
+    line-height: var(--text-serif-height);
+    letter-spacing: var(--text-serif-spacing);
 }
 
 h3 {
