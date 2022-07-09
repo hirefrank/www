@@ -8,6 +8,7 @@ const site = lume()
 site
   .use(postcss())
   .use(date({
+    locales: ["en-US"],
     formats: {
       "YEAR": "yyyy",
     },
