@@ -1,13 +1,19 @@
 import lume from "lume/mod.ts"
 import postcss from 'lume/plugins/postcss.ts'
-//import date from "lume/plugins/date.ts";
+import date from "lume/plugins/date.ts";
 //import metas from "lume/plugins/metas.ts";
 
 const site = lume()
 
 site
   .use(postcss())
+  .use(date({
+    formats: {
+      "YEAR": "yyyy",
+    },
+  }))
 
+  
 site
   .copy("static", ".")
   .copy("redirects", "_redirects")

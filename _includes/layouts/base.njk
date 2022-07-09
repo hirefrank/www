@@ -1,23 +1,21 @@
 <!DOCTYPE html>
-<html lang="en" >
-
+<html lang="en">
   {% include 'shared/head.njk' %}
-  <body class="Site {{ bodyClass }}">
-    <header class="Site-header">
-      <div class="Header Header--cozy" role="banner">
+  <body class="site {{ bodyClass }}">
+    <header class="site-header">
+      <div class="header header--cozy" role="banner">
         {% include 'shared/header.njk' %}
       </div>
     </header>
-    <main class="Site-content">
-      <div class="Container">
+    <main class="site-content">
+      <div class="container">
         {{ content | safe }}
       </div>
     </main>
-    <footer class="Site-footer">
-      <div class="Footer">
+    <footer class="site-footer">
+      <div class="footer">
         {% include 'shared/footer.njk' %}
       </div>
     </footer>
-    {% include 'shared/scripts.njk' %}
   </body>
 </html>
