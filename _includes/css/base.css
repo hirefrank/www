@@ -50,6 +50,8 @@ body > footer {
 
     border-block-start: var(--border);
     padding-block-start: var(--gutter);
+
+    font-size: var(--text-size-sm);
 }
 
 body > footer a {
@@ -383,46 +385,45 @@ details * + * {
 }
   
   
-  /*
-   * Logo
-   */
-  
-  .mark {
-    width: 135px;
-    background-color: #cb503d;
-    border-top: 17px solid #b85544;
-    text-align: center;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    margin: auto;
-  }
-  
-  .mark, .mark a, .mark a:hover {
-    font-size: 24px;
-    padding: 4px 0 15px 0;
-    color: #fff;
-    font-weight: 100;
-    text-decoration: none;
-    border-bottom: none;
-  }
+/*
+  * Logo
+  */
 
-  .footer ul {
-    list-style: none;
-  }
-  
-  .footer li {
-    float: left;
-  }
-  
-  .footer li::before {
-    content: '\2022';
-    padding: 0 0.5em;
-  }
-  
-  .footer li:first-of-type::before {
-    content: none;
-    padding: none;
-  }
-  
+.mark {
+  width: 135px;
+  background-color: #cb503d;
+  border-top: 17px solid #b85544;
+  text-align: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.mark, .mark a, .mark a:hover {
+  font-size: 24px;
+  padding: 4px 0 15px 0;
+  color: #fff;
+  font-weight: 100;
+  text-decoration: none;
+  border-bottom: none;
+}
+
+.footer ul {
+  list-style: none;
+}
+
+.footer li {
+  float: left;
+}
+
+.footer li::before {
+  content: '\2022';
+  padding: 0 0.5em;
+}
+
+.footer li:first-of-type::before {
+  content: none;
+  padding: none;
+}
