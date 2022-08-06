@@ -21,6 +21,7 @@
     --text-measure: 70ch;
     --text-size: max(1.1em, 1.2vw);
     --text-height: 1.7;
+    --text-size-lg: max(1.3em, 1.4vw);
     --text-spacing: -0.011em;
     --bold: 600;
 }

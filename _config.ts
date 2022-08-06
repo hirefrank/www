@@ -5,8 +5,6 @@ import date from "lume/plugins/date.ts";
 
 const site = lume()
 
-//site.data("year", new Date().getFullYear())
-
 site
   .use(postcss())
   .use(date())
