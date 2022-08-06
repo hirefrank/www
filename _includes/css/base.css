@@ -315,55 +315,55 @@ details * + * {
     vertical-align: top;
   }
   
-  .body-home section a:nth-child(1)::after {
+  .body-home p:nth-child(1) a:nth-child(1)::after {
     content: "\00a0🙌";
     font-size: 88%;
     vertical-align: top;
   }
   
-  .body-home section a:nth-child(2)::after {
+  .body-home p:nth-child(1) a:nth-child(2)::after {
     content: "\00a0🎨";
     font-size: 88%;
     vertical-align: top;
   }
   
-  .body-home section a:nth-child(3)::after {
+  .body-home p:nth-child(1) a:nth-child(3)::after {
     content: "\00a0💸";
     font-size: 88%;
     vertical-align: top;
   }
   
-  .body-home section a:nth-child(4)::after {
+  .body-home p:nth-child(1) a:nth-child(4)::after {
     content: "\00a0🧶";
     font-size: 88%;
     vertical-align: top;
   }
   
-  .body-home section a:nth-child(5)::after {
+  .body-home p:nth-child(2) a:nth-child(1)::after {
     content: "\00a0🐴";
     font-size: 88%;
     vertical-align: top;
   }
   
-  .about .efficiency::after {
+  .body-home .efficiency::after {
     content: "\00a0⚙️";
     font-size: 88%;
     vertical-align: top;
   }
   
-  .about .access::after {
+  .body-home .access::after {
     content: "\00a0🔓";
     font-size: 88%;
     vertical-align: top;
   }
   
-  .about .cook::after {
+  .body-home .cook::after {
     content: "\00a0🍝";
     font-size: 88%;
     vertical-align: top;
   }
   
-  .about .bread::after {
+  .body-home .bread::after {
     content: "\00a0🍞";
     font-size: 88%;
     vertical-align: top;
