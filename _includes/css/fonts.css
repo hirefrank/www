@@ -1,9 +1,9 @@
 @font-face {
-    font-family: 'Quicksand';
-    font-display: swap;
-    font-style: normal;
-    font-named-instance: 'Regular';
-    src: url('/assets/fonts/Quicksand-VariableFont_wght.ttf');
+  font-family: 'Quicksand';
+  font-display: swap;
+  font-style: normal;
+  font-named-instance: 'Regular';
+  src: url('/assets/fonts/Quicksand-VariableFont_wght.ttf');
 }
 
 @font-face {
@@ -16,13 +16,11 @@
 }
 
 :root {
-    --text-stack: Quicksand, Fallback, sans-serif;
-    --text-settings: 'kern' 1, 'liga' 1, 'case' 1, 'dlig' 1, 'ss03' 1;
-    --text-measure: 70ch;
-    --text-size: max(1.1em, 1.2vw);
-    --text-height: 1.7;
-    --text-size-sm: max(1em, 1.1vw);    
-    --text-size-lg: max(1.3em, 1.4vw);
-    --text-spacing: -0.011em;
-    --bold: 600;
+  --text-stack: Quicksand, Fallback, sans-serif;
+  --text-settings: 'kern' 1, 'liga' 1, 'case' 1, 'dlig' 1, 'ss03' 1;
+  --text-measure: 64ch;
+  --text-size: max(1.4em, 1.5vw);
+  --text-height: 1.8;
+  --text-spacing: -0.011em;
+  --bold: 600;
 }
