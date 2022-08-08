@@ -7,6 +7,14 @@
 }
 
 @font-face {
+  font-family: 'CrimsonProItalic';
+  font-weight: 400;
+  font-display: swap;
+  font-style: italic;
+  src: url('/assets/fonts/CrimsonPro-Italic-VariableFont_wght.ttf');
+}
+
+@font-face {
   font-family: 'Fallback';
   ascent-override: 100%;
   descent-override: 20%;
@@ -22,5 +30,18 @@
   --text-size: max(1.4em, 1.5vw);
   --text-height: 1.8;
   --text-spacing: -0.011em;
+
+  --text-header-stack: var(--text-stack);
+  --text-header-size: 130%;
+  --text-header-height: 1.545;
+  --text-header-spacing: normal;
+
+  --text-serif-stack: CrimsonProItalic, var(--text-stack);
+  --text-serif-size: 110%;
+  --text-serif-height: 1.545;
+  --text-serif-spacing: normal;
+
+  --text-footer-size: 70%;
+
   --bold: 600;
 }
