@@ -124,8 +124,8 @@ a {
 
 a:hover {
   color: var(--accent);
-  text-decoration-color: unset;
-  border-bottom: 1px dotted unset;
+  text-decoration-color: var(--accent);
+  border-bottom: 1px dotted var(--accent);
 }
 
 :is(h1, h2, h3) > a {
