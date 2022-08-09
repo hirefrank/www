@@ -53,7 +53,8 @@ body > footer {
   color: var(--on-canvas--dim);
 }
 
-body > footer a {
+body > footer a, 
+body > footer a:hover {
   text-decoration: none;
   border-bottom: none;
   font-weight: normal;
@@ -373,7 +374,13 @@ details * + * {
   vertical-align: top;
 }
   
-  
+iframe.video {
+	aspect-ratio: 16 / 9;
+	height: 100%;
+	width: 100%;
+}
+
+
 /*
  * Logo
  */
@@ -398,6 +405,10 @@ details * + * {
   text-decoration: none;
   border-bottom: none;
 }
+
+/*
+ * Logo
+ */
 
 .footer ul {
   list-style: none;

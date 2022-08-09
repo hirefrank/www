@@ -13,7 +13,7 @@ bodyClass: body-home
 
 <section>
   <h2>Projects</h2>
-  <nav>{%- for post in search.pages("project") | reverse -%}
-  <a href="{{post.data.url}}">{{ post.data.title }}</a>{%- if loop.index !== loop.length -%}<br />{%- endif -%}
-  {%- endfor -%}</nav>
+  <ul>{%- for post in search.pages("project") | reverse -%}
+  <li><a href="{{post.data.url}}">{{ post.data.title }}</a> - {{ post.data.summary }}</li>
+  {%- endfor -%}</ul>
 </section>
