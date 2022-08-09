@@ -14,7 +14,4 @@ site
   .copy("redirects", "_redirects")
   .copy("assets/fonts")
 
-site
-  .ignore("solved-by-flexbox-master")
-
 export default site;
