@@ -1,0 +1,21 @@
+{
+    # Your email for LetsEncrypt warnings/notices.
+    email fcharris@gmail.com 
+
+    # Global options block. Entirely optional, https is on by default
+    # Optional email key for lets encrypt
+    email your-mail@example.com 
+    # Optional staging lets encrypt for testing. Comment out for production.
+    acme_ca https://acme-staging-v02.api.letsencrypt.org/directory
+}
+
+localhost,
+www.example.com {
+    reverse_proxy ghost:2368 {
+        lb_try_duration 30s
+    }
+}
+
+example.com {
+    redir https://www.example.com{uri}
+}

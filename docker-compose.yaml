@@ -1,0 +1,41 @@
+version: '3.8'
+
+services:
+
+  caddy:
+    image: caddy:latest
+    container_name: caddy
+    depends_on:
+      - ghost
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile
+      - caddy-data:/data
+
+  ghost:
+    image: ghost:latest
+    container_name: ghost
+    restart: unless-stopped
+    environment:
+      database__client: mysql
+      database__connection__host: "${MYSQL_HOST}"
+      database__connection__database: "${MYSQL_DATABASE}"
+      database__connection__user: "${MYSQL_USER}"
+      database__connection__password: "${MYSQL_PASSWORD}"
+      database__connection__port: "${MYSQL_PORT}"
+      url: "${URL}"
+      mail__transport: "${MAIL_TRANSPORT}"
+      mail__options__host: "${MAIL_HOST}"
+      mail__options__port: "${MAIL_PORT}"
+      mail__options__secureConnection: "${MAIL_SECURE_CONNECTION}"
+      mail__options__auth__user: "${MAIL_USER}"
+      mail__options__auth__pass: "${MAIL_PASSWORD}"
+    volumes:
+      - ghost-data:/var/lib/ghost/content
+
+volumes: 
+  ghost-data:
+  caddy-data:
