@@ -1,2 +1,7 @@
 .env
 .DS_Store
+ghost-data/
+caddy-config/
+caddy-data/
+!.gitkeep
+

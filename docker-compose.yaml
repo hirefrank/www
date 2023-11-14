@@ -14,6 +14,7 @@ services:
     volumes:
       - ./Caddyfile:/etc/caddy/Caddyfile
       - ./caddy-data:/data
+      - ./caddy-config:/config
 
   ghost:
     image: ghost:latest
@@ -39,3 +40,4 @@ services:
 volumes: 
   ghost-data:
   caddy-data:
+  caddy-config:
