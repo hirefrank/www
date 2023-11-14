@@ -13,7 +13,7 @@ services:
       - "443:443"
     volumes:
       - ./Caddyfile:/etc/caddy/Caddyfile
-      - caddy-data:/data
+      - ./caddy-data:/data
 
   ghost:
     image: ghost:latest
@@ -34,7 +34,7 @@ services:
       mail__options__auth__user: "${MAIL_USER}"
       mail__options__auth__pass: "${MAIL_PASSWORD}"
     volumes:
-      - ghost-data:/var/lib/ghost/content
+      - ./ghost-data:/var/lib/ghost/content
 
 volumes: 
   ghost-data:
