@@ -1,6 +1,9 @@
 ---
 title: "Equinox Scheduler"
 summary: "Easily automate Equinox class reservations with Google Apps Script."
+date: 2018-09-01
+emoji: 🗓️
+
 ---
 
 #### Easily automate Equinox class reservations with Google Apps Script

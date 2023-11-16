@@ -12,8 +12,8 @@ bodyClass: body-home
 </section>
 
 <section>
-  <h2>Projects</h2>
+  <h2>Side Projects</h2>
   <ul>{%- for post in search.pages("project") | reverse -%}
-  <li><a href="{{post.data.url}}">{{ post.data.title }}</a> - {{ post.data.summary }}</li>
+  <li>{{post.data.emoji}} <a href="{{post.data.url}}">{{ post.data.title }}</a> - {{ post.data.summary }}</li>
   {%- endfor -%}</ul>
 </section>
