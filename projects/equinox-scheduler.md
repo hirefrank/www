@@ -1,12 +1,11 @@
 ---
 title: "Equinox Scheduler"
-summary: "Easily automate Equinox class reservations with Google Apps Script."
+summary: "Easilyautomate Equinox class reservations with Google Apps Script."
 date: 2018-09-01
 emoji: 🗓️
 
 ---
 
-#### Easily automate Equinox class reservations with Google Apps Script
 Back in 2019, I was an avid fan of Equinox's Precision Run Classes. The class is 45 minutes long and customizes the treadmill's speed, duration, incline, and recovery to your need (think: spin class but for runners). Since there was a limit on the number of treadmills per class, you had to reserve a spot in advance. Reservations open 26 hours before class time -- for early morning classes this means waking up far too early. 
 
 *This project:*
