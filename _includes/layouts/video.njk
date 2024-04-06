@@ -1,0 +1,16 @@
+---
+layout: layouts/base.njk
+bodyClass: body-video
+---
+
+<header>
+  <h1>{{ title }}</h1>
+  
+</header>
+
+<section>
+  <iframe class="video" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" src="//www.youtube.com/embed/{{ youtube_id }}?start={{ start }}" allowfullscreen></iframe>
+  <p>{{ artist }} &middot; {{ video }}</p>
+  {{ content | safe }}
+  <em>&mdash; {{ date }}</em>
+</section>

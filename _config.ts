@@ -1,17 +1,17 @@
 import lume from "lume/mod.ts";
-//import date from "lume/plugins/date.ts";
+import postcss from 'lume/plugins/postcss.ts'
+import date from "lume/plugins/date.ts";
 //import metas from "lume/plugins/metas.ts";
-//import sass from "lume/plugins/sass.ts";
 
-const site = lume({
-  src: "./src",
-});
+const site = lume()
 
-//site.use(date());
-//site.use(metas());
-//site.use(sass());
-
-site.copy("public", ".");
-site.copy("assets", ".");
+site
+  .use(postcss())
+  .use(date())
+  
+site
+  .copy("static", ".")
+  .copy("redirects", "_redirects")
+  .copy("assets/fonts")
 
 export default site;
