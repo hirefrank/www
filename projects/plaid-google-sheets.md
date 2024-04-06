@@ -1,6 +1,6 @@
 ---
 title: "Plaid + Google Sheets"
-summary: "Automates the process of fetching transaction data and maintaining a record of in a Google Sheet."
+summary: "Automates the process of fetching transaction data and maintaining a record in a Google Sheet."
 date: 2018-03-01
 emoji: 🏦
 
