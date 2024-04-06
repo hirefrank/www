@@ -417,3 +417,27 @@ iframe.video {
   content: none;
   padding: none;
 }
+
+/* side projects */
+
+section.side-projects {
+  gap: var(--sm);
+}
+
+.side-projects h2 {
+  font-weight: normal;
+  font-family: var(--text-serif-stack);
+  font-style: italic;
+  line-height: var(--text-serif-height);
+  letter-spacing: var(--text-serif-spacing);
+}
+
+.side-projects ul {
+  font-size: 90%;
+  margin: 0;
+  padding:0;
+
+}
+.side-projects li {
+  margin-bottom: var(--sm);
+}
