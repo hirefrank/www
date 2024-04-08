@@ -46,18 +46,12 @@ body > footer {
   grid-template-columns: var(--cols);
   gap: var(--gutter);
 
-  /*border-block-start: var(--border);*/
+  border-block-start: var(--border);
   padding-block-start: var(--gutter);
-
-  font-size: var(--text-footer-size);
-  color: var(--on-canvas--dim);
 }
 
-body > footer a, 
-body > footer a:hover {
+body > footer a {
   text-decoration: none;
-  border-bottom: none;
-  font-weight: normal;
 }
 
 body > footer :last-child {
@@ -70,10 +64,6 @@ header h1 + p {
 
 h1, h2, h3 {
   font-weight: var(--bold);
-  font-family: var(--text-header-stack);
-  font-size:   var(--text-header-size);
-  line-height: var(--text-header-height);
-  letter-spacing: var(--text-header-spacing);
 }
 
 h3 {
@@ -117,22 +107,18 @@ sup {
 
 a {
   color: var(--on-canvas--dim);
-  text-decoration: none;
+  text-decoration: underline;
   text-decoration-color: var(--on-canvas--mute);
-  border-bottom: 1px dotted var(--on-canvas--dim);
-  font-weight: var(--bold);
 }
 
 a:hover {
-  color: var(--accent);
-  text-decoration-color: var(--accent);
-  border-bottom: 1px dotted var(--accent);
+  color: unset;
+  text-decoration-color: unset;
 }
 
 :is(h1, h2, h3) > a {
   color: unset;
   text-decoration: none;
-  border-bottom: none;
 }
 
 blockquote {
@@ -168,9 +154,15 @@ dl dd::before {
   content: '↳ ';
 }
 
-
 ul {
-  list-style: none;
+  list-style: disc;
+}
+
+ul ::marker {
+  content: '• ';
+  color: var(--on-canvas--mute);
+  padding-inline-start: calc(var(--gap) / 2);
+  margin-inline-start: calc(var(--gap) * -0.5);
 }
 
 ol {
@@ -192,7 +184,6 @@ ol ::marker {
 ul li,
 dl dd {
   margin-block-start: 0;
-  margin-block-end: var(--gap);
 }
 
 hr {
@@ -290,154 +281,23 @@ details * + * {
 }
 
 @media not screen and (hover: hover) {
+
   abbr[title] {
-    text-decoration: none;
+      text-decoration: none;
   }
+
   abbr[title]:after {
-    content: ' (' attr(title) ')';
+      content: ' (' attr(title) ')';
   }
+
 }
 
 @media screen and (hover: hover) {
+
   abbr[title] {
-    text-decoration: underline dotted;
-    text-decoration-color: var(--on-canvas--mute);
-    cursor: help;
+      text-decoration: underline dotted;
+      text-decoration-color: var(--on-canvas--mute);
+      cursor: help;
   }
-}
 
-.body-home h1::after {
-    content: "\00a0🙋🏼‍♂️";
-    font-size: 88%;
-    vertical-align: top;
-  }
-  
-.body-home p:nth-child(1) a:nth-child(1)::after {
-  content: "\00a0🙌";
-  font-size: 88%;
-  vertical-align: top;
-}
-
-.body-home p:nth-child(1) a:nth-child(2)::after {
-  content: "\00a0🎨";
-  font-size: 88%;
-  vertical-align: top;
-}
-
-.body-home p:nth-child(1) a:nth-child(3)::after {
-  content: "\00a0💸";
-  font-size: 88%;
-  vertical-align: top;
-}
-
-.body-home p:nth-child(1) a:nth-child(4)::after {
-  content: "\00a0🧶";
-  font-size: 88%;
-  vertical-align: top;
-}
-
-.body-home p:last-child {
-  margin-block-end: 3em;
-}
-
-.body-home .efficiency::after {
-  content: "\00a0⚙️";
-  font-size: 88%;
-  vertical-align: top;
-}
-
-.body-home .access::after {
-  content: "\00a0🔓";
-  font-size: 88%;
-  vertical-align: top;
-}
-
-.body-home .cook::after {
-  content: "\00a0🍝";
-  font-size: 88%;
-  vertical-align: top;
-}
-
-.body-home .bread::after {
-  content: "\00a0🍞";
-  font-size: 88%;
-  vertical-align: top;
-}
-  
-iframe.video {
-	aspect-ratio: 16 / 9;
-	height: 100%;
-	width: 100%;
-}
-
-
-/*
- * Logo
- */
-
-.mark {
-  width: 135px;
-  background-color: #cb503d;
-  border-top: 17px solid #b85544;
-  text-align: center;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  margin: auto;
-}
-
-.mark, .mark a, .mark a:hover {
-  font-size: 24px;
-  padding: 4px 0 15px 0;
-  color: #fff;
-  font-weight: 100;
-  text-decoration: none;
-  border-bottom: none;
-}
-
-/*
- * Logo
- */
-
-.footer ul {
-  list-style: none;
-}
-
-.footer li {
-  float: left;
-}
-
-.footer li::before {
-  content: '\2022';
-  padding: 0 0.5em;
-}
-
-.footer li:first-of-type::before {
-  content: none;
-  padding: none;
-}
-
-/* side projects */
-
-section.side-projects {
-  gap: var(--sm);
-}
-
-.side-projects h2 {
-  font-weight: normal;
-  font-family: var(--text-serif-stack);
-  font-style: italic;
-  line-height: var(--text-serif-height);
-  letter-spacing: var(--text-serif-spacing);
-}
-
-.side-projects ul {
-  font-size: 90%;
-  margin: 0;
-  padding:0;
-
-}
-.side-projects li {
-  margin-bottom: var(--sm);
 }
