@@ -2,19 +2,19 @@
 set -e
 
 # Set the directory of the database in a variable
-DB_PATH=/var/lib/ghost/content/data/ghost.db
+# DB_PATH=/var/lib/ghost/content/data/ghost.db
 
-# Restore the database if it does not already exist.
-if [ -f $DB_PATH ]; then
-	echo "Database already exists, skipping restore"
-else
-	echo "No database found, restoring from replica if exists"
-    mkdir -p /var/lib/ghost/content/data/
-    # mkdir -p /var/lib/ghost/content/themes/
-    mkdir -p /var/lib/ghost/content/logs/
-	litestream restore -if-replica-exists $DB_PATH
-    sleep 30s # try to give it time to sync db
-fi
+# # Restore the database if it does not already exist.
+# if [ -f $DB_PATH ]; then
+# 	echo "Database already exists, skipping restore"
+# else
+# 	echo "No database found, restoring from replica if exists"
+#     mkdir -p /var/lib/ghost/content/data/
+#     # mkdir -p /var/lib/ghost/content/themes/
+#     mkdir -p /var/lib/ghost/content/logs/
+# 	litestream restore -if-replica-exists $DB_PATH
+#     sleep 30s # try to give it time to sync db
+# fi
 
 # Run litestream with your app as the subprocess.
 # exec litestream replicate -exec "node current/index.js"
