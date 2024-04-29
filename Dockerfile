@@ -23,3 +23,5 @@ RUN set -ex; \
 # Move the run script and litestream config to the runtime image
 COPY ./entrypoint.sh entrypoint.sh
 RUN chmod +x entrypoint.sh
+
+ENTRYPOINT [ "./entrypoint.sh" ]
