@@ -1,8 +1,0 @@
-_site
-.env*
-.DS_Store
-
-# only here for cloudflare wrangler
-node_modules
-package-lock.json
-package.json
