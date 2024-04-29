@@ -10,11 +10,13 @@ if [ -f $DB_PATH ]; then
 else
 	echo "No database found, restoring from replica if exists"
     mkdir -p /var/lib/ghost/content/data/
-    mkdir -p /var/lib/ghost/content/themes/
+    # mkdir -p /var/lib/ghost/content/themes/
     mkdir -p /var/lib/ghost/content/logs/
 	litestream restore -if-replica-exists $DB_PATH
     sleep 30s # try to give it time to sync db
 fi
 
 # Run litestream with your app as the subprocess.
-exec litestream replicate -exec "node current/index.js"
+# exec litestream replicate -exec "node current/index.js"
+
+node current/index.js
