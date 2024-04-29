@@ -5,6 +5,10 @@ RUN su-exec node yarn add ghost-storage-cloudinary
 FROM ghost:5-alpine
 COPY --chown=node:node --from=cloudinary $GHOST_INSTALL/node_modules $GHOST_INSTALL/node_modules
 COPY --chown=node:node --from=cloudinary $GHOST_INSTALL/node_modules/ghost-storage-cloudinary $GHOST_INSTALL/content/adapters/storage/ghost-storage-cloudinary
+
+COPY --from=litestream/litestream:latest /usr/local/bin/litestream /usr/local/bin/litestream
+COPY ./litestream.yml /etc/litestream.yml
+
 # Here, we use the Ghost CLI to set some pre-defined values.
 RUN set -ex; \
     su-exec node ghost config storage.active ghost-storage-cloudinary; \
@@ -16,4 +20,6 @@ RUN set -ex; \
     su-exec node ghost config mail.transport "SMTP"; \
     su-exec node ghost config mail.options.service "Mailgun";
 
-    
+# Move the run script and litestream config to the runtime image
+COPY ./entrypoint.sh entrypoint.sh
+RUN chmod +x entrypoint.sh
