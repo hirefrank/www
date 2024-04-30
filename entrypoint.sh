@@ -2,7 +2,7 @@
 set -e
 
 # Set the directory of the database in a variable
-DB_PATH=/var/lib/ghost/content/data/ghost.db
+DB_PATH=/var/lib/ghost/data/ghost.db
 
 # Restore the database if it does not already exist.
 if [ -f $DB_PATH ]; then
