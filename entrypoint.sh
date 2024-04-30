@@ -1,6 +1,9 @@
 #!/bin/bash
 set -e
 
+# Start cron
+crond -f
+
 # Set the directory of the database in a variable
 DB_PATH=/var/lib/ghost/content/data/ghost.db
 

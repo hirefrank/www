@@ -7,7 +7,7 @@ ARG LITESTREAM_BUCKET
 
 RUN apk add --update --quiet --no-cache rclone
 
-RUN echo '*/15 * * * * rclone sync /var/lib/ghost/content cloudflare:content/ --exclude ghost.db >/proc/1/fd/1 2>&1' > /etc/crontabs/root
+RUN echo '*/15 * * * * rclone sync -L /var/lib/ghost/content cloudflare:content/ --exclude=data/** >/proc/1/fd/1 2>&1' > /etc/crontabs/root
 
 RUN mkdir -p /root/.config/rclone && \
     echo "[cloudflare]" > /root/.config/rclone/rclone.conf && \
@@ -17,7 +17,7 @@ RUN mkdir -p /root/.config/rclone && \
     echo "access_key_id = ${LITESTREAM_ACCESS_KEY_ID}" >> /root/.config/rclone/rclone.conf && \
     echo "secret_access_key = ${LITESTREAM_SECRET_ACCESS_KEY}" >> /root/.config/rclone/rclone.conf && \
     echo "endpoint = ${LITESTREAM_ENDPOINT}/${LITESTREAM_BUCKET}" >> /root/.config/rclone/rclone.conf
-    
+
 COPY --from=litestream/litestream:latest /usr/local/bin/litestream /usr/local/bin/litestream
 
 COPY ./litestream.yml /etc/litestream.yml
