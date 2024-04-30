@@ -1,4 +1,4 @@
-FROM ghost:5-alpine
+FROM ghost:5.82-alpine
 
 RUN apk add --update --quiet --no-cache 
 #rclone
