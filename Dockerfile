@@ -14,9 +14,9 @@ RUN apk add --update --quiet --no-cache
 #     echo "secret_access_key = ${LITESTREAM_SECRET_ACCESS_KEY}" >> /root/.config/rclone/rclone.conf && \
 #     echo "endpoint = ${LITESTREAM_ENDPOINT}/${LITESTREAM_BUCKET}" >> /root/.config/rclone/rclone.conf
 
-COPY --from=litestream/litestream:latest /usr/local/bin/litestream /usr/local/bin/litestream
-COPY ./litestream.yml /etc/litestream.yml
-COPY ./entrypoint.sh entrypoint.sh
-RUN chmod +x entrypoint.sh
+# COPY --from=litestream/litestream:latest /usr/local/bin/litestream /usr/local/bin/litestream
+# COPY ./litestream.yml /etc/litestream.yml
+# COPY ./entrypoint.sh entrypoint.sh
+# RUN chmod +x entrypoint.sh
 
-ENTRYPOINT [ "./entrypoint.sh" ]
+# ENTRYPOINT [ "./entrypoint.sh" ]
