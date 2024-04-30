@@ -5,7 +5,7 @@ RUN apk add --update --quiet --no-cache supervisor rclone
 RUN mkdir -p /var/log/supervisor
 COPY supervisord.conf /etc/supervisord.conf
 
-RUN echo '*/15 * * * * rclone sync -L /var/lib/ghost/content cloudflare:content/ --exclude=data/** >/proc/1/fd/1 2>&1' > /etc/crontabs/root
+# RUN echo '*/15 * * * * rclone sync -L /var/lib/ghost/content cloudflare:content/ --exclude=data/** >/proc/1/fd/1 2>&1' > /etc/crontabs/root
 
 RUN mkdir -p /root/.config/rclone && \
     echo "[cloudflare]" > /root/.config/rclone/rclone.conf && \
@@ -21,4 +21,4 @@ COPY ./litestream.yml /etc/litestream.yml
 COPY ./entrypoint.sh entrypoint.sh
 RUN chmod +x entrypoint.sh
 
-ENTRYPOINT ["/usr/bin/supervisord", "-c", "/etc/supervisord.conf"]
+# ENTRYPOINT ["/usr/bin/supervisord", "-c", "/etc/supervisord.conf"]
