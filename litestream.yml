@@ -1,6 +1,0 @@
-dbs:
-  - path: /var/lib/ghost/content/data/ghost.db
-    replicas:
-      - type: s3
-        endpoint: ${LITESTREAM_ENDPOINT}
-        bucket: ${LITESTREAM_BUCKET}
