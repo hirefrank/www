@@ -1,0 +1,39 @@
+layout: layouts/articles.tsx
+title: Articles
+url: /articles/
+indexable: true
+
+menu:
+  title:
+  visible: true
+  order: 2
+
+header:
+  title: Writing on software design, company building, and the aerospace industry.
+  description: |
+    All of my long-form thoughts on programming, leadership, product design, and more, collected in chronological order.
+
+articles:
+  - title: Crafting a design system for a multiplanetary future
+    description: Most companies try to stay ahead of the curve when it comes to visual design, but for Planetaria we needed to create a
+      brand that would still inspire us 100 years from now when humanity has spcross our entire
+      solar system.
+    url: /article/crafting-a-design-system-for-a-multiplanetary-future
+    date: 2022-09-05
+
+  - title: 'Introducing Animaginary: High performance web animations'
+    description: When you’re building a website for a company as ambitious as Planetaria, you need to make an impression. I wanted
+      people to visit our website and see animations that looked more realistic than reality
+      itself.
+    url: /article/introducing-animaginary
+    date: 2022-09-02
+
+  - title: Rewriting the cosmOS kernel in Rust
+    description: When we released the first version of cosmOS last year, it was written in Go. Go is a wonderful programming language,
+      but it’s been a while since I’ve seen an article on the front page of Hacker News about
+      rewriting some important tool in Go and I see articles on there about rewriting things in Rust
+      every single week.
+    url: /article/rewriting-the-cosmos-kernel-in-rust
+    date: 2022-07-14
+
+

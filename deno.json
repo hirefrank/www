@@ -1,0 +1,32 @@
+{
+  "importMap": "import_map.json",
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "jsxImportSource": "npm:preact"
+  },
+  "tasks": {
+    "clean": "rm -rf ./_site",
+    "build": "BUILD_MODE=\"prod\" deno task lume",
+    "serve": "BUILD_MODE=\"dev\" deno task lume -s",
+    "lume": "echo \"import 'lume/cli.ts'\" | deno run --unstable -A -"
+  },
+  "lint": {
+    "exclude": [
+      "./_site"
+    ],
+    "rules": {
+      "tags": [
+        "recommended"
+      ],
+      "exclude": [
+        "no-explicit-any",
+        "no-unused-vars"
+      ]
+    }
+  },
+  "fmt": {
+    "exclude": [
+      "./_site"
+    ]
+  }
+}

@@ -1,0 +1,13 @@
+layout: layouts/uses.tsx
+title: Uses
+url: /uses/
+indexable: true
+
+menu:
+  title:
+  visible: true
+  order: 5
+
+header:
+  title: Software I use, gadgets I love, and other things I recommend.
+  description: I get asked a lot about the things I use to build software, stay productive, or buy to fool myself into thinking I’m being productive when I’m really just procrastinating. Here’s a big list of all of my favorite stuff.

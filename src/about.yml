@@ -1,0 +1,13 @@
+layout: layouts/about.tsx
+title: About
+description: Test
+url: /about/
+indexable: true
+
+menu:
+  title: About
+  visible: true
+  order: 1
+
+header:
+  title: I’m Spencer Sharp. I live in New York City, where I design the future.

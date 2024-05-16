@@ -1,0 +1,11 @@
+@import 'css/dark-mode.css';
+@import 'css/prism.css';
+@import 'css/prose.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.active-nav {
+  color: rgb(45 212 191 / var(--tw-text-opacity));
+}

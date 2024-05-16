@@ -1,0 +1,10 @@
+{
+  "name": "Spencer Sharp",
+  "short_name": "Spencer",
+  "description": "I am a passionate web developer who likes to experiment with different stacks.",
+  "lang": "en",
+  "id": "/",
+  "start_url": "/",
+  "orientation": "natural",
+  "display": "standalone"
+}

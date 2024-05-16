@@ -1,0 +1,53 @@
+name: Deploy Site
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  test:
+    name: Run tests
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      
+      - name: Setup Deno environment
+        uses: denoland/setup-deno@v1
+        with:
+          deno-version: v1.x
+
+      - name: Verify formatting
+        run: deno fmt -c deno.json --check
+
+      - name: Run linter
+        run: deno lint -c deno.json
+
+  build:
+    needs: test
+
+    name: Build site
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      
+      - name: Setup Deno environment
+        uses: denoland/setup-deno@v1
+        with:
+          deno-version: v1.x
+
+      - name: Run lume build
+        run: deno task build
+
+      - name: Deploy to Server
+        uses: burnett01/rsync-deployments@6.0.0
+        with:
+          switches: -avzr --delete
+          path: "./_site/*"
+          remote_path: ${{ secrets.REMOTE_PATH }}
+          remote_host: ${{ secrets.FTP_SERVER }}
+          remote_user: ${{ secrets.FTP_USERNAME }}
+          remote_key: ${{ secrets.SSH_PRIVATE_KEY }}
