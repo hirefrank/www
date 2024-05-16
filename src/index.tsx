@@ -33,6 +33,16 @@ export default (
       id: 3,
       src: urlFilter!("/images/photos/image-3.jpg"),
       className: 'rotate-2'
+    },
+    {
+      id: 3,
+      src: urlFilter!("/images/photos/image-4.jpg"),
+      className: 'rotate-2'
+    },
+    {
+      id: 3,
+      src: urlFilter!("/images/photos/image-5.jpg"),
+      className: '-rotate-2'
     }
   ]
   const workList = [
@@ -107,7 +117,7 @@ export default (
   return (
     <comp.layout.container header={header} headerChild={socialMedias()}>
 
-      <div className="-my-4 flex justify-center overflow-hidden gap-5 py-4 sm:gap-8">
+      <div className="-my-4 flex justify-center 2xl:overflow-visible overflow-auto gap-5 py-4 sm:gap-8">
         {
           images.map(image =>
             <div
