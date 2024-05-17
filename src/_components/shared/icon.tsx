@@ -1,18 +1,20 @@
 type IconProps = {
   className: string;
-  color: string;
-  icon: string;
+  p1ClassName: string;
+  p2ClassName: string;
+  fill: string;
+  path: string;
+  path2: string;
+  viewBox: string;
   size: number;
 };
 
-export default ({ className, p1ClassName, p2ClassName, color, path, path2, size = 16, viewBox="0 0 16 16" }: IconProps) => {
+export default ({ className, p1ClassName, p2ClassName, fill, path, path2, size = 16, viewBox="0 0 16 16" }: IconProps) => {
   return (
     <svg
       aria-hidden="true"
       role="img"
-      fill={color
-        ? color.startsWith("#") ? color : `var(--${color})`
-        : "currentColor"}
+      fill={fill ? fill : "none"}
       fill-rule="evenodd"
       stroke-width="1.5"
       stroke-linecap="round"

@@ -72,6 +72,7 @@ export default (
                 <comp.shared.icon
                   path={icons.link}
                   size={20}
+                  fill='currentColor'
                   className='flex-none'
                   viewBox="0 0 24 24"
                 />
