@@ -9,3 +9,10 @@
 .active-nav {
   color: rgb(45 212 191 / var(--tw-text-opacity));
 }
+
+:root[data-theme='light'] {
+  color-scheme: light;
+}
+:root[data-theme='dark'] {
+  color-scheme: dark;
+}

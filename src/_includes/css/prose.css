@@ -1,12 +1,22 @@
-.prose {
+
+:root[data-theme="dark"] {
   --tw-prose-body: #a1a1aa;
+  --tw-prose-counters: #e4e4e7;
   --tw-prose-headings: #e4e4e7;
+}
+
+:root[data-theme="light"] {
+  --tw-prose-body: #52525b;
+  --tw-prose-counters: #18181b;
+  --tw-prose-headings: #18181b;
+}
+
+.prose {
   --tw-prose-links: #14b8a6;
   --tw-prose-links-hover: #0d9488;
   --tw-prose-underline: rgb(20 184 166 / 0.2);
   --tw-prose-underline-hover: #14b8a6;
   --tw-prose-bold: #18181b;
-  --tw-prose-counters: #e4e4e7;
   --tw-prose-bullets: #18181b;
   --tw-prose-hr: #f4f4f5;
   --tw-prose-quote-borders: #e4e4e7;

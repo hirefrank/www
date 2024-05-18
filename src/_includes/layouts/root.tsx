@@ -12,6 +12,7 @@ export default (
       className="h-full antialiased"
     >
 
+
     <head>
       <meta charSet="utf-8"/>
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -19,6 +20,10 @@ export default (
 
       <link rel="stylesheet" nonce="CSP_NONCE" href={urlFilter!(`/styles.css`)}/>
       <script type="module" nonce="CSP_NONCE" src={urlFilter!(`/scripts/main.js`)} inline/>
+
+      <meta name="supported-color-schemes" content="light dark"/>
+      <meta name="theme-color" content="#fff" media="(prefers-color-scheme: light)"/>
+        <meta name="theme-color" content="#121212" media="(prefers-color-scheme: dark)"/>
 
       <meta name="title" content={`${title} - ${site.title}`}/>
       <meta name="description" content={excerpt || site.description}/>
@@ -93,11 +98,11 @@ export default (
 
       <link rel="manifest" href={urlFilter!("/manifest.json")}/>
     </head>
-    <body className="flex h-full bg-zinc-50 dark:bg-black">
+    <body className="flex h-full bg-zinc-50 dark-bg-black">
     <div className="flex w-full">
       <div className="fixed inset-0 flex justify-center sm:px-8">
         <div className="flex w-full max-w-7xl lg:px-8">
-          <div className="w-full bg-white ring-1 ring-zinc-100 dark:bg-zinc-900 dark:ring-zinc-300/20"></div>
+        <div className="w-full bg-white ring-1 ring-zinc-100 dark-bg-zinc-900 dark-ring-zinc-300/20"></div>
         </div>
       </div>
 
@@ -118,6 +123,7 @@ export default (
       </div>
     </div>
     </body>
+
 
     </html>
   );

@@ -11,7 +11,7 @@ export default (data: PageData) => {
         <div className="relative px-4 sm:px-8 lg:px-12">
           <div className="mx-auto max-w-2xl lg:max-w-5xl">
             <h1
-              className="text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100">
+              className="text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl dark-text-zinc-100">
               Sorry, the page you are looking for could not be found.
             </h1>
           </div>

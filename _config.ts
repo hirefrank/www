@@ -1,4 +1,3 @@
-
 import lume from "lume/mod.ts";
 import date from "lume/plugins/date.ts";
 import slugify_urls from "lume/plugins/slugify_urls.ts";
@@ -50,6 +49,7 @@ site
   .use(inline())
   .use(tailwindcss({
     extensions: [".html", ".jsx"],
+    darkMode: 'selector'
   }))
   .use(postcss())
   .use(sitemap({
