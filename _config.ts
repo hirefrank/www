@@ -48,8 +48,7 @@ site
   .use(terser())
   .use(inline())
   .use(tailwindcss({
-    extensions: [".html", ".jsx"],
-    darkMode: 'selector'
+    extensions: [".html", ".jsx"]
   }))
   .use(postcss())
   .use(sitemap({

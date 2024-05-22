@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if ("boolean" === typeof targetTheme) {
       targetTheme = targetTheme ? "dark" : "light";
     }
-    console.log(targetTheme)
+
     root.setAttribute("data-theme", targetTheme);
     localStorage.setItem("theme", targetTheme);
   };
