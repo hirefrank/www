@@ -31,7 +31,9 @@ export default (
                   {header.title}
                 </h1>
                 <div className="mt-6 space-y-7 text-base text-zinc-600 dark-text-zinc-400">
-                  <p>
+                
+                {/* Frank is an accomplished leader with over 20 years of working in software development. He began his career in engineering before joining Google as a UX Designer working on search experiences. He designed the original set of transit icons on Google Maps — which, to date, might be the only thing his family understands about his career. 😉 Later, he joined Etsy pre-IPO and helped build out their search and discovery experience and a new sustainable, high-margin revenue stream in the form if search-based advertising for sellers. Since then, he’s led product teams at Betterment (fintech), Casper (direct-to-consumer), and InVision (SaaS). Currently, he’s the VP of Product for the Slack Platform. Frank resides in Brooklyn, NY, with his wife, two small daughters, and their not-always-helpful truffle dog, Sadie. */}
+                <p>
                     I’ve loved making things for
                     as long as I can remember, and wrote my first program when I was 6 years old, just two weeks after
                     my
