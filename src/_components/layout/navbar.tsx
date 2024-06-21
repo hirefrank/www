@@ -1,10 +1,10 @@
-import type {Page, PageData, PageHelpers} from "#types";
+import type {PageData, PageHelpers} from "#types";
 
 export default (
-  {activeUrl, comp, icons, search}: PageData,
+  {activeUrl, comp, icons, search}: Lume.Data & PageData,
   {urlFilter}: PageHelpers,
 ) => {
-  const items = search?.pages("menu.visible=true", "menu.order") as Page[];
+  const items = search?.pages("menu.visible=true", "menu.order");
 
   return (
     <>
@@ -127,7 +127,7 @@ export default (
           <nav className="mt-6">
             <ul
               className="-my-2 divide-y divide-zinc-100 text-base text-zinc-800 dark-divide-zinc-100/5 dark-text-zinc-300">
-              {items.map(({data}: { data }) => (
+              {items.map((data) => (
                 <li>
                   <comp.layout.link
                     className="block py-2"

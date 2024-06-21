@@ -12,7 +12,7 @@ const header = {
 }
 
 export default (
-  params: PageData,
+  params: Lume.Data & PageData,
   { urlFilter }: PageHelpers,
 ) => {
   const {comp, icons, search } = params
@@ -146,7 +146,7 @@ export default (
               <div className="mx-auto grid max-w-xl grid-cols-1 gap-y-20 lg:max-w-none lg:grid-cols-2">
                 <div className="flex flex-col gap-16">
                   {
-                    articles.map(({data}) => {
+                    articles.map((data) => {
                       return <article className="group relative flex flex-col items-start">
                         <h2 className="text-base font-semibold tracking-tight text-zinc-800 dark-text-zinc-100">
                           <div

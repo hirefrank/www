@@ -1,12 +1,10 @@
-import type { Page as BasePage, PageData as BasePageData } from "lume/core.ts";
 import type { Children } from "lume/plugins/jsx_preact.ts";
 import type SiteMeta from "../_data/site.ts";
 
 export type { PaginateResult } from "lume/plugins/paginate.ts";
-export type { PageHelpers } from "lume/core.ts";
 export type { Children };
 
-export interface PageData extends BasePageData {
+export interface PageData {
   /** The page description */
   description?: string;
 
@@ -51,17 +49,9 @@ export interface PageData extends BasePageData {
 
   /** Cache busting plugin */
   cacheBusting: string;
-
-  /** Overwrite Page interface */
-  page: Page;
 }
 
-export interface Page extends BasePage {
-  /** Overwrite PageData interface */
-  data: PageData;
-}
-
-export interface AboutData extends PageData {
+export interface AboutData extends Lume.Data {
   header: {
     title: string;
     description: string;
@@ -89,4 +79,10 @@ export interface AboutData extends PageData {
       }>;
     }>;
   };
+
+  comp: any;
+}
+
+export interface PageHelpers {
+  urlFilter: Lume.Helpers["url"];
 }
