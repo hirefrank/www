@@ -79,8 +79,6 @@ export interface AboutData extends Lume.Data {
       }>;
     }>;
   };
-
-  comp: any;
 }
 
 export interface PageHelpers {
