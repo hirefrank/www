@@ -1,4 +1,3 @@
-import {formatDate} from "#utils";
 import type {PageData} from "#types";
 
 export const layout = "layouts/root.tsx";
@@ -21,7 +20,7 @@ export default (
             <div className="xl:relative">
               <comp.cards.intro intro={header}/>
 
-              {headerChild}
+              {headerChild}s
 
               <div className="mt-16 sm:mt-20">
                 {children}

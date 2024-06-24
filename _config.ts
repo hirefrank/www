@@ -15,8 +15,7 @@ import rehypePlugins from "#plugins/unified/rehype/mod.ts";
 const site = lume({
   src: "./src",
   server: {
-    page404: "/404/",
-    port: 3005
+    page404: "/404/"
   },
 }, {
   url: {

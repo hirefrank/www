@@ -28,7 +28,7 @@ export default ({comp, site}: PageData, {urlFilter}: PageHelpers) => {
                     className="transition hover:text-teal-500 dark-hover:text-teal-400" href="/uses">Uses</a>
                   </div>
                   <p className="text-sm text-zinc-400 dark-text-zinc-500">
-                    © 2024 Spencer Sharp. All
+                    © {new Date().getFullYear()} Frank Harris. All
                     rights reserved.
                   </p>
                 </div>
