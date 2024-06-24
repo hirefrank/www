@@ -1,8 +1,6 @@
 {
   "editor.insertSpaces": true,
   "editor.tabSize": 2,
-  "deno.enable": true,
-  "deno.importMap": "./import_map.json",
   "emmet.includeLanguages": {
     "postcss": "css"
   }
