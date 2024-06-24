@@ -1,0 +1,44 @@
+{
+  "editor.insertSpaces": true,
+  "editor.formatOnSave": true,
+
+  "editor.tabSize": 2,
+  "deno.enable": true,
+  "deno.lint": true,
+  "editor.defaultFormatter": "denoland.vscode-deno",
+  "deno.cacheOnSave": true,
+  "deno.suggest.imports.hosts": {
+      "https://deno.land": true
+  },
+  "deno.unstable": true,
+  "deno.enablePaths": [
+    "./src",
+    "./routes",
+    "./components",
+    "./islands",
+    "deno.json",
+    "dev.ts",
+    "fresh.config.ts",
+    "fresh.gen.ts",
+    "main.ts",
+    ],
+  "[typescript]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "denoland.vscode-deno"
+  },
+  "[typescriptreact]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "denoland.vscode-deno"
+  },
+  "[javascriptreact]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "denoland.vscode-deno"
+  },
+  "[javascript]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "denoland.vscode-deno"
+  },
+  "css.customData": [
+    ".vscode/tailwind.json"
+  ],
+}
