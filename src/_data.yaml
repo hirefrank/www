@@ -48,7 +48,6 @@ plans:
   - name: Individual Contributor
     price: $300
     unit: /hr
-    description: Perfect for those looking to enhance their skills.
     features:
       - Feedback on product plans
       - Stakeholder management
@@ -57,7 +56,6 @@ plans:
   - name: Manager & Leader
     price: $500
     unit: /hr
-    description: Ideal for experienced leaders looking to scale their impact and navigate complex challenges.
     features:
       - Leading and scaling teams
       - Guidance on product strategy

@@ -33,6 +33,10 @@ server.use(redirects({
     "/calp": {
       "to": "/cal",
       "code": 302
+    },
+    "/mail-hf": {
+      "to": "mailto:frank@hirefrank.com?subject=Hi!",
+      "code": 302
     }
   },
   strict: false,
