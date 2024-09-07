@@ -1,0 +1,12 @@
+---
+layout: base.vto
+---
+
+<section class="side-projects">
+  <h2 class="font-serif italic text-[130%] leading-[1.545] mb-3">Side Projects</h2>
+  <ul class="text-[90%] space-y-3">
+    {{ for post of search.pages("project").reverse() }}
+      <li>{{ post.emoji }} <a href="{{ post.url }}" class="text-on-canvas-dim border-b border-dotted border-on-canvas-dim font-semibold hover:text-accent hover:border-accent">{{ post.title }}</a> - {{ post.summary }}</li>
+    {{ /for }}
+  </ul>
+</section>

@@ -2,8 +2,20 @@
   "editor.insertSpaces": true,
   "editor.tabSize": 2,
   "deno.enable": true,
-  "deno.importMap": "./import_map.json",
-  "emmet.includeLanguages": {
-    "postcss": "css"
-  }
+  "deno.lint": true,
+  "deno.unstable": true,
+  "deno.suggest.imports.hosts": {
+    "https://deno.land": true
+  },
+  "files.associations": {
+    "*.css": "tailwindcss"
+  },
+  "editor.quickSuggestions": {
+    "strings": true
+  },
+  "tailwindCSS.includeLanguages": {
+    "html": "html",
+    "javascript": "javascript",
+    "css": "css"
+  },
 }

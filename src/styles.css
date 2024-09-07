@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --hue: 26;
+    --canvas: hsl(var(--hue) 85% 95%);
+    --on-canvas: hsl(var(--hue) 10% 10%);
+    --on-canvas--dim: hsl(var(--hue) 20% 35%);
+    --on-canvas--mute: hsl(var(--hue) 10% 90%);
+    --accent: hsl(8, 58%, 52%);
+  }
+}
+
+@layer components {
+  .simple {
+    @apply my-4;
+
+    h1 {
+      @apply font-serif italic text-[150%] leading-[1.545] my-6;
+    }
+
+    section {
+      p, ul {
+        @apply mb-4 text-[90%];
+      }
+
+      ul {
+        @apply list-disc pl-8 mb-6;
+      }
+    }
+  }
+}
+
+@font-face {
+  font-family: 'Quicksand';
+  font-display: swap;
+  font-style: normal;
+  src: url('/fonts/Quicksand-VariableFont_wght.ttf');
+}
+
+@font-face {
+  font-family: 'CrimsonProItalic';
+  font-weight: 400;
+  font-display: swap;
+  font-style: italic;
+  src: url('/fonts/CrimsonPro-Italic-VariableFont_wght.ttf');
+}
