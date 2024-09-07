@@ -7,7 +7,8 @@
     "lume": "echo \"import 'lume/cli.ts'\" | deno run -A -",
     "build": "deno task lume",
     "serve": "deno task lume -s",
-    "serve-prod": "deno run -A serve.ts"
+    "serve-prod": "deno run -A serve.ts",
+    "medium-to-md": "deno run -A ./cli/medium-to-markdown.ts"
   },
   "compilerOptions": {
     "types": [

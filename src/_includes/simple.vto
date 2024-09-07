@@ -2,9 +2,12 @@
 layout: base.vto
 ---
 
-<div class="simple">
-  <h1>{{ title }}</h1>
-  <section>
-    {{ content }}
-  </section>
-</div>
+<h1>{{ title }}</h1>
+{{ if tags && tags.includes("video") }}
+  <iframe class="video" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" src="//www.youtube.com/embed/{{ youtube_id }}?start={{ start }}" allowfullscreen></iframe>
+  <p>{{ artist }} &middot; {{ video }}</p>
+  {{ content }}
+  <em>&mdash; {{ date }}</em>
+{{ else }}
+  {{ content }}
+{{ /if }}

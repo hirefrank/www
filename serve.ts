@@ -17,22 +17,21 @@ server.use(redirects({
     "/15/06/cooke-blowin-in-the-wind/": "/videos/cooke-blowin-in-the-wind/",
     "/14/09/apple-in-your-mouth/": "/videos/apple-in-your-mouth/",
     "/14/09/long-shadows/": "/videos/long-shadows/",
-    "/tag/summer": "/",
-    "/tag/video": "/",
-    "/tag/twitter": "/",
-    "/tag/movies": "/",
-    "/tag/music": "/",
-    "/tag/nyc": "/",
-    "/feeds/rss.xml": "/",
-    "/tags": "/",
-    "/archives": "/",
-    "/sitemap.xml": "/",
+    "/tag/summer": "/writings",
+    "/tag/video": "/writings",
+    "/tag/twitter": "/writings",
+    "/tag/movies": "/writings",
+    "/tag/music": "/writings",
+    "/tag/nyc": "/writings",
+    "/feeds/rss.xml": "/writings",
+    "/tags": "/writings",
+    "/archives": "/writings",
     "/cal": {
-      "to": "https://cal.com/hirefrank",
+      "to": "https://cal.com/hirefrank/catchup",
       "code": 302
     },
     "/calp": {
-      "to": "https://cal.com/hirefrank",
+      "to": "/cal",
       "code": 302
     }
   },

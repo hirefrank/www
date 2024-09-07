@@ -1,0 +1,6 @@
+<h2 class="font-serif italic text-[130%] leading-[1.545] mb-3">Writings</h2>
+<ul class="text-[90%] space-y-3">
+  {{ for post of search.pages("writing") }}
+  <li>{{ post.title }}</li>
+  {{ /for }}
+</ul>

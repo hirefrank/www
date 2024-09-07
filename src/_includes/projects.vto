@@ -1,12 +1,7 @@
----
-layout: base.vto
----
-
-<section class="side-projects">
-  <h2 class="font-serif italic text-[130%] leading-[1.545] mb-3">Side Projects</h2>
-  <ul class="text-[90%] space-y-3">
-    {{ for post of search.pages("project").reverse() }}
-      <li>{{ post.emoji }} <a href="{{ post.url }}" class="text-on-canvas-dim border-b border-dotted border-on-canvas-dim font-semibold hover:text-accent hover:border-accent">{{ post.title }}</a> - {{ post.summary }}</li>
-    {{ /for }}
-  </ul>
-</section>
+<ul class="space-y-6 list-none -ml-8">
+{{ for p of projects }}
+  {{ if p.draft != "true"}}
+    <li>{{ p.emoji }} <a href="{{ p.url }}" class="text-on-canvas-dim border-b border-dotted border-on-canvas-dim font-semibold hover:text-accent hover:border-accent">{{ p.title }}</a> - {{ p.summary }}{{ if p.post != null }} <a href="{{ p.url }}">Learn more &#x21A9;</a>{{ /if }}</li>
+  {{ /if }}
+{{ /for }}
+</ul>

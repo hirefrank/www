@@ -13,7 +13,7 @@
   }
 }
 
-@layer components {
+/* @layer components {
   .simple {
     @apply my-4;
 
@@ -31,6 +31,26 @@
       }
     }
   }
+} */
+
+@layer components {
+  h1 {
+    @apply text-[160%] leading-[1.545] font-semibold;
+    + p { @apply text-[124%] leading-[1.545] font-normal; }
+  }
+
+  p { @apply mb-4 text-[100%]; }
+
+  p a {
+    @apply text-on-canvas-dim border-b border-dotted border-on-canvas-dim font-semibold hover:text-accent hover:border-accent;
+  }
+
+  ul {
+    @apply list-disc pl-8 mb-6;
+    :is(nav, footer) & { @apply list-none p-0 m-0; }
+  }
+
+  nav ul { @apply m-0 p-0; }
 }
 
 @font-face {
@@ -47,3 +67,5 @@
   font-style: italic;
   src: url('/fonts/CrimsonPro-Italic-VariableFont_wght.ttf');
 }
+
+
