@@ -46,7 +46,7 @@
         </div>
       </nav>
     </header>
-    <main class="mt-[max(5rem,calc(20vh-5rem))]">
+    <main class="mt-[max(4rem,calc(20vh-8rem))]">
       <div class="container space-y-6">
         {{ if page.data.url === "/" }}
         <div class="w-32 h-32 rounded-full overflow-hidden">
@@ -59,7 +59,7 @@
         {{ if page.data.url === "/services/" }}{{ include "services.vto" }}{{ /if }}
       </div>
     </main>
-    <footer class="text-[70%] text-on-canvas-dim mt-auto pt-4 pb-0">
+    <footer class="text-[70%] text-on-canvas-dim mt-auto pt-8 pb-0">
       <div class="footer">
         <ul class="flex flex-wrap items-center [&>li]:mr-4 [&>li:last-child]:mr-0">
           <li>&copy; {{ new Date().getFullYear() }}</li>

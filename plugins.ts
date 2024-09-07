@@ -23,6 +23,7 @@ export default function () {
                 'on-canvas-dim': 'var(--on-canvas--dim)',
                 'on-canvas-mute': 'var(--on-canvas--mute)',
                 'accent': 'var(--accent)',
+                'accent-dark': 'var(--accent-dark)',
               },
               fontFamily: {
                 'sans': ['Quicksand', 'Fallback', 'sans-serif'],

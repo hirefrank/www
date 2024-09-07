@@ -10,6 +10,7 @@
     --on-canvas--dim: hsl(var(--hue) 20% 35%);
     --on-canvas--mute: hsl(var(--hue) 10% 90%);
     --accent: hsl(8, 58%, 52%);
+    --accent-dark: hsl(8, 58%, 42%);
   }
 }
 

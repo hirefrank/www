@@ -43,3 +43,54 @@ projects:
     emoji: "💾"
     post: null
     url: "https://github.com/hirefrank/zoom-backup"
+
+plans:
+  - name: Individual Contributor
+    price: $300
+    unit: /hr
+    description: Perfect for those looking to enhance their skills.
+    features:
+      - Feedback on product plans
+      - Stakeholder management
+      - Tips for effective collaboration
+      - Career development planning
+  - name: Manager & Leader
+    price: $500
+    unit: /hr
+    description: Ideal for experienced leaders looking to scale their impact and navigate complex challenges.
+    features:
+      - Leading and scaling teams
+      - Guidance on product strategy
+      - Managing difficult conversations
+      - Go-to-market plans & pricing
+      - Navigating company milestones
+
+testimonials:
+  - quote: "Working with Frank has been a game-changer for our team. His strategic approach and deep industry knowledge have accelerated our product development process."
+    name: Michael Chen
+    title: CTO, InnovateTech
+  - quote: "Frank's coaching has been instrumental in my growth as a product leader. His insights and guidance have helped me navigate complex challenges with confidence."
+    name: Sarah Johnson
+    title: VP of Product, TechCorp
+  - quote: "The mentorship I received from Frank was invaluable. He helped me refine my product strategy and improve team collaboration, leading to significant improvements in our product outcomes."
+    name: Alex Rodriguez
+    title: Product Manager, StartupX
+  - quote: "Frank's expertise in product leadership is unparalleled. His coaching has not only improved our product processes but has also helped me become a more effective leader."
+    name: Emily Wong
+    title: Director of Product, GlobalTech
+  - quote: "Working with Frank transformed our approach to product development. His insights into user-centric design and agile methodologies have been game-changing for our organization."
+    name: David Smith
+    title: CEO, InnovateNow
+  - quote: "Frank's mentorship was crucial in helping me transition from engineering to product management. His practical advice and industry insights were exactly what I needed to succeed in my new role."
+    name: Lisa Patel
+    title: Senior Product Manager, TechGiant
+
+faqs:
+  - question: What does a typical coaching session look like?
+    answer: Each session is tailored to your specific needs and goals. We'll discuss current challenges, strategize solutions, and create actionable plans for your growth as a product leader.
+  - question: How long are the coaching engagements?
+    answer: Coaching engagements are typically 3-6 months long, but can be adjusted based on your needs and progress. We'll regularly review and adjust our approach to ensure you're getting the most value.
+  - question: Can I expense this against my Learning & Development budget?
+    answer: Absolutely! Many clients use their Learning & Development budgets to invest in coaching. We can provide detailed invoices and documentation to support your expense claims. This coaching is an investment in your professional growth which aligns well with L&D policies.
+  - question: What is the meaning of "Working Titles"?
+    answer: '"Working Titles" reflects our view of leadership as an ongoing journey. We believe in continuous growth, guiding leaders to adapt and refine their skills throughout their careers, regardless of their current role or title.'
