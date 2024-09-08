@@ -1,4 +1,4 @@
-<ul class="space-y-6 list-none -ml-8">
+<ul class="space-y-6 list-none -ml-8 text-[110%] leading-[1.545] font-normal">
 {{ for p of projects }}
   {{ if p.draft != "true"}}
     <li>{{ p.emoji }} <a href="{{ p.url }}" class="text-on-canvas-dim border-b border-dotted border-on-canvas-dim font-semibold hover:text-accent hover:border-accent">{{ p.title }}</a> - {{ p.summary }}{{ if p.post != null }} <a href="{{ p.url }}">Learn more &#x21A9;</a>{{ /if }}</li>

@@ -14,33 +14,15 @@
   }
 }
 
-/* @layer components {
-  .simple {
-    @apply my-4;
-
-    h1 {
-      @apply font-serif italic text-[150%] leading-[1.545] my-6;
-    }
-
-    section {
-      p, ul {
-        @apply mb-4 text-[90%];
-      }
-
-      ul {
-        @apply list-disc pl-8 mb-6;
-      }
-    }
-  }
-} */
-
 @layer components {
   h1 {
     @apply text-[160%] leading-[1.545] font-semibold;
     + p { @apply text-[124%] leading-[1.545] font-normal; }
-  }
+  }how
 
   p { @apply mb-4 text-[100%]; }
+  .home p:first-child { @apply text-[100%]; }  /* Style for the first paragraph */
+  .home p + p { @apply text-[124%] leading-[1.545] font-light; }  /* Style for subsequent paragraphs */
 
   p a {
     @apply text-on-canvas-dim border-b border-dotted border-on-canvas-dim font-semibold hover:text-accent hover:border-accent;

@@ -5,6 +5,7 @@ import sitemap from "lume/plugins/sitemap.ts";
 import minifyHTML from "lume/plugins/minify_html.ts";
 import robots from "lume/plugins/robots.ts";
 import markdown from "lume/plugins/markdown.ts";
+import date from "lume/plugins/date.ts";
 
 import "lume/types.ts";
 
@@ -43,6 +44,11 @@ export default function () {
       .use(sitemap({
         query: "indexable=true", // Select only pages with the indexable attribute as true
         sort: "date=desc", // To sort by data in ascendent order
+      }))
+      .use(date({
+        formats: {
+          "SHORT": "MMM dd",
+        },
       }))
       .copy("static", "./");
   }

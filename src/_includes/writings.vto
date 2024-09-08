@@ -1,6 +1,11 @@
-<h2 class="font-serif italic text-[130%] leading-[1.545] mb-3">Writings</h2>
-<ul class="text-[90%] space-y-3">
-  {{ for post of search.pages("writing") }}
-  <li>{{ post.title }}</li>
+<h2 class="font-serif italic text-[130%] leading-[1.545] mb-6">Writings</h2>
+<ul class="text-[90%] space-y-3 ml-0 pl-0">
+  {{ for post of search.pages("writing").reverse() }}
+  <li class="flex justify-between items-center ml-0 pl-0">
+    <div class="flex-1">
+      <span class="text-accent-dark mr-3 uppercase text-[90%] font-medium">{{ post.date |> date("SHORT") }}</span>
+      <span class="">{{ post.title }}</span>
+    </div>
+  </li>
   {{ /for }}
 </ul>
