@@ -14,7 +14,7 @@ Frank Harris is a seasoned product leader with over 20 years of experience leadi
 
 Frank's experience in the technology industry spans roles from engineering to executive leadership. His career trajectory showcases a unique blend of technical expertise, design sensibility, and strategic product management.
 
-Beginning his journey as an engineer, Frank transitioned to UX Design at Google, where he made a lasting impact by designing the original set of transit icons for Google Maps. This early work bridged the gap between complex technology and user-friendly design, setting the tone for his future endeavors.
+Formerly an engineer, he joined Google as a UX designer where he created the original transit icons for Google Maps. This work showcased his ability to bridge complex technology with user-friendly designs, foreshadowing his future career direction.
 
 Frank's career continued to evolve as a Product Manager when he joined Etsy pre-IPO. He played a pivotal role in enhancing the platform's search and discovery experience with an innovative approach that led to the development of a new, high-margin revenue stream through search-based advertising for sellers.
 
