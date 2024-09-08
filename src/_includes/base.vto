@@ -54,6 +54,7 @@
         </div>
         {{ /if }}
         {{ content }}
+        {{ if page.data.url === "/" }}{{ include "social.vto" }}{{ /if }}
         {{# {{ if page.data.url === "/" }}{{ include "writings.vto" }}{{ /if }} #}}
         {{ if page.data.url === "/projects/" }}{{ include "projects.vto" }}{{ /if }}
         {{ if page.data.url === "/services/" }}{{ include "services.vto" }}{{ /if }}

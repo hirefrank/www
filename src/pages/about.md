@@ -18,10 +18,10 @@ Beginning his journey as an engineer, Frank transitioned to UX Design at Google,
 
 Frank's career continued to evolve as a Product Manager when he joined Etsy pre-IPO. He played a pivotal role in enhancing the platform's search and discovery experience with an innovative approach that led to the development of a new, high-margin revenue stream through search-based advertising for sellers.
 
-Throughout his career, Frank has held product leadership positions at several high-profile companies, including Slack, InVision, Casper, and Betterment.
-
-In these roles, Frank has honed his skills in product strategy, team leadership, and navigating the complexities of various business models and industries. His experience spans B2B and B2C sectors, regulated industries, and both early-stage and established companies.
+Throughout his career, Frank has held product leadership positions at prominent companies like Slack, InVision, Casper, and Betterment, spanning B2B and B2C sectors, regulated industries, and both startups and public companies.
 
 Frank's current focus is helping product leaders take the next step in their journey with his coaching practice, [Working Titles](/services).
 
-Frank lives in Brooklyn, NY with his wife, two young daughters, and an Italian truffle dog that isn't of much use in the city.
+He lives in Brooklyn, NY with his wife, two young daughters, and an Italian truffle dog that isn't of much use in the city.
+
+Frank can be reached [via email](/mailto-hf) for any inquiries.out his career,
