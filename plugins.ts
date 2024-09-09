@@ -6,6 +6,7 @@ import minifyHTML from "lume/plugins/minify_html.ts";
 import robots from "lume/plugins/robots.ts";
 import markdown from "lume/plugins/markdown.ts";
 import date from "lume/plugins/date.ts";
+import onDemand from "lume/plugins/on_demand.ts";
 
 import "lume/types.ts";
 
@@ -50,6 +51,7 @@ export default function () {
           "SHORT": "MMM dd",
         },
       }))
+      .use(onDemand())
       .copy("static", "./");
   }
 }
