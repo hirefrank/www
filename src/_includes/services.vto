@@ -1,46 +1,46 @@
-<section class="pt-6">
-<h2 class="font-serif italic text-[130%] leading-[1.545] mb-6">Simple pricing for everyone</h2>
-<div class="grid md:grid-cols-2 gap-6 mb-12">
+<section class="services-section">
+<h2>Simple pricing for everyone</h2>
+<div class="grid-responsive">
   {{ for plan of plans }}
   <div class="border border-zinc-200 bg-white rounded-lg p-6 flex flex-col h-full shadow-md">
     <div>
-      <h3 class="text-xl font-semibold mb-2">{{ plan.name }}</h3>
-      <p class="text-2xl font-bold mb-4">{{ plan.price }}<span class="text-base font-normal">{{ plan.unit }}</span></p>
-      <ul class="text-[84%] space-y-2 mb-6">
+      <h3 class="card-title">{{ plan.name }}</h3>
+      <p class="card-price">{{ plan.price }}<span class="card-price-unit">{{ plan.unit }}</span></p>
+      <ul class="card-feature-list">
         {{ for feature of plan.features }}
         <li>{{ feature }}</li>
         {{ /for }}
       </ul>
     </div>
     <div class="mt-auto">
-      <a href="#" class="text-[80%] font-medium block text-center bg-white text-accent border border-accent rounded-lg py-2 hover:bg-accent hover:text-white transition">Book a free consultation</a>
+      <a href="#" class="card-button">Book a free consultation</a>
     </div>
   </div>
   {{ /for }}
 </div>
 
-<section>
-  <h2 class="font-serif italic text-[130%] leading-[1.545] mb-6">Loved by leaders worldwide</h2>
-  <div class="grid md:grid-cols-2 gap-6 mb-12 text-[84%]">
+<section class="services-section">
+  <h2>Loved by leaders worldwide</h2>
+  <div class="grid-responsive text-[84%]">
     {{ for testimonial of testimonials }}
-    <div class="border border-zinc-200 rounded-lg p-6 bg-white shadow-md flex flex-col h-full">
-      <p class="mb-4 flex-grow">"{{ testimonial.quote }}"</p>
+    <div class="testimonial">
+      <p class="testimonial-quote">"{{ testimonial.quote }}"</p>
       <div class="mt-auto">
-        <p class="font-semibold mb-0 pb-0">{{ testimonial.name }}</p>
-        <p class="text-gray-600 my-0 pt-0">{{ testimonial.title }}</p>
+        <p class="testimonial-author">{{ testimonial.name }}</p>
+        <p class="testimonial-title">{{ testimonial.title }}</p>
       </div>
     </div>
     {{ /for }}
   </div>
 </section>
 
-<section>
-<h2 class="font-serif italic text-[130%] leading-[1.545] mb-6">Frequently asked questions</h2>
-<div class="space-y-6 mb-12">
+<section class="services-section">
+<h2>Frequently asked questions</h2>
+<div class="faq-container">
   {{ for faq of faqs }}
   <div>
-    <h3 class="font-semibold mb-2">{{ faq.question }}</h3>
-    <p class="text-[90%]">{{ faq.answer }}</p>
+    <h3 class="faq-question">{{ faq.question }}</h3>
+    <p class="faq-answer">{{ faq.answer }}</p>
   </div>
     {{ /for }}
   </div>

@@ -12,17 +12,30 @@
     --accent: hsl(8, 58%, 52%);
     --accent-dark: hsl(8, 58%, 42%);
   }
-}
 
-@layer components {
   h1 {
-    @apply text-[160%] leading-[1.545] font-semibold;
-    + p { @apply text-[124%] leading-[1.545] font-normal; }
-  }how
+    @apply text-2xl sm:text-3xl md:text-4xl leading-tight font-semibold;
+    + p { @apply text-2xl md:text-4xl leading-relaxed md:leading-normal font-normal; }
+  }
 
-  p { @apply mb-4 text-[100%]; }
-  .home p:first-child { @apply text-[100%]; }  /* Style for the first paragraph */
-  .home p + p { @apply text-[124%] leading-[1.545] font-light; }  /* Style for subsequent paragraphs */
+  h2 {
+    @apply text-xl sm:text-2xl md:text-3xl leading-tight font-serif italic mb-4 sm:mb-6;
+  }
+
+  p {
+    @apply mb-4 text-xl md:text-2xl;
+  }
+  .home p:first-child {
+    @apply text-base md:text-lg;
+  }
+  .home p + p {
+    @apply text-2xl sm:text-3xl md:text-4xl leading-relaxed md:leading-normal font-light;
+  }
+
+/*
+  p { @apply mb-4 md:text-[100%] text-[90%]}
+  .home p:first-child { @apply md:text-[100%]; text-[90%] }
+  .home p + p { @apply md:text-[124%] leading-[1.545] font-light; } */
 
   p a {
     @apply text-on-canvas-dim border-b border-dotted border-on-canvas-dim font-semibold hover:text-accent hover:border-accent;
@@ -34,6 +47,230 @@
   }
 
   nav ul { @apply m-0 p-0; }
+
+  main {
+    @apply mt-[max(4rem,calc(20vh-14rem))];
+  }
+
+  footer {
+    @apply text-[80%] sm:text-[86%] text-on-canvas-dim mt-auto pt-8 sm:pt-16 mb-2;
+  }
+}
+
+@layer utilities {
+  .link-style {
+    @apply text-on-canvas-dim border-b border-dotted border-on-canvas-dim font-semibold hover:text-accent hover:border-accent;
+  }
+
+  .nav-menu {
+    @apply flex flex-col space-y-2 sm:flex-row sm:space-y-0 sm:space-x-4 ml-auto -mt-[calc(3em-30px)] text-[74%] font-medium;
+  }
+
+  .grid-responsive {
+    @apply grid gap-6 mb-12 grid-cols-1 sm:grid-cols-2;
+  }
+
+  .main-content {
+    @apply mt-[max(4rem,calc(20vh-14rem))];
+  }
+
+  .footer-list {
+    @apply flex flex-wrap items-center [&>li]:mr-4 [&>li:last-child]:mr-0;
+  }
+
+  .rotate-hover {
+    @apply transform rotate-3 hover:rotate-0 transition-transform duration-300;
+  }
+
+  .scale-hover {
+    @apply scale-110 hover:scale-100 transition-transform duration-300;
+  }
+
+  .profile-image {
+    @apply w-24 h-24 sm:w-[135px] sm:h-[135px] rounded-full overflow-hidden mx-0;
+  }
+
+  .profile-image img {
+    @apply w-full h-full object-cover transform scale-[1.3] my-6 ml-1;
+  }
+
+  .social-icon {
+    @apply w-7 h-7 hover:text-accent inline-block no-underline;
+  }
+
+  .body-layout {
+    @apply font-sans text-[1.4em] leading-[1.8] tracking-[-0.011em] min-h-screen mx-auto;
+    max-width: min(40em, 100% - 2rem);
+  }
+
+  .body-padding {
+    @apply pt-[max(env(safe-area-inset-top),3rem)] pb-[max(env(safe-area-inset-bottom),0.80rem)] px-[max(env(safe-area-inset-right),1.125rem)];
+  }
+
+  .body-flex {
+    @apply flex flex-col;
+  }
+
+  .nav-link {
+    @apply text-on-canvas hover:text-accent no-underline;
+  }
+
+  .nav-link-active {
+    @apply text-accent font-bold;
+  }
+
+  .main-container {
+    @apply container space-y-6;
+  }
+
+  .home-container {
+    @apply main-container home;
+  }
+
+  .writings-title {
+    @apply font-serif italic text-[130%] leading-[1.545] mb-6;
+  }
+
+  .writings-list {
+    @apply text-[90%] space-y-3 ml-0 pl-0;
+  }
+
+  .writings-item {
+    @apply flex justify-between items-center ml-0 pl-0;
+  }
+
+  .writings-date {
+    @apply text-accent-dark mr-3 uppercase text-[90%] font-medium;
+  }
+
+  .projects-list {
+    @apply space-y-6 list-none -ml-8 text-[110%] leading-[1.545] font-normal;
+  }
+
+  .simple-content {
+    @apply mt-4;
+  }
+
+  .video-container {
+    @apply mt-4 mb-4;
+  }
+
+  .video-info {
+    @apply mb-4;
+  }
+
+  .video-date {
+    @apply italic;
+  }
+
+  .about-image-container {
+    @apply float-none sm:float-right mx-auto sm:ml-8 my-4 sm:my-8 relative overflow-hidden rounded-lg shadow-lg w-full sm:w-96 h-64 sm:h-96;
+  }
+
+  .about-image {
+    @apply absolute w-full h-full object-cover object-[70%_center];
+  }
+
+  .services-section {
+    @apply pt-6;
+  }
+
+  .faq-container {
+    @apply space-y-6 mb-12;
+  }
+
+  .site-header {
+    @apply mb-8;
+  }
+
+  .navbar {
+    @apply bg-canvas;
+  }
+
+  .navbar-container {
+    @apply container flex justify-end;
+  }
+
+  .default-list {
+    @apply list-disc pl-8 mb-6;
+  }
+
+  .reset-list {
+    @apply list-none p-0 m-0;
+  }
+
+  .section-spacing {
+    @apply my-8 sm:my-12;
+  }
+
+  .content-spacing {
+    @apply my-4 sm:my-6;
+  }
+
+  .text-responsive {
+    @apply text-base sm:text-lg md:text-xl;
+  }
+
+  .text-responsive-small {
+    @apply text-sm sm:text-base md:text-lg;
+  }
+}
+
+@layer components {
+  .logo-container {
+    @apply -mt-[calc(3em-19px)] w-[100px] sm:w-[135px] h-[60px] sm:h-[76px] bg-accent border-t-[12px] sm:border-t-[17px] border-[#b85544] text-center;
+  }
+
+  .logo-text {
+    @apply text-xl sm:text-2xl py-1 pt-[6px] sm:pt-[8px] pb-[11px] sm:pb-[15px] text-canvas font-light no-underline inline-block w-full;
+  }
+
+  .card {
+    @apply border border-zinc-200 bg-white rounded-lg p-4 sm:p-6 flex flex-col h-full shadow-md;
+  }
+
+  .card-title {
+    @apply text-xl font-semibold mb-2;
+  }
+
+  .card-price {
+    @apply text-2xl font-bold mb-4;
+  }
+
+  .card-price-unit {
+    @apply text-base font-normal;
+  }
+
+  .card-feature-list {
+    @apply text-[84%] space-y-2 mb-6;
+  }
+
+  .card-button {
+    @apply text-[80%] font-medium block text-center bg-white text-accent border border-accent rounded-lg py-2 hover:bg-accent hover:text-white transition;
+  }
+
+  .testimonial {
+    @apply border border-zinc-200 rounded-lg p-6 bg-white shadow-md flex flex-col h-full;
+  }
+
+  .testimonial-quote {
+    @apply mb-4 flex-grow;
+  }
+
+  .testimonial-author {
+    @apply font-semibold mb-0 pb-0;
+  }
+
+  .testimonial-title {
+    @apply text-gray-600 my-0 pt-0;
+  }
+  .faq-question {
+    @apply font-semibold mb-2;
+  }
+
+  .faq-answer {
+    @apply text-[90%];
+  }
 }
 
 @font-face {

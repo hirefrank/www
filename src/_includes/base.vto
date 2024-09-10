@@ -4,39 +4,34 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>{{ title || site.title }}</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="generator" content="Lume" />
     <meta name="robots" content="index,follow" />
     <meta name="referrer" content="origin" />
     <link rel="icon" href="/favicon.ico" />
     <link rel="stylesheet" href="/styles.css" />
   </head>
-  <body class="font-sans text-[1.4em] leading-[1.8] tracking-[-0.011em] min-h-screen max-w-prose mx-auto pt-[max(env(safe-area-inset-top),3rem)] pb-[max(env(safe-area-inset-bottom),0.80rem)] px-[max(env(safe-area-inset-right),1.125rem)] flex flex-col">
+  <body class="body-layout body-padding body-flex">
     <header class="site-header">
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container flex justify-end ">
+      <nav class="navbar">
+        <div class="navbar-container">
           <a class="navbar-brand" href="/">
-            <div class="-mt-[calc(3em-19px)] w-[135px] h-[76px] bg-accent border-t-[17px] border-[#b85544] text-center">
-                <div class="text-2xl py-1 pt-[8px] pb-[15px] text-canvas font-light no-underline inline-block w-full">hirefrank</div>
+            <div class="logo-container">
+                <div class="logo-text">hirefrank</div>
             </div>
           </a>
-          <ul class="flex space-x-4 ml-auto -mt-[calc(3em-30px)] text-[74%] font-medium">
+          <ul class="nav-menu">
             {{ for item of [
               { url: "/about/", label: "About", show: true },
-              { url: "/writings/", label: "Writings", show: false },
               { url: "/projects/", label: "Projects", show: true },
               { url: "/services/", label: "Working Titles", show: true },
-              { url: "/speaking/", label: "Speaking", show: false }
+              { url: "/speaking/", label: "Speaking", show: false },
+              { url: "/uses/", label: "Uses", show: false },
+              { url: "/contact/", label: "Contact", show: false }
             ] }}
               {{ if item.show }}
                 <li>
-                  <a
-                    href="{{ item.url }}"
-                    class="
-                      text-on-canvas hover:text-accent no-underline
-                      {{ page.data.url === item.url ? 'text-accent font-bold' : '' }}
-                    "
-                  >
+                  <a href="{{ item.url }}" class="nav-link {{ page.data.url === item.url ? 'nav-link-active' : '' }}">
                     {{ item.label }}
                   </a>
                 </li>
@@ -46,23 +41,23 @@
         </div>
       </nav>
     </header>
-    <main class="mt-[max(4rem,calc(20vh-14rem))]">
-      <div class="container space-y-6{{ if page.data.url === "/" }} home{{ /if }}">
+    <main>
+  <div class="{{ page.data.url === '/' ? 'home-container' : 'main-container' }}">
         {{ if page.data.url === "/" }}
-        <div class="w-[135px] h-[135px] rounded-full overflow-hidden">
-          <img alt="Frank Harris" class="w-full h-full object-cover transform scale-[1.3] my-6 ml-1" src="/images/mug.jpg">
+        <div class="profile-image">
+          <img alt="Frank Harris" src="/images/mug.jpg">
         </div>
         {{ /if }}
         {{ content }}
         {{ if page.data.url === "/" }}{{ include "social.vto" }}{{ /if }}
-        {{# {{ if page.data.url === "/" }}{{ include "writings.vto" }}{{ /if }} #}}
+        {{ if page.data.url === "/" }}{{ include "writings.vto" }}{{ /if }}
         {{ if page.data.url === "/projects/" }}{{ include "projects.vto" }}{{ /if }}
         {{ if page.data.url === "/services/" }}{{ include "services.vto" }}{{ /if }}
       </div>
     </main>
-    <footer class="text-[86%] text-on-canvas-dim mt-auto pt-16 mb-2">
+    <footer>
       <div class="footer">
-        <ul class="flex flex-wrap items-center [&>li]:mr-4 [&>li:last-child]:mr-0">
+        <ul class="footer-list">
           <li>&copy; {{ new Date().getFullYear() }} Frank Harris</li>
         </ul>
       </div>

@@ -7,8 +7,8 @@ url: /about/
 Frank Harris is a seasoned product leader with over 20 years of experience leading teams and building products across companies like Slack, Etsy, and Google.
 
 <div class="clearfix">
-  <div class="float-right ml-8 my-8 relative overflow-hidden rounded-lg shadow-lg transform rotate-3 hover:rotate-0 transition-transform duration-300 w-96 h-96">
-    <img src="/images/speaking.jpg" alt="Frank Harris" class="absolute w-full h-full object-cover object-[70%_center] scale-110 hover:scale-100 transition-transform duration-300">
+  <div class="about-image-container">
+    <img src="/images/speaking.jpg" alt="Frank Harris" class="about-image scale-hover">
   </div>
 </div>
 
@@ -24,4 +24,4 @@ Frank's current focus is helping product leaders take the next step in their jou
 
 He lives in Brooklyn, NY with his wife, two young daughters, and an Italian truffle dog that isn't of much use in the city.
 
-Frank can be reached [via email](/mailto-hf) for any inquiries.out his career,
+Frank can be reached [via email](/mailto) for any inquiries.

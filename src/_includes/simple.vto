@@ -4,10 +4,16 @@ layout: base.vto
 
 <h1>{{ title }}</h1>
 {{ if tags && tags.includes("video") }}
-  <iframe class="video" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" src="//www.youtube.com/embed/{{ youtube_id }}?start={{ start }}" allowfullscreen></iframe>
-  <p>{{ artist }} &middot; {{ video }}</p>
-  {{ content }}
-  <em>&mdash; {{ date }}</em>
+  <div class="video-container">
+    <iframe class="video" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" src="//www.youtube.com/embed/{{ youtube_id }}?start={{ start }}" allowfullscreen></iframe>
+  </div>
+  <p class="video-info">{{ artist }} &middot; {{ video }}</p>
+  <div class="simple-content">
+    {{ content }}
+  </div>
+  <em class="video-date">&mdash; {{ date }}</em>
 {{ else }}
-  {{ content }}
+  <div class="simple-content">
+    {{ content }}
+  </div>
 {{ /if }}
