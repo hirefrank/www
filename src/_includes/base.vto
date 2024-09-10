@@ -20,19 +20,17 @@
                 <div class="logo-text">hirefrank</div>
             </div>
           </a>
-          <ul class="nav-menu">
-            {{ for item of [
-              { url: "/about/", label: "About", show: true },
-              { url: "/projects/", label: "Projects", show: true },
-              { url: "/services/", label: "Working Titles", show: true },
-              { url: "/speaking/", label: "Speaking", show: false },
-              { url: "/uses/", label: "Uses", show: false },
-              { url: "/contact/", label: "Contact", show: false }
-            ] }}
-              {{ if item.show }}
+          <button id="menu-toggle" class="lg:hidden flex flex-col justify-center items-center -mt-[calc(3em-28px)]">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+          </button>
+          <ul id="nav-menu" class="nav-menu">
+            {{ for section of sections }}
+              {{ if section.show }}
                 <li>
-                  <a href="{{ item.url }}" class="nav-link {{ page.data.url === item.url ? 'nav-link-active' : '' }}">
-                    {{ item.label }}
+                  <a href="{{ section.url }}" class="nav-link {{ page.data.url === section.url ? 'nav-link-active' : '' }}">
+                    {{ section.label }}
                   </a>
                 </li>
               {{ /if }}
@@ -42,17 +40,20 @@
       </nav>
     </header>
     <main>
-  <div class="{{ page.data.url === '/' ? 'home-container' : 'main-container' }}">
+      <div class="{{ page.data.url === '/' ? 'home-container' : 'main-container' }}">
         {{ if page.data.url === "/" }}
         <div class="profile-image">
           <img alt="Frank Harris" src="/images/mug.jpg">
         </div>
         {{ /if }}
         {{ content }}
-        {{ if page.data.url === "/" }}{{ include "social.vto" }}{{ /if }}
-        {{ if page.data.url === "/" }}{{ include "writings.vto" }}{{ /if }}
-        {{ if page.data.url === "/projects/" }}{{ include "projects.vto" }}{{ /if }}
-        {{ if page.data.url === "/services/" }}{{ include "services.vto" }}{{ /if }}
+        {{ for section of sections }}
+          {{ if section.url === page.data.url && section.includes }}
+            {{ for include of section.includes }}
+              {{ include include }}
+            {{ /for }}
+          {{ /if }}
+        {{ /for }}
       </div>
     </main>
     <footer>
@@ -62,5 +63,62 @@
         </ul>
       </div>
     </footer>
+    <script>
+document.addEventListener('DOMContentLoaded', (event) => {
+  console.log('DOMContentLoaded event fired');
+
+  const menuToggle = document.getElementById('menu-toggle');
+  const navMenu = document.getElementById('nav-menu');
+
+  console.log('menuToggle:', menuToggle);
+  console.log('navMenu:', navMenu);
+
+  if (!menuToggle || !navMenu) {
+    console.error('Menu toggle or nav menu not found');
+    return;
+  }
+
+  menuToggle.addEventListener('click', (e) => {
+    console.log('Menu toggle clicked');
+    e.stopPropagation();
+    menuToggle.classList.toggle('menu-open');
+    navMenu.classList.toggle('hidden');
+    navMenu.classList.toggle('flex');
+    console.log('Menu classes after toggle:', navMenu.classList);
+  });
+
+  document.addEventListener('click', (event) => {
+    if (!navMenu.contains(event.target) && !menuToggle.contains(event.target)) {
+      console.log('Closing menu');
+      menuToggle.classList.remove('menu-open');
+      navMenu.classList.add('hidden');
+      navMenu.classList.remove('flex');
+    }
+  });
+
+  let resizeTimeout;
+  function handleResize() {
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(() => {
+      console.log('Window resized');
+      if (window.innerWidth >= 1024) {
+        menuToggle.classList.remove('menu-open');
+        navMenu.classList.remove('hidden');
+        navMenu.classList.add('flex');
+      } else {
+        if (!menuToggle.classList.contains('menu-open')) {
+          navMenu.classList.add('hidden');
+          navMenu.classList.remove('flex');
+        }
+      }
+      console.log('Menu classes after resize:', navMenu.classList);
+    }, 250);
+  }
+
+  window.addEventListener('resize', handleResize);
+  handleResize();
+});
+
+    </script>
   </body>
 </html>

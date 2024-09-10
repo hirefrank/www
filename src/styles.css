@@ -15,27 +15,24 @@
 
   h1 {
     @apply text-2xl sm:text-3xl md:text-4xl leading-tight font-semibold;
-    + p { @apply text-2xl md:text-4xl leading-relaxed md:leading-normal font-normal; }
+    + p { @apply text-xl sm:text-2xl md:text-3xl leading-relaxed md:leading-normal font-normal; }
   }
 
   h2 {
-    @apply text-xl sm:text-2xl md:text-3xl leading-tight font-serif italic mb-4 sm:mb-6;
+    @apply text-2xl sm:text-2xl md:text-3xl leading-tight font-serif italic mb-4;
   }
 
   p {
-    @apply mb-4 text-xl md:text-2xl;
-  }
-  .home p:first-child {
-    @apply text-base md:text-lg;
-  }
-  .home p + p {
-    @apply text-2xl sm:text-3xl md:text-4xl leading-relaxed md:leading-normal font-light;
+    @apply mb-4 text-lg sm:text-xl md:text-2xl leading-relaxed md:leading-normal font-normal;
   }
 
-/*
-  p { @apply mb-4 md:text-[100%] text-[90%]}
-  .home p:first-child { @apply md:text-[100%]; text-[90%] }
-  .home p + p { @apply md:text-[124%] leading-[1.545] font-light; } */
+  .simple-content p:first-child {
+    @apply text-xl sm:text-2xl md:text-3xl leading-relaxed md:leading-normal font-normal;
+  }
+
+  .home p + p {
+    @apply text-xl sm:text-2xl md:text-3xl leading-relaxed md:leading-normal font-light;
+  }
 
   p a {
     @apply text-on-canvas-dim border-b border-dotted border-on-canvas-dim font-semibold hover:text-accent hover:border-accent;
@@ -53,7 +50,7 @@
   }
 
   footer {
-    @apply text-[80%] sm:text-[86%] text-on-canvas-dim mt-auto pt-8 sm:pt-16 mb-2;
+    @apply text-base text-on-canvas-dim mt-auto pt-8 sm:pt-16 mb-2;
   }
 }
 
@@ -63,11 +60,11 @@
   }
 
   .nav-menu {
-    @apply flex flex-col space-y-2 sm:flex-row sm:space-y-0 sm:space-x-4 ml-auto -mt-[calc(3em-30px)] text-[74%] font-medium;
+    @apply hidden lg:flex flex-col lg:flex-row absolute lg:relative top-full left-0 w-full lg:w-auto bg-white lg:bg-transparent space-y-0 sm:flex-row sm:space-y-0 sm:space-x-4 ml-auto -mt-[calc(3em-14px)] text-base font-medium z-50;
   }
 
   .grid-responsive {
-    @apply grid gap-6 mb-12 grid-cols-1 sm:grid-cols-2;
+    @apply grid gap-6 mb-6 grid-cols-1 sm:grid-cols-2;
   }
 
   .main-content {
@@ -87,7 +84,7 @@
   }
 
   .profile-image {
-    @apply w-24 h-24 sm:w-[135px] sm:h-[135px] rounded-full overflow-hidden mx-0;
+    @apply w-[100px] sm:w-[135px] h-[100px] sm:h-[135px] rounded-full overflow-hidden mx-0;
   }
 
   .profile-image img {
@@ -95,7 +92,11 @@
   }
 
   .social-icon {
-    @apply w-7 h-7 hover:text-accent inline-block no-underline;
+    @apply w-4 h-4 sm:w-7 sm:h-7 hover:text-accent inline-block no-underline;
+  }
+
+  .social-icon svg {
+    @apply w-5 h-5 sm:w-7 sm:h-7;
   }
 
   .body-layout {
@@ -127,12 +128,8 @@
     @apply main-container home;
   }
 
-  .writings-title {
-    @apply font-serif italic text-[130%] leading-[1.545] mb-6;
-  }
-
   .writings-list {
-    @apply text-[90%] space-y-3 ml-0 pl-0;
+    @apply text-lg sm:text-2xl leading-tight font-normal space-y-3 ml-0 pl-0;
   }
 
   .writings-item {
@@ -140,11 +137,11 @@
   }
 
   .writings-date {
-    @apply text-accent-dark mr-3 uppercase text-[90%] font-medium;
+    @apply text-accent-dark mr-3 uppercase text-base sm:text-lg font-normal;
   }
 
   .projects-list {
-    @apply space-y-6 list-none -ml-8 text-[110%] leading-[1.545] font-normal;
+    @apply space-y-6 list-none -ml-8 text-lg sm:text-xl md:text-2xl leading-relaxed md:leading-normal font-normal;
   }
 
   .simple-content {
@@ -184,11 +181,11 @@
   }
 
   .navbar {
-    @apply bg-canvas;
+    @apply bg-canvas relative;
   }
 
   .navbar-container {
-    @apply container flex justify-end;
+    @apply container flex justify-between items-center;
   }
 
   .default-list {
@@ -207,16 +204,25 @@
     @apply my-4 sm:my-6;
   }
 
-  .text-responsive {
-    @apply text-base sm:text-lg md:text-xl;
-  }
-
-  .text-responsive-small {
-    @apply text-sm sm:text-base md:text-lg;
-  }
 }
 
 @layer components {
+  .hamburger-line {
+    @apply w-6 h-0.5 bg-gray-600 mb-1 transition-all duration-300 ease-in-out;
+  }
+
+  .menu-open .hamburger-line:nth-child(1) {
+    @apply transform rotate-45 translate-y-1.5;
+  }
+
+  .menu-open .hamburger-line:nth-child(2) {
+    @apply opacity-0;
+  }
+
+  .menu-open .hamburger-line:nth-child(3) {
+    @apply transform -rotate-45 -translate-y-1.5;
+  }
+
   .logo-container {
     @apply -mt-[calc(3em-19px)] w-[100px] sm:w-[135px] h-[60px] sm:h-[76px] bg-accent border-t-[12px] sm:border-t-[17px] border-[#b85544] text-center;
   }
@@ -234,19 +240,19 @@
   }
 
   .card-price {
-    @apply text-2xl font-bold mb-4;
+    @apply text-2xl sm:text-3xl font-semibold mb-4;
   }
 
   .card-price-unit {
-    @apply text-base font-normal;
+    @apply text-xl font-normal;
   }
 
   .card-feature-list {
-    @apply text-[84%] space-y-2 mb-6;
+    @apply text-base sm:text-lg space-y-2 mb-6;
   }
 
   .card-button {
-    @apply text-[80%] font-medium block text-center bg-white text-accent border border-accent rounded-lg py-2 hover:bg-accent hover:text-white transition;
+    @apply text-base sm:text-lg font-medium block text-center bg-white text-accent border border-accent rounded-lg py-2 hover:bg-accent hover:text-white transition;
   }
 
   .testimonial {
@@ -254,22 +260,22 @@
   }
 
   .testimonial-quote {
-    @apply mb-4 flex-grow;
+    @apply text-base sm:text-lg mb-4 flex-grow;
   }
 
   .testimonial-author {
-    @apply font-semibold mb-0 pb-0;
+    @apply text-base sm:text-lg font-semibold mb-0 pb-0;
   }
 
   .testimonial-title {
-    @apply text-gray-600 my-0 pt-0;
+    @apply text-base sm:text-lg text-gray-600 my-0 pt-0;
   }
   .faq-question {
-    @apply font-semibold mb-2;
+    @apply text-lg sm:text-xl font-semibold mb-2;
   }
 
   .faq-answer {
-    @apply text-[90%];
+    @apply text-lg sm:text-xl;
   }
 }
 

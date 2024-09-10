@@ -1,3 +1,33 @@
+sections:
+  - url: "/"
+    label: "Home"
+    show: false
+    includes:
+      # - "writings.vto"
+      - "social.vto"
+  - url: "/about/"
+    label: "About"
+    show: true
+  - url: "/projects/"
+    label: "Projects"
+    show: true
+    includes:
+      - "projects.vto"
+  - url: "/services/"
+    label: "Working Titles"
+    show: true
+    includes:
+      - "services.vto"
+  - url: "/speaking/"
+    label: "Speaking"
+    show: false
+  - url: "/uses/"
+    label: "Uses"
+    show: false
+  - url: "/contact/"
+    label: "Contact"
+    show: false
+
 projects:
   - title: "Equinox Scheduler"
     summary: "Easily automate Equinox class reservations with Google Apps Script."
