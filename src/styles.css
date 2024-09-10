@@ -15,7 +15,7 @@
 
   h1 {
     @apply text-2xl sm:text-3xl md:text-4xl leading-tight font-semibold;
-    + p { @apply text-xl sm:text-2xl md:text-3xl leading-relaxed md:leading-normal font-normal; }
+    + p { @apply text-xl sm:text-2xl md:text-3xl leading-normal sm:leading-relaxed md:leading-relaxed font-normal; }
   }
 
   h2 {
@@ -23,15 +23,15 @@
   }
 
   p {
-    @apply mb-4 text-lg sm:text-xl md:text-2xl leading-relaxed md:leading-normal font-normal;
+    @apply mb-4 text-lg sm:text-xl md:text-2xl leading-normal sm:leading-relaxed md:leading-relaxed font-normal;
   }
 
   .simple-content p:first-child {
-    @apply text-xl sm:text-2xl md:text-3xl leading-relaxed md:leading-normal font-normal;
+    @apply text-xl sm:text-2xl md:text-3xl leading-normal sm:leading-relaxed md:leading-relaxed font-normal;
   }
 
   .home p + p {
-    @apply text-xl sm:text-2xl md:text-3xl leading-relaxed md:leading-normal font-light;
+    @apply text-xl sm:text-2xl md:text-3xl leading-normal sm:leading-relaxed md:leading-relaxed font-light;
   }
 
   p a {
@@ -63,19 +63,19 @@
     @apply
       /* Layout */
       flex-col
-      lg:flex-row
-      lg:flex
+      sm:flex-row
+      sm:flex
 
       /* Positioning */
       absolute
-      lg:relative
-      lg:top-0
+      sm:relative
+      sm:top-0
       top-10
       right-0
 
       /* Dimensions */
       w-max
-      lg:w-auto
+      sm:w-auto
 
       /* Spacing */
       space-y-0
@@ -86,7 +86,7 @@
 
       /* Padding */
       px-3 py-2
-      lg:p-0
+      sm:p-0
 
       /* Typography */
       text-base
@@ -97,10 +97,10 @@
       shadow-md
       border border-zinc-200 bg-white
       leading-loose
-      lg:border-none
-      lg:bg-transparent
-      lg:shadow-none
-      lg:leading-normal
+      sm:border-none
+      sm:bg-transparent
+      sm:shadow-none
+      sm:leading-normal
 
       /* Other */
       z-50;
@@ -143,7 +143,7 @@
   }
 
   .body-layout {
-    @apply font-sans text-[1.4em] leading-[1.8] tracking-[-0.011em] min-h-[calc(100vh-2.5em)] mx-auto;
+    @apply font-sans text-[1.4em] leading-[1.8] tracking-[-0.011em] min-h-[calc(100vh-2.5em)] sm:min-h-[calc(100vh-0.5em)] mx-auto;
     max-width: min(40em, 100% - 2rem);
   }
 
@@ -184,7 +184,7 @@
   }
 
   .projects-list {
-    @apply space-y-6 list-none -ml-8 text-lg sm:text-xl md:text-2xl leading-relaxed md:leading-normal font-normal;
+    @apply space-y-6 list-none -ml-8 text-lg sm:text-xl md:text-2xl leading-normal sm:leading-relaxed md:leading-relaxed font-normal;
   }
 
   .simple-content {
