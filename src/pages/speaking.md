@@ -3,7 +3,6 @@ layout: simple.vto
 indexable: false
 url: "/speaking/"
 title: Speaking
-description: ""
 ---
 
 I’ve spoken at events all around the world and been interviewed for many podcasts.

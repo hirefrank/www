@@ -3,7 +3,6 @@ layout: simple.vto
 indexable: false
 url: "/uses/"
 title: Uses
-description: ""
 ---
 
 Software I use, gadgets I love, and other things I recommend.

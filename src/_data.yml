@@ -26,8 +26,9 @@ sections:
     show: false
   - url: "/contact/"
     label: "Contact"
-    show: false
+    show: true
     includes:
+      - "social.vto"
       - "calendar.vto"
 
 projects:
@@ -113,3 +114,10 @@ faqs:
     answer: Absolutely! Many clients use their Learning & Development budgets to invest in coaching. We can provide detailed invoices and documentation to support your expense claims. This coaching is an investment in your professional growth which aligns well with L&D policies.
   - question: What is the meaning of "Working Titles"?
     answer: '"Working Titles" reflects our view of leadership as an ongoing journey. We believe in continuous growth, guiding leaders to adapt and refine their skills throughout their careers, regardless of their current role or title.'
+
+metas:
+  site: =site.description
+  twitter: "@hirefrank"
+  icon: /images/mug.jpg
+  lang: en
+  generator: true

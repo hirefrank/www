@@ -192,7 +192,7 @@
   }
 
   .projects-list {
-    @apply space-y-6 list-none pb-12 text-lg sm:text-xl md:text-2xl leading-normal sm:leading-relaxed md:leading-relaxed font-normal;
+    @apply -ml-8 space-y-6 list-none pb-12 text-lg sm:text-xl md:text-2xl leading-normal sm:leading-relaxed md:leading-relaxed font-normal;
   }
 
   .simple-content {

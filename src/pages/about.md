@@ -24,5 +24,3 @@ Throughout his career, Frank has held product leadership positions at prominent 
 Frank's current focus is helping product leaders take the next step in their journey with his coaching practice, [Working Titles](/services).
 
 He lives in Brooklyn, NY with his wife, two young daughters, and an Italian truffle dog that isn't of much use in the city.
-
-Frank can be reached [via email](/mailto) for any inquiries.
