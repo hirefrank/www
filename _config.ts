@@ -7,7 +7,7 @@ const site = lume({
 
 });
 
-const pageConfigs: Array<{ path: string; layout: string; tags?: string[] }> = [
+const pageConfigs: Array<{ path: string; layout: string; tags?: string[]; indexable?: boolean }> = [
   { path: "/pages", layout: "simple.vto" },
   { path: "/writings", layout: "simple.vto", tags: ["writing"] },
   { path: "/videos", layout: "simple.vto", tags: ["video"], indexable: true },
