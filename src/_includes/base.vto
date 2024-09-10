@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en" class="bg-canvas text-on-canvas">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>{{ title || site.title }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Lume" />
+    <meta name="robots" content="index,follow" />
+    <meta name="referrer" content="origin" />
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body class="body-layout body-padding body-flex">
+    <header class="site-header">
+      <nav class="navbar">
+        <div class="navbar-container">
+          <a class="navbar-brand" href="/">
+            <div class="logo-container">
+                <div class="logo-text">hirefrank</div>
+            </div>
+          </a>
+          <button id="menu-toggle" class="sm:hidden flex flex-col justify-center items-center -mt-[calc(3em-28px)]">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+          </button>
+          <ul id="nav-menu" class="nav-menu">
+            {{ for section of sections }}
+              {{ if section.show }}
+                <li>
+                  <a href="{{ section.url }}" class="nav-link {{ page.data.url === section.url ? 'nav-link-active' : '' }}">
+                    {{ section.label }}
+                  </a>
+                </li>
+              {{ /if }}
+            {{ /for }}
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <div class="{{ page.data.url === '/' ? 'home-container' : 'main-container' }}">
+        {{ if page.data.url === "/" }}
+        <div class="profile-image">
+          <img alt="Frank Harris" src="/images/mug.jpg">
+        </div>
+        {{ /if }}
+        {{ content }}
+        {{ for section of sections }}
+          {{ if section.url === page.data.url && section.includes }}
+            {{ for include of section.includes }}
+              {{ include include }}
+            {{ /for }}
+          {{ /if }}
+        {{ /for }}
+      </div>
+    </main>
+    <footer>
+      <div class="footer">
+        <ul class="footer-list">
+          <li>&copy; {{ new Date().getFullYear() }} Frank Harris</li>
+        </ul>
+      </div>
+    </footer>
+    <script>
+      document.addEventListener('DOMContentLoaded', (event) => {
+        console.log('DOMContentLoaded event fired');
+
+        const menuToggle = document.getElementById('menu-toggle');
+        const navMenu = document.getElementById('nav-menu');
+
+        console.log('menuToggle:', menuToggle);
+        console.log('navMenu:', navMenu);
+
+        if (!menuToggle || !navMenu) {
+          console.error('Menu toggle or nav menu not found');
+          return;
+        }
+
+        menuToggle.addEventListener('click', (e) => {
+          console.log('Menu toggle clicked');
+          e.stopPropagation();
+          menuToggle.classList.toggle('menu-open');
+          navMenu.classList.toggle('hidden');
+          navMenu.classList.toggle('flex');
+          console.log('Menu classes after toggle:', navMenu.classList);
+        });
+
+        document.addEventListener('click', (event) => {
+          if (!navMenu.contains(event.target) && !menuToggle.contains(event.target)) {
+            console.log('Closing menu');
+            menuToggle.classList.remove('menu-open');
+            navMenu.classList.add('hidden');
+            navMenu.classList.remove('flex');
+          }
+        });
+
+        let resizeTimeout;
+        function handleResize() {
+          clearTimeout(resizeTimeout);
+          resizeTimeout = setTimeout(() => {
+            console.log('Window resized');
+            if (window.innerWidth >= 1024) {
+              menuToggle.classList.remove('menu-open');
+              navMenu.classList.remove('hidden');
+              navMenu.classList.add('flex');
+            } else {
+              if (!menuToggle.classList.contains('menu-open')) {
+                navMenu.classList.add('hidden');
+                navMenu.classList.remove('flex');
+              }
+            }
+            console.log('Menu classes after resize:', navMenu.classList);
+          }, 250);
+        }
+
+        window.addEventListener('resize', handleResize);
+        handleResize();
+      });
+
+    </script>
+  </body>
+</html>

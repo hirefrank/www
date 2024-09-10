@@ -1,17 +1,23 @@
 import lume from "lume/mod.ts";
-import postcss from 'lume/plugins/postcss.ts'
-import date from "lume/plugins/date.ts";
-//import metas from "lume/plugins/metas.ts";
+import plugins from "./plugins.ts";
 
-const site = lume()
+const site = lume({
+  src: "./src",
+  location: new URL("https://hirefrank.com"),
 
-site
-  .use(postcss())
-  .use(date())
-  
-site
-  .copy("static", ".")
-  .copy("redirects", "_redirects")
-  .copy("assets/fonts")
+});
+
+const pageConfigs: Array<{ path: string; layout: string; tags?: string[] }> = [
+  { path: "/pages", layout: "simple.vto" },
+  { path: "/writings", layout: "simple.vto", tags: ["writing"] },
+  { path: "/videos", layout: "simple.vto", tags: ["video"] },
+];
+
+pageConfigs.forEach(({ path, layout, tags }) => {
+  site.data("layout", layout, path);
+  if (tags) site.data("tags", tags, path);
+});
+
+site.use(plugins());
 
 export default site;

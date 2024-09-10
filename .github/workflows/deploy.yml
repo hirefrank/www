@@ -31,4 +31,4 @@ jobs:
         with:
           project: "www-hirefrank"
           entrypoint: "serve.ts"
-          root: "."
+          root: ""

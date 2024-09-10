@@ -1,0 +1,11 @@
+<h2 class="pt-2">Writings</h2>
+<ul class="writings-list">
+  {{ for post of search.pages("writing").reverse() }}
+  <li class="writings-item">
+    <div class="flex-1">
+      <span class="writings-date">{{ post.date |> date("SHORT") }}</span>
+      <span>{{ post.title }}</span>
+    </div>
+  </li>
+  {{ /for }}
+</ul>
