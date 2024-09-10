@@ -46,11 +46,11 @@
   nav ul { @apply m-0 p-0; }
 
   main {
-    @apply mt-[max(4rem,calc(20vh-14rem))];
+    @apply mt-14;
   }
 
   footer {
-    @apply text-base text-on-canvas-dim mt-auto pt-8 sm:pt-16 mb-2;
+    @apply text-base text-on-canvas-dim mt-auto;
   }
 }
 
@@ -60,7 +60,50 @@
   }
 
   .nav-menu {
-    @apply hidden lg:flex flex-col lg:flex-row absolute lg:relative top-full left-0 w-full lg:w-auto bg-white lg:bg-transparent space-y-0 sm:flex-row sm:space-y-0 sm:space-x-4 ml-auto -mt-[calc(3em-14px)] text-base font-medium z-50;
+    @apply
+      /* Layout */
+      flex-col
+      lg:flex-row
+      lg:flex
+
+      /* Positioning */
+      absolute
+      lg:relative
+      lg:top-0
+      top-10
+      right-0
+
+      /* Dimensions */
+      w-max
+      lg:w-auto
+
+      /* Spacing */
+      space-y-0
+      sm:space-y-0
+      sm:space-x-4
+      ml-auto
+      -mt-[calc(3em-14px)]
+
+      /* Padding */
+      px-3 py-2
+      lg:p-0
+
+      /* Typography */
+      text-base
+      font-medium
+
+      /* Colors and Background */
+      bg-transparent
+      shadow-md
+      border border-zinc-200 bg-white
+      leading-loose
+      lg:border-none
+      lg:bg-transparent
+      lg:shadow-none
+      lg:leading-normal
+
+      /* Other */
+      z-50;
   }
 
   .grid-responsive {
@@ -100,7 +143,7 @@
   }
 
   .body-layout {
-    @apply font-sans text-[1.4em] leading-[1.8] tracking-[-0.011em] min-h-screen mx-auto;
+    @apply font-sans text-[1.4em] leading-[1.8] tracking-[-0.011em] min-h-[calc(100vh-2.5em)] mx-auto;
     max-width: min(40em, 100% - 2rem);
   }
 

@@ -64,60 +64,60 @@
       </div>
     </footer>
     <script>
-document.addEventListener('DOMContentLoaded', (event) => {
-  console.log('DOMContentLoaded event fired');
+      document.addEventListener('DOMContentLoaded', (event) => {
+        console.log('DOMContentLoaded event fired');
 
-  const menuToggle = document.getElementById('menu-toggle');
-  const navMenu = document.getElementById('nav-menu');
+        const menuToggle = document.getElementById('menu-toggle');
+        const navMenu = document.getElementById('nav-menu');
 
-  console.log('menuToggle:', menuToggle);
-  console.log('navMenu:', navMenu);
+        console.log('menuToggle:', menuToggle);
+        console.log('navMenu:', navMenu);
 
-  if (!menuToggle || !navMenu) {
-    console.error('Menu toggle or nav menu not found');
-    return;
-  }
-
-  menuToggle.addEventListener('click', (e) => {
-    console.log('Menu toggle clicked');
-    e.stopPropagation();
-    menuToggle.classList.toggle('menu-open');
-    navMenu.classList.toggle('hidden');
-    navMenu.classList.toggle('flex');
-    console.log('Menu classes after toggle:', navMenu.classList);
-  });
-
-  document.addEventListener('click', (event) => {
-    if (!navMenu.contains(event.target) && !menuToggle.contains(event.target)) {
-      console.log('Closing menu');
-      menuToggle.classList.remove('menu-open');
-      navMenu.classList.add('hidden');
-      navMenu.classList.remove('flex');
-    }
-  });
-
-  let resizeTimeout;
-  function handleResize() {
-    clearTimeout(resizeTimeout);
-    resizeTimeout = setTimeout(() => {
-      console.log('Window resized');
-      if (window.innerWidth >= 1024) {
-        menuToggle.classList.remove('menu-open');
-        navMenu.classList.remove('hidden');
-        navMenu.classList.add('flex');
-      } else {
-        if (!menuToggle.classList.contains('menu-open')) {
-          navMenu.classList.add('hidden');
-          navMenu.classList.remove('flex');
+        if (!menuToggle || !navMenu) {
+          console.error('Menu toggle or nav menu not found');
+          return;
         }
-      }
-      console.log('Menu classes after resize:', navMenu.classList);
-    }, 250);
-  }
 
-  window.addEventListener('resize', handleResize);
-  handleResize();
-});
+        menuToggle.addEventListener('click', (e) => {
+          console.log('Menu toggle clicked');
+          e.stopPropagation();
+          menuToggle.classList.toggle('menu-open');
+          navMenu.classList.toggle('hidden');
+          navMenu.classList.toggle('flex');
+          console.log('Menu classes after toggle:', navMenu.classList);
+        });
+
+        document.addEventListener('click', (event) => {
+          if (!navMenu.contains(event.target) && !menuToggle.contains(event.target)) {
+            console.log('Closing menu');
+            menuToggle.classList.remove('menu-open');
+            navMenu.classList.add('hidden');
+            navMenu.classList.remove('flex');
+          }
+        });
+
+        let resizeTimeout;
+        function handleResize() {
+          clearTimeout(resizeTimeout);
+          resizeTimeout = setTimeout(() => {
+            console.log('Window resized');
+            if (window.innerWidth >= 1024) {
+              menuToggle.classList.remove('menu-open');
+              navMenu.classList.remove('hidden');
+              navMenu.classList.add('flex');
+            } else {
+              if (!menuToggle.classList.contains('menu-open')) {
+                navMenu.classList.add('hidden');
+                navMenu.classList.remove('flex');
+              }
+            }
+            console.log('Menu classes after resize:', navMenu.classList);
+          }, 250);
+        }
+
+        window.addEventListener('resize', handleResize);
+        handleResize();
+      });
 
     </script>
   </body>
