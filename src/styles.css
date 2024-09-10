@@ -46,7 +46,7 @@
   nav ul { @apply m-0 p-0; }
 
   main {
-    @apply mt-14;
+    @apply mt-8 sm:mt-32;
   }
 
   footer {
@@ -184,7 +184,7 @@
   }
 
   .projects-list {
-    @apply space-y-6 list-none -ml-8 text-lg sm:text-xl md:text-2xl leading-normal sm:leading-relaxed md:leading-relaxed font-normal;
+    @apply space-y-6 list-none -ml-8 pb-12 text-lg sm:text-xl md:text-2xl leading-normal sm:leading-relaxed md:leading-relaxed font-normal;
   }
 
   .simple-content {
