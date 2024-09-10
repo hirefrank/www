@@ -10,14 +10,20 @@ const site = lume({
 const pageConfigs: Array<{ path: string; layout: string; tags?: string[] }> = [
   { path: "/pages", layout: "simple.vto" },
   { path: "/writings", layout: "simple.vto", tags: ["writing"] },
-  { path: "/videos", layout: "simple.vto", tags: ["video"] },
+  { path: "/videos", layout: "simple.vto", tags: ["video"], indexable: true },
 ];
 
-pageConfigs.forEach(({ path, layout, tags }) => {
+pageConfigs.forEach(({ path, layout, tags, indexable }) => {
   site.data("layout", layout, path);
   if (tags) site.data("tags", tags, path);
+  if (indexable) site.data("indexable", indexable, path);
 });
 
+site.data("site", {
+  title: "Frank Harris",
+  name: "hirefrank",
+  description: "Frank Harris's personal website.",
+});
 site.use(plugins());
 
 export default site;

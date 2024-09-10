@@ -27,6 +27,8 @@ sections:
   - url: "/contact/"
     label: "Contact"
     show: false
+    includes:
+      - "calendar.vto"
 
 projects:
   - title: "Equinox Scheduler"
@@ -94,24 +96,13 @@ plans:
       - Navigating company milestones
 
 testimonials:
-  - quote: "Working with Frank has been a game-changer for our team. His strategic approach and deep industry knowledge have accelerated our product development process."
-    name: Michael Chen
-    title: CTO, InnovateTech
-  - quote: "Frank's coaching has been instrumental in my growth as a product leader. His insights and guidance have helped me navigate complex challenges with confidence."
-    name: Sarah Johnson
-    title: VP of Product, TechCorp
-  - quote: "The mentorship I received from Frank was invaluable. He helped me refine my product strategy and improve team collaboration, leading to significant improvements in our product outcomes."
-    name: Alex Rodriguez
-    title: Product Manager, StartupX
-  - quote: "Frank's expertise in product leadership is unparalleled. His coaching has not only improved our product processes but has also helped me become a more effective leader."
-    name: Emily Wong
-    title: Director of Product, GlobalTech
-  - quote: "Working with Frank transformed our approach to product development. His insights into user-centric design and agile methodologies have been game-changing for our organization."
-    name: David Smith
-    title: CEO, InnovateNow
-  - quote: "Frank's mentorship was crucial in helping me transition from engineering to product management. His practical advice and industry insights were exactly what I needed to succeed in my new role."
-    name: Lisa Patel
-    title: Senior Product Manager, TechGiant
+  - quote: "Frank is an incredible thought partner, and is the kind of person who makes you and your organization more stable, grounded and thoughtful. Frank and I have worked together at two companies, most recently when he was interim head of product at InVision while I was on parental leave. Frank is the person you want in your personal board of directors.  He has exceptionally high EQ and people sense -- he can provide empathy and humor that helps you navigate the hardest situations, and at the same time objectivity exactly when you need it. I've learned so much from him, and he made me so much better at my job."
+    name: Eleanor Morgan
+    title: CEO & Founder, Stealth Startup
+  - quote: "I'm incredibly grateful for the mentorship and guidance Frank has provided me throughout my career. He's helped me navigate complex team dynamics, refine my product strategy, and overcome challenges I faced at work. With Frank's support, I've been able to grow into product leadership roles and develop the confidence necessary to succeed in this field. He is always available to offer practical advice, and a fresh perspective. I highly recommend him to anyone looking to take their product career to the next level."
+    name: Betty Liao
+    title: Product, Google
+
 
 faqs:
   - question: What does a typical coaching session look like?

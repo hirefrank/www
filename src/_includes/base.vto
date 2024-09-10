@@ -6,10 +6,12 @@
     <title>{{ title || site.title }}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="generator" content="Lume" />
+    <meta name="description" content="{{ description || site.description }}" />
     <meta name="robots" content="index,follow" />
     <meta name="referrer" content="origin" />
     <link rel="icon" href="/favicon.ico" />
     <link rel="stylesheet" href="/styles.css" />
+    <script defer src="https://cloud.umami.is/script.js" data-website-id="ca31839b-7aed-429f-87cf-198ac487443f"></script>
   </head>
   <body class="body-layout body-padding body-flex">
     <header class="site-header">
@@ -17,7 +19,7 @@
         <div class="navbar-container">
           <a class="navbar-brand" href="/">
             <div class="logo-container">
-                <div class="logo-text">hirefrank</div>
+                <div class="logo-text">{{ site.name }}</div>
             </div>
           </a>
           <button id="menu-toggle" class="sm:hidden flex flex-col justify-center items-center -mt-[calc(3em-28px)]">
@@ -63,7 +65,7 @@
         </ul>
       </div>
     </footer>
-    <script>
+    <script type="text/javascript">
       document.addEventListener('DOMContentLoaded', (event) => {
         console.log('DOMContentLoaded event fired');
 

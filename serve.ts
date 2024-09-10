@@ -2,8 +2,8 @@ import site from "./_config.ts";
 import Server from "lume/core/server.ts";
 import notFound from "lume/middlewares/not_found.ts";
 import redirects from "lume/middlewares/redirects.ts";
-import onDemand from "lume/middlewares/on_demand.ts";
-import "./_preload.ts";
+// import onDemand from "lume/middlewares/on_demand.ts";
+// import "./_preload.ts";
 
 const server = new Server({
   port: 8000,
@@ -45,7 +45,7 @@ server.use(redirects({
   strict: false,
 }));
 
-server.use(onDemand({ site }));
+// server.use(onDemand({ site }));
 server.start();
 
 console.log("Listening on http://localhost:8000");

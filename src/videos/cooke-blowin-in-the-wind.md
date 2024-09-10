@@ -4,6 +4,7 @@ date: 2015-06-28T07:50:21-05:00
 artist: "Sam Cooke"
 video: "Blowin' in the Wind"
 youtube_id: PBDdLgBO0Nw
+description: "Sam Cooke in 1964, a few months before his death, performing 'Blowin' in the Wind' on the ABC variety show Shindig!"
 ---
 
 Sam Cooke in 1964, a few months before his death, performing "Blowin' in the Wind" on the ABC variety show [Shindig!](https://en.wikipedia.org/wiki/Shindig!).

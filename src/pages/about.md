@@ -2,6 +2,7 @@
 indexable: true
 title: About
 url: /about/
+description: "Frank Harris is a seasoned product leader with over 20 years of experience leading teams and building products across companies like Slack, Etsy, and Google."
 ---
 
 Frank Harris is a seasoned product leader with over 20 years of experience leading teams and building products across companies like Slack, Etsy, and Google.

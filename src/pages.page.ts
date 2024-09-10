@@ -10,7 +10,8 @@ export default function* () {
     url: "/projects/",
     layout: "simple.vto",
     title: "Side Projects",
-    description: "",
+    description: "Weekend hacking, tech explorations, and other bits.",
+    content: "<p>Weekend hacking, tech explorations, and other bits.</p>",
     indexable: true
   }
 }
