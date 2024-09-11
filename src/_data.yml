@@ -107,13 +107,13 @@ testimonials:
 
 faqs:
   - question: What does a typical coaching session look like?
-    answer: Each session is tailored to your specific needs and goals. We'll discuss current challenges, strategize solutions, and support your growth as a product leader.
+    answer: Each session is tailored to the client's specific needs and goals. Sessions involve discussing current challenges, strategizing solutions, and supporting growth as a product leader.
   - question: How long are the coaching engagements?
-    answer: Coaching engagements are typically 3-6 months long, but can be adjusted based on your needs and progress. We'll regularly review and adjust our approach to ensure you're getting the most value.
-  - question: Can I expense this against my Learning & Development budget?
-    answer: Absolutely! Many clients use their Learning & Development budgets to invest in coaching. We can provide detailed invoices and documentation to support your expense claims. This coaching is an investment in your professional growth which aligns well with L&D policies.
+    answer: Coaching engagements typically last 3-6 months, but can be adjusted based on individual needs and progress. Regular reviews ensure the approach is optimized for maximum value.
+  - question: Can this be expensed against a Learning & Development budget?
+    answer: Yes. Many clients use Learning & Development budgets for coaching. Detailed invoices and documentation can be provided to support expense claims. This coaching is an investment in professional growth that aligns well with most L&D policies.
   - question: What is the meaning of "Working Titles"?
-    answer: '"Working Titles" reflects our view of leadership as an ongoing journey. We believe in continuous growth, guiding leaders to adapt and refine their skills throughout their careers, regardless of their current role or title.'
+    answer: '"Working Titles" reflects the view of leadership as an ongoing journey. It emphasizes continuous growth, guiding leaders to adapt and refine their skills throughout their careers, regardless of current role or title.'
 
 metas:
   site: =site.description
