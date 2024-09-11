@@ -21,6 +21,6 @@ Frank's career continued to evolve as a Product Manager when he joined Etsy pre-
 
 Throughout his career, Frank has held product leadership positions at prominent companies like Slack, InVision, Casper, and Betterment, spanning B2B and B2C sectors, regulated industries, and both startups and public companies.
 
-Frank's current focus is helping product leaders take the next step in their journey with his coaching practice, [Working Titles](/services).
+Frank's current focus is helping product leaders take the next step in their journey with his [coaching practice](/coaching).
 
 He lives in Brooklyn, NY with his wife, two young daughters, and an Italian truffle dog that isn't of much use in the city.
