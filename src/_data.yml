@@ -13,11 +13,11 @@ sections:
     show: true
     includes:
       - "projects.vto"
-  - url: "/services/"
-    label: "Working Titles"
+  - url: "/coaching/"
+    label: "Coaching"
     show: true
     includes:
-      - "services.vto"
+      - "coaching.vto"
   - url: "/speaking/"
     label: "Speaking"
     show: false
@@ -117,8 +117,6 @@ faqs:
     answer: Coaching engagements typically last 3-6 months, but can be adjusted based on individual needs and progress. Regular reviews ensure the approach is optimized for maximum value.
   - question: Can this be expensed against a Learning & Development budget?
     answer: Yes. Many clients use Learning & Development budgets for coaching. Detailed invoices and documentation can be provided to support expense claims. This coaching is an investment in professional growth that aligns well with most L&D policies.
-  - question: What is the meaning of "Working Titles"?
-    answer: '"Working Titles" reflects the view of leadership as an ongoing journey. It emphasizes continuous growth, guiding leaders to adapt and refine their skills throughout their careers, regardless of current role or title.'
 
 metas:
   site: =site.description
