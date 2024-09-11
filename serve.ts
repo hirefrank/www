@@ -1,4 +1,4 @@
-import site from "./_config.ts";
+// impor.t site from "./_config.ts";
 import Server from "lume/core/server.ts";
 import notFound from "lume/middlewares/not_found.ts";
 import redirects from "lume/middlewares/redirects.ts";
@@ -8,6 +8,20 @@ import redirects from "lume/middlewares/redirects.ts";
 const server = new Server({
   port: 8000,
   root: `${Deno.cwd()}/_site`
+});
+
+// New middleware for domain routing
+server.use(async (request, next) => {
+  const url = new URL(request.url);
+  if (url.hostname === "workingtitles.xyz") {
+    return new Response(null, {
+      status: 302,
+      headers: { Location: "https://hirefrank.com/services" }
+    });
+  }
+
+  // If not redirecting, pass the request to the next middleware
+  return await next(request);
 });
 
 server.use(notFound());
