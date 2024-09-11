@@ -3,7 +3,7 @@ layout: base.vto
 indexable: true
 url: "/index.html"
 title: "Frank Harris"
-description: "Frank Harris's personal website."
+description: "A maker, coach, and angel investor with more than 20 years of experience leading teams and building products at companies like Slack, Etsy, and Google."
 ---
 
 # Hi, I'm Frank.
