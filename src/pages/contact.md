@@ -7,7 +7,7 @@ description: "Frank Harris is a seasoned product leader with over 20 years of ex
 
 I'm always excited to meet with product folks and leaders.
 
-Whether you're facing challenges in product strategy, team dynamics, or personal growth as a leader, I'd love to help.
+Whether you're facing challenges in product strategy, team dynamics, or growth as a leader, I'd love to help.
 
 <!-- Whether you're looking to level up your team, tackle a tricky product challenge, or just geek out about the latest in tech, I'm all ears. Let's chat about how we can create something amazing together! -->
 

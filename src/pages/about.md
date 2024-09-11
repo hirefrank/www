@@ -2,10 +2,10 @@
 indexable: true
 title: About
 url: /about/
-description: "Frank Harris is a seasoned product leader with over 20 years of experience leading teams and building products across companies like Slack, Etsy, and Google."
+description: "Frank Harris is a product executive with over 20 years of experience leading high-performing teams and building products across companies like Slack, Etsy, and Google."
 ---
 
-Frank Harris is a seasoned product leader with over 20 years of experience leading teams and building products across companies like Slack, Etsy, and Google.
+Frank Harris is a product executive with over 20 years of experience leading high-performing teams and building products across companies like Slack, Etsy, and Google.
 
 <div class="clearfix">
   <div class="about-image-container">
@@ -15,11 +15,11 @@ Frank Harris is a seasoned product leader with over 20 years of experience leadi
 
 Frank's experience in the technology industry spans roles from engineering to executive leadership. His career trajectory showcases a unique blend of technical expertise, design sensibility, and strategic product management.
 
-A self-taught engineer, he joined Google as a UX designer where he created the original transit icons for Google Maps. This work showcased his ability to bridge complex technology with user-friendly designs, foreshadowing his career direction.
+As a self-taught engineer, Frank joined Google as a UX designer and created the original transit icons for Google Maps. This work demonstrated his ability to bridge technology with user-friendly designs, foreshadowing his career path.
 
-Frank's career continued to evolve as a Product Manager when he joined Etsy pre-IPO. He played a pivotal role in enhancing the platform's search and discovery experience with an innovative approach that led to the development of a new, high-margin revenue stream through search-based advertising for sellers.
+Frank's career continued to evolve as a Product Manager when he joined Etsy pre-IPO. He played a pivotal role in enhancing the platform's search and discovery experience with an innovative approach that led to the development of a new, high-margin revenue stream through advertising for sellers.
 
-Throughout his career, Frank has held product leadership positions at prominent companies like Slack, InVision, Casper, and Betterment, spanning B2B and B2C sectors, regulated industries, and both startups and public companies.
+In his career, Frank has held product leadership positions at prominent companies like Slack, InVision, Casper, and Betterment, spanning B2B and B2C sectors, regulated industries, and both startups and public companies.
 
 Frank's current focus is helping product leaders take the next step in their journey with his [coaching practice](/coaching).
 
