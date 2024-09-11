@@ -1,9 +1,9 @@
-// impor.t site from "./_config.ts";
 import Server from "lume/core/server.ts";
 import notFound from "lume/middlewares/not_found.ts";
 import redirects from "lume/middlewares/redirects.ts";
 // import onDemand from "lume/middlewares/on_demand.ts";
 // import "./_preload.ts";
+// import site from "./_config.ts";
 
 const server = new Server({
   port: 8000,
@@ -16,7 +16,7 @@ server.use(async (request, next) => {
   if (host && /^(www\.)?workingtitles\.xyz$/.test(host)) {
     return new Response(null, {
       status: 302,
-      headers: { Location: "https://hirefrank.com/services" }
+      headers: { Location: "https://hirefrank.com/services?ref=workingtitles.xyz" }
     });
   }
 
