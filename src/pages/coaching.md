@@ -2,7 +2,7 @@
 layout: simple.vto
 indexable: true
 url: "/coaching/"
-title: Coaching
+title: Hands-on Coaching
 description: "A coaching practice dedicated to guiding leaders through the tricky stuff of building products and high-performing teams."
 ---
 
