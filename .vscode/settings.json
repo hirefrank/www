@@ -1,0 +1,19 @@
+{
+  "deno.enable": true,
+  "deno.lint": true,
+  "deno.unstable": true,
+  "deno.suggest.imports.hosts": {
+    "https://deno.land": true
+  },
+  "files.associations": {
+    "*.css": "tailwindcss"
+  },
+  "editor.quickSuggestions": {
+    "strings": true
+  },
+  "tailwindCSS.includeLanguages": {
+    "html": "html",
+    "javascript": "javascript",
+    "css": "css"
+  }
+}

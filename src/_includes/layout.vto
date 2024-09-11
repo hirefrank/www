@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en" class="{{ it.htmlClass || 'h-full scroll-smooth bg-white antialiased' }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ it.title }} - TaxPal</title>
+    {{# <meta name="description" content="{{ it.description || 'Most bookkeeping software is accurate, but hard to use. We make the opposite trade-off, and hope you don't get audited.' }}"> #}}
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body class="{{ it.bodyClass || 'flex h-full flex-col' }}">
+    {{ it.content }}
+</body>
+</html>
