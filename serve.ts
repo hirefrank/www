@@ -27,6 +27,7 @@ server.use(async (request, next) => {
 server.use(notFound());
 server.use(redirects({
   redirects: {
+    "w9": "/extras/w9.pdf",
     "/14/08/why-is-it-so-hard/": "/videos/why-is-it-so-hard/",
     "/18/03/rainbows-rainier/": "/videos/rainbows-rainier/",
     "/17/03/bey-toe-ven/": "/videos/bey-toe-ven/",
