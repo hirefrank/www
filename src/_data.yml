@@ -91,7 +91,7 @@ plans:
   - name: Leader
     price: $500
     unit: per session
-    description: "Elevate your leadership skills and navigate complex product challenges."
+    description: "Elevate your leadership skills and navigate product challenges."
     features:
       - 60 minute remote or NYC session
       - Leading and scaling teams
