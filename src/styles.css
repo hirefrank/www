@@ -311,7 +311,7 @@
   }
 
   .card-price-description {
-    @apply text-lg sm:text-xl font-normal sm:leading-relaxed;
+    @apply text-lg sm:text-xl font-normal sm:leading-relaxed mb-4;
   }
 
   .card-feature-list {
