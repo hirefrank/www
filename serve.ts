@@ -16,7 +16,7 @@ server.use(async (request, next) => {
   if (host && /^(www\.)?workingtitles\.xyz$/.test(host)) {
     return new Response(null, {
       status: 302,
-      headers: { Location: "https://hirefrank.com/services?ref=workingtitles.xyz" }
+      headers: { Location: "https://hirefrank.com/services/?ref=workingtitles.xyz" }
     });
   }
 
