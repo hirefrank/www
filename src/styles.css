@@ -235,6 +235,11 @@
     @apply pt-6;
   }
 
+  .additional-info {
+    @apply text-base sm:text-lg leading-normal sm:leading-relaxed font-normal;
+  }
+
+
   .faq-container {
     @apply space-y-6 mb-12;
   }
