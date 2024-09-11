@@ -12,6 +12,7 @@ const server = new Server({
 
 // New middleware for domain routing
 server.use(async (request, next) => {
+  console.log(request);
   const url = new URL(request.url);
   if (url.hostname === "workingtitles.xyz") {
     return new Response(null, {
