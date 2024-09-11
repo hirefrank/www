@@ -12,9 +12,8 @@ const server = new Server({
 
 // New middleware for domain routing
 server.use(async (request, next) => {
-  console.log(request);
-  const url = new URL(request.url);
-  if (url.hostname === "workingtitles.xyz") {
+  const host = request.headers.get('host');
+  if (host && /^(www\.)?workingtitles\.xyz$/.test(host)) {
     return new Response(null, {
       status: 302,
       headers: { Location: "https://hirefrank.com/services" }
