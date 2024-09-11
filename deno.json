@@ -1,0 +1,32 @@
+{
+  "imports": {
+    "lume/": "https://deno.land/x/lume@v2.3.0/",
+    "tailwind/colors": "https://esm.sh/tailwindcss@3.4.7/colors"
+  },
+  "tasks": {
+    "lume": "echo \"import 'lume/cli.ts'\" | deno run -A -",
+    "build": "deno task lume",
+    "serve": "deno task lume -s",
+    "serve-prod": "deno run -A serve.ts"
+  },
+  "compilerOptions": {
+    "types": [
+      "lume/types.ts"
+    ]
+  },
+  "lint": {
+    "exclude": [
+      "./_site"
+    ],
+    "rules": {
+      "tags": [
+        "recommended"
+      ]
+    }
+  },
+  "fmt": {
+    "exclude": [
+      "./_site"
+    ]
+}
+}
