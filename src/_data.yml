@@ -80,21 +80,27 @@ projects:
 plans:
   - name: Individual Contributor
     price: $300
-    unit: /hr
+    unit: per session
+    description: "Accelerate your product career with focused, skill-building coaching."
     features:
-      - Feedback on product plans
+      - 45 minute, remote session
+      - Product feedback
       - Stakeholder management
-      - Tips for effective collaboration
       - Career development planning
-  - name: Manager & Leader
+      - 2 session minimum
+  - name: Leader
     price: $500
-    unit: /hr
+    unit: per session
+    description: "Elevate your leadership skills and navigate complex product challenges."
     features:
+      - 60 minute, remote or NYC session
       - Leading and scaling teams
       - Guidance on product strategy
       - Managing difficult conversations
       - Go-to-market plans & pricing
       - Navigating company milestones
+      - Available on Slack between sessions
+      - 12 session minimum
 
 testimonials:
   - quote: "Frank is an incredible thought partner, and is the kind of person who makes you and your organization more stable, grounded and thoughtful. Frank and I have worked together at two companies, most recently when he was interim head of product at InVision while I was on parental leave. Frank is the person you want in your personal board of directors.  He has exceptionally high EQ and people sense -- he can provide empathy and humor that helps you navigate the hardest situations, and at the same time objectivity exactly when you need it. I've learned so much from him, and he made me so much better at my job."

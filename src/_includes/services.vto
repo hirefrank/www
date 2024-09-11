@@ -5,7 +5,8 @@
   <div class="border border-zinc-200 bg-white rounded-lg p-6 flex flex-col h-full shadow-md">
     <div>
       <h3 class="card-title">{{ plan.name }}</h3>
-      <p class="card-price">{{ plan.price }}<span class="card-price-unit">{{ plan.unit }}</span></p>
+      <p class="card-price">{{ plan.price }}<span class="card-price-unit"> {{ plan.unit }}</span></p>
+      <p class="card-price-description">{{ plan.description }}</p>
       <ul class="card-feature-list">
         {{ for feature of plan.features }}
         <li>{{ feature }}</li>

@@ -303,11 +303,15 @@
   }
 
   .card-price {
-    @apply text-2xl sm:text-3xl font-semibold mb-4;
+    @apply text-2xl sm:text-3xl font-semibold mb-2;
   }
 
   .card-price-unit {
-    @apply text-xl font-normal;
+    @apply text-lg sm:text-xl font-normal;
+  }
+
+  .card-price-description {
+    @apply text-base sm:text-lg font-semibold;
   }
 
   .card-feature-list {
