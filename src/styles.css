@@ -94,6 +94,7 @@
 
       /* Typography */
       text-2xl
+      sm:text-base
       font-medium
 
       /* Colors and Background */
