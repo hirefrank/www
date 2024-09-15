@@ -8,11 +8,6 @@ sections:
   - url: "/about/"
     label: "About"
     show: true
-  - url: "/projects/"
-    label: "Projects"
-    show: true
-    includes:
-      - "projects.vto"
   - url: "/coaching/"
     label: "Coaching"
     show: true
@@ -24,6 +19,11 @@ sections:
   - url: "/uses/"
     label: "Uses"
     show: false
+  - url: "/projects/"
+    label: "Projects"
+    show: true
+    includes:
+      - "projects.vto"
   - url: "/contact/"
     label: "Contact"
     show: true
