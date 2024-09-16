@@ -12,4 +12,4 @@ As an executive product leader with over two decades in tech, [Frank](/about ) h
 
 As a coach, Frank offers unique insights drawn from his experience managing teams and products across various growth stages and industries.
 
-He helps leaders navigate ambiguity, refine strategies, and increase their impact in areas such as product strategy, organizational design, go-to-market planning, and pricing.
+He helps leaders navigate ambiguity, refine strategies, and increase their impact in areas such as product development, organizational design, go-to-market planning, and pricing.
