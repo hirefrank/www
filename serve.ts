@@ -44,12 +44,12 @@ server.use(redirects({
     "/feeds/rss.xml": "/writings",
     "/tags": "/writings",
     "/archives": "/writings",
-    "/cal": {
-      "to": "https://cal.com/hirefrank/catchup",
+    "/vip": {
+      "to": "https://cal.com/hirefrank/vip-catch-up",
       "code": 302
     },
     "/calp": {
-      "to": "/cal",
+      "to": "/vip",
       "code": 302
     },
     "/mailto": {
