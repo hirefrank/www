@@ -9,4 +9,4 @@ I'm always excited to meet with product folks and leaders.
 
 Whether you're facing challenges in product strategy, team dynamics, or growth as a leader, I'd love to help.
 
-Feel free to [drop me a note](/mailto) or <a href="#cal" data-cal-link="hirefrank/catchup" data-cal-namespace="catchup" data-cal-config='{"layout":"month_view"}'>schedule a time to chat</a>.
+Feel free to [drop me a note](/mailto) or <a href="#cal" data-cal-link="hirefrank/meet-and-greet" data-cal-namespace="meet-and-greet" data-cal-config='{"layout":"month_view"}'>schedule a time to chat</a>.
