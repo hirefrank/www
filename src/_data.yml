@@ -76,6 +76,12 @@ projects:
     emoji: "💾"
     post: null
     url: "https://github.com/hirefrank/zoom-backup"
+  - title: "pg-to-sqlite"
+    summary: "A Bash script that automates the migration of PostgreSQL databases to SQLite3."
+    date: "2024-04-20"
+    emoji: "🗃️"
+    post: null
+    url: "https://github.com/hirefrank/pg-to-sqlite"
 
 plans:
   - name: Individual Contributor
