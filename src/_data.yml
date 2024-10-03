@@ -83,8 +83,6 @@ projects:
     post: null
     url: null
 
-
-
 plans:
   - name: Individual Contributor
     price: $300
