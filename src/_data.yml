@@ -74,7 +74,7 @@ projects:
     date: "2014-06-04"
     emoji: "⛽"
     post: null
-    url: "nycgasfinder"
+    url: "https://github.com/hirefrank/nycgasfinder"
   - title: "NYC Summer Films"
     summary: "A comprehensive calendar of free outdoor movie screenings across New York City during the summer of 2014."
     date: "2014-05-18"
