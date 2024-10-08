@@ -1,7 +1,8 @@
 {
   "imports": {
     "lume/": "https://deno.land/x/lume@v2.3.0/",
-    "tailwind/colors": "https://esm.sh/tailwindcss@3.4.7/colors"
+    "tailwind/colors": "https://esm.sh/tailwindcss@3.4.7/colors",
+    "rss": "https://deno.land/x/rss@1.1.1/mod.ts"
   },
   "tasks": {
     "lume": "echo \"import 'lume/cli.ts'\" | deno run -A -",

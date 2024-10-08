@@ -3,7 +3,7 @@ sections:
     label: "Home"
     show: false
     includes:
-      # - "writings.vto"
+      - "writings.vto"
       - "social.vto"
   - url: "/about/"
     label: "About"
@@ -13,6 +13,9 @@ sections:
     show: true
     includes:
       - "coaching.vto"
+  - url: "/writings"
+    label: "Writings"
+    show: false
   - url: "/speaking/"
     label: "Speaking"
     show: false
