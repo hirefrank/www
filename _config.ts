@@ -1,7 +1,7 @@
 import lume from "lume/mod.ts";
 import plugins from "./plugins.ts";
 import { parseFeed } from "rss";
-import { MEDIUM_RSS_URL } from "./serve.ts";
+import { MEDIUM_RSS_URL } from "./_constants.ts";
 
 const site = lume({
   src: "./src",

@@ -2,9 +2,7 @@ import Server from "lume/core/server.ts";
 import notFound from "lume/middlewares/not_found.ts";
 import redirects from "lume/middlewares/redirects.ts";
 import { parseFeed } from "rss";
-
-export const MEDIUM_RSS_URL = "https://medium.com/feed/@hirefrank"; // Replace with your Medium RSS feed URL
-export const GITHUB_REPO = "hirefrank/www"; // Replace with your GitHub username and repo name
+import { MEDIUM_RSS_URL, GITHUB_REPO } from "./_constants.ts";
 const GITHUB_PAT = Deno.env.get("GITHUB_PAT");
 const KV = await Deno.openKv();
 
