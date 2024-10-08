@@ -33,11 +33,11 @@ async function getMediumPosts() {
   }));
 }
 
-// Use an IIFE to allow top-level await
-(async () => {
+// Fetch Medium posts before site generation
+site.addEventListener("beforeBuild", async () => {
   const mediumPosts = await getMediumPosts();
   site.data("mediumPosts", mediumPosts);
-})();
+});
 
 site.data("site", {
   title: "Frank Harris",
