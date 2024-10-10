@@ -181,7 +181,11 @@
   }
 
   .writings-list {
-    @apply text-lg sm:text-2xl leading-tight font-normal space-y-3 ml-0 pl-0;
+    @apply text-lg sm:text-2xl leading-tight font-normal space-y-6 ml-0 pl-0 mb-2;
+  }
+
+  .writings-list a {
+    @apply text-on-canvas-dim border-b border-dotted font-normal hover:text-accent hover:border-accent;
   }
 
   .writings-item {
@@ -189,11 +193,11 @@
   }
 
   .writings-date {
-    @apply text-accent-dark mr-3 uppercase text-base sm:text-lg font-normal;
+    @apply text-accent-dark mr-2 uppercase text-base sm:text-lg font-normal;
   }
 
   .projects-list {
-    @apply -ml-8 space-y-6 list-none pb-12 text-lg sm:text-xl md:text-2xl leading-normal sm:leading-relaxed md:leading-relaxed font-normal;
+    @apply -ml-8 space-y-6 list-none text-lg sm:text-xl md:text-2xl leading-normal sm:leading-relaxed md:leading-relaxed font-normal;
   }
 
   .simple-content {
