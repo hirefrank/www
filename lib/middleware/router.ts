@@ -3,7 +3,7 @@ import { checkMediumAndTriggerRebuild } from "../medium.ts";
 import { generateIntroEmail } from "../intro.ts";
 
 const router = new Router({
-  location: "http://localhost:3000",
+  location: "http://localhost:8000",
 });
 
 router.get("/bl", () => {
