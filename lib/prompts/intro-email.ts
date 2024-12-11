@@ -10,7 +10,7 @@ export const generateIntroEmailPrompt = ({
   jobUrl: string;
 }) => [{
   role: "system" as const,
-  content: "You are a professional email writer helping to craft introduction request emails."
+  content: "You are a professional email writer helping to craft introduction request emails. You must NEVER fabricate experience or qualifications. Only reference experience that is explicitly stated in the resume or additional context. For career changes or new directions, focus on transferable skills that are actually present in these materials. You must NEVER use the phrases 'resonates with me', 'aligns with my passion', or 'piqued my interest' in your outputs."
 }, {
   role: "user" as const,
   content: `
@@ -21,6 +21,33 @@ Context provided:
 <resumeSummary>${resumeText}</resumeSummary>
 <additionalContext>${additionalContext}</additionalContext>
 Job URL: ${jobUrl}
+
+EXPERIENCE ASSESSMENT (MANDATORY FIRST STEP):
+1. Review resume and job requirements carefully
+2. Do NOT fabricate any experience or qualifications
+3. Only reference skills and experience explicitly mentioned in the resume or additional context
+4. For roles requiring specific qualifications (like SEC reporting, medical licenses, etc.):
+   - NEVER imply you have those qualifications if not explicitly stated
+   - Be very clear about coming from a different background
+   - Focus on concrete transferable skills, not domain knowledge
+
+5. Identify experience level and adjust language accordingly:
+   - DIRECT MATCH: "I've been doing X for Y years..."
+   - RELATED: "While my background is adjacent..."
+   - CAREER CHANGE: "I'm looking to transition from X to Y..."
+   - NEW DIRECTION: "While I'm coming from a different background in X..."
+
+For CAREER CHANGE or NEW DIRECTION situations:
+- Be explicit about the transition in the first two sentences
+- Only mention transferable skills that are explicitly in your materials
+- Use clear transition phrases like:
+  • "I'm looking to transition from X to Y..."
+  • "While I'm coming from a background in X..."
+  • "I'm excited to move from X into Y..."
+- Never use phrases that imply domain expertise like:
+  • "explore opportunities in [new field]"
+  • "leverage my experience in [new field]"
+  • "apply my skills to [new field]"
 
 Key requirements:
 1. Sound like a real person writing to someone they know professionally
@@ -46,7 +73,6 @@ GOOD:
 - "[Company] is hiring a [Role] - their work in [area] is exactly what I want to focus on next"
 - "I've been following [Company]'s work in [area], and they're hiring a [Role]"
 - "[Company] has an interesting [Role] role open"
-- "Your team at [Company] is hiring a [Role]"
 
 AVOID:
 - "I came across"
@@ -81,9 +107,10 @@ Start with: "Quick background:" or "Why I'd be a good fit:"
 
 Bullets should be:
 - Short (one line each)
-- Specific
+- Specific and factual with no implied expertise
 - Achievement-focused
-- Actually from the resume
+- Actually from the resume/context
+- Never reframe past experience to imply domain knowledge
 
 GOOD BULLETS:
 • "Led AI product strategy at InVision, driving 250% user growth"
@@ -94,11 +121,19 @@ BAD BULLETS:
 • "My experience in driving data-driven growth strategies would be valuable..."
 • "I have a strong track record of managing cross-functional teams..."
 • "My background has equipped me with the skills to leverage data effectively..."
+• "Managed compliance and reporting initiatives" (implies domain expertise)
+• "Led teams with a focus on financial accuracy" (stretches the truth)
 
 PROSE FORMAT (use when experience tells a more cohesive story):
 - One or two sentences connecting key experiences to role requirements
 - Focus on specific achievements and their relevance
 - Keep it conversational and direct
+
+Choose format based on:
+- Number of distinct qualifications to highlight
+- Coherence of experience narrative
+- Additional context provided
+- What's easier for connection to forward
 
 6. Close:
 - Keep it simple: "Thanks!" or "Thanks, [FirstName]"
@@ -109,12 +144,6 @@ FirstName
 Email
 Phone (if provided)
 LinkedIn (if provided)
-
-Choose format based on:
-- Number of distinct qualifications to highlight
-- Coherence of experience narrative
-- Additional context provided
-- What's easier for connection to forward
 
 Voice and tone:
 - Write like you're messaging a professional acquaintance
@@ -136,7 +165,9 @@ Avoid:
 - "Thank you for your consideration"
 - Any mention of "hiring manager" or "hiring team"
 
-Example 1 - Multiple distinct qualifications:
+EXAMPLE OUTPUTS:
+
+Example 1 - Direct Match:
 Subject: Quick intro request - Anthropic Product Manager
 
 Hey {firstName},
@@ -156,14 +187,19 @@ Lauren
 lauren.bacall@gmail.com
 www.linkedin.com/in/lauren-bacall
 
-Example 2 - Cohesive experience story:
-Subject: Quick intro request - Amplitude Sr Product Manager
+Example 2 - Career Change to Regulated Field:
+Subject: Quick intro request - Acme SEC Reporting Role
 
 Hey {firstName},
 
-I've been following Amplitude's work in product analytics, and they're hiring a Sr PM. Any chance you could introduce me to someone on the team?
+Acme is hiring for their SEC Reporting team. I'm looking to transition from my product management background into financial reporting. While I don't have direct SEC experience, my work managing budgets and analytics at InVision has given me strong foundations in financial data and detailed reporting. Would you know anyone there who might be open to chatting?
 
-I've spent the last two years building out InVision's analytics platform from scratch, growing it to 100+ internal teams and driving a 250% increase in feature adoption. Really excited about bringing that experience to Amplitude. Here's the role: [url]
+Quick background:
+• Managed $2M product budget with detailed financial tracking
+• Built analytics systems for business metrics and reporting
+• Led complex projects requiring high attention to detail
+
+Here's the role: [url]
 
 Thanks!
 
@@ -177,7 +213,6 @@ Response format:
   "body": "Email body here including signature"
 }
 `}];
-
 
 /*
 FUTURE REFINEMENTS

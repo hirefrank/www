@@ -7,7 +7,6 @@ interface EmailRequest {
   jobUrl: string;
   additionalContext: string;
   resume: number[];
-  token: string;
 }
 
 interface EmailResponse {
@@ -23,8 +22,6 @@ if (!apiKey) {
 const openai = new OpenAI({
   apiKey: apiKey || '' // Fallback to empty string if not set
 });
-
-const isTestMode = Deno.env.get("NODE_ENV") === "test";
 
 const extractTextFromPDF = async (pdfBuffer: ArrayBuffer): Promise<string> => {
   try {
@@ -51,41 +48,35 @@ const extractTextFromPDF = async (pdfBuffer: ArrayBuffer): Promise<string> => {
 
 async function fetchJobDescription(url: string): Promise<string> {
   try {
-    const response = await fetch(url);
+    // Validate URL format
+    const parsedUrl = new URL(url);
+    if (!parsedUrl.protocol.startsWith('http')) {
+      throw new Error('Invalid URL protocol. Must be http or https.');
+    }
+
+    const response = await fetch(parsedUrl.href);
+    if (!response.ok) {
+      throw new Error(`Failed to fetch job description: ${response.status}`);
+    }
+
     const html = await response.text();
     // Basic HTML cleanup - remove tags and normalize whitespace
     return html
       .replace(/<[^>]*>/g, ' ')
       .replace(/\s+/g, ' ')
       .trim();
-  } catch (error) {
+  } catch (error: unknown) {
     console.error('Error fetching job description:', error);
-    return 'Unable to fetch job description';
+    if (error instanceof Error) {
+      throw new Error(`Invalid job posting URL: ${error.message}`);
+    }
+    throw new Error('Invalid job posting URL: Unknown error occurred');
   }
 }
 
 export async function generateIntroEmail({ request }: { request: Request }): Promise<Response> {
   try {
     const formData = await request.json() as EmailRequest;
-
-    // Skip Turnstile verification in test mode
-    if (!isTestMode) {
-      const turnstileResponse = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          secret: Deno.env.get("TURNSTILE_SECRET_KEY"),
-          response: formData.token,
-        }),
-      });
-
-      const turnstileResult = await turnstileResponse.json();
-      if (!turnstileResult.success) {
-        return new Response('Invalid CAPTCHA', { status: 400 });
-      }
-    }
 
     console.log("[API] Request body parsed:", {
       ...formData,
@@ -108,27 +99,24 @@ export async function generateIntroEmail({ request }: { request: Request }): Pro
           jobUrl: formData.jobUrl,
         })
       ],
-      temperature: 0.2,
+      temperature: 0.1,
       max_tokens: 2048,
-      top_p: 0.8,
+      top_p: 0.7,
     });
 
     const response = completion.choices[0].message.content;
     console.log("[API] OpenAI response:", response);
 
     try {
-      // More robust cleaning of the response
       const cleanResponse = response
-        ?.replace(/<response>\n?/g, '')  // Remove opening tag and optional newline
-        .replace(/\n?<\/response>/g, '')  // Remove closing tag and optional newline
+        ?.replace(/<response>\n?/g, '')
+        .replace(/\n?<\/response>/g, '')
         .trim();
 
-      console.log("[API] Cleaned response:", cleanResponse); // Add debug logging
+      console.log("[API] Cleaned response:", cleanResponse);
 
-      // Only parse if cleanResponse is defined
       const parsedResponse = JSON.parse(cleanResponse || '') as EmailResponse;
 
-      // Validate the parsed response
       if (!parsedResponse?.subject || !parsedResponse?.body) {
         console.error("[API] Invalid response structure:", parsedResponse);
         throw new Error("Invalid response structure from OpenAI");
