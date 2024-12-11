@@ -7,7 +7,7 @@ import { checkMediumAndTriggerRebuild } from "./lib/medium.ts";
 
 const server = new Server({
   root: `${Deno.cwd()}/_site`,
-  port: 8000,
+  port: 3000,
 });
 
 // domain routing middleware
@@ -27,9 +27,11 @@ server.use(router);
 server.use(onDemand({ site }));
 server.use(notFound());
 
+server.start();
+
 Deno.cron("medium trigger", "0 6 * * *", async () => {
   await checkMediumAndTriggerRebuild();
   console.log("check medium and trigger rebuild executed at 6 am");
 });
 
-console.log("Listening on http://localhost:8000");
+console.log("Listening on http://localhost:3000");
