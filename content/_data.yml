@@ -33,8 +33,19 @@ sections:
     includes:
       - "social.vto"
       - "calendar.vto"
+  - url: "/intro/"
+    label: "Intro"
+    show: false
+    includes:
+      - "intro.vto"
 
 projects:
+  - title: "Intro"
+    summary: "Need someone in your network to make an introduction? Craft the perfect email that makes it easy for them to help."
+    date: "2024-12-11"
+    emoji: "👋"
+    post: null
+    url: "/intro/"
   - title: "pg-to-sqlite"
     summary: "A Bash script that automates the migration of PostgreSQL databases to SQLite."
     date: "2024-04-20"

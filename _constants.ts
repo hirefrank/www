@@ -1,2 +1,0 @@
-export const MEDIUM_RSS_URL = "https://medium.com/feed/@hirefrank"; // Replace with your Medium RSS feed URL
-export const GITHUB_REPO = "hirefrank/www"; // Replace with your GitHub username and repo name

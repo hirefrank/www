@@ -1,8 +1,7 @@
-import { parse } from "https://deno.land/std@0.181.0/flags/mod.ts";
-import { ensureDir } from "https://deno.land/std@0.181.0/fs/ensure_dir.ts";
-import { join } from "https://deno.land/std@0.181.0/path/mod.ts";
-
-import mediumToMarkdown from "npm:medium-to-markdown";
+import { parse } from "std/flags";
+import { ensureDir } from "std/fs";
+import { join } from "std/path";
+import mediumToMarkdown from "medium-to-markdown";
 
 const args = parse(Deno.args);
 const mediumUrl = String(args._[0]);
@@ -30,8 +29,8 @@ async function convertAndSave(url: string) {
     await Deno.writeTextFile(outputPath, markdown);
 
     console.log(`Markdown file saved: ${outputPath}`);
-  } catch (error) {
-    console.error("Error:", error.message);
+  } catch (error: unknown) {
+    console.error("Error:", error instanceof Error ? error.message : String(error));
   }
 }
 

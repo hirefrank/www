@@ -1,15 +1,24 @@
 {
   "imports": {
-    "lume/": "https://deno.land/x/lume@v2.3.0/",
+    "lume/": "https://deno.land/x/lume@v2.4.2/",
     "tailwind/colors": "https://esm.sh/tailwindcss@3.4.7/colors",
-    "rss": "https://deno.land/x/rss@1.1.1/mod.ts"
+    "rss": "https://deno.land/x/rss@1.1.1/mod.ts",
+    "experimental-router": "https://raw.githubusercontent.com/lumeland/experimental-plugins/8480fb23aa16bb06fda65a1b374040c97e1067b8/router/mod.ts",
+    "dotenv": "https://deno.land/std@0.218.0/dotenv/load.ts",
+    "std/flags": "https://deno.land/std@0.218.0/flags/mod.ts",
+    "std/fs": "https://deno.land/std@0.218.0/fs/mod.ts",
+    "std/path": "https://deno.land/std@0.218.0/path/mod.ts",
+    "medium-to-markdown": "npm:medium-to-markdown",
+    "pdfjs": "npm:pdfjs-dist",
+    "openai": "npm:openai"
   },
   "tasks": {
     "lume": "echo \"import 'lume/cli.ts'\" | deno run -A --unstable-cron --unstable-kv -",
     "build": "deno task lume",
     "serve": "deno task lume -s",
     "serve-prod": "deno run -A --unstable-cron --unstable-kv serve.ts",
-    "medium-to-md": "deno run -A ./cli/medium-to-markdown.ts"
+    "medium-to-md": "deno run -A ./cli/medium-to-markdown.ts",
+    "test-intro": "NODE_ENV=test deno run -A ./cli/test-intro.ts"
   },
   "compilerOptions": {
     "types": [
@@ -30,5 +39,5 @@
     "exclude": [
       "./_site"
     ]
-}
+  }
 }

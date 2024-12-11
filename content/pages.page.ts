@@ -5,7 +5,7 @@ export default function* () {
     url: "/404.html",
     title: "Not found",
     content: "Whoops. Content not found.",
-  },
+  };  // note the semicolon here
   yield {
     url: "/projects/",
     layout: "simple.vto",
@@ -13,5 +13,5 @@ export default function* () {
     description: "Weekend hacking, tech explorations, and other bits.",
     content: "<p>Weekend hacking, tech explorations, and other bits.</p>",
     indexable: true
-  }
+  };  // and here
 }
