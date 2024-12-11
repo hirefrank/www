@@ -3,7 +3,9 @@ import { checkMediumAndTriggerRebuild } from "../medium.ts";
 import { generateIntroEmail } from "../intro.ts";
 
 const router = new Router({
-  location: "http://localhost:3000",
+  location: Deno.env.get("DENO_DEPLOYMENT_ID")
+    ? "https://hirefrank.com"
+    : "http://localhost:3000",
 });
 
 router.post("/api/generate-intro", generateIntroEmail);
