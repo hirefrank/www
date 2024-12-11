@@ -16,9 +16,13 @@ interface EmailResponse {
 }
 
 const apiKey = Deno.env.get("OPENAI_API_KEY");
-if (!apiKey) throw new Error("OPENAI_API_KEY environment variable is not set");
+if (!apiKey) {
+  console.error("Warning: OPENAI_API_KEY environment variable is not set. Some features may be limited.");
+}
 
-const openai = new OpenAI({ apiKey });
+const openai = new OpenAI({
+  apiKey: apiKey || '' // Fallback to empty string if not set
+});
 
 const isTestMode = Deno.env.get("NODE_ENV") === "test";
 
