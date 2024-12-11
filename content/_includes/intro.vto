@@ -40,11 +40,11 @@
   </div>
 
   <div class="space-y-2">
-    <label class="block text-base font-medium">Additional Context</label>
+    <label class="block text-base font-medium">Why are you a great fit?</label>
     <textarea
       id="additionalContext"
-      rows="4"
-      placeholder="Add any additional context about your connection or why you are a great fit for the role you'd like included in the email. Don't worry about the tone or wordsmithing it, I'll handle it."
+      rows="3"
+      placeholder="Don't worry about the tone or wordsmithing it &mdash; we'll handle it."
       class="w-full p-2 border rounded focus:ring-2 focus:ring-blue-500 text-base placeholder-zinc-600"
     ></textarea>
   </div>
@@ -86,6 +86,20 @@
     </div>
   </div>
 </form>
+
+<div class="mt-4 text-center space-x-4 text-base text-zinc-500">
+  <span>Privacy first — no data is stored.</span>
+  <span>•</span>
+  <a href="https://github.com/hirefrank/www/blob/main/lib/intro.ts"
+     class="hover:text-accent hover:underline"
+     target="_blank"
+     rel="noopener noreferrer">View Source</a>
+  <span>•</span>
+  <a href="/mailto"
+     class="hover:text-accent hover:underline"
+     target="_blank"
+     rel="noopener noreferrer">Send Feedback</a>
+</div>
 
 <script>
   async function handleSubmit(event) {
