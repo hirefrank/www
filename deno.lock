@@ -1906,6 +1906,7 @@
     "https://deno.land/x/lume@v2.4.2/deps/vento.ts": "50bb794a4aa7a65c0394d585277bfe85f2c44fd19a0d848dfa54cba52cf55b62",
     "https://deno.land/x/lume@v2.4.2/deps/xml.ts": "ca44c214383270649e96947571f997e8d8a0b120a2e038f2f3684783256b3921",
     "https://deno.land/x/lume@v2.4.2/deps/yaml.ts": "cbcf4d295ed88066e12a718750f09cebbf30fefa32e186844b597bce74b35557",
+    "https://deno.land/x/lume@v2.4.2/middlewares/cache_busting.ts": "550854653eeebdb76bc8b0528072345103b93649432eacc1779df76a43a00565",
     "https://deno.land/x/lume@v2.4.2/middlewares/logger.ts": "c96f1a9f9d5757555b6f141865ce8551ac176f90c8ee3e9ad797b2b400a9a567",
     "https://deno.land/x/lume@v2.4.2/middlewares/no_cache.ts": "0119e3ae3a596ab12c42df693b93e5b03dd9608e289d862242751a9739438f35",
     "https://deno.land/x/lume@v2.4.2/middlewares/no_cors.ts": "4d24619b5373c98bcc3baf404db47ba088c87ac8538ea1784e58d197b81d4d02",

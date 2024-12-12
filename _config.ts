@@ -1,15 +1,17 @@
 import lume from "lume/mod.ts";
 import plugins from "./lib/plugins.ts";
 import { getMediumPosts } from "./lib/medium.ts";
-import { redirects, router } from "./lib/middleware.ts";
+import { redirects, router, cacheBusting, notFound } from "./lib/middleware.ts";
 
 const site = lume({
   src: "./content",
   location: new URL("https://hirefrank.com"),
   server: {
     middlewares: [
-      redirects,
-      router,
+        redirects,
+        router,
+        notFound(),
+        cacheBusting(),
     ],
   },
 });
@@ -31,6 +33,8 @@ site.addEventListener("beforeBuild", async () => {
   const mediumPosts = await getMediumPosts();
   site.data("mediumPosts", mediumPosts);
 });
+
+site.data('cacheBusterVersion', `v${Date.now()}`);
 
 site.data("site", {
   title: "Frank Harris",

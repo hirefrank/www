@@ -1,7 +1,7 @@
 import Server from "lume/core/server.ts";
 import onDemand from "lume/middlewares/on_demand.ts";
 import site from "./_config.ts";
-import { redirects, router, notFound } from "./lib/middleware.ts";
+import { redirects, router, notFound, cache_busting } from "./lib/middleware.ts";
 import { checkMediumAndTriggerRebuild } from "./lib/medium.ts";
 
 
@@ -26,6 +26,7 @@ server.use(redirects);
 server.use(router);
 server.use(onDemand({ site }));
 server.use(notFound());
+server.use(cache_busting());
 
 server.start();
 
