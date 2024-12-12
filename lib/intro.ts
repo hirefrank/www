@@ -3,6 +3,7 @@ import "dotenv";
 import OpenAI from "openai";
 import { generateIntroEmailPrompt } from "./prompts/intro-email.ts";
 
+export const MAX_OUTPUT_TOKENS = 1024;
 interface EmailRequest {
   jobUrl: string;
   additionalContext: string;
@@ -12,6 +13,29 @@ interface EmailRequest {
 interface EmailResponse {
   subject: string;
   body: string;
+  analysis?: {
+    requirements: string[];
+    matches: {
+      requirement: string;
+      evidence: string;
+      confidence: number;
+    }[];
+    experienceLevel: 'DIRECT_MATCH' | 'RELATED' | 'CAREER_CHANGE' | 'NEW_DIRECTION';
+    qualityChecks: {
+      relevanceTest: boolean;
+      authenticityTest: boolean;
+      languageTest: boolean;
+      formatTest: boolean;
+      toneTest: boolean;
+      nameHandlingTest: boolean;  // Added for name template validation
+    };
+    metrics: {
+      wordCount: number;
+      uniquePhrases: boolean;
+      toneMatch: boolean;
+      specificEvidence: boolean;
+    };
+  };
 }
 
 const apiKey = Deno.env.get("OPENAI_API_KEY");
@@ -20,7 +44,7 @@ if (!apiKey) {
 }
 
 const openai = new OpenAI({
-  apiKey: apiKey || '' // Fallback to empty string if not set
+  apiKey: apiKey || ''
 });
 
 const extractTextFromPDF = async (pdfBuffer: ArrayBuffer): Promise<string> => {
@@ -48,7 +72,6 @@ const extractTextFromPDF = async (pdfBuffer: ArrayBuffer): Promise<string> => {
 
 async function fetchJobDescription(url: string): Promise<string> {
   try {
-    // Validate URL format
     const parsedUrl = new URL(url);
     if (!parsedUrl.protocol.startsWith('http')) {
       throw new Error('Invalid URL protocol. Must be http or https.');
@@ -60,7 +83,6 @@ async function fetchJobDescription(url: string): Promise<string> {
     }
 
     const html = await response.text();
-    // Basic HTML cleanup - remove tags and normalize whitespace
     return html
       .replace(/<[^>]*>/g, ' ')
       .replace(/\s+/g, ' ')
@@ -72,6 +94,17 @@ async function fetchJobDescription(url: string): Promise<string> {
     }
     throw new Error('Invalid job posting URL: Unknown error occurred');
   }
+}
+
+function validateNameHandling(body: string): boolean {
+  const firstLine = body.split('\n')[0].trim();
+  if (!firstLine.startsWith('Hey {firstName},')) {
+    throw new Error('Email must start with "Hey {firstName},"');
+  }
+  if (firstLine.match(/Hey [A-Z][a-z]+,/)) {
+    throw new Error('Email contains hardcoded name instead of {firstName}');
+  }
+  return true;
 }
 
 export async function generateIntroEmail({ request }: { request: Request }): Promise<Response> {
@@ -100,8 +133,10 @@ export async function generateIntroEmail({ request }: { request: Request }): Pro
         })
       ],
       temperature: 0.1,
-      max_tokens: 2048,
-      top_p: 0.7,
+      max_tokens: MAX_OUTPUT_TOKENS,
+      top_p: 0.5,
+      frequency_penalty: 0.2,
+      presence_penalty: 0.1,
     });
 
     const response = completion.choices[0].message.content;
@@ -117,9 +152,26 @@ export async function generateIntroEmail({ request }: { request: Request }): Pro
 
       const parsedResponse = JSON.parse(cleanResponse || '') as EmailResponse;
 
-      if (!parsedResponse?.subject || !parsedResponse?.body) {
+      if (!parsedResponse?.subject || !parsedResponse?.body || !parsedResponse?.analysis) {
         console.error("[API] Invalid response structure:", parsedResponse);
         throw new Error("Invalid response structure from OpenAI");
+      }
+
+      // Validate name handling
+      validateNameHandling(parsedResponse.body);
+
+      // Verify quality checks
+      const failedChecks = Object.entries(parsedResponse.analysis.qualityChecks)
+        .filter(([_, passed]) => !passed)
+        .map(([test]) => test);
+
+      if (failedChecks.length > 0) {
+        throw new Error(`Quality checks failed: ${failedChecks.join(', ')}`);
+      }
+
+      // Additional verification for metrics
+      if (!parsedResponse.analysis.metrics) {
+        throw new Error("Missing metrics in analysis");
       }
 
       return Response.json({
