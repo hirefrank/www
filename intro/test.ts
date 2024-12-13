@@ -1,8 +1,8 @@
 import { parse } from "std/flags";
 import { ensureDir } from "std/fs";
 import { join } from "std/path";
-import { generateIntroEmail } from "../lib/intro.ts";
-import { TokenCosts, calculateCosts } from "../lib/utils/token-costs.ts";
+import { generateIntroEmail } from "./mod.ts";
+import { TokenCosts, calculateCosts } from "./token-costs.ts";
 
 const MODEL_MAX_TOKENS = 16384;  // GPT-4o-mini maximum context length
 const MAX_OUTPUT_TOKENS = 1024;  // Our configured max_tokens setting

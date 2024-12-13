@@ -1,7 +1,7 @@
 import * as pdfjs from 'pdfjs';
 import "dotenv";
 import OpenAI from "openai";
-import { generateIntroEmailPrompt } from "./prompts/intro-email.ts";
+import { generateIntroEmailPrompt } from "./prompt.ts";
 
 export const MAX_OUTPUT_TOKENS = 1024;
 interface EmailRequest {
