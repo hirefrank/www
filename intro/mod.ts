@@ -1,9 +1,10 @@
 import * as pdfjs from 'pdfjs';
 import "dotenv";
 import OpenAI from "openai";
-import { generateIntroEmailPrompt } from "./prompt.ts";
+import { generateEmailPrompt } from "./prompt.ts";
 
 export const MAX_OUTPUT_TOKENS = 1024;
+
 interface EmailRequest {
   jobUrl: string;
   additionalContext: string;
@@ -27,7 +28,57 @@ interface EmailResponse {
       languageTest: boolean;
       formatTest: boolean;
       toneTest: boolean;
-      nameHandlingTest: boolean;  // Added for name template validation
+      nameHandlingTest: boolean;
+    };
+    metrics: {
+      wordCount: number;
+      uniquePhrases: boolean;
+      toneMatch: boolean;
+      specificEvidence: boolean;
+    };
+  };
+}
+
+interface DetailedResponse {
+  detailed_analysis: {
+    job_requirements: string[];
+    resume_highlights: Array<{
+      highlight: string;
+      relevance: string;
+    }>;
+    candidate_perspective: Array<{
+      reason: string;
+      agreement: string;
+    }>;
+    ranked_reasons: Array<{
+      rank: number;
+      reason: string;
+      explanation: string;
+    }>;
+  };
+  intro_email: {
+    subject: string;
+    greeting: string;
+    opening: string;
+    experience_bullets: string[];
+    company_interest: string;
+    closing: string;
+  };
+  email_analysis: {
+    requirements: string[];
+    matches: Array<{
+      requirement: string;
+      evidence: string;
+      confidence: number;
+    }>;
+    experienceLevel: 'DIRECT_MATCH' | 'RELATED' | 'CAREER_CHANGE' | 'NEW_DIRECTION';
+    qualityChecks: {
+      relevanceTest: boolean;
+      authenticityTest: boolean;
+      languageTest: boolean;
+      formatTest: boolean;
+      toneTest: boolean;
+      nameHandlingTest: boolean;
     };
     metrics: {
       wordCount: number;
@@ -96,15 +147,69 @@ async function fetchJobDescription(url: string): Promise<string> {
   }
 }
 
-function validateNameHandling(body: string): boolean {
-  const firstLine = body.split('\n')[0].trim();
-  if (!firstLine.startsWith('Hey {firstName},')) {
-    throw new Error('Email must start with "Hey {firstName},"');
+function validateResponse(response: unknown): response is DetailedResponse {
+  if (!response || typeof response !== 'object') return false;
+
+  const requiredFields = [
+    'detailed_analysis',
+    'intro_email',
+    'email_analysis'
+  ];
+
+  for (const field of requiredFields) {
+    if (!(field in response)) return false;
   }
-  if (firstLine.match(/Hey [A-Z][a-z]+,/)) {
-    throw new Error('Email contains hardcoded name instead of {firstName}');
+
+  // deno-lint-ignore no-explicit-any
+  const introEmail = (response as any).intro_email;
+  if (!introEmail.subject || !introEmail.greeting ||
+      !introEmail.opening || !Array.isArray(introEmail.experience_bullets) ||
+      !introEmail.company_interest || !introEmail.closing) {
+    return false;
   }
+
+  if (!introEmail.greeting.startsWith('Hey {firstName},')) {
+    return false;
+  }
+
+  if (introEmail.experience_bullets.length < 3) {
+    return false;
+  }
+
   return true;
+}
+
+function sanitizeResponse(response: string): string {
+  return response
+    .replace(/[\u201C\u201D]/g, '"') // Replace smart quotes
+    .replace(/[\u2018\u2019]/g, "'") // Replace smart apostrophes
+    .replace(/\n\s*\n/g, '\n') // Remove extra newlines
+    .replace(/\s+}/g, '}') // Remove whitespace before closing braces
+    .replace(/{\s+/g, '{') // Remove whitespace after opening braces
+    .trim();
+}
+
+function constructEmailBody(emailComponents: DetailedResponse['intro_email']): string {
+  return `${emailComponents.greeting}
+
+${emailComponents.opening}
+
+Quick background:
+${emailComponents.experience_bullets.map(bullet => `• ${bullet}`).join('\n')}
+
+${emailComponents.company_interest}
+
+${emailComponents.closing}
+
+Thanks!`;
+}
+
+function transformToEmailResponse(detailedResponse: DetailedResponse): EmailResponse {
+  return {
+    subject: detailedResponse.intro_email.subject,
+    body: constructEmailBody(detailedResponse.intro_email),
+    analysis: detailedResponse.email_analysis
+  };
 }
 
 export async function generateIntroEmail({ request }: { request: Request }): Promise<Response> {
@@ -122,16 +227,18 @@ export async function generateIntroEmail({ request }: { request: Request }): Pro
       fetchJobDescription(formData.jobUrl)
     ]);
 
+    const prompt = generateEmailPrompt({
+      jobDescription,
+      resumeText: pdfText,
+      additionalContext: formData.additionalContext,
+    });
+
     const completion = await openai.chat.completions.create({
       model: "gpt-4o-mini",
-      messages: [
-        ...generateIntroEmailPrompt({
-          jobDescription,
-          resumeText: pdfText,
-          additionalContext: formData.additionalContext,
-          jobUrl: formData.jobUrl,
-        })
-      ],
+      messages: [{
+        role: "system",
+        content: prompt
+      }],
       temperature: 0.1,
       max_tokens: MAX_OUTPUT_TOKENS,
       top_p: 0.5,
@@ -143,39 +250,32 @@ export async function generateIntroEmail({ request }: { request: Request }): Pro
     console.log("[API] OpenAI response:", response);
 
     try {
-      const cleanResponse = response
-        ?.replace(/<response>\n?/g, '')
-        .replace(/\n?<\/response>/g, '')
-        .trim();
-
+      const cleanResponse = sanitizeResponse(response || '');
       console.log("[API] Cleaned response:", cleanResponse);
 
-      const parsedResponse = JSON.parse(cleanResponse || '') as EmailResponse;
-
-      if (!parsedResponse?.subject || !parsedResponse?.body || !parsedResponse?.analysis) {
-        console.error("[API] Invalid response structure:", parsedResponse);
-        throw new Error("Invalid response structure from OpenAI");
+      let parsedResponse: DetailedResponse;
+      try {
+        parsedResponse = JSON.parse(cleanResponse);
+      } catch (parseError: unknown) {
+        console.error("[API] JSON parse error:", parseError);
+        throw new Error(`Invalid JSON format: ${parseError instanceof Error ? parseError.message : String(parseError)}`);
       }
 
-      // Validate name handling
-      validateNameHandling(parsedResponse.body);
-
-      // Verify quality checks
-      const failedChecks = Object.entries(parsedResponse.analysis.qualityChecks)
-        .filter(([_, passed]) => !passed)
-        .map(([test]) => test);
-
-      if (failedChecks.length > 0) {
-        throw new Error(`Quality checks failed: ${failedChecks.join(', ')}`);
+      if (!validateResponse(parsedResponse)) {
+        console.error("[API] Response validation failed:", parsedResponse);
+        throw new Error("Response missing required fields or invalid format");
       }
 
-      // Additional verification for metrics
-      if (!parsedResponse.analysis.metrics) {
-        throw new Error("Missing metrics in analysis");
+      const transformedResponse = transformToEmailResponse(parsedResponse);
+
+      // Validate the transformed response
+      if (!transformedResponse.subject || !transformedResponse.body) {
+        throw new Error("Transformed response missing required fields");
       }
 
       return Response.json({
-        ...parsedResponse,
+        ...transformedResponse,
+        detailed_analysis: parsedResponse.detailed_analysis,
         completion: {
           usage: completion.usage
         }
@@ -186,8 +286,8 @@ export async function generateIntroEmail({ request }: { request: Request }): Pro
         },
       });
     } catch (parseError: unknown) {
-      console.error("[API] Parse error:", parseError);
-      throw new Error(`Failed to parse AI response: ${parseError instanceof Error ? parseError.message : String(parseError)}`);
+      console.error("[API] Error processing response:", parseError);
+      throw new Error(`Failed to process AI response: ${parseError instanceof Error ? parseError.message : String(parseError)}`);
     }
   } catch (error: unknown) {
     return new Response(

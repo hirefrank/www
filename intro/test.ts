@@ -4,8 +4,19 @@ import { join } from "std/path";
 import { generateIntroEmail } from "./mod.ts";
 import { TokenCosts, calculateCosts } from "./token-costs.ts";
 
-const MODEL_MAX_TOKENS = 16384;  // GPT-4o-mini maximum context length
-const MAX_OUTPUT_TOKENS = 1024;  // Our configured max_tokens setting
+const MODEL_MAX_TOKENS = 16384;
+const MAX_OUTPUT_TOKENS = 1024;
+
+interface StyleTracking {
+  openingTemplates: Set<string>;
+  closingTemplates: Set<string>;
+  metricsUsed: Set<string>;
+  styleMatches: {
+    dataStyle: number;
+    actionStyle: number;
+    mismatch: number;
+  };
+}
 
 interface PhraseTracking {
   phrases: Set<string>;
@@ -22,17 +33,9 @@ interface QualityMetrics {
   hasValidNameHandling: boolean;
   hasTeamSizeOrScope: boolean;
   hasForbiddenPhrases: boolean;
+  hasProperMetricFormat: boolean;
+  jsonValid: boolean;
 }
-
-const FORBIDDEN_PHRASES = [
-  "resonates",
-  "innovative approach",
-  "would you know anyone",
-  "excited",
-  "passionate",
-  "aligns",
-  "mission"
-];
 
 const TEST_CASES = [
   {
@@ -69,19 +72,81 @@ const TEST_CASES = [
   },
 ];
 
-function validateNameHandling(body: string): boolean {
-  const firstLine = body.split('\n')[0].trim();
-  return firstLine === 'Hey {firstName},';
+const FORBIDDEN_PHRASES = [
+  "drawn to",
+  "resonates",
+  "excited",
+  "passionate",
+  "aligns",
+  "mission",
+  "culture",
+  "I hope this message finds you well",
+  "I believe my background aligns"
+];
+
+const STYLE_INDICATORS = {
+  dataStyle: [
+    "metrics",
+    "growth",
+    "data-driven",
+    "analytics",
+    "%",
+    "increase",
+    "measured",
+    "tracked"
+  ],
+  actionStyle: [
+    "launched",
+    "built",
+    "led",
+    "drove",
+    "spearheaded",
+    "initiated",
+    "created",
+    "developed"
+  ]
+};
+
+function validateStyle(text: string, context: string): boolean {
+  const isDataContext = STYLE_INDICATORS.dataStyle.some(indicator =>
+    context.toLowerCase().includes(indicator.toLowerCase())
+  );
+  const isActionContext = STYLE_INDICATORS.actionStyle.some(indicator =>
+    context.toLowerCase().includes(indicator.toLowerCase())
+  );
+
+  if (isDataContext) {
+    return STYLE_INDICATORS.dataStyle.some(indicator =>
+      text.toLowerCase().includes(indicator.toLowerCase())
+    );
+  }
+  if (isActionContext) {
+    return STYLE_INDICATORS.actionStyle.some(indicator =>
+      text.toLowerCase().includes(indicator.toLowerCase())
+    );
+  }
+  return true;
 }
 
-function checkForForbiddenPhrases(text: string): string[] {
-  return FORBIDDEN_PHRASES.filter(phrase =>
+function validateMetricFormat(text: string): boolean {
+  const metricPatterns = [
+    /\d+%/,
+    /\$\d+/,
+    /\d+x/,
+    /\d+\s*(users|customers|clients)/i,
+    /\d+\s*(team|person|member)/i
+  ];
+  return metricPatterns.some(pattern => pattern.test(text));
+}
+
+function checkForbiddenPhrases(text: string): boolean {
+  return !FORBIDDEN_PHRASES.some(phrase =>
     text.toLowerCase().includes(phrase.toLowerCase())
   );
 }
 
 function countTotalBullets(testCases: typeof TEST_CASES): number {
-  return testCases.length * 3; // Assuming 3 bullets per email
+  return testCases.length * 3;
 }
 
 // deno-lint-ignore no-explicit-any
@@ -111,46 +176,61 @@ async function analyzeQuality(
   logger: (message: string) => Promise<void>,
   email: string,
   additionalContext: string,
-  phraseTracking: PhraseTracking
+  phraseTracking: PhraseTracking,
+  styleTracking: StyleTracking
 ): Promise<QualityMetrics> {
   const bullets = email.match(/•[^\n]+/g) || [];
   const opening = email.split('\n\n')[1];
 
-  // Track phrases
+  // Track phrases and styles
   phraseTracking.openings.add(opening);
   bullets.forEach(bullet => phraseTracking.bullets.add(bullet));
 
   const connectionAsk = email.match(/\?[^\n]+/)?.[0] || '';
   phraseTracking.connectionAsks.add(connectionAsk);
 
-  const metrics: QualityMetrics = {
-    hasSpecificMetrics: bullets.some(b => /\d+%|\$\d+|\d+ team|\d+x/.test(b)),
+  // Track metrics
+  const metrics = email.match(/\d+%|\$\d+|\d+x|\d+\s*(users|customers|clients|team|person|member)/gi) || [];
+  metrics.forEach(metric => styleTracking.metricsUsed.add(metric));
+
+  // Track style matches
+  if (validateStyle(opening, additionalContext)) {
+    if (additionalContext.toLowerCase().includes('data-driven')) {
+      styleTracking.styleMatches.dataStyle++;
+    } else {
+      styleTracking.styleMatches.actionStyle++;
+    }
+  } else {
+    styleTracking.styleMatches.mismatch++;
+  }
+
+  const qualityMetrics: QualityMetrics = {
+    hasSpecificMetrics: bullets.some(b => validateMetricFormat(b)),
     hasDateReferences: /202[2-4]|last year|this year|recently/.test(email),
-    matchesSenderStyle: additionalContext.toLowerCase().includes('data-driven') ?
-      /\d+%|\$\d+|growth|metrics/.test(opening) :
-      /launching|building|driving|initiative/.test(opening),
+    matchesSenderStyle: validateStyle(email, additionalContext),
     hasUniqueOpening: phraseTracking.openings.size === phraseTracking.phrases.size,
-    hasValidNameHandling: validateNameHandling(email),
+    hasValidNameHandling: email.startsWith('Hey {firstName},'),
     hasTeamSizeOrScope: /\d+ team|\d+ person|\d+ member/.test(email),
-    hasForbiddenPhrases: checkForForbiddenPhrases(email).length === 0
+    hasForbiddenPhrases: checkForbiddenPhrases(email),
+    hasProperMetricFormat: validateMetricFormat(email),
+    jsonValid: true
   };
 
   await logger("\nQuality Metrics:");
-  await logger(`• Specific Metrics: ${metrics.hasSpecificMetrics ? '✓' : '✗'}`);
-  await logger(`• Date References: ${metrics.hasDateReferences ? '✓' : '✗'}`);
-  await logger(`• Style Match: ${metrics.matchesSenderStyle ? '✓' : '✗'}`);
-  await logger(`• Unique Opening: ${metrics.hasUniqueOpening ? '✓' : '✗'}`);
-  await logger(`• Valid Name Handling: ${metrics.hasValidNameHandling ? '✓' : '✗'}`);
-  await logger(`• Team Size/Scope: ${metrics.hasTeamSizeOrScope ? '✓' : '✗'}`);
-  await logger(`• No Forbidden Phrases: ${metrics.hasForbiddenPhrases ? '✓' : '✗'}`);
-
-  const foundForbidden = checkForForbiddenPhrases(email);
-  if (foundForbidden.length > 0) {
-    await logger("\nWarning - Forbidden phrases found:");
-    foundForbidden.forEach(async phrase => await logger(`• "${phrase}"`));
+  for (const [key, value] of Object.entries(qualityMetrics)) {
+    await logger(`• ${key}: ${value ? '✓' : '✗'}`);
   }
 
-  return metrics;
+  if (!qualityMetrics.hasForbiddenPhrases) {
+    await logger("\nForbidden phrases found:");
+    FORBIDDEN_PHRASES.forEach(async phrase => {
+      if (email.toLowerCase().includes(phrase.toLowerCase())) {
+        await logger(`• "${phrase}"`);
+      }
+    });
+  }
+
+  return qualityMetrics;
 }
 
 async function logTokenAnalysis(logger: (message: string) => Promise<void>, costs: TokenCosts) {
@@ -167,9 +247,9 @@ async function logTokenAnalysis(logger: (message: string) => Promise<void>, cost
   await logger(`Cost: $${costs.totalCost.toFixed(4)}`);
 }
 
-async function runTests() {
+export async function runTests() {
   const timestamp = new Date().toISOString().replace(/[:.]/g, "-");
-  const logDir = "./test/logs";
+  const logDir = "./intro/logs";
   const logPath = join(logDir, `intro-test-${timestamp}.log`);
 
   await ensureDir(logDir);
@@ -191,6 +271,17 @@ async function runTests() {
     openings: new Set<string>(),
     bullets: new Set<string>(),
     connectionAsks: new Set<string>()
+  };
+
+  const styleTracking: StyleTracking = {
+    openingTemplates: new Set<string>(),
+    closingTemplates: new Set<string>(),
+    metricsUsed: new Set<string>(),
+    styleMatches: {
+      dataStyle: 0,
+      actionStyle: 0,
+      mismatch: 0
+    }
   };
 
   try {
@@ -227,7 +318,6 @@ async function runTests() {
         await logger("\nTest Result:");
         await logger(`Status: ${response.status}`);
 
-        // Log analysis if present
         if (result.analysis) {
           await logAnalysis(logger, result.analysis);
         }
@@ -238,10 +328,7 @@ async function runTests() {
         await logger("Body:");
         await logger(result.body);
 
-        // Log quality metrics
-        await analyzeQuality(logger, result.body, testCase.input.additionalContext, phraseTracking);
-
-        // Log token analysis
+        await analyzeQuality(logger, result.body, testCase.input.additionalContext, phraseTracking, styleTracking);
         await logTokenAnalysis(logger, costs);
         await logger("\n----------------------------------------");
       } catch (error) {
@@ -255,6 +342,12 @@ async function runTests() {
     await logger(`• Unique Openings: ${phraseTracking.openings.size} / ${TEST_CASES.length}`);
     await logger(`• Unique Bullets: ${phraseTracking.bullets.size} / ${countTotalBullets(TEST_CASES)}`);
     await logger(`• Unique Connection Asks: ${phraseTracking.connectionAsks.size} / ${TEST_CASES.length}`);
+
+    await logger("\nStyle Analysis:");
+    await logger(`• Data Style Matches: ${styleTracking.styleMatches.dataStyle}`);
+    await logger(`• Action Style Matches: ${styleTracking.styleMatches.actionStyle}`);
+    await logger(`• Style Mismatches: ${styleTracking.styleMatches.mismatch}`);
+    await logger(`• Unique Metrics Used: ${styleTracking.metricsUsed.size}`);
 
     await logger("\nTest Summary:");
     await logger("----------------------------------------");
