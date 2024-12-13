@@ -10,7 +10,8 @@
     "std/path": "https://deno.land/std@0.218.0/path/mod.ts",
     "medium-to-markdown": "npm:medium-to-markdown",
     "pdfjs": "npm:pdfjs-dist",
-    "openai": "npm:openai"
+    "openai": "npm:openai",
+    "anthropic": "npm:@anthropic-ai/sdk"
   },
   "tasks": {
     "lume": "echo \"import 'lume/cli.ts'\" | deno run -A --unstable-cron --unstable-kv -",

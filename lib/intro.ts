@@ -1,203 +1,214 @@
-import * as pdfjs from 'pdfjs';
-import "dotenv";
-import OpenAI from "openai";
+import { OpenAI } from "openai";
+import * as pdfjs from "pdfjs";
+import { EmailGenerationError, ValidationError } from "./utils/error.ts";
+import { MODEL_CONFIGS } from "./utils/models.ts";
 import { generateIntroEmailPrompt } from "./prompts/intro-email.ts";
+import { generateRefinementPrompt } from "./prompts/refinement.ts";
+import { ProcessedData, EmailGenerationContext } from "./prompts/shared-types.ts";
+import { TokenUsage, calculateTokenUsage, validateTokenUsage } from "./utils/token-tracking.ts";
+import { combinedProcessingSchema, emailSchema } from "./utils/schema.ts";
+import "dotenv";
 
-export const MAX_OUTPUT_TOKENS = 1024;
-interface EmailRequest {
-  jobUrl: string;
-  additionalContext: string;
-  resume: number[];
+// Validate environment
+const API_KEY = Deno.env.get("OPENAI_API_KEY");
+if (!API_KEY) {
+  throw new Error("Missing OpenAI API key");
 }
 
-interface EmailResponse {
-  subject: string;
-  body: string;
-  analysis?: {
-    requirements: string[];
-    matches: {
-      requirement: string;
-      evidence: string;
-      confidence: number;
-    }[];
-    experienceLevel: 'DIRECT_MATCH' | 'RELATED' | 'CAREER_CHANGE' | 'NEW_DIRECTION';
-    qualityChecks: {
-      relevanceTest: boolean;
-      authenticityTest: boolean;
-      languageTest: boolean;
-      formatTest: boolean;
-      toneTest: boolean;
-      nameHandlingTest: boolean;  // Added for name template validation
-    };
-    metrics: {
-      wordCount: number;
-      uniquePhrases: boolean;
-      toneMatch: boolean;
-      specificEvidence: boolean;
-    };
-  };
-}
+const openai = new OpenAI({ apiKey: API_KEY });
 
-const apiKey = Deno.env.get("OPENAI_API_KEY");
-if (!apiKey) {
-  console.error("Warning: OPENAI_API_KEY environment variable is not set. Some features may be limited.");
-}
-
-const openai = new OpenAI({
-  apiKey: apiKey || ''
-});
-
-const extractTextFromPDF = async (pdfBuffer: ArrayBuffer): Promise<string> => {
+async function extractTextFromPDF(pdfBuffer: ArrayBuffer): Promise<string> {
   try {
-    console.log("[DEBUG] PDF buffer size:", pdfBuffer.byteLength);
     const pdf = await pdfjs.getDocument(pdfBuffer).promise;
-    console.log("[DEBUG] PDF loaded, pages:", pdf.numPages);
-    let text = '';
+    const textPromises = Array.from(
+      { length: pdf.numPages },
+      (_, i) => pdf.getPage(i + 1).then(page => page.getTextContent())
+    );
 
-    for (let i = 1; i <= pdf.numPages; i++) {
-      const page = await pdf.getPage(i);
-      const content = await page.getTextContent();
-      text += content.items.map((item) => {
-        if ('str' in item) return item.str;
-        return '';
-      }).join(' ');
-    }
-
-    return text;
-  } catch (error) {
-    console.error("[DEBUG] PDF extraction error:", error);
-    throw error;
-  }
-};
-
-async function fetchJobDescription(url: string): Promise<string> {
-  try {
-    const parsedUrl = new URL(url);
-    if (!parsedUrl.protocol.startsWith('http')) {
-      throw new Error('Invalid URL protocol. Must be http or https.');
-    }
-
-    const response = await fetch(parsedUrl.href);
-    if (!response.ok) {
-      throw new Error(`Failed to fetch job description: ${response.status}`);
-    }
-
-    const html = await response.text();
-    return html
-      .replace(/<[^>]*>/g, ' ')
-      .replace(/\s+/g, ' ')
+    const contents = await Promise.all(textPromises);
+    return contents
+      .flatMap(content => content.items)
+      .map(item => ('str' in item ? item.str : ""))
+      .join(" ")
       .trim();
-  } catch (error: unknown) {
-    console.error('Error fetching job description:', error);
-    if (error instanceof Error) {
-      throw new Error(`Invalid job posting URL: ${error.message}`);
-    }
-    throw new Error('Invalid job posting URL: Unknown error occurred');
+  } catch (error) {
+    throw new EmailGenerationError(
+      "Failed to extract text from PDF",
+      "preprocess",
+      error
+    );
   }
 }
 
-function validateNameHandling(body: string): boolean {
-  const firstLine = body.split('\n')[0].trim();
-  if (!firstLine.startsWith('Hey {firstName},')) {
-    throw new Error('Email must start with "Hey {firstName},"');
-  }
-  if (firstLine.match(/Hey [A-Z][a-z]+,/)) {
-    throw new Error('Email contains hardcoded name instead of {firstName}');
-  }
-  return true;
-}
-
-export async function generateIntroEmail({ request }: { request: Request }): Promise<Response> {
+async function fetchJobDescription(url: string | URL | Request): Promise<string> {
   try {
-    const formData = await request.json() as EmailRequest;
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 10000);
 
-    console.log("[API] Request body parsed:", {
-      ...formData,
-      resume: formData.resume ? `[${formData.resume.length} bytes]` : undefined
+    const response = await fetch(url, { signal: controller.signal });
+    clearTimeout(timeout);
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+
+    const text = await response.text();
+    return text
+      .replace(/<[^>]*>/g, " ")
+      .replace(/\s+/g, " ")
+      .trim();
+  } catch (error) {
+    throw new EmailGenerationError(
+      "Failed to fetch job description",
+      "preprocess",
+      error
+    );
+  }
+}
+
+async function processAndGenerateEmail(
+  context: EmailGenerationContext
+): Promise<{ processedData: ProcessedData; emailContent: string; usage: TokenUsage }> {
+  try {
+    const config = MODEL_CONFIGS.gpt4oMini;
+    const response = await openai.chat.completions.create({
+      model: config.model,
+      messages: generateIntroEmailPrompt(context),
+      tools: [{ type: "function", function: combinedProcessingSchema }],
+      tool_choice: { type: "function", function: { name: "process_and_generate_email" } },
+      temperature: config.temperature
     });
 
-    const resumeBuffer = new Uint8Array(formData.resume).buffer;
-    const [pdfText, jobDescription] = await Promise.all([
+    const usage = calculateTokenUsage("gpt4oMini", {
+      input: response.usage?.prompt_tokens || 0,
+      output: response.usage?.completion_tokens || 0
+    });
+
+    if (!validateTokenUsage(usage, config)) {
+      throw new Error(`Token usage exceeds limits: ${usage.inputTokens + usage.outputTokens} tokens used`);
+    }
+
+    const toolCall = response.choices[0].message.tool_calls?.[0];
+    if (!toolCall || toolCall.function.name !== "process_and_generate_email") {
+      throw new Error("Invalid tool response");
+    }
+
+    const result = JSON.parse(toolCall.function.arguments);
+    return {
+      processedData: result.processedData,
+      emailContent: JSON.stringify(result.email),
+      usage
+    };
+  } catch (error) {
+    throw new EmailGenerationError(
+      "Processing and email generation failed",
+      "draft",
+      error
+    );
+  }
+}
+
+async function refineWithGPT4o(
+  emailContent: string,
+  additionalContext: string
+): Promise<{ content: string; usage: TokenUsage }> {
+  try {
+    const config = MODEL_CONFIGS.gpt4o;
+    const response = await openai.chat.completions.create({
+      model: config.model,
+      messages: generateRefinementPrompt({ draftOutput: emailContent, additionalContext }),
+      tools: [{ type: "function", function: emailSchema }],
+      tool_choice: { type: "function", function: { name: "generate_intro_email" } },
+      temperature: config.temperature
+    });
+
+    const usage = calculateTokenUsage("gpt4o", {
+      input: response.usage?.prompt_tokens || 0,
+      output: response.usage?.completion_tokens || 0
+    });
+
+    if (!validateTokenUsage(usage, config)) {
+      throw new Error(`Token usage exceeds limits: ${usage.inputTokens + usage.outputTokens} tokens used`);
+    }
+
+    const toolCall = response.choices[0].message.tool_calls?.[0];
+    if (!toolCall || toolCall.function.name !== "generate_intro_email") {
+      throw new Error("Invalid tool response");
+    }
+
+    return {
+      content: toolCall.function.arguments,
+      usage
+    };
+  } catch (error) {
+    throw new EmailGenerationError(
+      "Refinement failed",
+      "refine",
+      error
+    );
+  }
+}
+
+export async function generateIntroEmail({
+  request
+}: {
+  request: Request;
+}): Promise<Response> {
+  try {
+    const { jobUrl, additionalContext, resume } = await request.json();
+    const resumeBuffer = new Uint8Array(resume).buffer;
+
+    // Parallel processing
+    const [jobDescription, resumeText] = await Promise.all([
+      fetchJobDescription(jobUrl),
       extractTextFromPDF(resumeBuffer),
-      fetchJobDescription(formData.jobUrl)
     ]);
 
-    const completion = await openai.chat.completions.create({
-      model: "gpt-4o-mini",
-      messages: [
-        ...generateIntroEmailPrompt({
-          jobDescription,
-          resumeText: pdfText,
-          additionalContext: formData.additionalContext,
-          jobUrl: formData.jobUrl,
-        })
-      ],
-      temperature: 0.1,
-      max_tokens: MAX_OUTPUT_TOKENS,
-      top_p: 0.5,
-      frequency_penalty: 0.2,
-      presence_penalty: 0.1,
-    });
-
-    const response = completion.choices[0].message.content;
-    console.log("[API] OpenAI response:", response);
-
-    try {
-      const cleanResponse = response
-        ?.replace(/<response>\n?/g, '')
-        .replace(/\n?<\/response>/g, '')
-        .trim();
-
-      console.log("[API] Cleaned response:", cleanResponse);
-
-      const parsedResponse = JSON.parse(cleanResponse || '') as EmailResponse;
-
-      if (!parsedResponse?.subject || !parsedResponse?.body || !parsedResponse?.analysis) {
-        console.error("[API] Invalid response structure:", parsedResponse);
-        throw new Error("Invalid response structure from OpenAI");
-      }
-
-      // Validate name handling
-      validateNameHandling(parsedResponse.body);
-
-      // Verify quality checks
-      const failedChecks = Object.entries(parsedResponse.analysis.qualityChecks)
-        .filter(([_, passed]) => !passed)
-        .map(([test]) => test);
-
-      if (failedChecks.length > 0) {
-        throw new Error(`Quality checks failed: ${failedChecks.join(', ')}`);
-      }
-
-      // Additional verification for metrics
-      if (!parsedResponse.analysis.metrics) {
-        throw new Error("Missing metrics in analysis");
-      }
-
-      return Response.json({
-        ...parsedResponse,
-        completion: {
-          usage: completion.usage
-        }
-      }, {
-        headers: {
-          "Access-Control-Allow-Origin": "*",
-          "Content-Type": "application/json",
-        },
+    // Combined processing and draft generation
+    const { emailContent, usage: initialUsage } =
+      await processAndGenerateEmail({
+        jobDescription,
+        resumeText,
+        additionalContext,
+        jobUrl
       });
-    } catch (parseError: unknown) {
-      console.error("[API] Parse error:", parseError);
-      throw new Error(`Failed to parse AI response: ${parseError instanceof Error ? parseError.message : String(parseError)}`);
-    }
-  } catch (error: unknown) {
+
+    // Final refinement
+    const { content: finalContent, usage: finalUsage } =
+      await refineWithGPT4o(emailContent, additionalContext);
+
     return new Response(
-      error instanceof Error ? error.message : String(error),
-      {
-        status: 500,
-        headers: {
-          "Content-Type": "text/plain",
-          "Access-Control-Allow-Origin": "*"
+      JSON.stringify({
+        status: 200,
+        output: finalContent,
+        usage: {
+          gpt4oMini: {
+            input: initialUsage.inputTokens,
+            output: initialUsage.outputTokens
+          },
+          gpt4o: {
+            input: finalUsage.inputTokens,
+            output: finalUsage.outputTokens
+          }
         }
+      }),
+      { headers: { "Content-Type": "application/json" } }
+    );
+
+  } catch (error) {
+    console.error("Email generation error:", error);
+    const status = error instanceof ValidationError ? 422 : 500;
+    const errorMessage = error instanceof Error ? error.message : 'An unknown error occurred';
+
+    return new Response(
+      JSON.stringify({
+        status,
+        error: errorMessage,
+        details: error instanceof EmailGenerationError ? error.details : undefined
+      }),
+      {
+        status,
+        headers: { "Content-Type": "application/json" }
       }
     );
   }
