@@ -18,7 +18,7 @@
     "serve": "deno task lume -s",
     "serve-prod": "deno run -A --unstable-cron --unstable-kv serve.ts",
     "medium-to-md": "deno run -A ./cli/medium-to-markdown.ts",
-    "test-intro": "NODE_ENV=test deno run -A ./cli/test-intro.ts"
+    "test-intro": "NODE_ENV=test deno run -A ./intro/test.ts"
   },
   "compilerOptions": {
     "types": [

@@ -1,0 +1,375 @@
+Starting intro email generation tests...
+
+Running test case: Lauren Growth/Data 1
+----------------------------------------
+
+Test Result:
+Status: 200
+
+Analysis Details:
+Requirements:
+• 5+ years in product management
+• Experience launching new products
+• Technical background with engineering teams
+• Experience with Large Language Models
+• Data-driven mindset with Python and SQL proficiency
+
+Requirement Matches:
+
+Requirement: 5+ years in product management
+Evidence: Over 5 years of product management experience at InVision and Jobcase (2017-2023)
+Confidence: 100%
+
+Requirement: Experience launching new products
+Evidence: Led 0-to-1 product strategy for Freehand's tools, launching multiple features (2022-2023)
+Confidence: 100%
+
+Requirement: Technical background with engineering teams
+Evidence: Managed cross-functional teams including engineers to deliver technical products (2022-2023)
+Confidence: 100%
+
+Requirement: Experience with Large Language Models
+Evidence: No direct evidence
+Confidence: 0%
+
+Requirement: Data-driven mindset with Python and SQL proficiency
+Evidence: Used SQL for data visualization and analytics at Accenture (2016-2017)
+Confidence: 50%
+
+Experience Level: RELATED
+
+Quality Checks:
+• relevanceTest: ✓
+• authenticityTest: ✓
+• languageTest: ✓
+• formatTest: ✓
+• toneTest: ✓
+• nameHandlingTest: ✓
+
+Email Output:
+Subject: Quick intro request - Anthropic Product Manager, Research
+Body length: 765 characters
+Body:
+Hey {firstName},
+
+After leading multiple product launches at InVision, I see parallels in Anthropic's mission to productize applied research. My experience driving a +250% WAU growth aligns well with your focus on customer needs. Could you introduce me to someone on the team?
+
+Quick background:
+• Led 0-to-1 strategy for Freehand’s tools, launching market-leading features (2022-2023)
+• Managed cross-functional teams, collaborating closely with engineers to deliver technical solutions
+• Utilized SQL for data visualization and analytics, supporting key business decisions at Accenture (2016-2017)
+
+Learn more: https://jobasaurus--new-ui-p2.deno.dev/job/6289451-product-manager-research
+
+Thanks!
+
+Lauren
+brucato.lauren@gmail.com
+www.linkedin.com/in/lauren-brucato
+
+Quality Metrics:
+• Specific Metrics: ✗
+• Date References: ✓
+• Style Match: ✓
+• Unique Opening: ✗
+• Valid Name Handling: ✓
+• Team Size/Scope: ✗
+• No Forbidden Phrases: ✗
+
+Warning - Forbidden phrases found:
+• "aligns"
+• "mission"
+
+Token Analysis:
+Input tokens: undefined
+Output tokens: undefined
+Total tokens used: NaN / 16384 (NaN%)
+Remaining context window: NaN tokens
+Remaining output tokens: NaN / 1024 (NaN% available)
+Cost: $NaN
+
+----------------------------------------
+
+Running test case: Lauren Growth/Data 2
+----------------------------------------
+
+Test Result:
+Status: 200
+
+Analysis Details:
+Requirements:
+• 7+ years product management experience
+• Track record of executing growth initiatives
+• Analytical mindset using data for decisions
+• Excellent communication and collaboration skills
+• Experience in fast-changing environments
+
+Requirement Matches:
+
+Requirement: 7+ years product management experience
+Evidence: Over 7 years of product management experience across multiple roles (2014-2023)
+Confidence: 100%
+
+Requirement: Track record of executing growth initiatives
+Evidence: +250% increase in WAU through retention-focused roadmap at InVision (2022-2023)
+Confidence: 100%
+
+Requirement: Analytical mindset using data for decisions
+Evidence: Used data to visualize key performance metrics for a $40M venture at Accenture (2016-2017)
+Confidence: 100%
+
+Requirement: Excellent communication and collaboration skills
+Evidence: Led cross-functional teams to drive impact on growth initiatives at InVision (2022-2023)
+Confidence: 100%
+
+Requirement: Experience in fast-changing environments
+Evidence: Managed multiple teams and projects simultaneously in a fast-paced environment at InVision (2022-2023)
+Confidence: 100%
+
+Experience Level: DIRECT_MATCH
+
+Quality Checks:
+• relevanceTest: ✓
+• authenticityTest: ✓
+• languageTest: ✓
+• formatTest: ✓
+• toneTest: ✓
+• nameHandlingTest: ✓
+
+Email Output:
+Subject: Quick intro request - Amplitude Sr Product Manager
+Body length: 709 characters
+Body:
+Hey {firstName},
+
+At InVision, I drove a +250% increase in WAU through data-driven growth strategies. Amplitude's focus on enhancing user engagement aligns with my experience in executing impactful product initiatives. Could you introduce me to someone on the team?
+
+Quick background:
+• Led cross-functional teams to drive growth initiatives, achieving +250% WAU (2022-2023)
+• Managed multiple product launches and retention strategies in fast-paced environments
+• Utilized data analytics to inform decisions for a $40M business venture at Accenture
+
+Learn more: https://jobasaurus--new-ui-p2.deno.dev/job/6289375-sr-product-manager
+
+Thanks!
+
+Lauren
+brucato.lauren@gmail.com
+www.linkedin.com/in/lauren-brucato
+
+Quality Metrics:
+• Specific Metrics: ✓
+• Date References: ✓
+• Style Match: ✓
+• Unique Opening: ✗
+• Valid Name Handling: ✓
+• Team Size/Scope: ✗
+• No Forbidden Phrases: ✗
+
+Warning - Forbidden phrases found:
+• "aligns"
+
+Token Analysis:
+Input tokens: undefined
+Output tokens: undefined
+Total tokens used: NaN / 16384 (NaN%)
+Remaining context window: NaN tokens
+Remaining output tokens: NaN / 1024 (NaN% available)
+Cost: $NaN
+
+----------------------------------------
+
+Running test case: Lauren 0 to 1 1
+----------------------------------------
+
+Test Result:
+Status: 200
+
+Analysis Details:
+Requirements:
+• Experience in Enterprise product management
+• Strong leadership abilities
+• Experience with API definition and integration
+• Ability to understand customer pain points
+• Experience in earlier-stage product development
+
+Requirement Matches:
+
+Requirement: Experience in Enterprise product management
+Evidence: Led cross-functional teams to increase retention and revenue at Jobcase, focusing on user acquisition strategies.
+Confidence: 50%
+
+Requirement: Strong leadership abilities
+Evidence: Managed a 10-member cross-functional team to launch an email digest, coordinating efforts for long-term scalability.
+Confidence: 100%
+
+Requirement: Experience with API definition and integration
+Evidence: Introduced cross-linking API to optimize SEO scoring and enhance user engagement.
+Confidence: 100%
+
+Requirement: Ability to understand customer pain points
+Evidence: Revitalized a stalled project by rallying leadership around a lean roadmap addressing top customer needs.
+Confidence: 100%
+
+Requirement: Experience in earlier-stage product development
+Evidence: Directed 0-to-1 product strategy for Freehand's intelligent canvas tools, managing multiple teams for concurrent launches.
+Confidence: 100%
+
+Experience Level: DIRECT_MATCH
+
+Quality Checks:
+• relevanceTest: ✓
+• authenticityTest: ✓
+• languageTest: ✓
+• formatTest: ✓
+• toneTest: ✓
+• nameHandlingTest: ✓
+
+Email Output:
+Subject: Quick intro request - Grammarly Senior Product Manager, Enterprise
+Body length: 756 characters
+Body:
+Hey {firstName},
+
+After launching Freehand's first project planning tools, I see parallels in Grammarly's approach to enterprise solutions. Your focus on understanding customer pain points resonates with my experience. Could you introduce me to someone on the team?
+
+Quick background:
+• Directed 0-to-1 strategy for Freehand’s intelligent canvas tools, managing multiple teams (2022-2023)
+• Revitalized a stalled project by addressing top customer needs, rallying leadership around a lean roadmap
+• Introduced cross-linking API, optimizing SEO scoring and enhancing user engagement
+
+Learn more: https://jobasaurus--new-ui-p2.deno.dev/job/6332639-senior-product-manager-enterprise
+
+Thanks!
+
+Lauren
+brucato.lauren@gmail.com
+www.linkedin.com/in/lauren-brucato
+
+Quality Metrics:
+• Specific Metrics: ✗
+• Date References: ✓
+• Style Match: ✓
+• Unique Opening: ✗
+• Valid Name Handling: ✓
+• Team Size/Scope: ✗
+• No Forbidden Phrases: ✗
+
+Warning - Forbidden phrases found:
+• "resonates"
+
+Token Analysis:
+Input tokens: undefined
+Output tokens: undefined
+Total tokens used: NaN / 16384 (NaN%)
+Remaining context window: NaN tokens
+Remaining output tokens: NaN / 1024 (NaN% available)
+Cost: $NaN
+
+----------------------------------------
+
+Running test case: Lauren 0 to 1 2
+----------------------------------------
+
+Test Result:
+Status: 200
+
+Analysis Details:
+Requirements:
+• 5+ years in product management
+• Focus on improving customer experience (CX)
+• Ability to balance long-term objectives with immediate successes
+• Experience working with cross-functional teams
+• Strong commitment to understanding customer needs
+
+Requirement Matches:
+
+Requirement: 5+ years in product management
+Evidence: Over 7 years of product management experience at InVision and Jobcase, Inc. (2016-2023)
+Confidence: 100%
+
+Requirement: Focus on improving customer experience (CX)
+Evidence: Revitalized a stalled project to improve document sharing, resolving top customer needs (2022)
+Confidence: 100%
+
+Requirement: Ability to balance long-term objectives with immediate successes
+Evidence: Executed retention-focused roadmap driving +250% increase in WAU while launching omni-channel system (2023)
+Confidence: 100%
+
+Requirement: Experience working with cross-functional teams
+Evidence: Coordinated a 10-member cross-functional team for email digest launch, increasing DAU by 20K (2021)
+Confidence: 100%
+
+Requirement: Strong commitment to understanding customer needs
+Evidence: Directed product strategy for Freehand's tools, focusing on user groups and admin permissions (2022)
+Confidence: 100%
+
+Experience Level: DIRECT_MATCH
+
+Quality Checks:
+• relevanceTest: ✓
+• authenticityTest: ✓
+• languageTest: ✓
+• formatTest: ✓
+• toneTest: ✓
+• nameHandlingTest: ✓
+
+Email Output:
+Subject: Quick intro request - Gusto Senior Product Manager, CX Platform
+Body length: 721 characters
+Body:
+Hey {firstName},
+
+After leading impactful product initiatives at InVision, Gusto's mission to enhance customer experience resonates with my background. I see exciting parallels in my work on Freehand’s tools that improved user satisfaction. Could you introduce me to someone on the team?
+
+Quick background:
+• Drove +250% WAU growth through retention-focused roadmap at InVision (2023)
+• Revitalized document sharing project, addressing top customer needs (2022)
+• Coordinated a 10-member team to launch email digest, increasing DAU by 20K (2021)
+
+Learn more: https://jobasaurus--new-ui-p2.deno.dev/job/5907621-senior-product-manager-cx-platform
+
+Thanks!
+
+Lauren
+brucato.lauren@gmail.com
+www.linkedin.com/in/lauren-brucato
+
+Quality Metrics:
+• Specific Metrics: ✓
+• Date References: ✓
+• Style Match: ✓
+• Unique Opening: ✗
+• Valid Name Handling: ✓
+• Team Size/Scope: ✗
+• No Forbidden Phrases: ✗
+
+Warning - Forbidden phrases found:
+• "resonates"
+• "mission"
+
+Token Analysis:
+Input tokens: undefined
+Output tokens: undefined
+Total tokens used: NaN / 16384 (NaN%)
+Remaining context window: NaN tokens
+Remaining output tokens: NaN / 1024 (NaN% available)
+Cost: $NaN
+
+----------------------------------------
+
+Phrase Variation Analysis:
+• Unique Openings: 4 / 4
+• Unique Bullets: 12 / 12
+• Unique Connection Asks: 1 / 4
+
+Test Summary:
+----------------------------------------
+Total tokens used across all tests: NaN
+Average tokens per test: NaN
+Total input tokens: NaN
+Total output tokens: NaN
+Average context window usage: NaN%
+Total cost: $NaN
+
+Test results saved to: test/logs/intro-test-2024-12-13T00-10-17-283Z.log

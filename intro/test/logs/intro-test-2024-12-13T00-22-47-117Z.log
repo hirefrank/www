@@ -1,0 +1,26 @@
+Starting intro email generation tests...
+
+Testing with model: gpt-4o-mini
+========================================
+
+Running test case: Lauren Growth/Data 1
+----------------------------------------
+Error in test case: 400 'messages' must contain the word 'json' in some form, to use 'response_format' of type 'json_object'.
+
+Running test case: Lauren Growth/Data 2
+----------------------------------------
+Error in test case: 400 'messages' must contain the word 'json' in some form, to use 'response_format' of type 'json_object'.
+
+Running test case: Lauren 0 to 1 1
+----------------------------------------
+Error in test case: 400 'messages' must contain the word 'json' in some form, to use 'response_format' of type 'json_object'.
+
+Running test case: Lauren 0 to 1 2
+----------------------------------------
+Error in test case: 400 'messages' must contain the word 'json' in some form, to use 'response_format' of type 'json_object'.
+
+Testing with model: gpt-4o
+========================================
+
+Running test case: Lauren Growth/Data 1
+----------------------------------------

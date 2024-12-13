@@ -1,0 +1,17 @@
+Starting intro email generation tests...
+
+Testing with model: gpt-4o-mini
+========================================
+
+Running test case: Lauren Growth/Data 1
+----------------------------------------
+Error in test case: Failed to parse AI response: Unexpected token '`', "```json
+{
+"... is not valid JSON
+
+Running test case: Lauren Growth/Data 2
+----------------------------------------
+Error in test case: Failed to parse AI response: Unexpected token 'T', "The email "... is not valid JSON
+
+Running test case: Lauren 0 to 1 1
+----------------------------------------

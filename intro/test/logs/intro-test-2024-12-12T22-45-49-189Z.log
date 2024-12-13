@@ -1,0 +1,56 @@
+Starting intro email generation tests...
+
+Running test case: Frank Harris 1
+----------------------------------------
+
+Status: 200
+
+Token Analysis for haiku:
+Input tokens: 0
+Output tokens: 0
+Total tokens used: 0 / 4096 (0.0%)
+Remaining context window: 4096 tokens
+Remaining output tokens: 1024 / 1024 (100.0% available)
+Model cost: $0.0000
+
+Token Analysis for gpt4oMini:
+Input tokens: 0
+Output tokens: 0
+Total tokens used: 0 / 16384 (0.0%)
+Remaining context window: 16384 tokens
+Remaining output tokens: 1024 / 1024 (100.0% available)
+Model cost: $0.0000
+
+Token Analysis for gpt4o:
+Input tokens: 0
+Output tokens: 0
+Total tokens used: 0 / 16384 (0.0%)
+Remaining context window: 16384 tokens
+Remaining output tokens: 1024 / 1024 (100.0% available)
+Model cost: $0.0000
+
+Email Output:
+Subject: Introduction Request for Software Engineer Role at Anthropic
+Hi {firstName},
+
+• Developed LLM-based demos with a team of five engineers, resulting in a 30% increase in user engagement in Q1 2023.
+• Collaborated on a project that reduced processing time for AI models by 25% in 2022.
+• Led a team of four in implementing a new feature that enhanced system efficiency by 15% in 2023.
+
+Best regards,
+[Your Name]
+[Your Email]
+[Your LinkedIn Profile or Other Social Link]
+
+Quality Metrics:
+• has Specific Metrics: ✓
+• has Date References: ✓
+• matches Sender Style: ✗
+  Evidence: 
+• has Unique Opening: ✓
+• has Valid Name Handling: ✓
+• has Team Size Or Scope: ✗
+• has Forbidden Phrases: ✗
+  Evidence: aligns
+
+----------------------------------------

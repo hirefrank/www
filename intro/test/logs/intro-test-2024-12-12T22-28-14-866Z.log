@@ -1,0 +1,140 @@
+Starting intro email generation tests...
+
+Running test case: Frank Harris 1
+----------------------------------------
+
+Status: 200
+
+Token Analysis for haiku:
+Input tokens: 0
+Output tokens: 0
+Total tokens used: 0 / 4096 (0.0%)
+Remaining context window: 4096 tokens
+Remaining output tokens: 1024 / 1024 (100.0% available)
+Model cost: $0.0000
+
+Token Analysis for gpt4oMini:
+Input tokens: 0
+Output tokens: 0
+Total tokens used: 0 / 16384 (0.0%)
+Remaining context window: 16384 tokens
+Remaining output tokens: 1024 / 1024 (100.0% available)
+Model cost: $0.0000
+
+Token Analysis for gpt4o:
+Input tokens: 0
+Output tokens: 0
+Total tokens used: 0 / 16384 (0.0%)
+Remaining context window: 16384 tokens
+Remaining output tokens: 1024 / 1024 (100.0% available)
+Model cost: $0.0000
+
+Email Output:
+Subject: Introduction Request for Software Engineer Role at Anthropic
+
+Hi [First Name],
+
+I hope this message finds you well. I'm reaching out because Anthropic is currently hiring for a Software Engineer position, and I believe my experience aligns well with their requirements. I was wondering if you could help connect me with someone at Anthropic who might be able to provide more insights or guidance.
+
+Here's a brief overview of my relevant experience:
+
+- Developed a demo using large language models (LLMs) that boosted user engagement by 30% in Q1 2023.
+- Worked collaboratively with a team of five engineers to enhance product features in 2022.
+- Implemented machine learning models that reduced processing time by 25% in 2023.
+
+For more details about the role, you can check out the job posting here: [Anthropic Job Posting Link]
+
+Thank you so much for considering my request. I really appreciate any assistance you can provide.
+
+Best regards,
+
+[Your Name]  
+[Your Email]  
+[Your LinkedIn Profile or Other Social Link]
+
+Quality Metrics:
+• has Specific Metrics: ✗
+• has Date References: ✓
+• matches Sender Style: ✗
+• has Unique Opening: ✗
+• has Valid Name Handling: ✗
+• has Team Size Or Scope: ✗
+• has Forbidden Phrases: ✗
+
+Warning - Forbidden phrases found:
+• "aligns"
+
+----------------------------------------
+
+Running test case: Lauren Growth/Data 1
+----------------------------------------
+
+Status: 200
+
+Token Analysis for haiku:
+Input tokens: 0
+Output tokens: 0
+Total tokens used: 0 / 4096 (0.0%)
+Remaining context window: 4096 tokens
+Remaining output tokens: 1024 / 1024 (100.0% available)
+Model cost: $0.0000
+
+Token Analysis for gpt4oMini:
+Input tokens: 0
+Output tokens: 0
+Total tokens used: 0 / 16384 (0.0%)
+Remaining context window: 16384 tokens
+Remaining output tokens: 1024 / 1024 (100.0% available)
+Model cost: $0.0000
+
+Token Analysis for gpt4o:
+Input tokens: 0
+Output tokens: 0
+Total tokens used: 0 / 16384 (0.0%)
+Remaining context window: 16384 tokens
+Remaining output tokens: 1024 / 1024 (100.0% available)
+Model cost: $0.0000
+
+Email Output:
+**Subject:** Introduction Request for Jobasaurus Product Manager Role
+
+**Body:**
+
+Hi Lauren,
+
+I hope you're doing well. I recently came across the Product Manager position at Jobasaurus and am very interested in the opportunity. I have a proven track record of driving significant growth and would love to connect with someone from the team to learn more about the role.
+
+Here's a brief overview of my experience:
+
+- Led a team of 10 at InVision to achieve a 250% increase in Weekly Active Users in 2022.
+- Developed and implemented an iterative roadmap to enhance permissions and sharing features for a user base of 500,000 in 2021.
+- Worked closely with cross-functional teams to improve product features, resulting in a 30% boost in user engagement in 2023.
+
+For more details on the role, please see the job listing [here](https://jobasaurus--new-ui-p2.deno.dev/job/6289451-product-manager-research).
+
+If you could introduce me to someone on the team, I would greatly appreciate it.
+
+Thank you!
+
+Best regards,
+
+[Your Name]  
+[Your Email]  
+[Your LinkedIn Profile]
+
+Quality Metrics:
+• has Specific Metrics: ✗
+• has Date References: ✓
+• matches Sender Style: ✗
+• has Unique Opening: ✗
+• has Valid Name Handling: ✗
+• has Team Size Or Scope: ✗
+• has Forbidden Phrases: ✗
+
+Warning - Forbidden phrases found:
+• "mission"
+
+----------------------------------------
+
+Running test case: Lauren Growth/Data 2
+----------------------------------------

@@ -1,0 +1,45 @@
+Starting intro email generation tests...
+
+Running test case: Lauren Growth/Data 1
+----------------------------------------
+
+Error in test case Lauren Growth/Data 1:
+404 The model `gpt4oMini` does not exist or you do not have access to it.
+----------------------------------------
+
+Running test case: Lauren Growth/Data 2
+----------------------------------------
+
+Error in test case Lauren Growth/Data 2:
+404 The model `gpt4oMini` does not exist or you do not have access to it.
+----------------------------------------
+
+Running test case: Lauren 0 to 1 1
+----------------------------------------
+
+Error in test case Lauren 0 to 1 1:
+404 The model `gpt4oMini` does not exist or you do not have access to it.
+----------------------------------------
+
+Running test case: Lauren 0 to 1 2
+----------------------------------------
+
+Error in test case Lauren 0 to 1 2:
+404 The model `gpt4oMini` does not exist or you do not have access to it.
+----------------------------------------
+
+Phrase Variation Analysis:
+• Unique Openings: 0 / 4
+• Unique Bullets: 0 / 12
+• Unique Connection Asks: 0 / 4
+
+Test Summary:
+----------------------------------------
+Total tokens used across all tests: 0
+Average tokens per test: 0
+Total input tokens: 0
+Total output tokens: 0
+Average context window usage: 0.0%
+Total cost: $0.0000
+
+Test results saved to: test/logs/intro-test-2024-12-13T00-07-12-384Z.log

@@ -1,0 +1,220 @@
+Starting intro email generation tests...
+
+Running test case: Frank Harris 1
+----------------------------------------
+
+Status: 200
+
+Token Analysis for gpt4oMini:
+Input tokens: 0
+Output tokens: 0
+Total tokens used: 0 / 16384 (0.0%)
+Remaining context window: 16384 tokens
+Remaining output tokens: 1024 / 1024 (100.0% available)
+
+Token Analysis for gpt4o:
+Input tokens: 0
+Output tokens: 0
+Total tokens used: 0 / 16384 (0.0%)
+Remaining context window: 16384 tokens
+Remaining output tokens: 1024 / 1024 (100.0% available)
+Total cost: $0.0000
+
+Email Output:
+Subject: 
+
+
+
+
+
+Quality Metrics:
+• has Specific Metrics: ✓
+• has Date References: ✓
+• matches Sender Style: ✗
+  Evidence: 
+• has Unique Opening: ✓
+• has Valid Name Handling: ✗
+  Evidence: 
+• has Team Size Or Scope: ✓
+• has Forbidden Phrases: ✓
+
+----------------------------------------
+
+Running test case: Lauren Growth/Data 1
+----------------------------------------
+
+Status: 200
+
+Token Analysis for gpt4oMini:
+Input tokens: 0
+Output tokens: 0
+Total tokens used: 0 / 16384 (0.0%)
+Remaining context window: 16384 tokens
+Remaining output tokens: 1024 / 1024 (100.0% available)
+
+Token Analysis for gpt4o:
+Input tokens: 0
+Output tokens: 0
+Total tokens used: 0 / 16384 (0.0%)
+Remaining context window: 16384 tokens
+Remaining output tokens: 1024 / 1024 (100.0% available)
+Total cost: $0.0000
+
+Email Output:
+Subject: 
+
+
+
+
+
+Quality Metrics:
+• has Specific Metrics: ✓
+• has Date References: ✓
+• matches Sender Style: ✗
+  Evidence: 
+• has Unique Opening: ✗
+  Evidence: 
+• has Valid Name Handling: ✗
+  Evidence: 
+• has Team Size Or Scope: ✓
+• has Forbidden Phrases: ✓
+
+----------------------------------------
+
+Running test case: Lauren Growth/Data 2
+----------------------------------------
+
+Status: 200
+
+Token Analysis for gpt4oMini:
+Input tokens: 0
+Output tokens: 0
+Total tokens used: 0 / 16384 (0.0%)
+Remaining context window: 16384 tokens
+Remaining output tokens: 1024 / 1024 (100.0% available)
+
+Token Analysis for gpt4o:
+Input tokens: 0
+Output tokens: 0
+Total tokens used: 0 / 16384 (0.0%)
+Remaining context window: 16384 tokens
+Remaining output tokens: 1024 / 1024 (100.0% available)
+Total cost: $0.0000
+
+Email Output:
+Subject: 
+
+
+
+
+
+Quality Metrics:
+• has Specific Metrics: ✓
+• has Date References: ✓
+• matches Sender Style: ✗
+  Evidence: 
+• has Unique Opening: ✗
+  Evidence: 
+• has Valid Name Handling: ✗
+  Evidence: 
+• has Team Size Or Scope: ✓
+• has Forbidden Phrases: ✗
+  Evidence: aligns
+
+----------------------------------------
+
+Running test case: Lauren 0 to 1 1
+----------------------------------------
+
+Status: 200
+
+Token Analysis for gpt4oMini:
+Input tokens: 0
+Output tokens: 0
+Total tokens used: 0 / 16384 (0.0%)
+Remaining context window: 16384 tokens
+Remaining output tokens: 1024 / 1024 (100.0% available)
+
+Token Analysis for gpt4o:
+Input tokens: 0
+Output tokens: 0
+Total tokens used: 0 / 16384 (0.0%)
+Remaining context window: 16384 tokens
+Remaining output tokens: 1024 / 1024 (100.0% available)
+Total cost: $0.0000
+
+Email Output:
+Subject: 
+
+
+
+
+
+Quality Metrics:
+• has Specific Metrics: ✓
+• has Date References: ✓
+• matches Sender Style: ✗
+  Evidence: 
+• has Unique Opening: ✗
+  Evidence: 
+• has Valid Name Handling: ✗
+  Evidence: 
+• has Team Size Or Scope: ✗
+• has Forbidden Phrases: ✓
+
+----------------------------------------
+
+Running test case: Lauren 0 to 1 2
+----------------------------------------
+
+Status: 200
+
+Token Analysis for gpt4oMini:
+Input tokens: 0
+Output tokens: 0
+Total tokens used: 0 / 16384 (0.0%)
+Remaining context window: 16384 tokens
+Remaining output tokens: 1024 / 1024 (100.0% available)
+
+Token Analysis for gpt4o:
+Input tokens: 0
+Output tokens: 0
+Total tokens used: 0 / 16384 (0.0%)
+Remaining context window: 16384 tokens
+Remaining output tokens: 1024 / 1024 (100.0% available)
+Total cost: $0.0000
+
+Email Output:
+Subject: 
+
+
+
+
+
+Quality Metrics:
+• has Specific Metrics: ✓
+• has Date References: ✓
+• matches Sender Style: ✗
+  Evidence: 
+• has Unique Opening: ✗
+  Evidence: 
+• has Valid Name Handling: ✗
+  Evidence: 
+• has Team Size Or Scope: ✓
+• has Forbidden Phrases: ✓
+
+----------------------------------------
+
+Phrase Variation Analysis:
+• Unique Openings: 1 / 5
+• Unique Bullets: 0 / 15
+• Total Unique Phrases: 1
+
+Test Summary:
+----------------------------------------
+Total tokens used across all tests: 57183
+Average tokens per test: 11437
+Total cost: $0.0514
+Success rate: 5/5 (100.0%)
+
+Test results saved to: test/logs/intro-test-2024-12-13T00-00-29-114Z.log

@@ -1,0 +1,246 @@
+Starting intro email generation tests...
+
+Running test case: Frank Harris 1
+----------------------------------------
+
+Status: 200
+
+Token Analysis for gpt4oMini:
+Input tokens: 0
+Output tokens: 0
+Total tokens used: 0 / 16384 (0.0%)
+Remaining context window: 16384 tokens
+Remaining output tokens: 1024 / 1024 (100.0% available)
+
+Token Analysis for gpt4o:
+Input tokens: 0
+Output tokens: 0
+Total tokens used: 0 / 16384 (0.0%)
+Remaining context window: 16384 tokens
+Remaining output tokens: 1024 / 1024 (100.0% available)
+Total cost: $0.0000
+
+Email Output:
+Subject: Introduction Request for Anthropic Product Manager Role
+Hi {firstName},
+
+• At Slack, I successfully achieved a $2M pipeline within 90 days of launch (2021-Present).
+• During my tenure at Betterment, I contributed to a 4.5x increase in assets under management (2016-2018).
+• I led a project at Etsy that resulted in a 3.5% increase in conversions (2013).
+
+Best regards,
+[Your Name]
+[Your Email]
+[Your LinkedIn]
+
+Quality Metrics:
+• has Specific Metrics: ✓
+• has Date References: ✗
+• matches Sender Style: ✗
+  Evidence: 
+• has Unique Opening: ✓
+• has Valid Name Handling: ✓
+• has Team Size Or Scope: ✗
+• has Forbidden Phrases: ✓
+
+----------------------------------------
+
+Running test case: Lauren Growth/Data 1
+----------------------------------------
+
+Status: 200
+
+Token Analysis for gpt4oMini:
+Input tokens: 0
+Output tokens: 0
+Total tokens used: 0 / 16384 (0.0%)
+Remaining context window: 16384 tokens
+Remaining output tokens: 1024 / 1024 (100.0% available)
+
+Token Analysis for gpt4o:
+Input tokens: 0
+Output tokens: 0
+Total tokens used: 0 / 16384 (0.0%)
+Remaining context window: 16384 tokens
+Remaining output tokens: 1024 / 1024 (100.0% available)
+Total cost: $0.0000
+
+Email Output:
+Subject: Introduction Request for Product Manager Role at Anthropic
+Hi {firstName},
+
+• **InVision (August 2022 - September 2023):** Led the launch of three intelligent canvas tools, which played a key role in the acquisition of Freehand by MIRO.
+• **Jobcase, Inc. (January 2020 - June 2021):** Developed a job-seeker matching product that resulted in over $1M in savings.
+• **Accenture (April 2016 - October 2017):** Contributed to a $40M business venture through data visualization and analytics.
+
+Best regards,
+Lauren Brucato
+[Your Email]
+[Your LinkedIn]
+
+Quality Metrics:
+• has Specific Metrics: ✓
+• has Date References: ✓
+• matches Sender Style: ✗
+  Evidence: 
+• has Unique Opening: ✗
+  Evidence: 
+• has Valid Name Handling: ✓
+• has Team Size Or Scope: ✗
+• has Forbidden Phrases: ✓
+
+----------------------------------------
+
+Running test case: Lauren Growth/Data 2
+----------------------------------------
+
+Status: 200
+
+Token Analysis for gpt4oMini:
+Input tokens: 0
+Output tokens: 0
+Total tokens used: 0 / 16384 (0.0%)
+Remaining context window: 16384 tokens
+Remaining output tokens: 1024 / 1024 (100.0% available)
+
+Token Analysis for gpt4o:
+Input tokens: 0
+Output tokens: 0
+Total tokens used: 0 / 16384 (0.0%)
+Remaining context window: 16384 tokens
+Remaining output tokens: 1024 / 1024 (100.0% available)
+Total cost: $0.0000
+
+Email Output:
+Subject: Introduction Request for Amplitude's Senior Product Manager Role
+Hi {firstName},
+
+• **User Growth**: Achieved a 250% increase in weekly active users at InVision through retention-focused strategies (2022-2023).
+• **Revenue Generation**: Generated over $4M in net-new annual revenue and realized over $1M in savings through successful product launches in 2022.
+• **SEO Optimization**: Enhanced SEO performance, delivering 3x more impressions (5.4M/year) and 3.5x more clicks (85K/year) by optimizing content in 2022.
+
+Best regards,
+[Your Name]
+[Your Email]
+[Your LinkedIn]
+
+Quality Metrics:
+• has Specific Metrics: ✓
+• has Date References: ✓
+• matches Sender Style: ✗
+  Evidence: 
+• has Unique Opening: ✗
+  Evidence: 
+• has Valid Name Handling: ✓
+• has Team Size Or Scope: ✗
+• has Forbidden Phrases: ✓
+
+----------------------------------------
+
+Running test case: Lauren 0 to 1 1
+----------------------------------------
+
+Status: 200
+
+Token Analysis for gpt4oMini:
+Input tokens: 0
+Output tokens: 0
+Total tokens used: 0 / 16384 (0.0%)
+Remaining context window: 16384 tokens
+Remaining output tokens: 1024 / 1024 (100.0% available)
+
+Token Analysis for gpt4o:
+Input tokens: 0
+Output tokens: 0
+Total tokens used: 0 / 16384 (0.0%)
+Remaining context window: 16384 tokens
+Remaining output tokens: 1024 / 1024 (100.0% available)
+Total cost: $0.0000
+
+Email Output:
+Subject: Introduction Request for Senior Product Manager Role at Grammarly
+Hi {firstName},
+
+• At InVision in 2022, I led three teams to achieve a 250% increase in weekly active users through strategic product initiatives.
+• In 2020, I managed a 10-member cross-functional team at Jobcase, Inc., launching a product that resulted in over $1M in savings by matching job seekers with hiring events.
+• I also oversaw a four-person acquisition team at Jobcase, Inc. in 2021, delivering a 3x increase in SEO impressions and clicks through effective content strategies.
+
+Best regards,
+Lauren
+[Your Email]
+[Your LinkedIn]
+---
+
+Quality Metrics:
+• has Specific Metrics: ✓
+• has Date References: ✓
+• matches Sender Style: ✗
+  Evidence: 
+• has Unique Opening: ✗
+  Evidence: 
+• has Valid Name Handling: ✓
+• has Team Size Or Scope: ✓
+• has Forbidden Phrases: ✓
+
+----------------------------------------
+
+Running test case: Lauren 0 to 1 2
+----------------------------------------
+
+Status: 200
+
+Token Analysis for gpt4oMini:
+Input tokens: 0
+Output tokens: 0
+Total tokens used: 0 / 16384 (0.0%)
+Remaining context window: 16384 tokens
+Remaining output tokens: 1024 / 1024 (100.0% available)
+
+Token Analysis for gpt4o:
+Input tokens: 0
+Output tokens: 0
+Total tokens used: 0 / 16384 (0.0%)
+Remaining context window: 16384 tokens
+Remaining output tokens: 1024 / 1024 (100.0% available)
+Total cost: $0.0000
+
+Email Output:
+Subject: Introduction Request for Senior Product Manager Role at Jobasaurus
+Hi {firstName},
+
+• Achieved a 250% increase in weekly active users through retention-focused strategies in 2023.
+• Generated over $1M in savings by launching a product that matched job seekers with hiring events in 2022.
+• Delivered a 3x increase in SEO impressions and a 3.5x increase in clicks through efficient content strategies in 2022.
+
+Best regards,
+Lauren
+[Your Name]
+[Your Email]
+[Your LinkedIn]
+
+Quality Metrics:
+• has Specific Metrics: ✓
+• has Date References: ✓
+• matches Sender Style: ✗
+  Evidence: 
+• has Unique Opening: ✗
+  Evidence: 
+• has Valid Name Handling: ✓
+• has Team Size Or Scope: ✗
+• has Forbidden Phrases: ✓
+
+----------------------------------------
+
+Phrase Variation Analysis:
+• Unique Openings: 1 / 5
+• Unique Bullets: 15 / 15
+• Total Unique Phrases: 1
+
+Test Summary:
+----------------------------------------
+Total tokens used across all tests: 64190
+Average tokens per test: 12838
+Total cost: $0.0330
+Success rate: 5/5 (100.0%)
+
+Test results saved to: test/logs/intro-test-2024-12-12T23-00-18-307Z.log

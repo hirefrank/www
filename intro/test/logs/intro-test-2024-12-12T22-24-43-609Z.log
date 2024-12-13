@@ -1,0 +1,350 @@
+Starting intro email generation tests...
+
+Running test case: Frank Harris 1
+----------------------------------------
+
+Status: 200
+
+Token Analysis for haiku:
+Input tokens: 0
+Output tokens: 0
+Total tokens used: 0 / 4096 (0.0%)
+Remaining context window: 4096 tokens
+Remaining output tokens: 1024 / 1024 (100.0% available)
+Model cost: $0.0000
+
+Token Analysis for gpt4oMini:
+Input tokens: 0
+Output tokens: 0
+Total tokens used: 0 / 16384 (0.0%)
+Remaining context window: 16384 tokens
+Remaining output tokens: 1024 / 1024 (100.0% available)
+Model cost: $0.0000
+
+Token Analysis for gpt4o:
+Input tokens: 0
+Output tokens: 0
+Total tokens used: 0 / 16384 (0.0%)
+Remaining context window: 16384 tokens
+Remaining output tokens: 1024 / 1024 (100.0% available)
+Model cost: $0.0000
+
+Email Output:
+Subject: Introduction Request for Anthropic Product Manager Role
+
+Hi [First Name],
+
+I hope this message finds you well. I recently came across the Product Manager position at Anthropic, and I'm very interested in exploring this opportunity. Given my experience with large language models (LLMs) and product management, I believe I could be a great fit.
+
+Here's a brief overview of my background:
+
+- In 2023, I developed a demo showcasing LLM capabilities, which led to a 30% increase in user engagement.
+- I collaborated with a team of five engineers to enhance product features, achieving a 20% reduction in response time in 2022.
+- I successfully managed a project with a $500K budget, delivering it 10% under budget in 2023.
+
+You can find more details about the role here: [Link to Job Posting]
+
+If you know anyone at Anthropic who could provide more insight or facilitate an introduction, I would greatly appreciate it.
+
+Thank you for your help!
+
+Best regards,
+
+[Your Name]  
+[Your Email]  
+[Your LinkedIn Profile or Other Social Media]
+
+Quality Metrics:
+• has Specific Metrics: ✗
+• has Date References: ✓
+• matches Sender Style: ✗
+• has Unique Opening: ✗
+• has Valid Name Handling: ✗
+• has Team Size Or Scope: ✗
+• has Forbidden Phrases: ✓
+
+----------------------------------------
+
+Running test case: Lauren Growth/Data 1
+----------------------------------------
+
+Status: 200
+
+Token Analysis for haiku:
+Input tokens: 0
+Output tokens: 0
+Total tokens used: 0 / 4096 (0.0%)
+Remaining context window: 4096 tokens
+Remaining output tokens: 1024 / 1024 (100.0% available)
+Model cost: $0.0000
+
+Token Analysis for gpt4oMini:
+Input tokens: 0
+Output tokens: 0
+Total tokens used: 0 / 16384 (0.0%)
+Remaining context window: 16384 tokens
+Remaining output tokens: 1024 / 1024 (100.0% available)
+Model cost: $0.0000
+
+Token Analysis for gpt4o:
+Input tokens: 0
+Output tokens: 0
+Total tokens used: 0 / 16384 (0.0%)
+Remaining context window: 16384 tokens
+Remaining output tokens: 1024 / 1024 (100.0% available)
+Model cost: $0.0000
+
+Email Output:
+Subject: Introduction Request for Jobasaurus Product Manager Role
+
+Hi Lauren,
+
+I hope you're doing well. I recently came across the Product Manager Research position at Jobasaurus and am very interested in the opportunity. Given my background in driving significant growth and leading successful teams, I believe I could be a strong fit for the role. Would you be able to introduce me to someone at Jobasaurus who could provide more insight into the position?
+
+Here's a quick overview of my experience:
+
+- Led a cross-functional team of 10 at InVision, achieving a 250% increase in Weekly Active Users in 2022.
+- Developed and executed an iterative roadmap to revamp permissions and sharing features, boosting user satisfaction by 30% in 2021.
+- Worked closely with engineering and design teams to implement data-driven strategies, resulting in a 40% increase in feature adoption in 2023.
+
+For more details about the role, you can check it out here: [Jobasaurus Product Manager Research](https://jobasaurus--new-ui-p2.deno.dev/job/6289451-product-manager-research).
+
+Thank you so much for your help!
+
+Best regards,
+
+[Your Name]  
+[Your Email]  
+[Your LinkedIn Profile]
+
+Quality Metrics:
+• has Specific Metrics: ✗
+• has Date References: ✓
+• matches Sender Style: ✗
+• has Unique Opening: ✗
+• has Valid Name Handling: ✗
+• has Team Size Or Scope: ✗
+• has Forbidden Phrases: ✗
+
+Warning - Forbidden phrases found:
+• "mission"
+
+----------------------------------------
+
+Running test case: Lauren Growth/Data 2
+----------------------------------------
+
+Status: 200
+
+Token Analysis for haiku:
+Input tokens: 0
+Output tokens: 0
+Total tokens used: 0 / 4096 (0.0%)
+Remaining context window: 4096 tokens
+Remaining output tokens: 1024 / 1024 (100.0% available)
+Model cost: $0.0000
+
+Token Analysis for gpt4oMini:
+Input tokens: 0
+Output tokens: 0
+Total tokens used: 0 / 16384 (0.0%)
+Remaining context window: 16384 tokens
+Remaining output tokens: 1024 / 1024 (100.0% available)
+Model cost: $0.0000
+
+Token Analysis for gpt4o:
+Input tokens: 0
+Output tokens: 0
+Total tokens used: 0 / 16384 (0.0%)
+Remaining context window: 16384 tokens
+Remaining output tokens: 1024 / 1024 (100.0% available)
+Model cost: $0.0000
+
+Email Output:
+Subject: Introduction Request for Sr. Product Manager Role at Jobasaurus
+
+Hi Lauren,
+
+I hope you're doing well. I recently came across an exciting opportunity for a Sr. Product Manager position at Jobasaurus, and I believe my experience aligns well with their needs. I was wondering if you might be able to introduce me to someone at Jobasaurus who could provide more insight into the role.
+
+Here's a quick overview of my background:
+
+- Led a team at InVision to achieve a 250% increase in Weekly Active Users in 2022.
+- Developed and implemented an iterative roadmap to enhance permissions and sharing features at InVision in 2021.
+- Collaborated with a cross-functional team of 10 to enhance product features in 2023.
+
+For more details about the role, you can check out the job posting here: [Jobasaurus Sr. Product Manager Position](https://jobasaurus--new-ui-p2.deno.dev/job/6289375-sr-product-manager).
+
+Thank you so much for considering my request. I really appreciate your help!
+
+Best regards,
+
+[Your Name]  
+[your.email@example.com]  
+@yourprofile
+
+Quality Metrics:
+• has Specific Metrics: ✗
+• has Date References: ✓
+• matches Sender Style: ✗
+• has Unique Opening: ✗
+• has Valid Name Handling: ✗
+• has Team Size Or Scope: ✗
+• has Forbidden Phrases: ✗
+
+Warning - Forbidden phrases found:
+• "aligns"
+• "mission"
+
+----------------------------------------
+
+Running test case: Lauren 0 to 1 1
+----------------------------------------
+
+Status: 200
+
+Token Analysis for haiku:
+Input tokens: 0
+Output tokens: 0
+Total tokens used: 0 / 4096 (0.0%)
+Remaining context window: 4096 tokens
+Remaining output tokens: 1024 / 1024 (100.0% available)
+Model cost: $0.0000
+
+Token Analysis for gpt4oMini:
+Input tokens: 0
+Output tokens: 0
+Total tokens used: 0 / 16384 (0.0%)
+Remaining context window: 16384 tokens
+Remaining output tokens: 1024 / 1024 (100.0% available)
+Model cost: $0.0000
+
+Token Analysis for gpt4o:
+Input tokens: 0
+Output tokens: 0
+Total tokens used: 0 / 16384 (0.0%)
+Remaining context window: 16384 tokens
+Remaining output tokens: 1024 / 1024 (100.0% available)
+Model cost: $0.0000
+
+Email Output:
+**Subject:** Introduction Request for Senior Product Manager Role at Freehand
+
+**Body:**
+
+Hi Lauren,
+
+I hope this message finds you well. I recently came across an exciting opportunity at Freehand for a Senior Product Manager position, and I believe my experience aligns well with the role. I was wondering if you might be able to introduce me to someone at Freehand who could provide more insight into the position.
+
+Here's a quick overview of my background:
+
+- Successfully launched Freehand's first project planning tools, including Tables, which led to a 30% increase in user engagement in Q1 2023.
+- Managed a cross-functional team of 10 to deliver product features on schedule in 2022.
+- Spearheaded the development of project planning tools, resulting in a 25% reduction in project setup time in 2023.
+
+You can find more details about the role here: [Job Link](https://jobasaurus--new-ui-p2.deno.dev/job/6332639-senior-product-manager-enterprise).
+
+Thank you so much for considering my request. I appreciate any assistance you can provide.
+
+Best regards,
+
+[Your Name]  
+[your.email@example.com]  
+@yourprofile
+
+Quality Metrics:
+• has Specific Metrics: ✗
+• has Date References: ✓
+• matches Sender Style: ✗
+• has Unique Opening: ✗
+• has Valid Name Handling: ✗
+• has Team Size Or Scope: ✗
+• has Forbidden Phrases: ✗
+
+Warning - Forbidden phrases found:
+• "aligns"
+
+----------------------------------------
+
+Running test case: Lauren 0 to 1 2
+----------------------------------------
+
+Status: 200
+
+Token Analysis for haiku:
+Input tokens: 0
+Output tokens: 0
+Total tokens used: 0 / 4096 (0.0%)
+Remaining context window: 4096 tokens
+Remaining output tokens: 1024 / 1024 (100.0% available)
+Model cost: $0.0000
+
+Token Analysis for gpt4oMini:
+Input tokens: 0
+Output tokens: 0
+Total tokens used: 0 / 16384 (0.0%)
+Remaining context window: 16384 tokens
+Remaining output tokens: 1024 / 1024 (100.0% available)
+Model cost: $0.0000
+
+Token Analysis for gpt4o:
+Input tokens: 0
+Output tokens: 0
+Total tokens used: 0 / 16384 (0.0%)
+Remaining context window: 16384 tokens
+Remaining output tokens: 1024 / 1024 (100.0% available)
+Model cost: $0.0000
+
+Email Output:
+**Subject:** Introduction Request for Senior Product Manager Role at Freehand
+
+---
+
+Hi {firstName},
+
+I hope this message finds you well. I'm reaching out because Freehand is currently hiring for a Senior Product Manager position, and I believe my experience aligns well with their needs. Would you be able to introduce me to someone at Freehand who could provide more insight into this opportunity?
+
+Here's a brief overview of my background:
+
+- Successfully launched Freehand's first project planning tools, leading to a 30% increase in user engagement in Q1 2022.
+- Managed a cross-functional team of 10, delivering three major product updates within six months in 2021.
+- Spearheaded the development of user feedback mechanisms, resulting in a 25% improvement in customer satisfaction scores in 2022.
+
+You can find more details about the role here: [Job Link](https://jobasaurus--new-ui-p2.deno.dev/job/5907621-senior-product-manager-cx-platform).
+
+Thank you for considering my request. I appreciate any assistance you can provide.
+
+Best regards,
+
+Lauren  
+lauren@example.com  
+@lauren
+
+Quality Metrics:
+• has Specific Metrics: ✗
+• has Date References: ✓
+• matches Sender Style: ✗
+• has Unique Opening: ✗
+• has Valid Name Handling: ✗
+• has Team Size Or Scope: ✗
+• has Forbidden Phrases: ✗
+
+Warning - Forbidden phrases found:
+• "aligns"
+
+----------------------------------------
+
+Phrase Variation Analysis:
+• Unique Openings: 4 / 5
+• Unique Bullets: 0 / 15
+• Unique Connection Asks: 1 / 5
+
+Test Summary:
+----------------------------------------
+Total tokens used across all tests: 0
+Average tokens per test: 0
+Total input tokens: 0
+Total output tokens: 0
+Total cost across all models: $0.0000
+
+Test results saved to: test/logs/intro-test-2024-12-12T22-24-43-609Z.log

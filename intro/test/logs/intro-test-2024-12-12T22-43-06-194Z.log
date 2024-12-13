@@ -1,0 +1,43 @@
+Starting intro email generation tests...
+
+Running test case: Frank Harris 1
+----------------------------------------
+
+Status: 500
+Error: Failed to extract text from PDF
+
+Running test case: Lauren Growth/Data 1
+----------------------------------------
+
+Status: 500
+Error: Failed to extract text from PDF
+
+Running test case: Lauren Growth/Data 2
+----------------------------------------
+
+Status: 500
+Error: Failed to extract text from PDF
+
+Running test case: Lauren 0 to 1 1
+----------------------------------------
+
+Status: 500
+Error: Failed to extract text from PDF
+
+Running test case: Lauren 0 to 1 2
+----------------------------------------
+
+Status: 500
+Error: Failed to extract text from PDF
+
+Phrase Variation Analysis:
+• Unique Openings: 0 / 5
+• Unique Bullets: 0 / 15
+• Total Unique Phrases: 0
+
+Test Summary:
+----------------------------------------
+Total tokens used across all tests: 0
+Average tokens per test: 0
+Total cost: $0.0000
+Success rate: 0/5 (0.0%)

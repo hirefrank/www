@@ -1,0 +1,251 @@
+Starting intro email generation tests...
+
+Running test case: Frank Harris 1
+----------------------------------------
+
+Status: 200
+
+Token Analysis for gpt4oMini:
+Input tokens: 5418
+Output tokens: 737
+Total tokens used: 6155 / 16384 (37.6%)
+Remaining context window: 10229 tokens
+Remaining output tokens: 287 / 1024 (28.0% available)
+
+Token Analysis for gpt4o:
+Input tokens: 5418
+Output tokens: 737
+Total tokens used: 6155 / 16384 (37.6%)
+Remaining context window: 10229 tokens
+Remaining output tokens: 287 / 1024 (28.0% available)
+Total cost: $0.0047
+
+Email Output:
+Subject: Introduction Request for Anthropic Product Manager Role
+Hi ________,
+
+• Spearheaded a $2M pipeline within 90 days at Slack (2021-Present)
+• Achieved 4.5x AUM and 2.7x customer growth at Betterment (2016-2018)
+• Led a product overhaul at Etsy, resulting in a 3.5% increase in conversions (2018)
+
+Best regards,
+________
+________
+________
+
+Quality Metrics:
+• has Specific Metrics: ✓
+• has Date References: ✓
+• matches Sender Style: ✗
+  Evidence: 
+• has Unique Opening: ✓
+• has Valid Name Handling: ✗
+  Evidence: Hi ________,
+• has Team Size Or Scope: ✗
+• has Forbidden Phrases: ✓
+
+----------------------------------------
+
+Running test case: Lauren Growth/Data 1
+----------------------------------------
+
+Status: 200
+
+Token Analysis for gpt4oMini:
+Input tokens: 5261
+Output tokens: 792
+Total tokens used: 6053 / 16384 (36.9%)
+Remaining context window: 10331 tokens
+Remaining output tokens: 232 / 1024 (22.7% available)
+
+Token Analysis for gpt4o:
+Input tokens: 5261
+Output tokens: 792
+Total tokens used: 6053 / 16384 (36.9%)
+Remaining context window: 10331 tokens
+Remaining output tokens: 232 / 1024 (22.7% available)
+Total cost: $0.0052
+
+Email Output:
+Subject: Introduction Request for Product Manager Role at Anthropic
+Hi [First Name],
+
+• Spearheaded a product launch at Jobcase, Inc. (2020-2021), resulting in over $1M in savings by matching job seekers with hiring events.
+• Managed a four-person acquisition team at Jobcase, Inc. (2020-2021), generating over $4M in net-new annual revenue.
+• Enhanced SEO performance at Jobcase, Inc. (2020-2021), achieving 3x SEO impressions and 3.5x clicks through strategic content optimization.
+
+Best regards,
+Lauren
+[Your Email]
+[Your LinkedIn or Twitter Handle]
+
+Quality Metrics:
+• has Specific Metrics: ✓
+• has Date References: ✓
+• matches Sender Style: ✗
+  Evidence: 
+• has Unique Opening: ✗
+  Evidence: 
+• has Valid Name Handling: ✗
+  Evidence: Hi [First Name],
+• has Team Size Or Scope: ✗
+• has Forbidden Phrases: ✗
+  Evidence: aligns
+
+----------------------------------------
+
+Running test case: Lauren Growth/Data 2
+----------------------------------------
+
+Status: 200
+
+Token Analysis for gpt4oMini:
+Input tokens: 5229
+Output tokens: 825
+Total tokens used: 6054 / 16384 (37.0%)
+Remaining context window: 10330 tokens
+Remaining output tokens: 199 / 1024 (19.4% available)
+
+Token Analysis for gpt4o:
+Input tokens: 5229
+Output tokens: 825
+Total tokens used: 6054 / 16384 (37.0%)
+Remaining context window: 10330 tokens
+Remaining output tokens: 199 / 1024 (19.4% available)
+Total cost: $0.0053
+
+Email Output:
+Subject: Introduction Request for Amplitude Sr Product Manager Role
+Hi Lauren,
+
+• Led a team of three to achieve a 250% increase in weekly active users through retention-focused strategies (August 2022 - September 2023).
+• Coordinated a 10-member cross-functional team to generate over $1M in savings by launching a product that matched job seekers with hiring events (2020-2021).
+• Enhanced SEO performance, delivering 3x more impressions (5.4M/year) and 3.5x more clicks (85K/year) through effective content strategies (2020).
+
+Best regards,
+[Your Name]
+[Your Email Address]
+[Your LinkedIn Profile]
+
+Quality Metrics:
+• has Specific Metrics: ✓
+• has Date References: ✓
+• matches Sender Style: ✗
+  Evidence: 
+• has Unique Opening: ✗
+  Evidence: 
+• has Valid Name Handling: ✗
+  Evidence: Hi Lauren,
+• has Team Size Or Scope: ✓
+• has Forbidden Phrases: ✓
+
+----------------------------------------
+
+Running test case: Lauren 0 to 1 1
+----------------------------------------
+
+Status: 200
+
+Token Analysis for gpt4oMini:
+Input tokens: 5837
+Output tokens: 931
+Total tokens used: 6768 / 16384 (41.3%)
+Remaining context window: 9616 tokens
+Remaining output tokens: 93 / 1024 (9.1% available)
+
+Token Analysis for gpt4o:
+Input tokens: 5837
+Output tokens: 931
+Total tokens used: 6768 / 16384 (41.3%)
+Remaining context window: 9616 tokens
+Remaining output tokens: 93 / 1024 (9.1% available)
+Total cost: $0.0057
+
+Email Output:
+Subject: Introduction Request for Grammarly Senior Product Manager Role
+Hi Lauren,
+
+• At InVision, I led three teams to achieve a 250% increase in weekly active users through strategic roadmap execution from August 2022 to September 2023.
+• While at Jobcase, Inc., I managed a 10-member cross-functional team, generating over $4M in net-new annual revenue and saving over $1M through successful product launches in 2022.
+• At Accenture, I coordinated a 40-person business intelligence team to deliver a 3x increase in SEO impressions and clicks by optimizing web content and implementing a cross-linking API in 2021.
+
+Best regards,
+[Your Name]
+[Your Email]
+[Your LinkedIn Profile]
+
+Quality Metrics:
+• has Specific Metrics: ✓
+• has Date References: ✓
+• matches Sender Style: ✗
+  Evidence: 
+• has Unique Opening: ✗
+  Evidence: 
+• has Valid Name Handling: ✗
+  Evidence: Hi Lauren,
+• has Team Size Or Scope: ✓
+• has Forbidden Phrases: ✓
+
+----------------------------------------
+
+Running test case: Lauren 0 to 1 2
+----------------------------------------
+
+Status: 200
+
+Token Analysis for gpt4oMini:
+Input tokens: 5888
+Output tokens: 1081
+Total tokens used: 6969 / 16384 (42.5%)
+Remaining context window: 9415 tokens
+Remaining output tokens: -57 / 1024 (-5.6% available)
+
+Token Analysis for gpt4o:
+Input tokens: 5888
+Output tokens: 1081
+Total tokens used: 6969 / 16384 (42.5%)
+Remaining context window: 9415 tokens
+Remaining output tokens: -57 / 1024 (-5.6% available)
+Total cost: $0.0063
+
+Email Output:
+Subject: Introduction Request for Gusto's Senior Product Manager Role
+Hi ________,
+
+• **InVision (August 2022 - September 2023):** Led a team of 10 to achieve a 250% increase in weekly active users through strategic roadmap execution.
+• **Jobcase, Inc. (January 2020 - June 2021):** Generated over $1M in savings by launching a product that matched job seekers with hiring events, coordinating a 10-member cross-functional team.
+• **InVision (2021):** Generated $4M+ in net-new annual revenue by scaling marketing channels in a management role.
+
+Best regards,
+Lauren
+lauren@example.com
+@lauren
+---
+
+Quality Metrics:
+• has Specific Metrics: ✓
+• has Date References: ✓
+• matches Sender Style: ✗
+  Evidence: 
+• has Unique Opening: ✗
+  Evidence: 
+• has Valid Name Handling: ✗
+  Evidence: Hi ________,
+• has Team Size Or Scope: ✓
+• has Forbidden Phrases: ✓
+
+----------------------------------------
+
+Phrase Variation Analysis:
+• Unique Openings: 1 / 5
+• Unique Bullets: 15 / 15
+• Total Unique Phrases: 1
+
+Test Summary:
+----------------------------------------
+Total tokens used across all tests: 31999
+Average tokens per test: 6400
+Total cost: $0.0272
+Success rate: 5/5 (100.0%)
+
+Test results saved to: test/logs/intro-test-2024-12-12T22-54-45-646Z.log
