@@ -40,6 +40,12 @@ sections:
       - "intro.vto"
 
 projects:
+ - title: "Tech Compensation Calculator"
+    summary: "Project and compare total compensation packages including salary growth and bonuses."
+    date: "2024-12-15"
+    emoji: "💰"
+    post: null
+    url: "https://calculator.hirefrank.com"
   - title: "Intro"
     summary: "Need someone in your network to make an introduction? Craft the perfect email that makes it easy for them to help."
     date: "2024-12-11"
