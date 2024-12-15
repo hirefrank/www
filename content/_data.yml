@@ -40,7 +40,7 @@ sections:
       - "intro.vto"
 
 projects:
- - title: "Tech Compensation Calculator"
+  - title: "Tech Compensation Calculator"
     summary: "Project and compare total compensation packages including salary growth and bonuses."
     date: "2024-12-15"
     emoji: "💰"
