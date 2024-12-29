@@ -4,46 +4,99 @@ import { join } from "std/path";
 import { generateIntroEmail } from "./mod.ts";
 import { TokenCosts, calculateCosts } from "./token-costs.ts";
 
-const MODEL_MAX_TOKENS = 16384;
-const MAX_OUTPUT_TOKENS = 1024;
-
 interface StyleTracking {
-  openingTemplates: Set<string>;
-  closingTemplates: Set<string>;
-  metricsUsed: Set<string>;
-  styleMatches: {
-    dataStyle: number;
-    actionStyle: number;
-    mismatch: number;
+  declaredStyle: {
+    dataDriven: number;
+    actionDriven: number;
   };
 }
 
 interface PhraseTracking {
-  phrases: Set<string>;
-  openings: Set<string>;
   bullets: Set<string>;
-  connectionAsks: Set<string>;
 }
 
 interface QualityMetrics {
   hasSpecificMetrics: boolean;
-  hasDateReferences: boolean;
-  matchesSenderStyle: boolean;
-  hasUniqueOpening: boolean;
-  hasValidNameHandling: boolean;
-  hasTeamSizeOrScope: boolean;
   hasForbiddenPhrases: boolean;
-  hasProperMetricFormat: boolean;
-  jsonValid: boolean;
+  hasValidBulletFormat: boolean;
+  hasValidCompanyInterest: boolean;
+  styleMatchesAnalysis: boolean;
+}
+
+interface IntroEmailResponse {
+  subject: string;
+  body: string;
+  analysis: {
+    company_context: {
+      stage: string;
+      product_maturity: string;
+      team_structure: string;
+      core_problems: string[];
+      target_users: string;
+      success_metrics: string[];
+      key_stakeholders: string[];
+    };
+    candidate_fit: {
+      strong_matches: string[];
+      gaps: string[];
+      unique_value: string;
+    };
+    style: "DATA_DRIVEN" | "ACTION_DRIVEN";
+    requirements: string[];
+    matches: Array<{
+      requirement: string;
+      evidence: string;
+      confidence: "HIGH" | "MEDIUM" | "LOW";
+    }>;
+  };
+}
+
+interface TestResult {
+  status: number;
+  result?: IntroEmailResponse;
+  error?: string;
+  costs: TokenCosts;
 }
 
 const TEST_CASES = [
+  {
+    name: "Rebecca 1",
+    input: {
+      jobUrl: "https://careers.duolingo.com/jobs/6978517002",
+      additionalContext: "",
+      resume: Array.from(await Deno.readFile("./intro/fixtures/rebecca.pdf")),
+    }
+  },
+  {
+    name: "Akshay 1",
+    input: {
+      jobUrl: "https://www.shopify.com/careers/senior-staff-product-manager-technical_856c1898-01f0-4d01-a31f-3c766e5d5f0b",
+      additionalContext: "Former engineer, experienced product manager",
+      resume: Array.from(await Deno.readFile("./intro/fixtures/akshay.pdf")),
+    }
+  },
+  {
+    name: "Frank 1",
+    input: {
+      jobUrl: "https://jobasaurus--new-ui-p2.deno.dev/job/6289451-product-manager-research",
+      additionalContext: "I build demos with LLMs.",
+      resume: Array.from(await Deno.readFile("./intro/fixtures/frank.pdf")),
+    }
+  },
+  {
+    name: "Frank 2",
+    input: {
+      jobUrl: "https://job-boards.greenhouse.io/affirm/jobs/6252337003",
+      additionalContext: "",
+      resume: Array.from(await Deno.readFile("./intro/fixtures/frank.pdf")),
+    }
+  },
   {
     name: "Lauren Growth/Data 1",
     input: {
       jobUrl: "https://jobasaurus--new-ui-p2.deno.dev/job/6289451-product-manager-research",
       additionalContext: "Lauren is a data-driven, highly collaborative PM with proven success in driving growth (+250% WAU at InVision) and breaking down complex technical problems (delivering an iterative roadmap to overhaul permissions & sharing at InVision). ",
-      resume: Array.from(await Deno.readFile("./test/fixtures/lauren.pdf")),
+      resume: Array.from(await Deno.readFile("./intro/fixtures/lauren.pdf")),
     }
   },
   {
@@ -51,7 +104,7 @@ const TEST_CASES = [
     input: {
       jobUrl: "https://jobasaurus--new-ui-p2.deno.dev/job/6289375-sr-product-manager",
       additionalContext: "Lauren is a data-driven, highly collaborative PM with proven success in driving growth (+250% WAU at InVision) and breaking down complex technical problems (delivering an iterative roadmap to overhaul permissions & sharing at InVision). ",
-      resume: Array.from(await Deno.readFile("./test/fixtures/lauren.pdf")),
+      resume: Array.from(await Deno.readFile("./intro/fixtures/lauren.pdf")),
     }
   },
   {
@@ -59,7 +112,7 @@ const TEST_CASES = [
     input: {
       jobUrl: "https://jobasaurus--new-ui-p2.deno.dev/job/6332639-senior-product-manager-enterprise",
       additionalContext: "Lauren is an action-oriented PM with a strong track record of launching innovative products from the ground up in ambiguous environments (launching some of Freehand's first project planning tools, like Tables: https://www.freehandapp.com/blog/introducing-tables/)",
-      resume: Array.from(await Deno.readFile("./test/fixtures/lauren.pdf")),
+      resume: Array.from(await Deno.readFile("./intro/fixtures/lauren.pdf")),
     }
   },
   {
@@ -67,7 +120,7 @@ const TEST_CASES = [
     input: {
       jobUrl: "https://jobasaurus--new-ui-p2.deno.dev/job/5907621-senior-product-manager-cx-platform",
       additionalContext: "Lauren is an action-oriented PM with a strong track record of launching innovative products from the ground up in ambiguous environments (launching some of Freehand's first project planning tools, like Tables: https://www.freehandapp.com/blog/introducing-tables/)",
-      resume: Array.from(await Deno.readFile("./test/fixtures/lauren.pdf")),
+      resume: Array.from(await Deno.readFile("./intro/fixtures/lauren.pdf")),
     }
   },
 ];
@@ -84,59 +137,10 @@ const FORBIDDEN_PHRASES = [
   "I believe my background aligns"
 ];
 
-const STYLE_INDICATORS = {
-  dataStyle: [
-    "metrics",
-    "growth",
-    "data-driven",
-    "analytics",
-    "%",
-    "increase",
-    "measured",
-    "tracked"
-  ],
-  actionStyle: [
-    "launched",
-    "built",
-    "led",
-    "drove",
-    "spearheaded",
-    "initiated",
-    "created",
-    "developed"
-  ]
-};
-
-function validateStyle(text: string, context: string): boolean {
-  const isDataContext = STYLE_INDICATORS.dataStyle.some(indicator =>
-    context.toLowerCase().includes(indicator.toLowerCase())
-  );
-  const isActionContext = STYLE_INDICATORS.actionStyle.some(indicator =>
-    context.toLowerCase().includes(indicator.toLowerCase())
-  );
-
-  if (isDataContext) {
-    return STYLE_INDICATORS.dataStyle.some(indicator =>
-      text.toLowerCase().includes(indicator.toLowerCase())
-    );
-  }
-  if (isActionContext) {
-    return STYLE_INDICATORS.actionStyle.some(indicator =>
-      text.toLowerCase().includes(indicator.toLowerCase())
-    );
-  }
-  return true;
-}
-
-function validateMetricFormat(text: string): boolean {
-  const metricPatterns = [
-    /\d+%/,
-    /\$\d+/,
-    /\d+x/,
-    /\d+\s*(users|customers|clients)/i,
-    /\d+\s*(team|person|member)/i
-  ];
-  return metricPatterns.some(pattern => pattern.test(text));
+function validateBulletFormat(bullet: string): boolean {
+  return /^• .{5,}$/.test(bullet) &&
+         /\d+/.test(bullet) && // Has numbers
+         bullet.length <= 100;  // Max length check
 }
 
 function checkForbiddenPhrases(text: string): boolean {
@@ -145,14 +149,28 @@ function checkForbiddenPhrases(text: string): boolean {
   );
 }
 
-function countTotalBullets(testCases: typeof TEST_CASES): number {
-  return testCases.length * 3;
-}
-
-// deno-lint-ignore no-explicit-any
-async function logAnalysis(logger: (message: string) => Promise<void>, analysis: any) {
+async function logAnalysis(logger: (message: string) => Promise<void>, analysis: IntroEmailResponse['analysis']) {
   await logger("\nAnalysis Details:");
-  await logger("Requirements:");
+  await logger(`Style: ${analysis.style}`);
+
+  // Log company context
+  await logger("\nCompany Context:");
+  await logger(`• Stage: ${analysis.company_context.stage}`);
+  await logger(`• Product Maturity: ${analysis.company_context.product_maturity}`);
+  await logger(`• Team Structure: ${analysis.company_context.team_structure}`);
+  await logger(`• Core Problems: ${analysis.company_context.core_problems.join(", ")}`);
+  await logger(`• Target Users: ${analysis.company_context.target_users}`);
+  await logger(`• Success Metrics: ${analysis.company_context.success_metrics.join(", ")}`);
+  await logger(`• Key Stakeholders: ${analysis.company_context.key_stakeholders.join(", ")}`);
+
+  // Log candidate fit
+  await logger("\nCandidate Fit:");
+  await logger(`• Strong Matches: ${analysis.candidate_fit.strong_matches.join(", ")}`);
+  await logger(`• Gaps: ${analysis.candidate_fit.gaps.join(", ")}`);
+  await logger(`• Unique Value: ${analysis.candidate_fit.unique_value}`);
+
+  // Log requirements and matches (existing code)
+  await logger("\nRequirements:");
   for (const req of analysis.requirements) {
     await logger(`• ${req}`);
   }
@@ -161,59 +179,47 @@ async function logAnalysis(logger: (message: string) => Promise<void>, analysis:
   for (const match of analysis.matches) {
     await logger(`\nRequirement: ${match.requirement}`);
     await logger(`Evidence: ${match.evidence}`);
-    await logger(`Confidence: ${match.confidence}%`);
+    await logger(`Confidence: ${match.confidence}`);
   }
+}
 
-  await logger(`\nExperience Level: ${analysis.experienceLevel}`);
-
-  await logger("\nQuality Checks:");
-  for (const [check, passed] of Object.entries(analysis.qualityChecks)) {
-    await logger(`• ${check}: ${passed ? '✓' : '✗'}`);
-  }
+async function logTokenCosts(logger: (message: string) => Promise<void>, costs: TokenCosts) {
+  await logger("\nToken Usage and Costs:");
+  await logger(`• Input tokens: ${costs.inputTokens}`);
+  await logger(`• Output tokens: ${costs.outputTokens}`);
+  await logger(`• Total tokens: ${costs.inputTokens + costs.outputTokens}`);
+  await logger(`• Cost: $${costs.totalCost.toFixed(4)}`);
 }
 
 async function analyzeQuality(
   logger: (message: string) => Promise<void>,
   email: string,
   additionalContext: string,
+  analysis: IntroEmailResponse['analysis'],
   phraseTracking: PhraseTracking,
   styleTracking: StyleTracking
 ): Promise<QualityMetrics> {
   const bullets = email.match(/•[^\n]+/g) || [];
-  const opening = email.split('\n\n')[1];
 
-  // Track phrases and styles
-  phraseTracking.openings.add(opening);
+  // Track bullets for variety
   bullets.forEach(bullet => phraseTracking.bullets.add(bullet));
 
-  const connectionAsk = email.match(/\?[^\n]+/)?.[0] || '';
-  phraseTracking.connectionAsks.add(connectionAsk);
-
-  // Track metrics
-  const metrics = email.match(/\d+%|\$\d+|\d+x|\d+\s*(users|customers|clients|team|person|member)/gi) || [];
-  metrics.forEach(metric => styleTracking.metricsUsed.add(metric));
-
-  // Track style matches
-  if (validateStyle(opening, additionalContext)) {
-    if (additionalContext.toLowerCase().includes('data-driven')) {
-      styleTracking.styleMatches.dataStyle++;
-    } else {
-      styleTracking.styleMatches.actionStyle++;
-    }
+  // Track declared style
+  if (analysis.style === "DATA_DRIVEN") {
+    styleTracking.declaredStyle.dataDriven++;
   } else {
-    styleTracking.styleMatches.mismatch++;
+    styleTracking.declaredStyle.actionDriven++;
   }
 
   const qualityMetrics: QualityMetrics = {
-    hasSpecificMetrics: bullets.some(b => validateMetricFormat(b)),
-    hasDateReferences: /202[2-4]|last year|this year|recently/.test(email),
-    matchesSenderStyle: validateStyle(email, additionalContext),
-    hasUniqueOpening: phraseTracking.openings.size === phraseTracking.phrases.size,
-    hasValidNameHandling: email.startsWith('Hey {firstName},'),
-    hasTeamSizeOrScope: /\d+ team|\d+ person|\d+ member/.test(email),
+    hasSpecificMetrics: bullets.some(b => /\d+/.test(b)),
     hasForbiddenPhrases: checkForbiddenPhrases(email),
-    hasProperMetricFormat: validateMetricFormat(email),
-    jsonValid: true
+    hasValidBulletFormat: bullets.every(validateBulletFormat),
+    hasValidCompanyInterest: email.includes("could help") && email.includes("specific"),
+    styleMatchesAnalysis: (
+      (analysis.style === "DATA_DRIVEN" && additionalContext.toLowerCase().includes('data-driven')) ||
+      (analysis.style === "ACTION_DRIVEN" && additionalContext.toLowerCase().includes('action-oriented'))
+    )
   };
 
   await logger("\nQuality Metrics:");
@@ -233,18 +239,44 @@ async function analyzeQuality(
   return qualityMetrics;
 }
 
-async function logTokenAnalysis(logger: (message: string) => Promise<void>, costs: TokenCosts) {
-  const totalTokens = costs.inputTokens + costs.outputTokens;
-  const remainingContextTokens = MODEL_MAX_TOKENS - totalTokens;
-  const remainingOutputTokens = MAX_OUTPUT_TOKENS - costs.outputTokens;
+async function runSingleTest(
+  testCase: typeof TEST_CASES[0],
+  // deno-lint-ignore no-unused-vars
+  logger: (message: string) => Promise<void>
+): Promise<TestResult> {
+  try {
+    const mockRequest = new Request("http://localhost", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(testCase.input),
+    });
 
-  await logger("\nToken Analysis:");
-  await logger(`Input tokens: ${costs.inputTokens}`);
-  await logger(`Output tokens: ${costs.outputTokens}`);
-  await logger(`Total tokens used: ${totalTokens} / ${MODEL_MAX_TOKENS} (${((totalTokens/MODEL_MAX_TOKENS)*100).toFixed(1)}%)`);
-  await logger(`Remaining context window: ${remainingContextTokens} tokens`);
-  await logger(`Remaining output tokens: ${remainingOutputTokens} / ${MAX_OUTPUT_TOKENS} (${((remainingOutputTokens/MAX_OUTPUT_TOKENS)*100).toFixed(1)}% available)`);
-  await logger(`Cost: $${costs.totalCost.toFixed(4)}`);
+    const response = await generateIntroEmail({ request: mockRequest });
+    const responseText = await response.text();
+
+    const costs = calculateCosts({
+      usage: {
+        prompt_tokens: Math.ceil(testCase.input.additionalContext.length / 4) +
+                      Math.ceil((testCase.input.resume?.length || 0) / 4),
+        completion_tokens: Math.ceil(responseText.length / 4)
+      }
+    });
+
+    if (!response.ok) {
+      return { status: response.status, error: responseText, costs };
+    }
+
+    const result = JSON.parse(responseText) as IntroEmailResponse;
+    return { status: response.status, result, costs };
+  } catch (error) {
+    return {
+      status: 500,
+      error: error instanceof Error ? error.message : String(error),
+      costs: { inputTokens: 0, outputTokens: 0, totalCost: 0 }
+    };
+  }
 }
 
 export async function runTests() {
@@ -260,107 +292,90 @@ export async function runTests() {
     await logFile.write(new TextEncoder().encode(message + "\n"));
   };
 
+  const phraseTracking: PhraseTracking = {
+    bullets: new Set<string>()
+  };
+
+  const styleTracking: StyleTracking = {
+    declaredStyle: {
+      dataDriven: 0,
+      actionDriven: 0
+    }
+  };
+
   let totalCosts: TokenCosts = {
     inputTokens: 0,
     outputTokens: 0,
     totalCost: 0
   };
 
-  const phraseTracking: PhraseTracking = {
-    phrases: new Set<string>(),
-    openings: new Set<string>(),
-    bullets: new Set<string>(),
-    connectionAsks: new Set<string>()
-  };
-
-  const styleTracking: StyleTracking = {
-    openingTemplates: new Set<string>(),
-    closingTemplates: new Set<string>(),
-    metricsUsed: new Set<string>(),
-    styleMatches: {
-      dataStyle: 0,
-      actionStyle: 0,
-      mismatch: 0
-    }
-  };
-
   try {
     await logger("Starting intro email generation tests...");
+    await logger(`Using model: gpt-4o-mini`);
+    await logger("Model parameters:");
+    await logger("• temperature: 0.1");
+    await logger("• top_p: 0.5");
+    await logger("• frequency_penalty: 0.2");
+    await logger("• presence_penalty: 0.1");
 
     for (const testCase of TEST_CASES) {
       await logger(`\nRunning test case: ${testCase.name}`);
       await logger("----------------------------------------");
 
-      try {
-        const mockRequest = new Request("http://localhost", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(testCase.input),
-        });
+      const testResult = await runSingleTest(testCase, logger);
 
-        const response = await generateIntroEmail({ request: mockRequest });
+      // Update total costs
+      totalCosts = {
+        inputTokens: totalCosts.inputTokens + testResult.costs.inputTokens,
+        outputTokens: totalCosts.outputTokens + testResult.costs.outputTokens,
+        totalCost: totalCosts.totalCost + testResult.costs.totalCost
+      };
 
-        if (!response.ok) {
-          const errorText = await response.text();
-          throw new Error(errorText);
-        }
+      await logger("\nTest Result:");
+      await logger(`Status: ${testResult.status}`);
 
-        const result = await response.json();
-        const costs = calculateCosts(result.completion);
-        totalCosts = {
-          inputTokens: totalCosts.inputTokens + costs.inputTokens,
-          outputTokens: totalCosts.outputTokens + costs.outputTokens,
-          totalCost: totalCosts.totalCost + costs.totalCost
-        };
-
-        await logger("\nTest Result:");
-        await logger(`Status: ${response.status}`);
-
-        if (result.analysis) {
-          await logAnalysis(logger, result.analysis);
-        }
-
-        await logger("\nEmail Output:");
-        await logger(`Subject: ${result.subject}`);
-        await logger(`Body length: ${result.body.length} characters`);
-        await logger("Body:");
-        await logger(result.body);
-
-        await analyzeQuality(logger, result.body, testCase.input.additionalContext, phraseTracking, styleTracking);
-        await logTokenAnalysis(logger, costs);
-        await logger("\n----------------------------------------");
-      } catch (error) {
-        await logger(`\nError in test case ${testCase.name}:`);
-        await logger(error instanceof Error ? error.message : String(error));
-        await logger("----------------------------------------");
+      if (testResult.error) {
+        await logger(`Error: ${testResult.error}`);
+        continue;
       }
+
+      if (testResult.result?.analysis) {
+        await logAnalysis(logger, testResult.result.analysis);
+      }
+
+      await logger("\nEmail Output:");
+      await logger(`Subject: ${testResult.result?.subject}`);
+      await logger(`Body length: ${testResult.result?.body.length} characters`);
+      await logger("Body:");
+      await logger(testResult.result?.body || "");
+
+      if (testResult.result) {
+        await analyzeQuality(
+          logger,
+          testResult.result.body,
+          testCase.input.additionalContext,
+          testResult.result.analysis,
+          phraseTracking,
+          styleTracking
+        );
+      }
+
+      await logTokenCosts(logger, testResult.costs);
+      await logger("\n----------------------------------------");
     }
-
-    await logger("\nPhrase Variation Analysis:");
-    await logger(`• Unique Openings: ${phraseTracking.openings.size} / ${TEST_CASES.length}`);
-    await logger(`• Unique Bullets: ${phraseTracking.bullets.size} / ${countTotalBullets(TEST_CASES)}`);
-    await logger(`• Unique Connection Asks: ${phraseTracking.connectionAsks.size} / ${TEST_CASES.length}`);
-
-    await logger("\nStyle Analysis:");
-    await logger(`• Data Style Matches: ${styleTracking.styleMatches.dataStyle}`);
-    await logger(`• Action Style Matches: ${styleTracking.styleMatches.actionStyle}`);
-    await logger(`• Style Mismatches: ${styleTracking.styleMatches.mismatch}`);
-    await logger(`• Unique Metrics Used: ${styleTracking.metricsUsed.size}`);
 
     await logger("\nTest Summary:");
     await logger("----------------------------------------");
-    const totalTokensUsed = totalCosts.inputTokens + totalCosts.outputTokens;
-    const averageUsagePerTest = totalTokensUsed / TEST_CASES.length;
-    const averageContextUsage = (averageUsagePerTest / MODEL_MAX_TOKENS) * 100;
+    await logger(`Unique Bullets: ${phraseTracking.bullets.size} / ${TEST_CASES.length * 3}`);
+    await logger(`Data-Driven Styles: ${styleTracking.declaredStyle.dataDriven}`);
+    await logger(`Action-Driven Styles: ${styleTracking.declaredStyle.actionDriven}`);
 
-    await logger(`Total tokens used across all tests: ${totalTokensUsed}`);
-    await logger(`Average tokens per test: ${Math.round(averageUsagePerTest)}`);
-    await logger(`Total input tokens: ${totalCosts.inputTokens}`);
-    await logger(`Total output tokens: ${totalCosts.outputTokens}`);
-    await logger(`Average context window usage: ${averageContextUsage.toFixed(1)}%`);
-    await logger(`Total cost: $${totalCosts.totalCost.toFixed(4)}`);
+    await logger("\nTotal Cost Summary:");
+    await logger(`Total Input Tokens: ${totalCosts.inputTokens}`);
+    await logger(`Total Output Tokens: ${totalCosts.outputTokens}`);
+    await logger(`Total Tokens: ${totalCosts.inputTokens + totalCosts.outputTokens}`);
+    await logger(`Average Tokens per Test: ${Math.round((totalCosts.inputTokens + totalCosts.outputTokens) / TEST_CASES.length)}`);
+    await logger(`Total Cost: $${totalCosts.totalCost.toFixed(4)}`);
 
   } catch (error) {
     await logger(`\nFatal error: ${error instanceof Error ? error.message : String(error)}`);

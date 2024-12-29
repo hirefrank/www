@@ -17,13 +17,20 @@
         onchange="handleFileSelect(event)"
       >
       <div class="space-y-2">
-        <svg class="mx-auto h-12 w-12 text-zinc-400" stroke="currentColor" fill="none" viewBox="0 0 48 48" aria-hidden="true">
-          <path d="M28 8H12a4 4 0 00-4 4v20m32-12v8m0 0v8a4 4 0 01-4 4H12a4 4 0 01-4-4v-4m32-4l-3.172-3.172a4 4 0 00-5.656 0L28 28M8 32l9.172-9.172a4 4 0 015.656 0L28 28m0 0l4 4m4-24h8m-4-4v8m-12 4h.02" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-        </svg>
+        <div id="uploadIcon" class="transition-all">
+          <!-- Default Upload Icon -->
+          <svg class="mx-auto h-12 w-12 text-zinc-400" stroke="currentColor" fill="none" viewBox="0 0 48 48" aria-hidden="true">
+            <path d="M28 8H12a4 4 0 00-4 4v20m32-12v8m0 0v8a4 4 0 01-4 4H12a4 4 0 01-4-4v-4m32-4l-3.172-3.172a4 4 0 00-5.656 0L28 28M8 32l9.172-9.172a4 4 0 015.656 0L28 28m0 0l4 4m4-24h8m-4-4v8m-12 4h.02" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+          <!-- Success Check Icon (hidden by default) -->
+          <svg class="mx-auto h-12 w-12 text-green-500 hidden" id="successIcon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+        </div>
         <div class="text-zinc-600">
           <span id="fileText">Drag and drop your resume here, or click to select</span>
         </div>
-        <p class="text-base text-zinc-500">PDF files only</p>
+        <p class="text-sm text-zinc-500">PDF files only</p>
       </div>
     </div>
   </div>
@@ -184,6 +191,60 @@
         console.error('Failed to copy text: ', err);
         alert('Failed to copy text to clipboard');
       });
+  }
+
+  function handleFileSelect(event) {
+    const file = event.target.files[0];
+    updateDropZoneUI(file);
+  }
+
+  function handleDrop(event) {
+    event.preventDefault();
+    const file = event.dataTransfer.files[0];
+    if (file && file.type === 'application/pdf') {
+      const input = document.querySelector('#resume');
+      input.files = event.dataTransfer.files;
+      updateDropZoneUI(file);
+    }
+  }
+
+  function updateDropZoneUI(file) {
+    const dropZone = document.getElementById('dropZone');
+    const fileText = document.getElementById('fileText');
+    const uploadIcon = document.getElementById('uploadIcon').querySelector('svg');
+    const successIcon = document.getElementById('successIcon');
+
+    if (file && file.type === 'application/pdf') {
+      // Update border and background
+      dropZone.classList.remove('border-zinc-300');
+      dropZone.classList.add('border-green-500', 'bg-green-50');
+
+      // Update text
+      fileText.textContent = `Selected: ${file.name}`;
+
+      // Show success icon, hide upload icon
+      uploadIcon.classList.add('hidden');
+      successIcon.classList.remove('hidden');
+    } else {
+      // Reset to default state
+      dropZone.classList.remove('border-green-500', 'bg-green-50');
+      dropZone.classList.add('border-zinc-300');
+      fileText.textContent = 'Drag and drop your resume here, or click to select';
+      uploadIcon.classList.remove('hidden');
+      successIcon.classList.add('hidden');
+    }
+  }
+
+  function handleDragOver(event) {
+    event.preventDefault();
+    const dropZone = document.getElementById('dropZone');
+    dropZone.classList.add('border-accent', 'bg-accent/5');
+  }
+
+  function handleDragLeave(event) {
+    event.preventDefault();
+    const dropZone = document.getElementById('dropZone');
+    dropZone.classList.remove('border-accent', 'bg-accent/5');
   }
 
   // Add form submit listener
