@@ -99,7 +99,16 @@ export async function generateIntroEmail({
 
     const responseText = completion.choices[0]?.message?.content;
     if (!responseText) {
-      throw new Error("No response received from OpenAI");
+      console.log("No response received from OpenAI");
+      return Response.json({
+        error: "No response received from OpenAI",
+      }, {
+        status: 500,
+        headers: {
+          "Content-Type": "application/json",
+          "Access-Control-Allow-Origin": "*",
+        }
+      });
     }
 
     console.log("Raw OpenAI response:", responseText);
