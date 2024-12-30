@@ -40,13 +40,18 @@ sections:
       - "intro.vto"
 
 projects:
-
   - title: "Gmail Attachment Extractor"
     summary: "Automatically saves attachments from labeled emails to Google Drive."
     date: "2024-12-28"
     emoji: "📎"
     post: null
     url: "https://github.com/hirefrank/gmail-attachment-extractor"
+  - title: "Tech Compensation Calculator"
+    summary: "Project and compare total compensation packages including salary growth, bonuses, and equity grants."
+    date: "2024-12-15"
+    emoji: "💰"
+    post: null
+    url: "https://calculator.hirefrank.com"
   - title: "Intro"
     summary: "Need someone in your network to make an introduction? Craft the perfect email that makes it easy for them to help."
     date: "2024-12-11"
