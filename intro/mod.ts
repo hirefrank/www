@@ -39,8 +39,8 @@ interface EmailResponse {
   };
 }
 
-const apiKey = Deno.env.get("OPENAI_API_KEY");
-if (!apiKey) {
+const apiKey = Deno.env.get("OPENAI_API_KEY") || "";
+if (apiKey === "") {
   console.log("Missing OpenAI API key. Set OPENAI_API_KEY in your environment.");
 }
 
