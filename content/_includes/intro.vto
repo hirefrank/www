@@ -134,7 +134,11 @@
         resume: Array.from(new Uint8Array(resumeBuffer))
       };
 
-      console.log("Sending request...");
+      console.log("Sending request with data:", {
+        ...formData,
+        resume: `[${formData.resume.length} bytes]`
+      });
+
       const response = await fetch('/api/generate-intro', {
         method: 'POST',
         headers: {
@@ -143,13 +147,27 @@
         body: JSON.stringify(formData)
       });
 
-      if (!response.ok) {
-        const errorText = await response.text();
-        throw new Error(`Server error: ${errorText}`);
+      const responseText = await response.text();
+      console.log("Raw response:", responseText);
+
+      let emailData;
+      try {
+        emailData = JSON.parse(responseText);
+      } catch (parseError) {
+        console.error("Failed to parse response:", parseError);
+        throw new Error(`Invalid response format: ${responseText}`);
       }
 
-      const emailData = await response.json();
-      console.log("Received response:", emailData);
+      if (!response.ok) {
+        console.error('Server error response:', emailData);
+        throw new Error(emailData.error || emailData.details || 'Failed to generate email');
+      }
+
+      // Validate response structure
+      if (!emailData.subject || !emailData.body) {
+        console.error('Invalid response structure:', emailData);
+        throw new Error('Invalid email response format');
+      }
 
       // Hide loading state and show preview
       loadingState.classList.add('hidden');
@@ -162,7 +180,12 @@
     } catch (error) {
       // Hide loading state on error
       loadingState.classList.add('hidden');
-      console.error('Detailed error:', error);
+      console.error('Generation error:', {
+        message: error.message,
+        cause: error.cause,
+        stack: error.stack,
+        raw: error
+      });
       alert(`Failed to generate email: ${error.message}`);
     }
   }
