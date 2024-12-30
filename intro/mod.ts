@@ -161,13 +161,13 @@ export async function generateIntroEmail({
       throw new Error("Invalid response format from OpenAI - missing required fields");
     }
 
-    const DEFAULT_GREETING = "Hi {firstName},";
+    const DEFAULT_GREETING = "Hi {firstName},\n\n[Hope all is well with you. I'm reaching out with a small request.]";
     const DEFAULT_SIGNATURE = "Best,\n{yourName}";
 
     const email: EmailResponse = {
       subject: parsedResponse.email.subject,
       body: `${DEFAULT_GREETING}\n\n${parsedResponse.email.opening}\n\nQuick background:\n${parsedResponse.email.experience_bullets
-        .map((bullet: string) => `• ${bullet}`)
+        .map((bullet: string) => `${bullet}`)
         .join("\n")}\n\n${parsedResponse.email.company_interest}\n\n${parsedResponse.email.closing}\n\n${DEFAULT_SIGNATURE}`,
       analysis: {
         style: parsedResponse.analysis.style,

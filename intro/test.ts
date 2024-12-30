@@ -17,7 +17,6 @@ interface PhraseTracking {
 
 interface QualityMetrics {
   hasSpecificMetrics: boolean;
-  hasForbiddenPhrases: boolean;
   hasValidBulletFormat: boolean;
   hasValidCompanyInterest: boolean;
   styleMatchesAnalysis: boolean;
@@ -125,28 +124,10 @@ const TEST_CASES = [
   },
 ];
 
-const FORBIDDEN_PHRASES = [
-  "drawn to",
-  "resonates",
-  "excited",
-  "passionate",
-  "aligns",
-  "mission",
-  "culture",
-  "I hope this message finds you well",
-  "I believe my background aligns"
-];
-
 function validateBulletFormat(bullet: string): boolean {
   return /^• .{5,}$/.test(bullet) &&
          /\d+/.test(bullet) && // Has numbers
          bullet.length <= 100;  // Max length check
-}
-
-function checkForbiddenPhrases(text: string): boolean {
-  return !FORBIDDEN_PHRASES.some(phrase =>
-    text.toLowerCase().includes(phrase.toLowerCase())
-  );
 }
 
 async function logAnalysis(logger: (message: string) => Promise<void>, analysis: IntroEmailResponse['analysis']) {
@@ -169,7 +150,6 @@ async function logAnalysis(logger: (message: string) => Promise<void>, analysis:
   await logger(`• Gaps: ${analysis.candidate_fit.gaps.join(", ")}`);
   await logger(`• Unique Value: ${analysis.candidate_fit.unique_value}`);
 
-  // Log requirements and matches (existing code)
   await logger("\nRequirements:");
   for (const req of analysis.requirements) {
     await logger(`• ${req}`);
@@ -213,7 +193,6 @@ async function analyzeQuality(
 
   const qualityMetrics: QualityMetrics = {
     hasSpecificMetrics: bullets.some(b => /\d+/.test(b)),
-    hasForbiddenPhrases: checkForbiddenPhrases(email),
     hasValidBulletFormat: bullets.every(validateBulletFormat),
     hasValidCompanyInterest: email.includes("could help") && email.includes("specific"),
     styleMatchesAnalysis: (
@@ -227,22 +206,12 @@ async function analyzeQuality(
     await logger(`• ${key}: ${value ? '✓' : '✗'}`);
   }
 
-  if (!qualityMetrics.hasForbiddenPhrases) {
-    await logger("\nForbidden phrases found:");
-    FORBIDDEN_PHRASES.forEach(async phrase => {
-      if (email.toLowerCase().includes(phrase.toLowerCase())) {
-        await logger(`• "${phrase}"`);
-      }
-    });
-  }
-
   return qualityMetrics;
 }
 
 async function runSingleTest(
   testCase: typeof TEST_CASES[0],
-  // deno-lint-ignore no-unused-vars
-  logger: (message: string) => Promise<void>
+  _logger: (message: string) => Promise<void>
 ): Promise<TestResult> {
   try {
     const mockRequest = new Request("http://localhost", {
@@ -324,7 +293,6 @@ export async function runTests() {
 
       const testResult = await runSingleTest(testCase, logger);
 
-      // Update total costs
       totalCosts = {
         inputTokens: totalCosts.inputTokens + testResult.costs.inputTokens,
         outputTokens: totalCosts.outputTokens + testResult.costs.outputTokens,

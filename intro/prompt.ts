@@ -54,7 +54,7 @@ Extract and list:
 - Key stakeholders
 - Team composition
 
-B. Candidate Analysis (from resume):
+B. Candidate Analysis (from resume and additionalContext):
 Extract and list:
 - Industry verticals experience
 - Types of users/customers served
@@ -86,16 +86,37 @@ Select:
 
 STEP 3: Email Components
 
+Important Rules:
+1. Never use "your" when referring to the company or role:
+   BAD: "aligns well with your goals"
+   GOOD: "aligns well with Amplitude's goals"
+   BAD: "your platform"
+   GOOD: "the Amplitude platform"
+   BAD: "your team"
+   GOOD: "the Product team"
+
+2. Bullet Format:
+   - EXACTLY "• " (bullet point + space)
+   - Never use dashes or mixed formats
+   GOOD: "• Led 5-person team"
+   BAD: "• - Led 5-person team"
+   BAD: "- Led 5-person team"
+
 1. Subject: "Quick intro request - [Company] [Role]"
 
 2. Opening (2-3 sentences):
-- First sentence: Reference specific company initiative/challenge
-- Second sentence: Connect HIGH PRIORITY achievement from context that directly addresses this challenge
+- First: Connect your most relevant VERIFIED achievement to company's specific challenge
+- Second: Show understanding of their unique situation/needs and leverage additionalContext to demonstrate relevance to the role
 
 Examples:
-GOOD: "Anthropic's work on making AI systems more reliable is critical for enterprises making high-stakes decisions. My experience launching privacy-first analytics tools that grew enterprise adoption 40% showed me how to make complex technology accessible while maintaining compliance requirements."
+GOOD DATA-DRIVEN:
+"Having achieved 250% WAU growth in our analytics product, I appreciate the scale of Amplitude's self-serve challenges. My experience with retention metrics showed that..."
 
-BAD: "Anthropic's AI work is exciting. I have product experience."
+GOOD ACTION-DRIVEN:
+"After launching our collaboration platform from 0-to-1 and reaching 100K users, I see interesting parallels with Grammarly's enterprise expansion. Building developer tools taught me that..."
+
+BAD:
+"I saw your job posting and wanted to reach out."
 
 3. Experience bullets:
 Each bullet must include ALL of:
@@ -111,13 +132,9 @@ Map bullets by priority:
 - Second bullet: MEDIUM PRIORITY achievement from context
 - Third bullet: Strong supporting evidence from resume
 
-Examples:
-GOOD: "Led 5-person team to launch ML feature, driving 30% efficiency gain for 100 enterprise users in Q4 2022"
-BAD: "Improved platform performance through various initiatives"
-
 4. Company interest statement:
 Connect strongest context achievement to company's specific need:
-"My experience [HIGH PRIORITY achievement] highlighted how to [solve specific company challenge], which could help [Company] [achieve specific goal from job posting]."
+"Based on my experience [HIGH PRIORITY achievement], I see valuable opportunities to help [Company] [achieve specific goal from job posting]."
 
 5. Closing with link:
 "I'm interested in this role (jobUrl). Would you be open to connecting me with someone on the [specific team name from job description] team?"
@@ -139,6 +156,13 @@ STEP 4: Return JSON Output
             "gaps": ["gap1", "gap2"],
             "unique_value": "description"
         },
+        "verified_claims": [
+            {
+                "claim": "claim from context",
+                "evidence": "evidence from resume",
+                "priority": "HIGH | MEDIUM | LOW"
+            }
+        ],
         "style": "DATA_DRIVEN | ACTION_DRIVEN",
         "requirements": ["requirement1", "requirement2", "requirement3"],
         "matches": [
@@ -154,7 +178,7 @@ STEP 4: Return JSON Output
         "opening": "Generated opening paragraph",
         "experience_bullets": ["bullet1", "bullet2", "bullet3"],
         "company_interest": "Generated interest statement",
-        "closing": "Generated closing with job URL",
+        "closing": "Generated closing with job URL"
     }
 }
 
@@ -165,7 +189,6 @@ STEP 5: Quality Requirements
 4. HIGH PRIORITY achievements must be used first
 5. Opening must connect to company's specific needs
 6. Include timeframes for all achievements
-7. Greeting must be exactly "Hey {firstName},"
 
 Input Information:
 1. Job Description:
