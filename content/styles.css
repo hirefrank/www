@@ -173,7 +173,7 @@
   }
 
   .main-container {
-    @apply container space-y-6;
+    @apply container space-y-6 max-w-4xl mx-auto px-4 w-full;
   }
 
   .home-container {
@@ -281,7 +281,7 @@
 
 @layer components {
   .hamburger-line {
-    @apply w-6 h-0.5 bg-gray-600 mb-1 transition-all duration-300 ease-in-out;
+    @apply w-6 h-0.5 bg-gray-600 mb-1 transition-all duration-200 ease-in-out;
   }
 
   .menu-open .hamburger-line:nth-child(1) {
