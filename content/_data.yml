@@ -8,6 +8,11 @@ sections:
   - url: "/about/"
     label: "About"
     show: true
+  - url: "/coaching2/"
+    label: "Coaching"
+    show: false
+    includes:
+      - "coaching.vto"
   - url: "/coaching/"
     label: "Coaching"
     show: true

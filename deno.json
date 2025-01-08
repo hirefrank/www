@@ -1,6 +1,7 @@
 {
   "imports": {
     "lume/": "https://deno.land/x/lume@v2.4.2/",
+    "deno-dom": "https://deno.land/x/deno_dom@v0.1.43/deno-dom-wasm.ts",
     "tailwind/colors": "https://esm.sh/tailwindcss@3.4.7/colors",
     "rss": "https://deno.land/x/rss@1.1.1/mod.ts",
     "experimental-router": "https://raw.githubusercontent.com/lumeland/experimental-plugins/8480fb23aa16bb06fda65a1b374040c97e1067b8/router/mod.ts",

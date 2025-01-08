@@ -43,5 +43,6 @@ site.data("site", {
 });
 
 site.use(plugins());
+site.copy("content/coaching/_data.json", "./coaching.json")
 
 export default site;
