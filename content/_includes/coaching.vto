@@ -51,21 +51,19 @@
   </div>
 </section>
 
-{{ if url == "/coaching2/" }}
-  {{ set profile = hirefrank }}
-  <h1>{{ profile.name }}</h1>
-  <p>{{ profile.title }}</p>
+{{ set profile = hirefrank }}
+<h1>{{ profile.name }}</h1>
+<p>{{ profile.title }}</p>
 
-  <h2>Book a Session:</h2>
-  {{ for scheduler of profile.schedulers }}
-    <div class="scheduler">
-      <h3>{{ scheduler.title }}</h3>
-      <p>{{ scheduler.description }}</p>
-      <a href="{{ scheduler.bookingUrl }}">Book {{ scheduler.duration }}min session</a>
-    </div>
-  {{ /for }}
+<h2>Book a Session:</h2>
+{{ for scheduler of profile.schedulers }}
+  <div class="scheduler">
+    <h3>{{ scheduler.title }}</h3>
+    <p>{{ scheduler.description }}</p>
+    <a href="{{ scheduler.bookingUrl }}">Book {{ scheduler.duration }}min session</a>
+  </div>
+{{ /for }}
 
-{{ /if }}
 <!-- Current page: {{ url }} -->
 <!-- Cal element-click embed code begins -->
 <script type="text/javascript">
