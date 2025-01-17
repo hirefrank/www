@@ -19,7 +19,7 @@ export const definitions = {
   "/tags": "/writings",
   "/archives": "/writings",
   "/vip": {
-    "to": "https://cal.com/hirefrank/vip-catch-up",
+    "to": "https://coaching.hirefrank.com/book/vip-catch-up",
     "code": 302
   },
   "/calp": {

@@ -27,8 +27,8 @@ sections:
     label: "Contact"
     show: true
     includes:
-      - "social.vto"
       - "calendar.vto"
+      - "social.vto"
   - url: "/intro/"
     label: "Intro"
     show: false
