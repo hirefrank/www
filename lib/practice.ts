@@ -20,13 +20,13 @@ interface CoachingProfile {
     duration: number;
     description: string;
     bookingUrl: string;
-    packages: Array<{
-      title: string;
-      description: string;
-      totalSessions: number;
-      price: number;
-      currency: string;
-    }>;
+  }>;
+  packages: Array<{
+    title: string;
+    description: string;
+    totalSessions: number;
+    price: number;
+    currency: string;
   }>;
 }
 
@@ -63,34 +63,27 @@ function extractProfileData(html: string): Promise<CoachingProfile> {
       twitter: profileData.socialLinks?.twitter,
       linkedin: profileData.socialLinks?.linkedin,
     },
-    // deno-lint-ignore no-explicit-any
     testimonials: profileData.testimonials.map((t: any) => ({
       text: t.text,
       author: t.name,
     })),
     schedulers: profileData.schedulers
-      // deno-lint-ignore no-explicit-any
       .filter((s: any) => s.status === 'active')
-      // deno-lint-ignore no-explicit-any
       .map((s: any) => ({
         title: s.title,
         duration: s.duration,
         description: s.description,
         bookingUrl: `https://${profileData.domains.domainName}/me/${profileData.slug}/book/${s.slug}`,
-        packages: profileData.packages
-          ?.filter((p: { status: string; }) => p.status === 'active')
-          // deno-lint-ignore no-explicit-any
-          ?.map((p: { title: any; description: any; totalSessions: any; paymentOptions: {
-            // deno-lint-ignore no-explicit-any
-            [x: string]: any; currency: any;
-}[]; }) => ({
-            title: p.title,
-            description: p.description,
-            totalSessions: p.totalSessions,
-            price: p.paymentOptions?.[0]?.amount,
-            currency: p.paymentOptions?.[0]?.currency,
-          })) || [],
       })),
+    packages: profileData.packages
+      ?.filter((p: { status: string; }) => p.status === 'active')
+      ?.map((p: any) => ({
+        title: p.title,
+        description: p.description,
+        totalSessions: p.totalSessions,
+        price: p.paymentOptions?.[0]?.amount,
+        currency: p.paymentOptions?.[0]?.currency,
+      })) || [],
   });
 }
 
