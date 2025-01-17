@@ -1,6 +1,5 @@
 import lume from "lume/mod.ts";
 import plugins from "./lib/plugins.ts";
-import { getMediumPosts } from "./lib/medium.ts";
 import { redirects, router, cacheBusting, notFound } from "./lib/middleware.ts";
 
 const site = lume({
@@ -28,12 +27,6 @@ pageConfigs.forEach(({ path, layout, tags, indexable }) => {
   if (indexable) site.data("indexable", indexable, path);
 });
 
-// Fetch Medium posts before site generation
-site.addEventListener("beforeBuild", async () => {
-  const mediumPosts = await getMediumPosts();
-  site.data("mediumPosts", mediumPosts);
-});
-
 site.data('cacheBusterVersion', `v${Date.now()}`);
 
 site.data("site", {
@@ -43,5 +36,6 @@ site.data("site", {
 });
 
 site.use(plugins());
+site.copy("content/_data.json", "./coaching.json")
 
 export default site;

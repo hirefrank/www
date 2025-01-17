@@ -8,11 +8,10 @@ This repository contains the source code for Frank Harris's personal website, bu
 - Responsive design with custom Tailwind CSS styling
 - Dynamic content rendering using VTO templates
 - Blog posts and project showcases
-- Medium post integration
+- [Practice integration](https://practice.do/)
 - Automatic deployment to Deno Deploy
 - Custom intro email generator
 - Calendar integration for coaching sessions
-- Automatic daily Medium post sync
 
 ## 🛠️ Technologies Used
 
@@ -21,7 +20,7 @@ This repository contains the source code for Frank Harris's personal website, bu
 - [Tailwind CSS](https://tailwindcss.com/): A utility-first CSS framework
 - [VTO](https://lume.land/plugins/vento/): A template engine for Lume
 - [OpenAI](https://openai.com/): For AI-powered intro email generation
-- [Cal.com](https://cal.com/): For calendar scheduling
+- [Practice](https://practice.do/): For calendar scheduling
 - [PDF.js](https://mozilla.github.io/pdf.js/): For PDF parsing
 
 

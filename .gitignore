@@ -2,3 +2,5 @@ _site
 _cache
 */logs
 .env
+content/coaching/_data.json
+content/static/coaching.json

@@ -1,7 +1,7 @@
 import redirects from "lume/middlewares/redirects.ts";
 
 export const definitions = {
-  "w9": "/extras/w9.pdf",
+  "/w9": "/extras/w9.pdf",
   "/14/08/why-is-it-so-hard/": "/videos/why-is-it-so-hard/",
   "/18/03/rainbows-rainier/": "/videos/rainbows-rainier/",
   "/17/03/bey-toe-ven/": "/videos/bey-toe-ven/",
