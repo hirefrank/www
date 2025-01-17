@@ -117,8 +117,8 @@ export default function (options: Options) {
 
       // Write data file
       try {
-        await Deno.mkdir(`${site.options.src}/coaching`, { recursive: true });
-        const dataPath = `${site.options.src}/coaching/_data.json`;
+        await Deno.mkdir(`${site.options.src}/`, { recursive: true });
+        const dataPath = `${site.options.src}/_data.json`;
         await Deno.writeTextFile(dataPath, JSON.stringify(practiceData, null, 2));
         console.log(`✓ Wrote coaching data to ${dataPath}`);
 

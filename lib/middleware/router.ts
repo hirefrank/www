@@ -1,5 +1,4 @@
 import Router from "experimental-router";
-import { checkMediumAndTriggerRebuild } from "../medium.ts";
 import { generateIntroEmail } from "../../intro/mod.ts";
 
 const router = new Router({
@@ -9,12 +8,5 @@ const router = new Router({
 });
 
 router.post("/api/generate-intro", generateIntroEmail);
-
-// Add the Medium check endpoint
-router.post("/check-medium", async () => {
-  await checkMediumAndTriggerRebuild();
-  return new Response("Medium check completed", { status: 200 });
-});
-
 
 export default router.middleware();
