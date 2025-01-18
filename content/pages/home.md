@@ -12,4 +12,4 @@ A former product executive and angel investor with over 20 years at companies li
 
 I run [a coaching practice](/coaching) dedicated to guiding leaders through the tricky stuff of building products and high-performing teams.
 
-I write [Frank Takeaways](https://franktakeaways.com), a mildly entertaining newsletter about the notes worth keeping.
+I write [Frank Takeaways](https://hirefrank.substack.com/), a mildly entertaining newsletter about the notes worth keeping.
