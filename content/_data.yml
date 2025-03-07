@@ -54,6 +54,24 @@ projects:
     emoji: "👋"
     post: null
     url: "/intro/"
+  - title: "Field Guide to Culinary Democracy"
+    summary: "I analyzed over 500,000 words from 7,605 The NY Times Cooking comments labeled 'most helpful'."
+    date: "2024-10-07"
+    emoji: "🍽️"
+    post: null
+    url: "https://medium.com/@hirefrank/the-new-york-times-cooking-comments-a-field-guide-to-culinary-democracy-in-the-digital-age-0ed967bc5a81"
+  - title: "AI Reading List"
+    summary: "I used AI to outsource my kids' reading list in 30 seconds."
+    date: "2024-09-23"
+    emoji: "📚"
+    post: null
+    url: "https://medium.com/@hirefrank/how-i-used-ai-to-outsource-my-kids-reading-list-in-30-seconds-58994092131f"
+  - title: "Hardening Your VPS"
+    summary: "Learn how to harden your VPS to make it more secure. It's not as scary as it sounds."
+    date: "2024-09-05"
+    emoji: "🔒"
+    post: null
+    url: "https://medium.com/@hirefrank/you-can-do-hard-things-hardening-your-vps-e838af7dc3c9"
   - title: "pg-to-sqlite"
     summary: "A Bash script that automates the migration of PostgreSQL databases to SQLite."
     date: "2024-04-20"
