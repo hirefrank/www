@@ -18,6 +18,10 @@ export const definitions = {
   "/feeds/rss.xml": "/writings",
   "/tags": "/writings",
   "/archives": "/writings",
+  "/discovery": {
+    "to": "https://coaching.hirefrank.com/book/complimentary-coaching-consultation",
+    "code": 302
+  },
   "/vip": {
     "to": "https://coaching.hirefrank.com/book/vip-catch-up",
     "code": 302
