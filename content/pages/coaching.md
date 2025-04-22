@@ -6,10 +6,10 @@ title: Hands-on Coaching
 description: "A coaching practice dedicated to guiding leaders through the tricky stuff of building products and high-performing teams."
 ---
 
-A practice dedicated to supporting leaders through the tricky stuff of building products and high-performing teams.
+Building products is hard. Leading the people who build them? Even harder.
 
-As an executive product leader with over two decades in tech, [Frank](/about ) has built products and led teams at companies ranging from public giants like Slack, Google and Etsy, all the way to startups like Betterment, Casper and InVision. He now supports product leaders across all stages of companies as a coach.
+Whether it's stepping into a Staff+ role, managing a growing team, or navigating founder dynamics, coaching helps leaders move through uncertainty with more clarity, confidence, and impact.
 
-As a coach, Frank offers unique insights drawn from his experience managing teams and products across various growth stages and industries.
+Frank works with senior ICs, first-time managers, and seasoned VPs at startups, scale-ups, and public companies &mdash; spanning B2B and B2C sectors, regulated industries, and high-growth tech. His coaching is grounded in ICF-aligned principles and shaped by over 20 years of experience leading teams and building products at companies like Slack, Etsy, Google, Betterment, Casper, and InVision.
 
-He helps leaders navigate ambiguity, refine strategies, and increase their impact in areas such as product development, organizational design, go-to-market planning, and pricing.
+Sessions are hands-on and reflective while blending structured frameworks, sharp questions, and metaphor-driven insight to help leaders operate with intention and grow on purpose

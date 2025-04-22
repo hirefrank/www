@@ -2,10 +2,10 @@
 indexable: true
 title: About
 url: /about/
-description: "Frank Harris is a product executive with over 20 years of experience leading high-performing teams and building products across companies like Slack, Etsy, and Google."
+description: "Frank Harris is a coach and former product executive with over 20 years of experience building high-performing teams and products at companies like Slack, Etsy, and Google."
 ---
 
-Frank Harris is a product executive with over 20 years of experience leading high-performing teams and building products across companies like Slack, Etsy, and Google.
+Frank Harris is a coach and former product executive with over 20 years of experience building teams and products at companies like Slack, Etsy, and Google.
 
 <div class="clearfix">
   <div class="about-image-container">
@@ -13,15 +13,17 @@ Frank Harris is a product executive with over 20 years of experience leading hig
   </div>
 </div>
 
-Frank's experience in the technology industry spans roles from engineering to executive leadership. His career trajectory showcases a unique blend of technical expertise, design sensibility, and strategic product management.
+Frank’s career spans engineering, design, and product leadership across startups, scale-ups, and public companies. He’s known for combining deep technical intuition with design sensibility and a sharp sense of product strategy — a blend that shapes his coaching today.
 
-As a self-taught engineer, Frank joined Google as a UX designer and created the original transit icons for Google Maps. This work demonstrated his ability to bridge technology with user-friendly designs, foreshadowing his career path.
+As a self-taught engineer, Frank joined Google as a UX designer and created the original transit icons for Google Maps — an early example of his ability to bridge tech with human-friendly design.
 
-Frank's career continued to evolve as a Product Manager when he joined Etsy pre-IPO. He played a pivotal role in enhancing the platform's search and discovery experience with an innovative approach that led to the development of a new, high-margin revenue stream through advertising for sellers.
+He later joined Etsy as a product manager pre-IPO, where he played a pivotal role in enhancing search and discovery and led the launch of a high-margin, self-serve ad platform for sellers — one of their most successful revenue initiatives.
 
-In his career, Frank has held product leadership positions at prominent companies like Slack, InVision, Casper, and Betterment, spanning B2B and B2C sectors, regulated industries, and both startups and public companies.
+Frank went on to hold VP roles at Betterment, Casper, InVision, and Slack, leading cross-functional teams through periods of rapid growth, product reinvention, and organizational change.
 
-Frank's current focus is helping product leaders take the next step in their journey with his [coaching practice](/coaching).
+Today, he works with senior ICs, VPs, and founders as a coach — helping them navigate complex leadership challenges, clarify strategy, and grow with intention.
+
+His practice is grounded in ICF-aligned coaching, supported by [1:1 work](/coaching), tools like [Frankbot](https://tryfrank.chat) (his AI coaching assistant), and [Frank Takeaways](https://franktakeaways.com/), a weekly newsletter on product and leadership.
 
 He lives in Brooklyn, NY with his wife, two young daughters, and an Italian truffle dog that isn't of much use in the city.
 

@@ -6,10 +6,8 @@ title: "Frank Harris"
 description: "A former product executive and angel investor with over 20 years of experience at companies like Slack, Etsy, and Google."
 ---
 
-# Hi, I'm Frank.
+# I’m Frank Harris, a product leader turned coach.
 
-A former product executive and angel investor with over 20 years at companies like <span class="font-medium">Slack</span> <span class="relative -top-[0.1em] inline-block">🙌</span>, <span class="font-medium">Etsy</span> <span class="relative -top-[0.0em] inline-block">🧶</span>, and <span class="font-medium">Google</span> <span class="relative -top-[0.1em] inline-block">🤖</span>.
+I help leaders navigate messy and high-stakes moments of growth like new roles, scaling teams, and evolving strategies.
 
-I run [a coaching practice](/coaching) dedicated to guiding leaders through the tricky stuff of building products and high-performing teams.
-
-I write [Frank Takeaways](https://franktakeaways.com/), a mildly entertaining newsletter about the notes worth keeping.
+My coaching is shaped by two decades in the arena at places like <span class="font-medium">Slack</span> <span class="relative -top-[0.1em] inline-block">🙌</span>, <span class="font-medium">Etsy</span> <span class="relative -top-[0.0em] inline-block">🧶</span>, and <span class="font-medium">Google</span> <span class="relative -top-[0.1em] inline-block">🤖</span> &mdash; and now delivered through [1:1 coaching](/coaching), [Frankbot](https://tryfrank.chat) (my AI assistant), and [Frank Takeaways](https://franktakeaways.com/), my mildly entertaining newsletter.

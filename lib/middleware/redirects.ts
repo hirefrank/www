@@ -37,7 +37,8 @@ export const definitions = {
   "/mailto": {
     "to": "mailto:frank@hirefrank.com?subject=Hi!",
     "code": 302
-  }
+  },
+  "/resume": "/extras/resume.pdf",
 };
 
 export default redirects({
