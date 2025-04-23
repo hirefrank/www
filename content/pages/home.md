@@ -3,7 +3,7 @@ layout: base.vto
 indexable: true
 url: "/index.html"
 title: "Frank Harris"
-description: "A former product executive and angel investor with over 20 years of experience at companies like Slack, Etsy, and Google."
+description: "A former product executive turned coach with over 20 years of experience at companies like Slack, Etsy, and Google."
 ---
 
 # I’m Frank Harris, a product leader turned coach.
