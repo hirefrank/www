@@ -54,7 +54,7 @@
   }
 
   footer {
-    @apply text-base text-on-canvas-dim mt-auto pt-2;
+    @apply text-base text-on-canvas-dim mt-10 md:mt-auto pt-2;
   }
 
   .footer {
