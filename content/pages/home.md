@@ -8,7 +8,7 @@ description: "A former product executive turned coach with over 20 years of expe
 
 # I’m Frank Harris, a product leader turned coach.
 
-I help leaders navigate messy and high-stakes moments of growth like new roles, scaling teams, and evolving strategies.
+I help leaders navigate messy and high-stakes moments of growth like new roles, scaling teams, evolving strategies, and integrating AI into their work.
 
 My coaching is shaped by two decades in the arena at places like <span class="font-medium">Slack</span> <span class="relative -top-[0.1em] inline-block">🙌</span>, <span class="font-medium">Etsy</span> <span class="relative -top-[0.0em] inline-block">🧶</span>, and <span class="font-medium">Google</span> <span class="relative -top-[0.1em] inline-block">🤖</span>.
 
