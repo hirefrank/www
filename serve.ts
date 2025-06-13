@@ -1,7 +1,7 @@
-import Server from "lume/core/server.ts";
-import onDemand from "lume/middlewares/on_demand.ts";
-import site from "./_config.ts";
-import { redirects, router, notFound, cacheBusting } from "./lib/middleware.ts";
+import Server from 'lume/core/server.ts';
+import onDemand from 'lume/middlewares/on_demand.ts';
+import site from './_config.ts';
+import { redirects, router, notFound, cacheBusting } from './lib/middleware.ts';
 
 const server = new Server({
   root: `${Deno.cwd()}/_site`,
@@ -14,7 +14,7 @@ server.use(async (request, next) => {
   if (host && /^(www\.)?workingtitles\.xyz$/.test(host)) {
     return new Response(null, {
       status: 302,
-      headers: { Location: "https://hirefrank.com/coaching/?ref=workingtitles.xyz" }
+      headers: { Location: 'https://hirefrank.com/coaching/?ref=workingtitles.xyz' },
     });
   }
   return await next(request);
@@ -28,4 +28,4 @@ server.use(cacheBusting());
 
 server.start();
 
-console.log("Listening on http://localhost:3000");
+console.warn('Listening on http://localhost:3000');

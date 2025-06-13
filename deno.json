@@ -20,23 +20,15 @@
     "test-intro": "NODE_ENV=test deno run -A ./intro/test.ts"
   },
   "compilerOptions": {
-    "types": [
-      "lume/types.ts"
-    ]
+    "types": ["lume/types.ts"]
   },
   "lint": {
-    "exclude": [
-      "./_site"
-    ],
+    "exclude": ["./_site"],
     "rules": {
-      "tags": [
-        "recommended"
-      ]
+      "tags": ["recommended"]
     }
   },
   "fmt": {
-    "exclude": [
-      "./_site"
-    ]
+    "exclude": ["./_site"]
   }
 }

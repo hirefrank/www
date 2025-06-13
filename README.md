@@ -1,9 +1,11 @@
 # Frank Harris Personal Website
 
-This repository contains the source code for Frank Harris's personal website, built using Deno's Lume framework, Tailwind CSS for styling, and VTO as the template engine.
-
+This repository contains the source code for Frank Harris's personal website,
+built using Deno's Lume framework, Tailwind CSS for styling, and VTO as the
+template engine.
 
 ## 🚀 Features
+
 - Built with Lume, a static site generator for Deno
 - Responsive design with custom Tailwind CSS styling
 - Dynamic content rendering using VTO templates
@@ -22,7 +24,6 @@ This repository contains the source code for Frank Harris's personal website, bu
 - [OpenAI](https://openai.com/): For AI-powered intro email generation
 - [Practice](https://practice.do/): For calendar scheduling
 - [PDF.js](https://mozilla.github.io/pdf.js/): For PDF parsing
-
 
 ## 🏗️ Project Structure
 
@@ -57,17 +58,18 @@ To run the project locally:
 4. Run `deno task serve` to start the development server
 5. Open http://localhost:3000 in your browser
 
-
 ## 🚢 Deployment
 
-The site is automatically deployed to Deno Deploy when changes are pushed to the main branch. The deployment configuration can be found in `.github/workflows/deploy.yml`.
-
+The site is automatically deployed to Deno Deploy when changes are pushed to the
+main branch. The deployment configuration can be found in
+`.github/workflows/deploy.yml`.
 
 ## 📝 Content Management
+
 - Blog posts are stored in content/writings/ as Markdown files
 - Pages are stored in content/pages/ as Markdown files
-- Site configuration is in _config.ts
-- Global data is stored in content/_data.yml
+- Site configuration is in \_config.ts
+- Global data is stored in content/\_data.yml
 - Styles are managed through Tailwind CSS in content/styles.css
 
 ## License

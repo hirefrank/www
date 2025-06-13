@@ -10,7 +10,7 @@ export function generateEmailPrompt({
   jobUrl: string;
 }): string {
   if (!jobDescription || !resumeText || !jobUrl) {
-    throw new Error("Job description, resume text, and job URL are required inputs.");
+    throw new Error('Job description, resume text, and job URL are required inputs.');
   }
 
   return `You are an expert email writer. Follow these steps to analyze fit and create a professional introduction email. Return a JSON object summarizing your analysis and email.

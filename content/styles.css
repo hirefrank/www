@@ -15,7 +15,9 @@
 
   h1 {
     @apply text-xl sm:text-3xl md:text-3xl leading-tight font-semibold;
-    + p { @apply text-lg sm:text-2xl md:text-2xl leading-normal sm:leading-relaxed md:leading-relaxed font-normal; }
+    + p {
+      @apply text-lg sm:text-2xl md:text-2xl leading-normal sm:leading-relaxed md:leading-relaxed font-normal;
+    }
   }
 
   h2 {
@@ -40,10 +42,14 @@
 
   ul {
     @apply list-disc pl-8 mb-6;
-    :is(nav, footer) & { @apply list-none p-0 m-0; }
+    :is(nav, footer) & {
+      @apply list-none p-0 m-0;
+    }
   }
 
-  nav ul { @apply m-0 p-0; }
+  nav ul {
+    @apply m-0 p-0;
+  }
 
   main {
     @apply mt-8 sm:mt-24;
@@ -68,8 +74,7 @@
   }
 
   .nav-menu {
-    @apply
-      /* Layout */
+    @apply /* Layout */
       flex-col
       sm:flex-row
       sm:flex
@@ -128,7 +133,7 @@
   }
 
   .footer-list {
-    @apply flex flex-wrap items-center [&>li]:mr-4 [&>li:last-child]:mr-0 ;
+    @apply flex flex-wrap items-center [&>li]:mr-4 [&>li:last-child]:mr-0;
   }
 
   .rotate-hover {
@@ -248,7 +253,6 @@
     @apply text-base sm:text-lg leading-normal sm:leading-relaxed font-normal;
   }
 
-
   .faq-container {
     @apply space-y-6 mb-12;
   }
@@ -280,7 +284,6 @@
   .content-spacing {
     @apply my-4 sm:my-6;
   }
-
 }
 
 @layer components {
@@ -374,5 +377,3 @@
   font-style: italic;
   src: url('/fonts/CrimsonPro-Italic-VariableFont_wght.ttf');
 }
-
-

@@ -1,37 +1,32 @@
-import lume from "lume/mod.ts";
-import plugins from "./lib/plugins.ts";
-import { redirects, router, cacheBusting, notFound } from "./lib/middleware.ts";
+import lume from 'lume/mod.ts';
+import plugins from './lib/plugins.ts';
+import { redirects, router, cacheBusting, notFound } from './lib/middleware.ts';
 
 const site = lume({
-  src: "./content",
-  location: new URL("https://hirefrank.com"),
+  src: './content',
+  location: new URL('https://hirefrank.com'),
   server: {
-    middlewares: [
-        redirects,
-        router,
-        notFound(),
-        cacheBusting(),
-    ],
+    middlewares: [redirects, router, notFound(), cacheBusting()],
   },
 });
 
 const pageConfigs: Array<{ path: string; layout: string; tags?: string[]; indexable?: boolean }> = [
-  { path: "/pages", layout: "simple.vto" },
-  { path: "/writings", layout: "simple.vto", tags: ["writing"] },
-  { path: "/videos", layout: "simple.vto", tags: ["video"], indexable: true },
+  { path: '/pages', layout: 'simple.vto' },
+  { path: '/writings', layout: 'simple.vto', tags: ['writing'] },
+  { path: '/videos', layout: 'simple.vto', tags: ['video'], indexable: true },
 ];
 
 pageConfigs.forEach(({ path, layout, tags, indexable }) => {
-  site.data("layout", layout, path);
-  if (tags) site.data("tags", tags, path);
-  if (indexable) site.data("indexable", indexable, path);
+  site.data('layout', layout, path);
+  if (tags) site.data('tags', tags, path);
+  if (indexable) site.data('indexable', indexable, path);
 });
 
 site.data('cacheBusterVersion', `v${Date.now()}`);
 
-site.data("site", {
-  title: "Frank Harris",
-  name: "hirefrank",
+site.data('site', {
+  title: 'Frank Harris',
+  name: 'hirefrank',
   description: "Frank Harris's personal website.",
 });
 
