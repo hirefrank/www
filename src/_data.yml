@@ -1,0 +1,22 @@
+lang: en
+
+metas:
+  site: 'Portfolio'
+  tagline: 'A clean, minimal portfolio'
+  description: 'A professional portfolio showcasing projects and writings'
+  footer:
+    - 'Built with Lume'
+
+navigation:
+  - url: '/'
+    label: 'Home'
+  - url: '/about/'
+    label: 'About'
+  - url: '/projects/'
+    label: 'Projects'
+  - url: '/contact/'
+    label: 'Contact'
+
+# Sample profile image path - users should replace
+profileImage: '/images/profile.jpg'
+showProfileImage: true

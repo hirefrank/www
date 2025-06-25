@@ -1,0 +1,35 @@
+---
+layout: layouts/base.vto
+title: Home
+description: Portfolio and personal website
+---
+
+<p>I'm a product management leader who brings strategy and empathy together to build exceptional user experiences.</p>
+
+<p>Currently exploring the intersection of AI and human creativity while helping teams navigate the future of product development.</p>
+
+<h2>Recent Projects</h2>
+
+<ul class="projects-list">
+  {{ for project of projects || [] }}
+  <li>
+    <div class="rotate-hover scale-hover">
+      {{ project.emoji }}
+    </div>
+    <a href="{{ project.url }}" class="link-style">{{ project.title }}</a> - {{ project.summary }}
+  </li>
+  {{ /for }}
+</ul>
+
+<h2>Recent Writings</h2>
+
+<ul class="writings-list reset-list">
+  <li class="writings-item">
+    <a href="/writings/building-better-products/">Building Better Products Through User Empathy</a>
+    <span class="writings-date">MAR 20</span>
+  </li>
+  <li class="writings-item">
+    <a href="/writings/remote-product-teams/">Leading Remote Product Teams Successfully</a>
+    <span class="writings-date">FEB 15</span>
+  </li>
+</ul>

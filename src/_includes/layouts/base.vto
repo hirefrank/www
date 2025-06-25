@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="{{ lang || 'en' }}" class="bg-canvas text-on-canvas" data-theme="{{ colorScheme }}">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>{{ title || metas.site }} - {{ metas.tagline || 'Portfolio' }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Lume" />
+    <meta name="description" content="{{ description || metas.description }}" />
+    <meta name="robots" content="index,follow" />
+    <meta name="referrer" content="origin" />
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body class="body-layout body-padding body-flex">
+    <header class="site-header">
+      <nav class="navbar">
+        <div class="navbar-container">
+          <a class="navbar-brand" href="/">
+            <div class="logo-container">
+                <div class="logo-text">{{ metas.site }}</div>
+            </div>
+          </a>
+          <button id="menu-toggle" class="sm:hidden flex flex-col justify-center items-center -mt-[calc(3em-28px)]">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+          </button>
+          <ul id="nav-menu" class="nav-menu hidden sm:flex">
+            {{ for item of navigation }}
+              <li>
+                <a href="{{ item.url }}" class="nav-link {{ url === item.url ? 'nav-link-active' : '' }}">
+                  {{ item.label }}
+                </a>
+              </li>
+            {{ /for }}
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <div class="{{ url === '/' ? 'home-container' : 'main-container' }}">
+        {{ if url === "/" && showProfileImage !== false }}
+        <div class="profile-image">
+          <img alt="{{ metas.site }}" src="{{ profileImage || '/images/profile.jpg' }}">
+        </div>
+        {{ /if }}
+        {{ content }}
+      </div>
+    </main>
+    <footer>
+      <div class="footer">
+        <ul class="footer-list">
+          <li>&copy; {{ new Date().getFullYear() }} {{ metas.site }}</li>
+          {{ if metas.footer }}
+            {{ for item of metas.footer }}
+              <li>{{ item }}</li>
+            {{ /for }}
+          {{ /if }}
+        </ul>
+      </div>
+    </footer>
+    <script type="text/javascript">
+      document.addEventListener('DOMContentLoaded', (event) => {
+        const menuToggle = document.getElementById('menu-toggle');
+        const navMenu = document.getElementById('nav-menu');
+
+        if (!menuToggle || !navMenu) {
+          return;
+        }
+
+        menuToggle.addEventListener('click', (e) => {
+          e.stopPropagation();
+          menuToggle.classList.toggle('menu-open');
+          navMenu.classList.toggle('hidden');
+          navMenu.classList.toggle('flex');
+        });
+
+        document.addEventListener('click', (event) => {
+          if (!navMenu.contains(event.target) && !menuToggle.contains(event.target)) {
+            menuToggle.classList.remove('menu-open');
+            navMenu.classList.add('hidden');
+            navMenu.classList.remove('flex');
+          }
+        });
+
+        let resizeTimeout;
+        function handleResize() {
+          clearTimeout(resizeTimeout);
+          resizeTimeout = setTimeout(() => {
+            if (window.innerWidth >= 640) {
+              menuToggle.classList.remove('menu-open');
+              navMenu.classList.remove('hidden');
+              navMenu.classList.add('flex');
+            } else {
+              if (!menuToggle.classList.contains('menu-open')) {
+                navMenu.classList.add('hidden');
+                navMenu.classList.remove('flex');
+              }
+            }
+          }, 250);
+        }
+
+        window.addEventListener('resize', handleResize);
+        handleResize();
+      });
+    </script>
+  </body>
+</html>

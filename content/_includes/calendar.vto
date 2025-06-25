@@ -1,8 +1,0 @@
-{{ set profile = hirefrank }}
-{{ for scheduler of profile.schedulers }}
-  {{ if scheduler.title == "Let's Chat" }}
-    {{ set consultationUrl = scheduler.bookingUrl }}
-  {{ /if }}
-{{ /for }}
-
-<p>Feel free to <a href="/mailto">drop me a note</a> or <a href="{{ consultationUrl }}">schedule a time to chat</a>.</p>
