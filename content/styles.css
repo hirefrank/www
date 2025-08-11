@@ -149,7 +149,7 @@
   }
 
   .profile-image img {
-    @apply w-full h-full object-cover transform scale-[1.35] my-5 ml-1;
+    @apply w-full h-full object-cover transform scale-[1.2] my-2 ml-0;
   }
 
   .social-icon {
