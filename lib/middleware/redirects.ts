@@ -19,11 +19,11 @@ export const definitions = {
   '/tags': '/writings',
   '/archives': '/writings',
   '/discovery': {
-    to: 'https://coaching.hirefrank.com/book/complimentary-coaching-consultation',
+    to: 'https://cal.com/hirefrank/discovery-call-initial',
     code: 302,
   },
   '/vip': {
-    to: 'https://coaching.hirefrank.com/book/vip-catch-up',
+    to: 'https://cal.com/hirefrank/vip-catch-up',
     code: 302,
   },
   '/calp': {
