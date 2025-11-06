@@ -10,7 +10,7 @@ template engine.
 - Responsive design with custom Tailwind CSS styling
 - Dynamic content rendering using VTO templates
 - Blog posts and project showcases
-- [Practice integration](https://practice.do/)
+
 - Automatic deployment to Deno Deploy
 - Custom intro email generator
 - Calendar integration for coaching sessions
@@ -22,7 +22,7 @@ template engine.
 - [Tailwind CSS](https://tailwindcss.com/): A utility-first CSS framework
 - [VTO](https://lume.land/plugins/vento/): A template engine for Lume
 - [OpenAI](https://openai.com/): For AI-powered intro email generation
-- [Practice](https://practice.do/): For calendar scheduling
+
 - [PDF.js](https://mozilla.github.io/pdf.js/): For PDF parsing
 
 ## 🏗️ Project Structure

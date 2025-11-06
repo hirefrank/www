@@ -7,7 +7,7 @@ import robots from 'lume/plugins/robots.ts';
 import markdown from 'lume/plugins/markdown.ts';
 import date from 'lume/plugins/date.ts';
 import onDemand from 'lume/plugins/on_demand.ts';
-import coachingProfiles from './practice.ts';
+
 
 import 'lume/types.ts';
 
@@ -58,20 +58,6 @@ export default function () {
         })
       )
       .use(onDemand())
-      // .use(
-      //   coachingProfiles({
-      //     profiles: ['https://app.practice.do/me/hirefrank'],
-      //     onSuccess: async (data: unknown) => {
-      //       // Write to both locations
-      //       await Promise.all([
-      //         Deno.writeTextFile(
-      //           `${site.options.src}/static/coaching.json`,
-      //           JSON.stringify(data, null, 2)
-      //         ),
-      //       ]);
-      //     },
-      //   })
-      // )
       .copy('static', './');
   };
 }
