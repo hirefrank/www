@@ -58,20 +58,20 @@ export default function () {
         })
       )
       .use(onDemand())
-      .use(
-        coachingProfiles({
-          profiles: ['https://app.practice.do/me/hirefrank'],
-          onSuccess: async (data: unknown) => {
-            // Write to both locations
-            await Promise.all([
-              Deno.writeTextFile(
-                `${site.options.src}/static/coaching.json`,
-                JSON.stringify(data, null, 2)
-              ),
-            ]);
-          },
-        })
-      )
+      // .use(
+      //   coachingProfiles({
+      //     profiles: ['https://app.practice.do/me/hirefrank'],
+      //     onSuccess: async (data: unknown) => {
+      //       // Write to both locations
+      //       await Promise.all([
+      //         Deno.writeTextFile(
+      //           `${site.options.src}/static/coaching.json`,
+      //           JSON.stringify(data, null, 2)
+      //         ),
+      //       ]);
+      //     },
+      //   })
+      // )
       .copy('static', './');
   };
 }
