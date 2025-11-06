@@ -1,9 +1,4 @@
-{{ set profile = hirefrank }}
-{{ for scheduler of profile.schedulers }}
-  {{ if scheduler.title == "Complimentary Coaching Consultation" }}
-    {{ set consultationUrl = scheduler.bookingUrl }}
-  {{ /if }}
-{{ /for }}
+
 
 <section class="services-section">
 <h2>Simple pricing for everyone</h2>
@@ -24,7 +19,7 @@
       </ul>
     </div>
     <div class="mt-auto">
-      <a href="{{ consultationUrl }}" class="card-button">Book a free 30 minute session</a>
+      <a href="/discovery" class="card-button">Book a free 30 minute session</a>
     </div>
   </div>
   {{ /for }}

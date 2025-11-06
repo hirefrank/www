@@ -18,12 +18,16 @@ export const definitions = {
   '/feeds/rss.xml': '/writings',
   '/tags': '/writings',
   '/archives': '/writings',
+  '/lets-chat': {
+    to: 'https://cal.com/hirefrank/meet-and-greet',
+    code: 302,
+  },
   '/discovery': {
-    to: 'https://coaching.hirefrank.com/book/complimentary-coaching-consultation',
+    to: 'https://cal.com/hirefrank/discovery-call-initial',
     code: 302,
   },
   '/vip': {
-    to: 'https://coaching.hirefrank.com/book/vip-catch-up',
+    to: 'https://cal.com/hirefrank/vip-catch-up',
     code: 302,
   },
   '/calp': {
