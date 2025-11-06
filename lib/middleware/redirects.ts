@@ -18,6 +18,10 @@ export const definitions = {
   '/feeds/rss.xml': '/writings',
   '/tags': '/writings',
   '/archives': '/writings',
+  '/lets-chat': {
+    to: 'https://cal.com/hirefrank/meet-and-greet',
+    code: 302,
+  },
   '/discovery': {
     to: 'https://cal.com/hirefrank/discovery-call-initial',
     code: 302,
