@@ -9,14 +9,11 @@ export function FinalCTA() {
 
       {/* Content */}
       <div className="relative z-10 max-w-4xl mx-auto px-4 text-center">
-        <span className="inline-block mb-6 text-accent-400 font-medium tracking-wider uppercase text-sm">
-          Your next chapter starts here
-        </span>
         <h2 className="font-display text-3xl md:text-5xl font-bold mb-6 leading-tight text-white">
-          Ready to Navigate Your Next Moment of Growth?
+          What's holding you back?
         </h2>
         <p className="text-lg md:text-xl text-neutral-300 mb-10 max-w-2xl mx-auto">
-          Take the first step with a free, no-pressure conversation.
+          Let's figure it out together. 30 minutes, no pressure.
         </p>
         <button
           data-cal-link="hirefrank/discovery-call-initial"

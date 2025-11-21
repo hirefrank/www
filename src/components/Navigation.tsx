@@ -73,7 +73,7 @@ export function Navigation() {
               data-cal-link="hirefrank/discovery-call-initial"
               data-cal-namespace="discovery-call-initial"
               data-cal-config='{"layout":"month_view","theme":"light"}'
-              className="btn-primary text-sm px-5 py-3 cursor-pointer"
+              className="btn-primary text-sm px-5 pt-4 pb-3.5 cursor-pointer inline-flex items-center justify-center"
             >
               Book a Free Intro Call
             </button>

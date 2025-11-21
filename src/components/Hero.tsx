@@ -1,4 +1,16 @@
+import { useMemo } from "react";
+
+const heroVideos = [
+  "/videos/Rowing_Ritual_Dawn_Preparation_and_Partnership.mp4",
+  "/videos/Runner_and_Coach_s_Golden_Hour_Training.mp4",
+];
+
 export function Hero() {
+  // Randomly select a video on initial render
+  const videoSrc = useMemo(() => {
+    return heroVideos[Math.floor(Math.random() * heroVideos.length)];
+  }, []);
+
   return (
     <section className="relative h-screen min-h-[600px] w-full overflow-hidden flex items-center justify-center">
       {/* Video Background */}
@@ -10,25 +22,22 @@ export function Hero() {
           muted
           playsInline
           className="w-full h-full object-cover"
+          key={videoSrc}
         >
-          <source
-            src="/videos/Video_Generation_Been_In_The_Arena_.mp4"
-            type="video/mp4"
-          />
+          <source src={videoSrc} type="video/mp4" />
         </video>
       </div>
 
       {/* Content */}
       <div className="relative z-20 max-w-5xl mx-auto px-4 text-center text-white">
         <h1 className="font-display text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight tracking-tight text-white [background:none] [-webkit-text-fill-color:inherit]">
-          Building products is hard. <br className="hidden md:block" />
+          Lead with clarity. <br className="hidden md:block" />
           <span className="text-primary-300 [-webkit-text-fill-color:inherit]">
-            Leading the people who build them is harder.
+            Grow with intention.
           </span>
         </h1>
         <p className="text-xl md:text-2xl mb-10 text-neutral-200 max-w-3xl mx-auto leading-relaxed">
-          Navigate your next moment of growth with a partner who's been in the
-          arena — a 20-year veteran from Slack, Etsy, and Google.
+          Executive coaching for product leaders navigating complexity.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
           <button

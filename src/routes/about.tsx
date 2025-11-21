@@ -85,15 +85,26 @@ function AboutPage() {
           ))}
         </div>
 
+        {/* Featured Quote */}
+        <div className="mb-12 p-8 bg-gradient-to-br from-neutral-900 to-neutral-800 rounded-2xl text-white animate-fade-in-up" style={{ animationDelay: "200ms" }}>
+          <blockquote className="text-2xl md:text-3xl font-display font-bold leading-tight mb-4">
+            Building products is hard.{" "}
+            <span className="text-primary-400">Leading the people who build them is harder.</span>
+          </blockquote>
+          <p className="text-lg text-neutral-300 leading-relaxed">
+            Navigate your next moment of growth with a partner who's been in the arena — a 20-year veteran from Slack, Etsy, and Google.
+          </p>
+        </div>
+
         {/* Lead paragraph */}
-        <p className="lead text-xl text-neutral-800 mb-8 animate-fade-in-up" style={{ animationDelay: "200ms" }}>
+        <p className="lead text-xl text-neutral-800 mb-8 animate-fade-in-up" style={{ animationDelay: "300ms" }}>
           Frank Harris is a coach and former product executive with over 20
           years of experience building teams and products at companies like
           Slack, Etsy, and Google.
         </p>
 
         {/* Photo Gallery */}
-        <div className="mb-12 animate-fade-in-up" style={{ animationDelay: "300ms" }}>
+        <div className="mb-12 animate-fade-in-up" style={{ animationDelay: "400ms" }}>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {photos.map((photo, index) => (
               <div
@@ -112,7 +123,7 @@ function AboutPage() {
         </div>
 
         {/* Content */}
-        <div className="prose prose-lg prose-primary text-neutral-600 max-w-none animate-fade-in-up" style={{ animationDelay: "400ms" }}>
+        <div className="prose prose-lg prose-primary text-neutral-600 max-w-none animate-fade-in-up" style={{ animationDelay: "500ms" }}>
           <p>
             Frank's career spans engineering, design, and product leadership
             across startups, scale-ups, and public companies. He's known for
