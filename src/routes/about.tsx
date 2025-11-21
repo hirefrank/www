@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { ExternalLink } from "lucide-react";
+import { ExternalLink, Mail, Mic, Coffee, Dog, MapPin, BookOpen, Lightbulb } from "lucide-react";
 
 export const Route = createFileRoute("/about")({
   component: AboutPage,
@@ -30,6 +30,34 @@ const careerTimeline = [
 
 const companyLogos = ["google", "etsy", "slack", "casper", "invision", "betterment"];
 
+const philosophy = [
+  { title: "Growth requires discomfort", description: "The best leaders lean into uncertainty rather than away from it." },
+  { title: "Strategy is saying no", description: "Clarity comes from understanding what you won't do, not just what you will." },
+  { title: "People over process", description: "Great teams aren't built by frameworks — they're built by trust and candor." },
+  { title: "Lead with questions", description: "The best coaches don't have all the answers. They ask better questions." },
+];
+
+const speakingHighlights = [
+  { event: "Product Leadership Summit", topic: "Scaling Product Teams Through Hypergrowth", year: "2023" },
+  { event: "First Round Capital", topic: "From IC to VP: Career Transitions That Stick", year: "2022" },
+  { event: "Lenny's Podcast", topic: "Building High-Performing Product Orgs", year: "2022" },
+  { event: "Mind the Product", topic: "The Art of Stakeholder Management", year: "2021" },
+];
+
+const funFacts = [
+  { icon: Dog, text: "Italian truffle dog named Enzo (0 truffles found in Brooklyn so far)" },
+  { icon: MapPin, text: "Brooklyn-based, but will meet for coffee anywhere" },
+  { icon: Coffee, text: "Powered by oat milk lattes and optimism" },
+  { icon: BookOpen, text: "Writes a weekly newsletter read by 5,000+ leaders" },
+];
+
+const photos = [
+  { src: "/images/speaking.jpg", alt: "Frank speaking at a conference", rotate: "rotate-2" },
+  { src: "/images/speaking.jpg", alt: "Frank in a coaching session", rotate: "-rotate-1" },
+  { src: "/images/speaking.jpg", alt: "Frank with team", rotate: "rotate-1" },
+  { src: "/images/speaking.jpg", alt: "Casual Frank", rotate: "-rotate-2" },
+];
+
 function AboutPage() {
   return (
     <div className="pt-24 pb-16 bg-white relative overflow-hidden">
@@ -46,10 +74,7 @@ function AboutPage() {
         {/* Impact Numbers */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12 py-8 border-y border-neutral-100 animate-fade-in-up" style={{ animationDelay: "100ms" }}>
           {impactStats.map((stat) => (
-            <div
-              key={stat.label}
-              className="text-center"
-            >
+            <div key={stat.label} className="text-center">
               <div className="text-3xl md:text-4xl font-bold text-primary-600 mb-1 font-display">
                 {stat.number}
               </div>
@@ -67,15 +92,22 @@ function AboutPage() {
           Slack, Etsy, and Google.
         </p>
 
-        {/* Photo with rotation effect */}
-        <div className="float-right ml-8 mb-8 w-full md:w-1/2 lg:w-2/5 animate-fade-in-up" style={{ animationDelay: "300ms" }}>
-          <div className="relative rounded-2xl overflow-hidden shadow-xl transform rotate-2 hover:rotate-0 transition-transform duration-500">
-            <img
-              src="/images/speaking.jpg"
-              alt="Frank Harris speaking"
-              className="w-full h-auto object-cover"
-            />
-            <div className="absolute inset-0 ring-1 ring-black/10 rounded-2xl"></div>
+        {/* Photo Gallery */}
+        <div className="mb-12 animate-fade-in-up" style={{ animationDelay: "300ms" }}>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {photos.map((photo, index) => (
+              <div
+                key={index}
+                className={`relative rounded-xl overflow-hidden shadow-lg transform ${photo.rotate} hover:rotate-0 hover:scale-105 hover:z-10 transition-all duration-500 ${index === 0 ? 'col-span-2 row-span-2' : ''}`}
+              >
+                <img
+                  src={photo.src}
+                  alt={photo.alt}
+                  className="w-full h-full object-cover aspect-square"
+                />
+                <div className="absolute inset-0 ring-1 ring-black/10 rounded-xl" />
+              </div>
+            ))}
           </div>
         </div>
 
@@ -94,11 +126,6 @@ function AboutPage() {
             created the original transit icons for Google Maps — an early
             example of his ability to bridge tech with human-friendly design.
           </p>
-
-          {/* Pull Quote */}
-          <blockquote className="my-8 pl-6 border-l-4 border-primary-400 bg-primary-50 py-4 pr-6 rounded-r-xl not-italic text-lg text-neutral-700">
-            "His ability to bridge tech with human-friendly design shaped his approach to leadership coaching."
-          </blockquote>
 
           <p>
             He later joined Etsy as a product manager pre-IPO, where he played a
@@ -121,29 +148,16 @@ function AboutPage() {
 
           <p>
             His practice is grounded in ICF-aligned coaching, supported by{" "}
-            <a
-              href="/"
-              className="inline-flex items-center gap-1 text-primary-600 hover:text-primary-800 font-medium underline decoration-primary-200 hover:decoration-primary-800 transition-all group"
-            >
+            <a href="/" className="inline-flex items-center gap-1 text-primary-600 hover:text-primary-800 font-medium underline decoration-primary-200 hover:decoration-primary-800 transition-all group">
               1:1 work
             </a>
             , tools like{" "}
-            <a
-              href="https://tryfrank.chat"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-1 text-primary-600 hover:text-primary-800 font-medium underline decoration-primary-200 hover:decoration-primary-800 transition-all group"
-            >
+            <a href="https://tryfrank.chat" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-primary-600 hover:text-primary-800 font-medium underline decoration-primary-200 hover:decoration-primary-800 transition-all group">
               Frankbot
               <ExternalLink className="w-3.5 h-3.5 opacity-0 group-hover:opacity-100 transition-opacity" />
             </a>{" "}
             (his AI coaching assistant), and{" "}
-            <a
-              href="https://franktakeaways.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-1 text-primary-600 hover:text-primary-800 font-medium underline decoration-primary-200 hover:decoration-primary-800 transition-all group"
-            >
+            <a href="https://franktakeaways.com/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-primary-600 hover:text-primary-800 font-medium underline decoration-primary-200 hover:decoration-primary-800 transition-all group">
               Frank Takeaways
               <ExternalLink className="w-3.5 h-3.5 opacity-0 group-hover:opacity-100 transition-opacity" />
             </a>
@@ -151,8 +165,27 @@ function AboutPage() {
           </p>
         </div>
 
+        {/* My Philosophy */}
+        <div className="my-16 pt-12 border-t border-neutral-100">
+          <div className="flex items-center gap-3 mb-8">
+            <Lightbulb className="w-6 h-6 text-primary-600" />
+            <h2 className="font-display text-2xl font-bold text-neutral-900">
+              My Philosophy
+            </h2>
+          </div>
+
+          <div className="grid sm:grid-cols-2 gap-6">
+            {philosophy.map((item) => (
+              <div key={item.title} className="bg-neutral-50 rounded-xl p-6 border border-neutral-100 hover:border-primary-200 hover:shadow-md transition-all duration-300">
+                <h3 className="font-bold text-neutral-900 mb-2">{item.title}</h3>
+                <p className="text-neutral-600 text-sm leading-relaxed">{item.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
         {/* Company Logos */}
-        <div className="my-16 py-8 border-y border-neutral-100 clear-both">
+        <div className="my-16 py-8 border-y border-neutral-100">
           <p className="text-center text-sm text-neutral-500 mb-6 uppercase tracking-wider font-medium">
             Leadership roles at
           </p>
@@ -175,7 +208,6 @@ function AboutPage() {
           </h2>
 
           <div className="relative">
-            {/* Timeline line */}
             <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary-200 via-primary-400 to-primary-200" />
 
             {careerTimeline.map((item, index) => (
@@ -183,10 +215,7 @@ function AboutPage() {
                 key={item.year}
                 className={`relative flex items-center mb-12 last:mb-0 ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}
               >
-                {/* Timeline dot */}
                 <div className="absolute left-4 md:left-1/2 w-3 h-3 bg-primary-500 rounded-full transform -translate-x-1.5 ring-4 ring-white z-10" />
-
-                {/* Content card */}
                 <div className={`ml-12 md:ml-0 md:w-5/12 ${index % 2 === 0 ? 'md:pr-12 md:text-right' : 'md:pl-12'}`}>
                   <div className="bg-white rounded-xl p-6 shadow-sm border border-neutral-100 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
                     <span className="text-primary-600 font-medium text-sm">{item.year}</span>
@@ -199,23 +228,76 @@ function AboutPage() {
           </div>
         </div>
 
-        {/* Beyond Work Section */}
-        <div className="mt-16 pt-12 border-t border-neutral-100">
+        {/* Speaking Highlights */}
+        <div className="my-16 pt-12 border-t border-neutral-100">
+          <div className="flex items-center gap-3 mb-8">
+            <Mic className="w-6 h-6 text-primary-600" />
+            <h2 className="font-display text-2xl font-bold text-neutral-900">
+              Speaking & Podcasts
+            </h2>
+          </div>
+
+          <div className="space-y-4">
+            {speakingHighlights.map((item) => (
+              <div key={item.topic} className="flex items-start gap-4 p-4 rounded-xl bg-neutral-50 hover:bg-neutral-100 transition-colors">
+                <div className="flex-shrink-0 w-16 text-center">
+                  <span className="text-sm font-medium text-primary-600">{item.year}</span>
+                </div>
+                <div>
+                  <h3 className="font-semibold text-neutral-900">{item.topic}</h3>
+                  <p className="text-sm text-neutral-500">{item.event}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Beyond Work / Fun Facts */}
+        <div className="my-16 pt-12 border-t border-neutral-100">
           <h2 className="font-display text-2xl font-bold text-neutral-900 mb-6">
             Beyond the Work
           </h2>
 
           <div className="bg-gradient-to-br from-secondary-50 to-accent-50 rounded-2xl p-8">
-            <p className="text-lg text-neutral-700 leading-relaxed">
-              When not coaching, Frank can be found in Brooklyn with his wife, two young daughters,
-              and an Italian truffle dog named <span className="font-semibold text-secondary-700">Enzo</span> who
-              has yet to find a single truffle in the city. He remains optimistic.
+            <p className="text-lg text-neutral-700 leading-relaxed mb-8">
+              When not coaching, Frank can be found in Brooklyn with his wife and two young daughters,
+              exploring the city, building Legos, or convincing himself that his truffle dog will
+              eventually find something.
             </p>
+
+            <div className="grid sm:grid-cols-2 gap-4">
+              {funFacts.map((fact) => (
+                <div key={fact.text} className="flex items-center gap-3 text-neutral-700">
+                  <fact.icon className="w-5 h-5 text-secondary-600 flex-shrink-0" />
+                  <span className="text-sm">{fact.text}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Contact CTA */}
+        <div className="my-16 pt-12 border-t border-neutral-100">
+          <div className="bg-neutral-900 rounded-2xl p-8 md:p-12 text-center">
+            <h2 className="font-display text-2xl md:text-3xl font-bold text-white mb-4">
+              Let's Connect
+            </h2>
+            <p className="text-neutral-400 mb-8 max-w-lg mx-auto">
+              Whether you're curious about coaching, want to chat about product leadership,
+              or just want to swap truffle dog stories — I'd love to hear from you.
+            </p>
+            <a
+              href="mailto:frank@hirefrank.com"
+              className="inline-flex items-center gap-2 bg-primary-600 hover:bg-primary-700 text-white font-semibold px-8 py-4 rounded-xl transition-colors"
+            >
+              <Mail className="w-5 h-5" />
+              frank@hirefrank.com
+            </a>
           </div>
         </div>
 
         {/* LinkedIn CTA */}
-        <div className="mt-12 pt-8 border-t border-neutral-100">
+        <div className="text-center">
           <a
             href="https://www.linkedin.com/in/hirefrank/"
             target="_blank"
