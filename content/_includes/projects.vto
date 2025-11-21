@@ -1,9 +1,0 @@
-<ul class="projects-list">
-  {{ for p of projects }}
-    {{ if p.draft != "true"}}
-      <li>{{ p.emoji }} <a href="{{ p.url }}" class="link-style">{{ p.title }}</a> - {{ p.summary }}{{ if p.post != null }} <a href="{{ p.url }}" class="link-style">Learn more &#x21A9;</a>{{ /if }}</li>
-    {{ /if }}
-  {{ /for }}
-</ul>
-
-<p class="pb-6">See <a href='https://www.linkedin.com/in/hirefrank/' class="link-style">LinkedIn</a> for career accomplishments and projects.</p>

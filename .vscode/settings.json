@@ -1,11 +1,10 @@
 {
   "editor.insertSpaces": true,
   "editor.tabSize": 2,
-  "deno.enable": true,
-  "deno.lint": true,
-  "deno.unstable": true,
-  "deno.suggest.imports.hosts": {
-    "https://deno.land": true
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
   },
   "files.associations": {
     "*.css": "tailwindcss"
@@ -16,6 +15,14 @@
   "tailwindCSS.includeLanguages": {
     "html": "html",
     "javascript": "javascript",
+    "javascriptreact": "javascript",
+    "typescript": "javascript",
+    "typescriptreact": "javascript",
     "css": "css"
   },
+  "tailwindCSS.experimental.classRegex": [
+    ["className\\s*[:=]\\s*['\"`]([^'\"`]*)['\"`]"]
+  ],
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "typescript.enablePromptUseWorkspaceTsdk": true
 }

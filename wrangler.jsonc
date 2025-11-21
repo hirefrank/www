@@ -6,9 +6,9 @@
   "main": "./src/server.ts",
   // Replace with your Cloudflare account ID
   // Find it at: https://dash.cloudflare.com/ -> Workers & Pages -> Overview
-  "account_id": "YOUR_ACCOUNT_ID_HERE",
+  "account_id": "6034f1c5d23e5503f6573740480cf0d6",
   "vars": {
     "APP_NAME": "Frank Harris",
-    "APP_URL": "https://hirefrank.com"
-  }
+    "APP_URL": "https://hirefrank.com",
+  },
 }

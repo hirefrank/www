@@ -13,6 +13,7 @@
  */
 
 import handler from "@tanstack/react-start/server-entry";
+import { handleRedirect } from "./redirects";
 
 console.log("[server-entry]: using custom server entry in 'src/server.ts'");
 
@@ -35,6 +36,14 @@ export default {
    * @param ctx - Execution context for waitUntil() and passThroughOnException()
    */
   async fetch(request: Request, env: any, _ctx: ExecutionContext): Promise<Response> {
+    const url = new URL(request.url);
+
+    // Check for redirects before processing
+    const redirectResponse = handleRedirect(url.pathname, url.origin);
+    if (redirectResponse) {
+      return redirectResponse;
+    }
+
     // Delegate to TanStack Start handler
     return handler.fetch(request, env);
   },

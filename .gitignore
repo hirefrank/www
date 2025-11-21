@@ -1,9 +1,3 @@
-# Old Lume stuff
-_site
-_cache
-_data.json
-content/static/coaching.json
-
 # Tanstack Start / Vite
 node_modules/
 dist/
