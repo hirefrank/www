@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "cleanupPeriodDays": 30,
+  "env": {
+    "NODE_ENV": "development",
+    "FORCE_COLOR": "1"
+  },
+  "includeCoAuthoredBy": true,
+  "enableAllProjectMcpServers": true,
+  "enabledPlugins": {
+    "edge-stack@hirefrank-marketplace": true
+  },
+  "extraKnownMarketplaces": {
+    "hirefrank-marketplace": {
+      "source": {
+        "source": "github",
+        "repo": "hirefrank/hirefrank-marketplace"
+      }
+    }
+  },
+  "outputStyle": "Concise",
+  "defaultMode": "acceptEdits"
+}

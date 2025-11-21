@@ -1,6 +1,40 @@
+# Old Lume stuff
 _site
 _cache
-*/logs
-.env
 _data.json
 content/static/coaching.json
+
+# Tanstack Start / Vite
+node_modules/
+dist/
+.output/
+.vinxi/
+.wrangler/
+worker-configuration.d.ts
+
+# Environment
+.env
+.env.local
+.env.*.local
+.dev.vars
+
+# Logs
+*/logs
+*.log
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Testing
+coverage/
+
+# Build
+*.tsbuildinfo
