@@ -1,4 +1,4 @@
-import { createRootRoute, Outlet, ScrollRestoration } from '@tanstack/react-router'
+import { createRootRoute, Outlet } from '@tanstack/react-router'
 import type { ReactNode } from 'react'
 import { Navigation } from '~/components/Navigation'
 import { Footer } from '~/components/Footer'
@@ -37,7 +37,6 @@ function RootDocument({ children }: { children: ReactNode }) {
       </head>
       <body>
         {children}
-        <ScrollRestoration />
       </body>
     </html>
   )
