@@ -5,7 +5,7 @@ export function Benefits() {
     <section className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-32">
         {/* Benefit 1: Founders */}
-        <div className="grid md:grid-cols-2 gap-12 items-center">
+        <div id="founders" className="grid md:grid-cols-2 gap-12 items-center scroll-mt-24">
           <div className="order-2 md:order-1">
             <div className="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-800 text-sm font-medium mb-4">
               For Founders
@@ -45,7 +45,7 @@ export function Benefits() {
         </div>
 
         {/* Benefit 2: Leaders & VPs */}
-        <div className="grid md:grid-cols-2 gap-12 items-center">
+        <div id="leaders" className="grid md:grid-cols-2 gap-12 items-center scroll-mt-24">
           <div className="order-2">
             <div className="inline-flex items-center px-3 py-1 rounded-full bg-secondary-100 text-secondary-800 text-sm font-medium mb-4">
               For Leaders & VPs
@@ -56,7 +56,7 @@ export function Benefits() {
             <p className="text-lg text-neutral-600 mb-8 leading-relaxed">
               I provide the focused, 1:1 coaching that you don't have time for,
               helping your rising stars master the core skills of
-              leadership—from giving tough feedback to managing stakeholders and
+              leadership — from giving tough feedback to managing stakeholders and
               motivating their teams.
             </p>
             <ul className="space-y-4">
@@ -82,7 +82,7 @@ export function Benefits() {
         </div>
 
         {/* Benefit 3: ICs & New Managers */}
-        <div className="grid md:grid-cols-2 gap-12 items-center">
+        <div id="ics" className="grid md:grid-cols-2 gap-12 items-center scroll-mt-24">
           <div className="order-2 md:order-1">
             <div className="inline-flex items-center px-3 py-1 rounded-full bg-accent-100 text-accent-800 text-sm font-medium mb-4">
               For ICs & New Managers
@@ -95,7 +95,7 @@ export function Benefits() {
               Feeling stuck is frustrating when you know you're capable of more.
               I provide the candid feedback and actionable frameworks you need
               to unblock your career, increase your visibility, and lead with
-              confidence—with or without a title.
+              confidence — with or without a title.
             </p>
             <ul className="space-y-4">
               {[

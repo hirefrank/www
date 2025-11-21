@@ -2,6 +2,7 @@ import { createRootRoute, Outlet, HeadContent, Scripts } from "@tanstack/react-r
 import type { ReactNode } from "react";
 import { Navigation } from "~/components/Navigation";
 import { Footer } from "~/components/Footer";
+import { useCalEmbed } from "~/hooks/useCalEmbed";
 import globalsCss from "~/styles/globals.css?url";
 
 export const Route = createRootRoute({
@@ -36,6 +37,8 @@ export const Route = createRootRoute({
 });
 
 function RootComponent() {
+  useCalEmbed();
+
   return (
     <RootDocument>
       <Navigation />

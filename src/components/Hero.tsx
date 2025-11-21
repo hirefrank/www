@@ -31,14 +31,14 @@ export function Hero() {
           arena — a 20-year veteran from Slack, Etsy, and Google.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-          <a
-            href="https://calendly.com/frankharris/intro"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-primary text-lg px-8 py-4 shadow-lg shadow-primary-900/20 transform hover:scale-105 transition-all"
+          <button
+            data-cal-link="hirefrank/discovery-call-initial"
+            data-cal-namespace="discovery-call-initial"
+            data-cal-config='{"layout":"month_view","theme":"light"}'
+            className="btn-primary text-lg px-8 py-4 shadow-lg shadow-primary-900/20 transform hover:scale-105 transition-all cursor-pointer"
           >
             Book a Free Intro Call
-          </a>
+          </button>
         </div>
 
         {/* Social Proof */}

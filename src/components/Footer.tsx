@@ -23,8 +23,18 @@ export function Footer() {
               className="inline-flex items-center gap-2 btn-primary px-6 py-3"
             >
               Subscribe
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              <svg
+                className="w-4 h-4"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M14 5l7 7m0 0l-7 7m7-7H3"
+                />
               </svg>
             </a>
           </div>
@@ -36,19 +46,31 @@ export function Footer() {
             </h4>
             <ul className="space-y-3">
               <li>
-                <a href="#" className="hover:text-white transition-colors">
+                <Link
+                  to="/"
+                  hash="founders"
+                  className="hover:text-white transition-colors"
+                >
                   Founder Coaching
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="hover:text-white transition-colors">
+                <Link
+                  to="/"
+                  hash="leaders"
+                  className="hover:text-white transition-colors"
+                >
                   VP & Leader Coaching
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="hover:text-white transition-colors">
+                <Link
+                  to="/"
+                  hash="ics"
+                  className="hover:text-white transition-colors"
+                >
                   IC & Manager Coaching
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -92,14 +114,14 @@ export function Footer() {
           <div className="mb-4 md:mb-0">
             &copy; {currentYear} Frank Harris. All rights reserved.
           </div>
-          <div className="flex space-x-6 text-sm">
+          {/*<div className="flex space-x-6 text-sm">
             <a href="#" className="hover:text-white transition-colors">
               Privacy Policy
             </a>
             <a href="#" className="hover:text-white transition-colors">
               Terms of Service
             </a>
-          </div>
+          </div>*/}
         </div>
       </div>
     </footer>

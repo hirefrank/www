@@ -18,11 +18,11 @@ export function FinalCTA() {
         <p className="text-lg md:text-xl text-neutral-300 mb-10 max-w-2xl mx-auto">
           Take the first step with a free, no-pressure conversation.
         </p>
-        <a
-          href="https://calendly.com/frankharris/intro"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center justify-center px-10 py-5 text-lg font-semibold rounded-2xl bg-accent-500 text-white hover:bg-accent-400 transition-all duration-300 shadow-xl shadow-accent-500/30 hover:shadow-2xl hover:shadow-accent-500/40 hover:scale-105 active:scale-95 group"
+        <button
+          data-cal-link="hirefrank/discovery-call-initial"
+          data-cal-namespace="discovery-call-initial"
+          data-cal-config='{"layout":"month_view","theme":"light"}'
+          className="inline-flex items-center justify-center px-10 py-5 text-lg font-semibold rounded-2xl bg-accent-500 text-white hover:bg-accent-400 transition-all duration-300 shadow-xl shadow-accent-500/30 hover:shadow-2xl hover:shadow-accent-500/40 hover:scale-105 active:scale-95 group cursor-pointer"
         >
           Book a Free Intro Call
           <svg
@@ -38,7 +38,7 @@ export function FinalCTA() {
               d="M17 8l4 4m0 0l-4 4m4-4H3"
             />
           </svg>
-        </a>
+        </button>
       </div>
     </section>
   );

@@ -19,6 +19,7 @@
     "postinstall": "pnpm run cf-typegen"
   },
   "dependencies": {
+    "@calcom/embed-react": "^1.5.3",
     "@cloudflare/workers-types": "^4.20251113.0",
     "@radix-ui/react-dialog": "^1.1.15",
     "@radix-ui/react-dropdown-menu": "^2.1.16",

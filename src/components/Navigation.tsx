@@ -69,14 +69,14 @@ export function Navigation() {
 
           {/* CTA Button */}
           <div className="hidden md:block">
-            <a
-              href="https://calendly.com/frankharris/intro"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-primary text-sm px-5 py-3"
+            <button
+              data-cal-link="hirefrank/discovery-call-initial"
+              data-cal-namespace="discovery-call-initial"
+              data-cal-config='{"layout":"month_view","theme":"light"}'
+              className="btn-primary text-sm px-5 py-3 cursor-pointer"
             >
               Book a Free Intro Call
-            </a>
+            </button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -121,14 +121,14 @@ export function Navigation() {
                 </Link>
               );
             })}
-          <a
-            href="https://calendly.com/frankharris/intro"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-primary text-center w-full mt-4 py-4"
+          <button
+            data-cal-link="hirefrank/discovery-call-initial"
+            data-cal-namespace="discovery-call-initial"
+            data-cal-config='{"layout":"month_view"}'
+            className="btn-primary text-center w-full mt-4 py-4 cursor-pointer"
           >
             Book a Free Intro Call
-          </a>
+          </button>
         </div>
       )}
     </header>

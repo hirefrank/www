@@ -49,16 +49,18 @@ export function Pricing() {
                   </li>
                 ))}
               </ul>
-              <a
-                href="#"
+              <button
+                data-cal-link="hirefrank/discovery-call-initial"
+                data-cal-namespace="discovery-call-initial"
+                data-cal-config='{"layout":"month_view","theme":"light"}'
                 className={
                   pkg.featured
-                    ? "btn-primary w-full text-center shadow-md hover:shadow-lg"
-                    : "btn-secondary w-full text-center"
+                    ? "btn-primary w-full text-center shadow-md hover:shadow-lg cursor-pointer"
+                    : "btn-secondary w-full text-center cursor-pointer"
                 }
               >
                 {pkg.cta}
-              </a>
+              </button>
             </div>
           ))}
         </div>
