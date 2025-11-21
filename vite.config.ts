@@ -26,9 +26,6 @@ export default defineConfig({
           return visibleSections.includes(path)
         },
       },
-      sitemap: {
-        host: 'https://hirefrank.com',
-      },
     }),
     viteReact(),
   ],
