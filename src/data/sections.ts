@@ -1,54 +1,52 @@
 export interface Section {
-  url: string
-  label: string
-  show: boolean
-  includes?: string[]
+  url: string;
+  label: string;
+  show: boolean;
+  includes?: string[];
 }
 
 export const sections: Section[] = [
   {
-    url: '/',
-    label: 'Home',
-    show: false,
-    includes: ['social.vto'],
-  },
-  {
-    url: '/about/',
-    label: 'About',
+    url: "/",
+    label: "Coaching",
     show: true,
   },
   {
-    url: '/coaching/',
-    label: 'Coaching',
+    url: "/about",
+    label: "About",
     show: true,
-    includes: ['coaching.vto'],
   },
   {
-    url: '/speaking/',
-    label: 'Speaking',
+    url: "/studio",
+    label: "Studio",
     show: false,
   },
   {
-    url: '/uses/',
-    label: 'Uses',
+    url: "/speaking/",
+    label: "Speaking",
     show: false,
   },
   {
-    url: '/projects/',
-    label: 'Projects',
-    show: true,
-    includes: ['projects.vto'],
+    url: "/uses/",
+    label: "Uses",
+    show: false,
   },
   {
-    url: '/contact/',
-    label: 'Contact',
-    show: true,
-    includes: ['calendar.vto', 'social.vto'],
+    url: "/projects/",
+    label: "Projects",
+    show: false,
+    includes: ["projects.vto"],
   },
-]
+  {
+    url: "/contact/",
+    label: "Contact",
+    show: false,
+    includes: ["calendar.vto", "social.vto"],
+  },
+];
 
 export const site = {
-  title: 'Frank Harris',
-  name: 'hirefrank',
+  title: "Frank Harris",
+  name: "hirefrank",
   description: "Frank Harris's personal website.",
-}
+};

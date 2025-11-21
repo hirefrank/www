@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as WritingsRouteImport } from './routes/writings'
 import { Route as VideosRouteImport } from './routes/videos'
 import { Route as UsesRouteImport } from './routes/uses'
+import { Route as StudioRouteImport } from './routes/studio'
 import { Route as SpeakingRouteImport } from './routes/speaking'
 import { Route as ProjectsRouteImport } from './routes/projects'
 import { Route as ContactRouteImport } from './routes/contact'
@@ -32,6 +33,11 @@ const VideosRoute = VideosRouteImport.update({
 const UsesRoute = UsesRouteImport.update({
   id: '/uses',
   path: '/uses',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const StudioRoute = StudioRouteImport.update({
+  id: '/studio',
+  path: '/studio',
   getParentRoute: () => rootRouteImport,
 } as any)
 const SpeakingRoute = SpeakingRouteImport.update({
@@ -72,6 +78,7 @@ export interface FileRoutesByFullPath {
   '/contact': typeof ContactRoute
   '/projects': typeof ProjectsRoute
   '/speaking': typeof SpeakingRoute
+  '/studio': typeof StudioRoute
   '/uses': typeof UsesRoute
   '/videos': typeof VideosRoute
   '/writings': typeof WritingsRoute
@@ -83,6 +90,7 @@ export interface FileRoutesByTo {
   '/contact': typeof ContactRoute
   '/projects': typeof ProjectsRoute
   '/speaking': typeof SpeakingRoute
+  '/studio': typeof StudioRoute
   '/uses': typeof UsesRoute
   '/videos': typeof VideosRoute
   '/writings': typeof WritingsRoute
@@ -95,6 +103,7 @@ export interface FileRoutesById {
   '/contact': typeof ContactRoute
   '/projects': typeof ProjectsRoute
   '/speaking': typeof SpeakingRoute
+  '/studio': typeof StudioRoute
   '/uses': typeof UsesRoute
   '/videos': typeof VideosRoute
   '/writings': typeof WritingsRoute
@@ -108,6 +117,7 @@ export interface FileRouteTypes {
     | '/contact'
     | '/projects'
     | '/speaking'
+    | '/studio'
     | '/uses'
     | '/videos'
     | '/writings'
@@ -119,6 +129,7 @@ export interface FileRouteTypes {
     | '/contact'
     | '/projects'
     | '/speaking'
+    | '/studio'
     | '/uses'
     | '/videos'
     | '/writings'
@@ -130,6 +141,7 @@ export interface FileRouteTypes {
     | '/contact'
     | '/projects'
     | '/speaking'
+    | '/studio'
     | '/uses'
     | '/videos'
     | '/writings'
@@ -142,6 +154,7 @@ export interface RootRouteChildren {
   ContactRoute: typeof ContactRoute
   ProjectsRoute: typeof ProjectsRoute
   SpeakingRoute: typeof SpeakingRoute
+  StudioRoute: typeof StudioRoute
   UsesRoute: typeof UsesRoute
   VideosRoute: typeof VideosRoute
   WritingsRoute: typeof WritingsRoute
@@ -168,6 +181,13 @@ declare module '@tanstack/react-router' {
       path: '/uses'
       fullPath: '/uses'
       preLoaderRoute: typeof UsesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/studio': {
+      id: '/studio'
+      path: '/studio'
+      fullPath: '/studio'
+      preLoaderRoute: typeof StudioRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/speaking': {
@@ -222,6 +242,7 @@ const rootRouteChildren: RootRouteChildren = {
   ContactRoute: ContactRoute,
   ProjectsRoute: ProjectsRoute,
   SpeakingRoute: SpeakingRoute,
+  StudioRoute: StudioRoute,
   UsesRoute: UsesRoute,
   VideosRoute: VideosRoute,
   WritingsRoute: WritingsRoute,

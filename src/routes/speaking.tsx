@@ -2,6 +2,14 @@ import { createFileRoute } from '@tanstack/react-router'
 
 export const Route = createFileRoute('/speaking')({
   component: SpeakingPage,
+  head: () => ({
+    meta: [
+      { title: "Speaking - Frank Harris" },
+      { name: "description", content: "Frank Harris's speaking engagements, conference talks, and podcast interviews on product, leadership, and building teams." },
+      { property: "og:title", content: "Speaking - Frank Harris" },
+      { property: "og:description", content: "Frank Harris's speaking engagements, conference talks, and podcast interviews on product, leadership, and building teams." },
+    ],
+  }),
 })
 
 function SpeakingPage() {

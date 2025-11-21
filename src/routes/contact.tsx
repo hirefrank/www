@@ -4,6 +4,14 @@ import { SocialLinks } from "~/components/SocialLinks";
 
 export const Route = createFileRoute("/contact")({
   component: ContactPage,
+  head: () => ({
+    meta: [
+      { title: "Contact - Frank Harris" },
+      { name: "description", content: "Connect with Frank Harris for product strategy, team dynamics, or leadership growth conversations." },
+      { property: "og:title", content: "Contact - Frank Harris" },
+      { property: "og:description", content: "Connect with Frank Harris for product strategy, team dynamics, or leadership growth conversations." },
+    ],
+  }),
 });
 
 function ContactPage() {

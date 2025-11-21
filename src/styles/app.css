@@ -305,6 +305,73 @@
     @apply hover:decoration-primary-500 hover:decoration-4;
   }
 
+  /* Navigation header - scrolled state styles */
+  header[data-scrolled="true"] {
+    background-color: hsl(30 10% 8% / 0.92) !important;
+    backdrop-filter: blur(12px) saturate(180%);
+    -webkit-backdrop-filter: blur(12px) saturate(180%);
+    border-bottom: 1px solid hsl(30 12% 22% / 0.5);
+  }
+
+  header[data-scrolled="true"] a:not(.btn-primary),
+  header[data-scrolled="true"] button:not(.btn-primary) {
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+    text-decoration: none !important;
+    background: none !important;
+  }
+
+  header[data-scrolled="true"] nav a {
+    color: hsl(30 8% 75%) !important;
+    -webkit-text-fill-color: hsl(30 8% 75%) !important;
+  }
+
+  header[data-scrolled="true"] nav a[data-active="true"] {
+    color: hsl(14 80% 65%) !important;
+    -webkit-text-fill-color: hsl(14 80% 65%) !important;
+    font-weight: 700;
+  }
+
+  /* Navigation header - transparent state (hero) */
+  header[data-scrolled="false"][data-home="true"] a:not(.btn-primary),
+  header[data-scrolled="false"][data-home="true"] button:not(.btn-primary) {
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+    text-decoration: none !important;
+    background: none !important;
+  }
+
+  header[data-scrolled="false"][data-home="true"] nav a {
+    color: hsl(30 10% 88%) !important;
+    -webkit-text-fill-color: hsl(30 10% 88%) !important;
+  }
+
+  header[data-scrolled="false"][data-home="true"] nav a[data-active="true"] {
+    color: hsl(14 80% 65%) !important;
+    -webkit-text-fill-color: hsl(14 80% 65%) !important;
+    font-weight: 700;
+  }
+
+  /* Non-home pages, not scrolled */
+  header[data-scrolled="false"][data-home="false"] a:not(.btn-primary),
+  header[data-scrolled="false"][data-home="false"] button:not(.btn-primary) {
+    color: hsl(30 10% 8%) !important;
+    -webkit-text-fill-color: hsl(30 10% 8%) !important;
+    text-decoration: none !important;
+    background: none !important;
+  }
+
+  header[data-scrolled="false"][data-home="false"] nav a {
+    color: hsl(30 6% 35%) !important;
+    -webkit-text-fill-color: hsl(30 6% 35%) !important;
+  }
+
+  header[data-scrolled="false"][data-home="false"] nav a[data-active="true"] {
+    color: hsl(14 75% 55%) !important;
+    -webkit-text-fill-color: hsl(14 75% 55%) !important;
+    font-weight: 700;
+  }
+
   /* Enhanced list styles */
   ul, ol {
     @apply mb-6 space-y-2;
@@ -693,10 +760,4 @@
   src: url('/fonts/CrimsonPro-Italic-VariableFont_wght.ttf') format('truetype-variations');
 }
 
-@font-face {
-  font-family: 'Inter';
-  font-display: swap;
-  font-style: normal;
-  font-weight: 100 900;
-  src: url('https://rsms.me/inter/inter.css');
-}
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');

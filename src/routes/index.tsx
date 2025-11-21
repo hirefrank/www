@@ -1,47 +1,36 @@
-import { createFileRoute } from '@tanstack/react-router'
-import { ProfileImage } from '~/components/ProfileImage'
-import { SocialLinks } from '~/components/SocialLinks'
+import { createFileRoute } from "@tanstack/react-router";
+import { Hero } from "~/components/Hero";
+import { Benefits } from "~/components/Benefits";
+import { HowItWorks } from "~/components/HowItWorks";
+import { AboutPreview } from "~/components/AboutPreview";
+import { Pricing } from "~/components/Pricing";
+import { Testimonials } from "~/components/Testimonials";
+import { FAQ } from "~/components/FAQ";
+import { FinalCTA } from "~/components/FinalCTA";
 
-export const Route = createFileRoute('/')({
+export const Route = createFileRoute("/")({
   component: HomePage,
-})
+  head: () => ({
+    meta: [
+      { title: "Frank Harris - Executive Coach & Product Leader" },
+      { name: "description", content: "Frank Harris helps senior ICs, VPs, and founders navigate complex leadership challenges, clarify strategy, and grow with intention." },
+      { property: "og:title", content: "Frank Harris - Executive Coach & Product Leader" },
+      { property: "og:description", content: "Frank Harris helps senior ICs, VPs, and founders navigate complex leadership challenges, clarify strategy, and grow with intention." },
+    ],
+  }),
+});
 
 function HomePage() {
   return (
-    <div className="home-container">
-      <ProfileImage src="/images/mug.jpg" alt="Frank Harris" />
-
-      <h1>I'm Frank Harris, a product leader turned coach.</h1>
-
-      <p>
-        I help leaders navigate messy and high-stakes moments of growth like new roles,
-        scaling teams, evolving strategies, and integrating AI into their work.
-      </p>
-
-      <p>
-        My coaching is shaped by two decades in the arena at places like{' '}
-        <span className="font-medium">Slack</span>
-        <span className="relative -top-[0.1em] inline-block">🙌</span>,{' '}
-        <span className="font-medium">Etsy</span>
-        <span className="relative -top-[0.0em] inline-block">🧶</span>, and{' '}
-        <span className="font-medium">Google</span>
-        <span className="relative -top-[0.1em] inline-block">🤖</span>.
-      </p>
-
-      <p>
-        I bring that experience to leaders through{' '}
-        <a href="/coaching">1:1 coaching</a>,{' '}
-        <a href="https://tryfrank.chat" target="_blank" rel="noopener noreferrer">
-          Frankbot
-        </a>{' '}
-        (my AI assistant), and{' '}
-        <a href="https://franktakeaways.com/" target="_blank" rel="noopener noreferrer">
-          Frank Takeaways
-        </a>
-        , my <span className="hidden md:inline-block">mildly entertaining</span> newsletter.
-      </p>
-
-      <SocialLinks />
+    <div className="w-full">
+      <Hero />
+      <Benefits />
+      <HowItWorks />
+      <AboutPreview />
+      <Pricing />
+      <Testimonials />
+      <FAQ />
+      <FinalCTA />
     </div>
-  )
+  );
 }

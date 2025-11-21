@@ -2,13 +2,14 @@
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "hirefrank-www",
   "compatibility_date": "2025-09-24",
-  "compatibility_flags": ["nodejs_compat"],
-  "main": "./src/server.ts",
-  // Replace with your Cloudflare account ID
-  // Find it at: https://dash.cloudflare.com/ -> Workers & Pages -> Overview
+  // Cloudflare account ID
   "account_id": "6034f1c5d23e5503f6573740480cf0d6",
-  "vars": {
-    "APP_NAME": "Frank Harris",
-    "APP_URL": "https://hirefrank.com",
+  // Static assets configuration - no Worker script needed
+  "assets": {
+    "directory": "./dist/client/",
+    // SPA mode: serve index.html for all routes not found
+    "not_found_handling": "single-page-application"
   },
+  // Enable workers.dev subdomain
+  "workers_dev": true
 }

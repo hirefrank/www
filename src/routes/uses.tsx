@@ -2,6 +2,14 @@ import { createFileRoute } from '@tanstack/react-router'
 
 export const Route = createFileRoute('/uses')({
   component: UsesPage,
+  head: () => ({
+    meta: [
+      { title: "Uses - Frank Harris" },
+      { name: "description", content: "Software, gadgets, and tools Frank Harris uses for productivity, development, and design." },
+      { property: "og:title", content: "Uses - Frank Harris" },
+      { property: "og:description", content: "Software, gadgets, and tools Frank Harris uses for productivity, development, and design." },
+    ],
+  }),
 })
 
 function UsesPage() {

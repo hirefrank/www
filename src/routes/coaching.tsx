@@ -5,6 +5,14 @@ import { plans, testimonials, faqs } from '~/data/coaching'
 
 export const Route = createFileRoute('/coaching')({
   component: CoachingPage,
+  head: () => ({
+    meta: [
+      { title: "Coaching - Frank Harris" },
+      { name: "description", content: "Hands-on coaching for senior ICs, first-time managers, and seasoned VPs. ICF-aligned coaching grounded in 20+ years of leadership experience." },
+      { property: "og:title", content: "Coaching - Frank Harris" },
+      { property: "og:description", content: "Hands-on coaching for senior ICs, first-time managers, and seasoned VPs. ICF-aligned coaching grounded in 20+ years of leadership experience." },
+    ],
+  }),
 })
 
 function CoachingPage() {

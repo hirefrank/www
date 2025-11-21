@@ -32,3 +32,10 @@ coverage/
 
 # Build
 *.tsbuildinfo
+
+# Screenshots
+*.png
+!public/**/*.png
+
+# Playwright MCP artifacts
+.playwright-mcp/

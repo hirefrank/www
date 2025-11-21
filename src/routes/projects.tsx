@@ -4,6 +4,14 @@ import { publishedProjects } from '~/data/projects'
 
 export const Route = createFileRoute('/projects')({
   component: ProjectsPage,
+  head: () => ({
+    meta: [
+      { title: "Projects - Frank Harris" },
+      { name: "description", content: "Side projects, experiments, and things Frank has built over the years." },
+      { property: "og:title", content: "Projects - Frank Harris" },
+      { property: "og:description", content: "Side projects, experiments, and things Frank has built over the years." },
+    ],
+  }),
 })
 
 function ProjectsPage() {

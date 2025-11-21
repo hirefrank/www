@@ -26,9 +26,8 @@
     "@radix-ui/react-separator": "^1.1.8",
     "@radix-ui/react-slot": "^1.2.4",
     "@tanstack/react-query": "^5.90.10",
-    "@tanstack/react-router": "^1.132.47",
-    "@tanstack/react-start": "^1.132.53",
-    "@tanstack/start": "^1.120.20",
+    "@tanstack/react-router": "^1.139.0",
+    "@tanstack/react-start": "^1.139.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "gray-matter": "^4.0.3",
@@ -39,7 +38,6 @@
     "zod": "^4.1.12"
   },
   "devDependencies": {
-    "@cloudflare/vite-plugin": "^1.13.7",
     "@tailwindcss/vite": "^4.1.17",
     "@types/node": "^22.5.4",
     "@types/react": "^19.0.8",
