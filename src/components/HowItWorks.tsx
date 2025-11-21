@@ -5,7 +5,7 @@ export function HowItWorks() {
         <h2 className="font-display text-3xl md:text-4xl font-bold text-neutral-900 mb-16">
           How It Works
         </h2>
-        <div className="grid md:grid-cols-3 gap-12">
+        <div className="grid md:grid-cols-3 gap-16 md:gap-12">
           {[
             {
               step: "01",

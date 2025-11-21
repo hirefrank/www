@@ -26,7 +26,7 @@ export function FAQ() {
                 )}
               >
                 <button
-                  className="w-full flex justify-between items-center p-6 bg-neutral-50 hover:bg-neutral-100 transition-colors text-left cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-secondary-500 focus-visible:ring-inset"
+                  className="w-full flex justify-between items-center px-4 py-5 sm:p-6 bg-neutral-50 hover:bg-neutral-100 transition-colors text-left cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-secondary-500 focus-visible:ring-inset"
                   onClick={() => setOpenIndex(isOpen ? null : index)}
                   aria-expanded={isOpen}
                 >

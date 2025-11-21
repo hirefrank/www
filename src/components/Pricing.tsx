@@ -9,7 +9,7 @@ export function Pricing() {
           {pricing.title}
         </h2>
 
-        <div className="grid lg:grid-cols-3 gap-8 max-w-6xl mx-auto items-start">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 max-w-6xl mx-auto items-start">
           {pricing.packages.map((pkg) => (
             <div
               key={pkg.name}

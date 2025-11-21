@@ -6,9 +6,9 @@ export function Footer() {
   return (
     <footer className="bg-neutral-900 text-neutral-300 py-16 border-t border-neutral-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
-          {/* Newsletter */}
-          <div className="lg:col-span-2">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 mb-12">
+          {/* Newsletter - more prominent on mobile */}
+          <div className="lg:col-span-2 pb-8 border-b border-neutral-800 md:border-0 md:pb-0">
             <h3 className="text-white text-xl font-bold mb-4">
               Frank Takeaways
             </h3>

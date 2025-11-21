@@ -48,33 +48,33 @@ export function Hero() {
           </p>
           <div className="flex flex-col items-center gap-10">
             {/* First row */}
-            <div className="flex flex-wrap justify-center gap-8 md:gap-16 items-center">
-              <a href="https://graphite.dev" target="_blank" rel="noopener noreferrer" title="Graphite - Engineering productivity platform">
-                <img src="/images/logos/graphite.png" alt="Graphite logo" className="h-16 w-auto rounded-xl hover:opacity-80 transition-opacity" />
+            <div className="flex flex-wrap justify-center gap-6 sm:gap-8 md:gap-16 items-center">
+              <a href="https://graphite.dev" target="_blank" rel="noopener noreferrer" title="Graphite - Engineering productivity platform" className="p-2 -m-2 rounded-xl transition-opacity hover:opacity-80">
+                <img src="/images/logos/graphite.png" alt="Graphite logo" className="h-12 sm:h-16 w-auto rounded-xl" />
               </a>
-              <a href="https://uber.com" target="_blank" rel="noopener noreferrer" title="Uber - Global mobility platform">
-                <img src="/images/logos/uber.png" alt="Uber logo" className="h-16 w-auto rounded-xl hover:opacity-80 transition-opacity" />
+              <a href="https://uber.com" target="_blank" rel="noopener noreferrer" title="Uber - Global mobility platform" className="p-2 -m-2 rounded-xl transition-opacity hover:opacity-80">
+                <img src="/images/logos/uber.png" alt="Uber logo" className="h-12 sm:h-16 w-auto rounded-xl" />
               </a>
-              <a href="https://wise.com" target="_blank" rel="noopener noreferrer" title="Wise - International money transfer">
-                <img src="/images/logos/wise.png" alt="Wise logo" className="h-16 w-auto rounded-xl hover:opacity-80 transition-opacity" />
+              <a href="https://wise.com" target="_blank" rel="noopener noreferrer" title="Wise - International money transfer" className="p-2 -m-2 rounded-xl transition-opacity hover:opacity-80">
+                <img src="/images/logos/wise.png" alt="Wise logo" className="h-12 sm:h-16 w-auto rounded-xl" />
               </a>
-              <a href="https://joinfleek.com" target="_blank" rel="noopener noreferrer" title="Fleek - Decentralized web platform">
-                <img src="/images/logos/joinfleek.png" alt="Fleek logo" className="h-16 w-auto rounded-xl hover:opacity-80 transition-opacity" />
+              <a href="https://joinfleek.com" target="_blank" rel="noopener noreferrer" title="Fleek - Decentralized web platform" className="p-2 -m-2 rounded-xl transition-opacity hover:opacity-80">
+                <img src="/images/logos/joinfleek.png" alt="Fleek logo" className="h-12 sm:h-16 w-auto rounded-xl" />
               </a>
             </div>
             {/* Second row */}
-            <div className="flex flex-wrap justify-center gap-8 md:gap-16 items-center">
-              <a href="https://google.com" target="_blank" rel="noopener noreferrer" title="Google - Global technology company">
-                <img src="/images/logos/google.png" alt="Google logo" className="h-16 w-auto rounded-xl hover:opacity-80 transition-opacity" />
+            <div className="flex flex-wrap justify-center gap-6 sm:gap-8 md:gap-16 items-center">
+              <a href="https://google.com" target="_blank" rel="noopener noreferrer" title="Google - Global technology company" className="p-2 -m-2 rounded-xl transition-opacity hover:opacity-80">
+                <img src="/images/logos/google.png" alt="Google logo" className="h-12 sm:h-16 w-auto rounded-xl" />
               </a>
-              <a href="https://cash.app" target="_blank" rel="noopener noreferrer" title="Cash App - Financial services platform">
-                <img src="/images/logos/cash-app.png" alt="Cash App logo" className="h-16 w-auto rounded-xl hover:opacity-80 transition-opacity" />
+              <a href="https://cash.app" target="_blank" rel="noopener noreferrer" title="Cash App - Financial services platform" className="p-2 -m-2 rounded-xl transition-opacity hover:opacity-80">
+                <img src="/images/logos/cash-app.png" alt="Cash App logo" className="h-12 sm:h-16 w-auto rounded-xl" />
               </a>
-              <a href="https://mytra.ai" target="_blank" rel="noopener noreferrer" title="Mytra - Robotics and automation">
-                <img src="/images/logos/mytra.png" alt="Mytra logo" className="h-16 w-auto rounded-xl hover:opacity-80 transition-opacity" />
+              <a href="https://mytra.ai" target="_blank" rel="noopener noreferrer" title="Mytra - Robotics and automation" className="p-2 -m-2 rounded-xl transition-opacity hover:opacity-80">
+                <img src="/images/logos/mytra.png" alt="Mytra logo" className="h-12 sm:h-16 w-auto rounded-xl" />
               </a>
-              <a href="https://mejuri.com" target="_blank" rel="noopener noreferrer" title="Mejuri - Fine jewelry brand">
-                <img src="/images/logos/mejuri.png" alt="Mejuri logo" className="h-16 w-auto rounded-xl hover:opacity-80 transition-opacity" />
+              <a href="https://mejuri.com" target="_blank" rel="noopener noreferrer" title="Mejuri - Fine jewelry brand" className="p-2 -m-2 rounded-xl transition-opacity hover:opacity-80">
+                <img src="/images/logos/mejuri.png" alt="Mejuri logo" className="h-12 sm:h-16 w-auto rounded-xl" />
               </a>
             </div>
           </div>

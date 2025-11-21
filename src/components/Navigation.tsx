@@ -81,9 +81,9 @@ export function Navigation() {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden p-2"
+            className="md:hidden p-3 -m-1 rounded-lg active:bg-white/10 transition-colors"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            aria-label="Toggle menu"
+            aria-label={isMenuOpen ? "Close menu" : "Open menu"}
           >
             {isMenuOpen ? (
               <X className="w-6 h-6" />
@@ -110,7 +110,7 @@ export function Navigation() {
                 <Link
                   key={section.url}
                   to={section.url}
-                  className="text-lg font-medium py-3"
+                  className="text-lg font-medium py-4 px-4 -mx-4 rounded-lg active:bg-white/5 transition-colors"
                   style={{
                     color: isActive ? "hsl(14, 80%, 65%)" : "hsl(30, 8%, 75%)",
                     borderBottom: "1px solid hsl(30, 12%, 22%)",

@@ -35,7 +35,7 @@ export function Benefits() {
               ))}
             </ul>
           </div>
-          <div className="order-1 md:order-2 bg-neutral-50 rounded-2xl h-96 w-full object-cover flex items-center justify-center border border-neutral-100 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+          <div className="order-1 md:order-2 bg-neutral-50 rounded-2xl h-64 md:h-96 w-full object-cover flex items-center justify-center border border-neutral-100 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
             <img
               src="/images/illustrations/founders.png"
               alt="Strategic Vision"
@@ -72,7 +72,7 @@ export function Benefits() {
               ))}
             </ul>
           </div>
-          <div className="order-1 bg-neutral-50 rounded-2xl h-96 w-full flex items-center justify-center border border-neutral-100 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+          <div className="order-1 bg-neutral-50 rounded-2xl h-64 md:h-96 w-full flex items-center justify-center border border-neutral-100 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
             <img
               src="/images/illustrations/scale.png"
               alt="Team Growth"
@@ -110,7 +110,7 @@ export function Benefits() {
               ))}
             </ul>
           </div>
-          <div className="order-1 md:order-2 bg-neutral-50 rounded-2xl h-96 w-full flex items-center justify-center border border-neutral-100 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+          <div className="order-1 md:order-2 bg-neutral-50 rounded-2xl h-64 md:h-96 w-full flex items-center justify-center border border-neutral-100 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
             <img
               src="/images/illustrations/transform.png"
               alt="Career Acceleration"
