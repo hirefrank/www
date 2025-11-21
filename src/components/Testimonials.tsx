@@ -1,70 +1,90 @@
+import { testimonials } from "~/data/content";
+import type { Testimonial } from "~/data/content";
+
+// Compute size tier from quote length at build time
+type SizeTier = "large" | "medium" | "small";
+function getSizeTier(quote: string): SizeTier {
+  const len = quote.length;
+  if (len < 140) return "large";
+  if (len < 200) return "medium";
+  return "small";
+}
+
+function TestimonialCard({ testimonial }: { testimonial: Testimonial }) {
+  const size = getSizeTier(testimonial.quote);
+
+  // Font size based on computed tier
+  const textSize = {
+    large: "text-xl md:text-2xl leading-relaxed",
+    medium: "text-lg leading-relaxed",
+    small: "text-base leading-relaxed",
+  }[size];
+
+  const padding = {
+    large: "p-7",
+    medium: "p-6",
+    small: "p-5",
+  }[size];
+
+  return (
+    <div className="group break-inside-avoid mb-4 bg-white border border-neutral-200 rounded-xl shadow-sm hover:shadow-md hover:border-l-4 hover:border-l-accent-500 transition-all duration-300">
+      <div className={`flex flex-col ${padding}`}>
+        <p className={`text-neutral-600 ${textSize}`}>
+          {testimonial.quote.trim()}
+        </p>
+
+        {/* Attribution */}
+        <div className="flex items-center gap-3 mt-4 pt-4 border-t border-neutral-100">
+          <div className="w-9 h-9 rounded-full bg-accent-100 flex items-center justify-center text-accent-700 font-bold text-sm shrink-0">
+            {testimonial.name
+              .split(" ")
+              .map((n) => n[0])
+              .join("")}
+          </div>
+          <div className="min-w-0">
+            <div className="font-semibold text-neutral-900 text-sm">
+              {testimonial.name}
+            </div>
+            {(testimonial.title || testimonial.company) && (
+              <div className="text-neutral-500 text-xs">
+                {testimonial.title}
+                {testimonial.title && testimonial.company && (
+                  <span className="text-accent-600">
+                    {" "}
+                    · {testimonial.company}
+                  </span>
+                )}
+                {!testimonial.title && testimonial.company && (
+                  <span className="text-accent-600">{testimonial.company}</span>
+                )}
+              </div>
+            )}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export function Testimonials() {
   return (
-    <section className="py-24 bg-white overflow-hidden">
+    <section className="py-24 bg-gradient-to-b from-white to-neutral-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="font-display text-3xl md:text-4xl font-bold text-center text-neutral-900 mb-16">
-          Loved by Leaders Worldwide.
-        </h2>
+        {/* Section Header */}
+        <div className="text-center mb-16">
+          <span className="inline-block px-4 py-2 rounded-full bg-accent-100 text-accent-700 font-medium text-sm mb-4">
+            {testimonials.section.badge}
+          </span>
+          <h2 className="font-display text-3xl md:text-5xl font-bold text-neutral-900">
+            {testimonials.section.title}
+          </h2>
+        </div>
 
-        <div
-          className="flex overflow-x-auto pb-8 snap-x snap-mandatory gap-6 no-scrollbar"
-          role="region"
-          aria-label="Client testimonials"
-        >
-          {/* Testimonial 1 - Graphite */}
-          <div className="snap-center shrink-0 w-full md:w-[600px] bg-neutral-50 p-8 rounded-2xl border border-neutral-100 shadow-sm hover:shadow-lg transition-all duration-300">
-            <div className="flex items-center mb-6">
-              {/* Graphite Logo Placeholder */}
-              <span className="font-bold text-xl text-neutral-800">Graphite</span>
-            </div>
-            <blockquote className="text-xl text-neutral-700 italic mb-6 border-l-0 bg-transparent p-0">
-              "Frank helped me navigate the transition from IC to manager. His
-              advice is always practical and grounded in real experience."
-            </blockquote>
-            <div className="flex items-center">
-              <div className="w-12 h-12 bg-neutral-300 rounded-full mr-4"></div>
-              <div>
-                <div className="font-bold text-neutral-900">Jane Doe</div>
-                <div className="text-neutral-500 text-sm">Engineering Manager</div>
-              </div>
-            </div>
-          </div>
-
-          {/* Testimonial 2 */}
-          <div className="snap-center shrink-0 w-full md:w-[600px] bg-neutral-50 p-8 rounded-2xl border border-neutral-100 shadow-sm hover:shadow-lg transition-all duration-300">
-            <div className="flex items-center mb-6">
-              <span className="font-bold text-xl text-neutral-800">Uber</span>
-            </div>
-            <blockquote className="text-xl text-neutral-700 italic mb-6 border-l-0 bg-transparent p-0">
-              "The best investment I made in my career this year. Frank's
-              coaching is worth every penny."
-            </blockquote>
-            <div className="flex items-center">
-              <div className="w-12 h-12 bg-neutral-300 rounded-full mr-4"></div>
-              <div>
-                <div className="font-bold text-neutral-900">John Smith</div>
-                <div className="text-neutral-500 text-sm">Director of Product</div>
-              </div>
-            </div>
-          </div>
-
-          {/* Testimonial 3 */}
-          <div className="snap-center shrink-0 w-full md:w-[600px] bg-neutral-50 p-8 rounded-2xl border border-neutral-100 shadow-sm hover:shadow-lg transition-all duration-300">
-            <div className="flex items-center mb-6">
-              <span className="font-bold text-xl text-neutral-800">Wise</span>
-            </div>
-            <blockquote className="text-xl text-neutral-700 italic mb-6 border-l-0 bg-transparent p-0">
-              "Frank is a fantastic listener and strategic thinker. He helped me
-              clarify my vision and execute on it."
-            </blockquote>
-            <div className="flex items-center">
-              <div className="w-12 h-12 bg-neutral-300 rounded-full mr-4"></div>
-              <div>
-                <div className="font-bold text-neutral-900">Sarah Jones</div>
-                <div className="text-neutral-500 text-sm">VP of Engineering</div>
-              </div>
-            </div>
-          </div>
+        {/* Masonry layout using CSS columns */}
+        <div className="columns-1 md:columns-2 lg:columns-3 gap-4">
+          {testimonials.testimonials.map((testimonial) => (
+            <TestimonialCard key={testimonial.name} testimonial={testimonial} />
+          ))}
         </div>
       </div>
     </section>

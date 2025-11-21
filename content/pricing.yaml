@@ -1,0 +1,49 @@
+# Pricing packages for the coaching page
+# Edit this file to update pricing information
+
+title: Simple, Transparent Pricing
+footnote: If you are funding your coaching personally (without a corporate budget), please inquire about special rates during your intro call.
+
+packages:
+  - name: Pro
+    description: Asynchronous coaching
+    price: $99
+    period: /month
+    subtext: or $999/year
+    featured: false
+    cta: Book Intro Call
+    features:
+      - Unlimited coaching via chat
+      - Product feedback
+      - Stakeholder management
+      - Career development planning
+      - Replies within 24 hours
+
+  - name: Premium
+    description: Everything in Pro, plus live sessions
+    price: $999
+    period: /month
+    subtext: 3-month minimum commitment
+    featured: true
+    badge: Most Popular
+    cta: Book Intro Call
+    features:
+      - Everything in Pro
+      - Two 60-minute sessions per month
+      - Additional sessions at $450 each
+      - Direct access between sessions
+      - Priority scheduling
+
+  - name: Custom
+    description: For teams and organizations
+    price: Let's Talk
+    period: ""
+    subtext: Flexible pricing and commitments
+    featured: false
+    cta: Book Intro Call
+    features:
+      - Pooled sessions for your team
+      - 360-degree feedback programs
+      - Centralized billing and invoicing
+      - Custom packages for L&D budgets
+      - Custom engagement models

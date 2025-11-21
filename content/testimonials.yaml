@@ -1,0 +1,83 @@
+# Testimonials for the coaching page
+# Edit this file to add, remove, or update testimonials
+# Font size is automatically computed based on quote length
+
+section:
+  badge: Trusted by leaders
+  title: Loved by Leaders Worldwide
+
+testimonials:
+  - name: Tomas Reimers
+    title: Co-Founder
+    company: Graphite
+    quote: >
+      Frank had a material, double digit percentage, impact on our revenue
+      within a month of our first session. He combines a natural caring and
+      thoughtfulness with a wealth of professional experience. If this is your
+      first time stepping into a product leadership position, or are just
+      looking for a thought partner, I don't think you'll regret giving Frank
+      a try.
+
+  - name: Eleanor Morgan
+    title: CEO & Founder
+    company: Stealth Startup
+    quote: >
+      Frank is an incredible thought partner, and is the kind of person who
+      makes you and your organization more stable, grounded and thoughtful.
+      He has exceptionally high EQ and people sense—he can provide empathy
+      and humor that helps you navigate the hardest situations, and at the
+      same time objectivity exactly when you need it.
+
+  - name: Majed Masad
+    title: President
+    company: Mejuri
+    quote: >
+      As a first-time leader of digital product and technology teams, Frank's
+      coaching was a game-changer. His insights into organizational structure
+      and hiring were key to successfully scaling our tech team.
+
+  - name: Betty Liao
+    title: Product
+    company: Google
+    quote: >
+      I'm incredibly grateful for the mentorship and guidance Frank has
+      provided me throughout my career. He's helped me navigate complex team
+      dynamics, refine my product strategy, and overcome challenges I faced
+      at work.
+
+  - name: Sara Plotkin
+    quote: >
+      Frank is everything you'd want in a coach! He approaches these
+      conversations with a level of understanding and empathy that I've
+      never found in other career coaches.
+
+  - name: Lauren Brucato
+    quote: >
+      Frank has been an incredible mentor—equal parts product strategy
+      wizard, thoughtful sounding board, and hype man. His guidance has
+      sharpened my product intuition.
+
+  - name: Iban Benzal
+    title: Design Director
+    quote: >
+      I was looking for a great coach for years, and finally I found Frank.
+      He knows when to step in with practical advice that helps me solve in
+      minutes what I've been stuck on for weeks.
+
+  - name: Yash Raut
+    quote: >
+      Frank is a hidden gem in the Product world. He genuinely cares about
+      helping people grow and doesn't just give generic advice.
+
+  - name: Joseph Smith
+    quote: >
+      Frank has been an incredible thought partner. He brings deep knowledge
+      of product strategy and org design, paired with real-world experience.
+
+  - name: Mariel Frank
+    quote: >
+      Frank has been an invaluable resource during my highest growth years
+      as a Product Manager. Recently, Frank helped me turn a challenging job
+      search into three competing offers through product strategy and
+      interview coaching. If you're a product leader looking to level up,
+      Frank is your guy.

@@ -3,12 +3,14 @@ import tsConfigPaths from 'vite-tsconfig-paths'
 import { tanstackStart } from '@tanstack/react-start/plugin/vite'
 import viteReact from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
+import yaml from '@modyfi/vite-plugin-yaml'
 
 export default defineConfig({
   server: {
     port: 3000,
   },
   plugins: [
+    yaml(),
     tailwindcss(),
     tsConfigPaths({
       projects: ['./tsconfig.json'],
